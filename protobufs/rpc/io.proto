@@ -16,7 +16,7 @@ syntax = "proto3";
 
 package rpc;
 
-option go_package = "github.com/wirtual/protocol/rpc";
+option go_package = "github.com/wirtualdev/protocol/rpc";
 
 import "wirtual_egress.proto";
 import "wirtual_ingress.proto";

@@ -7,7 +7,7 @@ import (
 
 	"github.com/wirtualdev/wirtual-protocol/wirtual"
 	"github.com/wirtualdev/wirtual-protocol/rpc"
-	"github.com/wirtual/psrpc"
+	"github.com/wirtualdev/psrpc"
 )
 
 type FakeTypedAgentDispatchInternalClient struct {

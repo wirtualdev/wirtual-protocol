@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
+	_ "github.com/wirtualdev/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

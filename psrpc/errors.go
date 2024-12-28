@@ -20,7 +20,7 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/wirtual/psrpc"
+	"github.com/wirtualdev/psrpc"
 )
 
 func WithSuppressClientErrors(errs ...error) psrpc.ClientOption {

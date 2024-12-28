@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	wirtual "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtualdev/protocol/wirtual"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"

@@ -22,8 +22,8 @@ import (
 	"time"
 
 	"github.com/wirtualdev/wirtual-protocol/wirtual"
-	"github.com/wirtual/psrpc"
-	"github.com/wirtual/psrpc/pkg/middleware"
+	"github.com/wirtualdev/psrpc"
+	"github.com/wirtualdev/psrpc/pkg/middleware"
 )
 
 const (

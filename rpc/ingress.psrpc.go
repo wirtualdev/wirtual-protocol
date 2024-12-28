@@ -6,15 +6,15 @@ package rpc
 import (
 	"context"
 
-	"github.com/wirtual/psrpc"
-	"github.com/wirtual/psrpc/pkg/client"
-	"github.com/wirtual/psrpc/pkg/info"
-	"github.com/wirtual/psrpc/pkg/rand"
-	"github.com/wirtual/psrpc/pkg/server"
-	"github.com/wirtual/psrpc/version"
+	"github.com/wirtualdev/psrpc"
+	"github.com/wirtualdev/psrpc/pkg/client"
+	"github.com/wirtualdev/psrpc/pkg/info"
+	"github.com/wirtualdev/psrpc/pkg/rand"
+	"github.com/wirtualdev/psrpc/pkg/server"
+	"github.com/wirtualdev/psrpc/version"
 )
 import google_protobuf "google.golang.org/protobuf/types/known/emptypb"
-import wirtual5 "github.com/wirtual/protocol/wirtual"
+import wirtual5 "github.com/wirtualdev/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 

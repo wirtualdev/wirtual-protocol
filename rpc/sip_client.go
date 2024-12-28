@@ -15,7 +15,7 @@
 package rpc
 
 import (
-	"github.com/wirtual/psrpc"
+	"github.com/wirtualdev/psrpc"
 )
 
 type SIPClient interface {

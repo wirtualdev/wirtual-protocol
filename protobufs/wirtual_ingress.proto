@@ -18,7 +18,7 @@ package wirtual;
 
 import "wirtual_models.proto";
 
-option go_package = "github.com/wirtual/protocol/wirtual";
+option go_package = "github.com/wirtualdev/protocol/wirtual";
 option csharp_namespace = "Wirtual.Proto";
 option ruby_package = "Wirtual::Proto";
 

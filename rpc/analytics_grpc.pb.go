@@ -22,7 +22,7 @@ package rpc
 
 import (
 	context "context"
-	wirtual "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtualdev/protocol/wirtual"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"

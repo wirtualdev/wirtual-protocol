@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
+	livekit "github.com/wirtual/protocol/wirtual"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -65,18 +65,18 @@ var file_rpc_analytics_proto_rawDesc = []byte{
 }
 
 var file_rpc_analytics_proto_goTypes = []any{
-	(*livekit.AnalyticsStats)(nil),     // 0: livekit.AnalyticsStats
-	(*livekit.AnalyticsEvents)(nil),    // 1: livekit.AnalyticsEvents
-	(*livekit.AnalyticsNodeRooms)(nil), // 2: livekit.AnalyticsNodeRooms
+	(*livekit.AnalyticsStats)(nil),     // 0: wirtual.AnalyticsStats
+	(*livekit.AnalyticsEvents)(nil),    // 1: wirtual.AnalyticsEvents
+	(*livekit.AnalyticsNodeRooms)(nil), // 2: wirtual.AnalyticsNodeRooms
 	(*emptypb.Empty)(nil),              // 3: google.protobuf.Empty
 }
 var file_rpc_analytics_proto_depIdxs = []int32{
-	0, // 0: livekit.AnalyticsRecorderService.IngestStats:input_type -> livekit.AnalyticsStats
-	1, // 1: livekit.AnalyticsRecorderService.IngestEvents:input_type -> livekit.AnalyticsEvents
-	2, // 2: livekit.AnalyticsRecorderService.IngestNodeRoomStates:input_type -> livekit.AnalyticsNodeRooms
-	3, // 3: livekit.AnalyticsRecorderService.IngestStats:output_type -> google.protobuf.Empty
-	3, // 4: livekit.AnalyticsRecorderService.IngestEvents:output_type -> google.protobuf.Empty
-	3, // 5: livekit.AnalyticsRecorderService.IngestNodeRoomStates:output_type -> google.protobuf.Empty
+	0, // 0: wirtual.AnalyticsRecorderService.IngestStats:input_type -> wirtual.AnalyticsStats
+	1, // 1: wirtual.AnalyticsRecorderService.IngestEvents:input_type -> wirtual.AnalyticsEvents
+	2, // 2: wirtual.AnalyticsRecorderService.IngestNodeRoomStates:input_type -> wirtual.AnalyticsNodeRooms
+	3, // 3: wirtual.AnalyticsRecorderService.IngestStats:output_type -> google.protobuf.Empty
+	3, // 4: wirtual.AnalyticsRecorderService.IngestEvents:output_type -> google.protobuf.Empty
+	3, // 5: wirtual.AnalyticsRecorderService.IngestNodeRoomStates:output_type -> google.protobuf.Empty
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

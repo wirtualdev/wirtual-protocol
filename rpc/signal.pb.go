@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -218,14 +218,14 @@ var file_rpc_signal_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_rpc_signal_proto_goTypes = []any{
 	(*RelaySignalRequest)(nil),     // 0: rpc.RelaySignalRequest
 	(*RelaySignalResponse)(nil),    // 1: rpc.RelaySignalResponse
-	(*livekit.StartSession)(nil),   // 2: livekit.StartSession
-	(*livekit.SignalRequest)(nil),  // 3: livekit.SignalRequest
-	(*livekit.SignalResponse)(nil), // 4: livekit.SignalResponse
+	(*livekit.StartSession)(nil),   // 2: wirtual.StartSession
+	(*livekit.SignalRequest)(nil),  // 3: wirtual.SignalRequest
+	(*livekit.SignalResponse)(nil), // 4: wirtual.SignalResponse
 }
 var file_rpc_signal_proto_depIdxs = []int32{
-	2, // 0: rpc.RelaySignalRequest.start_session:type_name -> livekit.StartSession
-	3, // 1: rpc.RelaySignalRequest.requests:type_name -> livekit.SignalRequest
-	4, // 2: rpc.RelaySignalResponse.responses:type_name -> livekit.SignalResponse
+	2, // 0: rpc.RelaySignalRequest.start_session:type_name -> wirtual.StartSession
+	3, // 1: rpc.RelaySignalRequest.requests:type_name -> wirtual.SignalRequest
+	4, // 2: rpc.RelaySignalResponse.responses:type_name -> wirtual.SignalResponse
 	0, // 3: rpc.Signal.RelaySignal:input_type -> rpc.RelaySignalRequest
 	1, // 4: rpc.Signal.RelaySignal:output_type -> rpc.RelaySignalResponse
 	4, // [4:5] is the sub-list for method output_type

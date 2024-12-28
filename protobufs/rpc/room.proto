@@ -16,11 +16,11 @@ syntax = "proto3";
 
 package rpc;
 
-option go_package = "github.com/livekit/protocol/rpc";
+option go_package = "github.com/wirtual/protocol/rpc";
 
 import "options.proto";
-import "livekit_models.proto";
-import "livekit_room.proto";
+import "wirtual_models.proto";
+import "wirtual_room.proto";
 
 service Room {
   rpc DeleteRoom(livekit.DeleteRoomRequest) returns (livekit.DeleteRoomResponse) {

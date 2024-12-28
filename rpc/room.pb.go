@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -67,20 +67,20 @@ var file_rpc_room_proto_rawDesc = []byte{
 }
 
 var file_rpc_room_proto_goTypes = []any{
-	(*livekit.DeleteRoomRequest)(nil),         // 0: livekit.DeleteRoomRequest
-	(*livekit.SendDataRequest)(nil),           // 1: livekit.SendDataRequest
-	(*livekit.UpdateRoomMetadataRequest)(nil), // 2: livekit.UpdateRoomMetadataRequest
-	(*livekit.DeleteRoomResponse)(nil),        // 3: livekit.DeleteRoomResponse
-	(*livekit.SendDataResponse)(nil),          // 4: livekit.SendDataResponse
-	(*livekit.Room)(nil),                      // 5: livekit.Room
+	(*livekit.DeleteRoomRequest)(nil),         // 0: wirtual.DeleteRoomRequest
+	(*livekit.SendDataRequest)(nil),           // 1: wirtual.SendDataRequest
+	(*livekit.UpdateRoomMetadataRequest)(nil), // 2: wirtual.UpdateRoomMetadataRequest
+	(*livekit.DeleteRoomResponse)(nil),        // 3: wirtual.DeleteRoomResponse
+	(*livekit.SendDataResponse)(nil),          // 4: wirtual.SendDataResponse
+	(*livekit.Room)(nil),                      // 5: wirtual.Room
 }
 var file_rpc_room_proto_depIdxs = []int32{
-	0, // 0: rpc.Room.DeleteRoom:input_type -> livekit.DeleteRoomRequest
-	1, // 1: rpc.Room.SendData:input_type -> livekit.SendDataRequest
-	2, // 2: rpc.Room.UpdateRoomMetadata:input_type -> livekit.UpdateRoomMetadataRequest
-	3, // 3: rpc.Room.DeleteRoom:output_type -> livekit.DeleteRoomResponse
-	4, // 4: rpc.Room.SendData:output_type -> livekit.SendDataResponse
-	5, // 5: rpc.Room.UpdateRoomMetadata:output_type -> livekit.Room
+	0, // 0: rpc.Room.DeleteRoom:input_type -> wirtual.DeleteRoomRequest
+	1, // 1: rpc.Room.SendData:input_type -> wirtual.SendDataRequest
+	2, // 2: rpc.Room.UpdateRoomMetadata:input_type -> wirtual.UpdateRoomMetadataRequest
+	3, // 3: rpc.Room.DeleteRoom:output_type -> wirtual.DeleteRoomResponse
+	4, // 4: rpc.Room.SendData:output_type -> wirtual.SendDataResponse
+	5, // 5: rpc.Room.UpdateRoomMetadata:output_type -> wirtual.Room
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

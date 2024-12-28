@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	durationpb "google.golang.org/protobuf/types/known/durationpb"
@@ -48,7 +48,7 @@ type InternalCreateSIPParticipantRequest struct {
 	Address string `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty"`
 	// Hostname for the 'From' SIP address in INVITE
 	Hostname  string               `protobuf:"bytes,20,opt,name=hostname,proto3" json:"hostname,omitempty"`
-	Transport livekit.SIPTransport `protobuf:"varint,16,opt,name=transport,proto3,enum=livekit.SIPTransport" json:"transport,omitempty"`
+	Transport livekit.SIPTransport `protobuf:"varint,16,opt,name=transport,proto3,enum=wirtual.SIPTransport" json:"transport,omitempty"`
 	// Number used to make the call
 	Number string `protobuf:"bytes,3,opt,name=number,proto3" json:"number,omitempty"`
 	// Number to call to
@@ -80,13 +80,13 @@ type InternalCreateSIPParticipantRequest struct {
 	//
 	// When mapping 200 OK headers to follow-up request headers with attributes_to_headers map,
 	// lowercase header names should be used, for example: sip.h.x-custom-header.
-	IncludeHeaders  livekit.SIPHeaderOptions `protobuf:"varint,27,opt,name=include_headers,json=includeHeaders,proto3,enum=livekit.SIPHeaderOptions" json:"include_headers,omitempty"`
-	EnabledFeatures []livekit.SIPFeature     `protobuf:"varint,25,rep,packed,name=enabled_features,json=enabledFeatures,proto3,enum=livekit.SIPFeature" json:"enabled_features,omitempty"`
+	IncludeHeaders  livekit.SIPHeaderOptions `protobuf:"varint,27,opt,name=include_headers,json=includeHeaders,proto3,enum=wirtual.SIPHeaderOptions" json:"include_headers,omitempty"`
+	EnabledFeatures []livekit.SIPFeature     `protobuf:"varint,25,rep,packed,name=enabled_features,json=enabledFeatures,proto3,enum=wirtual.SIPFeature" json:"enabled_features,omitempty"`
 	// Max time for the callee to answer the call.
 	RingingTimeout *durationpb.Duration `protobuf:"bytes,23,opt,name=ringing_timeout,json=ringingTimeout,proto3" json:"ringing_timeout,omitempty"`
 	// Max call duration.
 	MaxCallDuration *durationpb.Duration       `protobuf:"bytes,24,opt,name=max_call_duration,json=maxCallDuration,proto3" json:"max_call_duration,omitempty"`
-	MediaEncryption livekit.SIPMediaEncryption `protobuf:"varint,28,opt,name=media_encryption,json=mediaEncryption,proto3,enum=livekit.SIPMediaEncryption" json:"media_encryption,omitempty"`
+	MediaEncryption livekit.SIPMediaEncryption `protobuf:"varint,28,opt,name=media_encryption,json=mediaEncryption,proto3,enum=wirtual.SIPMediaEncryption" json:"media_encryption,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -627,24 +627,24 @@ var file_rpc_sip_proto_goTypes = []any{
 	nil,                             // 5: rpc.InternalCreateSIPParticipantRequest.HeadersToAttributesEntry
 	nil,                             // 6: rpc.InternalCreateSIPParticipantRequest.AttributesToHeadersEntry
 	nil,                             // 7: rpc.InternalTransferSIPParticipantRequest.HeadersEntry
-	(livekit.SIPTransport)(0),       // 8: livekit.SIPTransport
-	(livekit.SIPHeaderOptions)(0),   // 9: livekit.SIPHeaderOptions
-	(livekit.SIPFeature)(0),         // 10: livekit.SIPFeature
+	(livekit.SIPTransport)(0),       // 8: wirtual.SIPTransport
+	(livekit.SIPHeaderOptions)(0),   // 9: wirtual.SIPHeaderOptions
+	(livekit.SIPFeature)(0),         // 10: wirtual.SIPFeature
 	(*durationpb.Duration)(nil),     // 11: google.protobuf.Duration
-	(livekit.SIPMediaEncryption)(0), // 12: livekit.SIPMediaEncryption
+	(livekit.SIPMediaEncryption)(0), // 12: wirtual.SIPMediaEncryption
 	(*emptypb.Empty)(nil),           // 13: google.protobuf.Empty
 }
 var file_rpc_sip_proto_depIdxs = []int32{
-	8,  // 0: rpc.InternalCreateSIPParticipantRequest.transport:type_name -> livekit.SIPTransport
+	8,  // 0: rpc.InternalCreateSIPParticipantRequest.transport:type_name -> wirtual.SIPTransport
 	3,  // 1: rpc.InternalCreateSIPParticipantRequest.participant_attributes:type_name -> rpc.InternalCreateSIPParticipantRequest.ParticipantAttributesEntry
 	4,  // 2: rpc.InternalCreateSIPParticipantRequest.headers:type_name -> rpc.InternalCreateSIPParticipantRequest.HeadersEntry
 	5,  // 3: rpc.InternalCreateSIPParticipantRequest.headers_to_attributes:type_name -> rpc.InternalCreateSIPParticipantRequest.HeadersToAttributesEntry
 	6,  // 4: rpc.InternalCreateSIPParticipantRequest.attributes_to_headers:type_name -> rpc.InternalCreateSIPParticipantRequest.AttributesToHeadersEntry
-	9,  // 5: rpc.InternalCreateSIPParticipantRequest.include_headers:type_name -> livekit.SIPHeaderOptions
-	10, // 6: rpc.InternalCreateSIPParticipantRequest.enabled_features:type_name -> livekit.SIPFeature
+	9,  // 5: rpc.InternalCreateSIPParticipantRequest.include_headers:type_name -> wirtual.SIPHeaderOptions
+	10, // 6: rpc.InternalCreateSIPParticipantRequest.enabled_features:type_name -> wirtual.SIPFeature
 	11, // 7: rpc.InternalCreateSIPParticipantRequest.ringing_timeout:type_name -> google.protobuf.Duration
 	11, // 8: rpc.InternalCreateSIPParticipantRequest.max_call_duration:type_name -> google.protobuf.Duration
-	12, // 9: rpc.InternalCreateSIPParticipantRequest.media_encryption:type_name -> livekit.SIPMediaEncryption
+	12, // 9: rpc.InternalCreateSIPParticipantRequest.media_encryption:type_name -> wirtual.SIPMediaEncryption
 	7,  // 10: rpc.InternalTransferSIPParticipantRequest.headers:type_name -> rpc.InternalTransferSIPParticipantRequest.HeadersEntry
 	0,  // 11: rpc.SIPInternal.CreateSIPParticipant:input_type -> rpc.InternalCreateSIPParticipantRequest
 	2,  // 12: rpc.SIPInternal.TransferSIPParticipant:input_type -> rpc.InternalTransferSIPParticipantRequest

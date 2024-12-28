@@ -36,27 +36,27 @@ func Bootstrap() error {
 		"go install github.com/twitchtv/twirp/protoc-gen-twirp@latest",
 		"go install google.golang.org/protobuf/cmd/protoc-gen-go@latest",
 		"go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest",
-		"go install github.com/livekit/psrpc/protoc-gen-psrpc@latest",
+		"go install github.com/wirtual/psrpc/protoc-gen-psrpc@latest",
 	)
 }
 
 // regenerate protobuf
 func Proto() error {
 	twirpProtoFiles := []string{
-		"livekit_agent_dispatch.proto",
-		"livekit_egress.proto",
-		"livekit_ingress.proto",
-		"livekit_room.proto",
-		"livekit_sip.proto",
+		"wirtual_agent_dispatch.proto",
+		"wirtual_egress.proto",
+		"wirtual_ingress.proto",
+		"wirtual_room.proto",
+		"wirtual_sip.proto",
 	}
 	protoFiles := []string{
-		"livekit_agent.proto",
-		"livekit_analytics.proto",
-		"livekit_internal.proto",
-		"livekit_models.proto",
-		"livekit_rtc.proto",
-		"livekit_webhook.proto",
-		"livekit_metrics.proto",
+		"wirtual_agent.proto",
+		"wirtual_analytics.proto",
+		"wirtual_internal.proto",
+		"wirtual_models.proto",
+		"wirtual_rtc.proto",
+		"wirtual_webhook.proto",
+		"wirtual_metrics.proto",
 	}
 	grpcProtoFiles := []string{
 		"infra/link.proto",
@@ -77,7 +77,7 @@ func Proto() error {
 	}
 
 	fmt.Println("generating protobuf")
-	target := "livekit"
+	target := "wirtual"
 	if err := os.MkdirAll(target, 0755); err != nil {
 		return err
 	}
@@ -162,7 +162,7 @@ func Proto() error {
 
 	fmt.Println("generating psrpc protobuf")
 
-	psrpcDir, err := mageutil.GetPkgDir("github.com/livekit/psrpc")
+	psrpcDir, err := mageutil.GetPkgDir("github.com/wirtual/psrpc")
 	if err != nil {
 		return err
 	}

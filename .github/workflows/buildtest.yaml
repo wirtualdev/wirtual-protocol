@@ -32,7 +32,7 @@ jobs:
             ~/go/pkg/mod
             ~/go/bin
             ~/.cache
-          key: livekit-protocol
+          key: wirtual-protocol
 
       - name: Set up Go
         uses: actions/setup-go@v5

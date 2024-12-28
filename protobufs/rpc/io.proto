@@ -16,12 +16,12 @@ syntax = "proto3";
 
 package rpc;
 
-option go_package = "github.com/livekit/protocol/rpc";
+option go_package = "github.com/wirtual/protocol/rpc";
 
-import "livekit_egress.proto";
-import "livekit_ingress.proto";
-import "livekit_sip.proto";
-import "livekit_room.proto";
+import "wirtual_egress.proto";
+import "wirtual_ingress.proto";
+import "wirtual_sip.proto";
+import "wirtual_room.proto";
 import "google/protobuf/empty.proto";
 import "google/protobuf/duration.proto";
 

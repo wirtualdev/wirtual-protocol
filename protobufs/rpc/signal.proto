@@ -16,11 +16,11 @@ syntax = "proto3";
 
 package rpc;
 
-option go_package = "github.com/livekit/protocol/rpc";
+option go_package = "github.com/wirtual/protocol/rpc";
 
 import "options.proto";
-import "livekit_internal.proto";
-import "livekit_rtc.proto";
+import "wirtual_internal.proto";
+import "wirtual_rtc.proto";
 
 service Signal {
   rpc RelaySignal(rpc.RelaySignalRequest) returns (rpc.RelaySignalResponse) {

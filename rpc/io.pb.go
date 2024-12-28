@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
+	livekit "github.com/wirtual/protocol/wirtual"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	durationpb "google.golang.org/protobuf/types/known/durationpb"
@@ -696,8 +696,8 @@ type EvaluateSIPDispatchRulesResponse struct {
 	//
 	// When mapping INVITE headers to response headers with attributes_to_headers map,
 	// lowercase header names should be used, for example: sip.h.x-custom-header.
-	IncludeHeaders  livekit.SIPHeaderOptions `protobuf:"varint,19,opt,name=include_headers,json=includeHeaders,proto3,enum=livekit.SIPHeaderOptions" json:"include_headers,omitempty"`
-	EnabledFeatures []livekit.SIPFeature     `protobuf:"varint,15,rep,packed,name=enabled_features,json=enabledFeatures,proto3,enum=livekit.SIPFeature" json:"enabled_features,omitempty"`
+	IncludeHeaders  livekit.SIPHeaderOptions `protobuf:"varint,19,opt,name=include_headers,json=includeHeaders,proto3,enum=wirtual.SIPHeaderOptions" json:"include_headers,omitempty"`
+	EnabledFeatures []livekit.SIPFeature     `protobuf:"varint,15,rep,packed,name=enabled_features,json=enabledFeatures,proto3,enum=wirtual.SIPFeature" json:"enabled_features,omitempty"`
 	// Max time for the caller to wait for track subscription.
 	RingingTimeout *durationpb.Duration `protobuf:"bytes,16,opt,name=ringing_timeout,json=ringingTimeout,proto3" json:"ringing_timeout,omitempty"`
 	// Max call duration.
@@ -707,7 +707,7 @@ type EvaluateSIPDispatchRulesResponse struct {
 	// be needed
 	RoomPreset      string                     `protobuf:"bytes,20,opt,name=room_preset,json=roomPreset,proto3" json:"room_preset,omitempty"`
 	RoomConfig      *livekit.RoomConfiguration `protobuf:"bytes,21,opt,name=room_config,json=roomConfig,proto3" json:"room_config,omitempty"`
-	MediaEncryption livekit.SIPMediaEncryption `protobuf:"varint,22,opt,name=media_encryption,json=mediaEncryption,proto3,enum=livekit.SIPMediaEncryption" json:"media_encryption,omitempty"`
+	MediaEncryption livekit.SIPMediaEncryption `protobuf:"varint,22,opt,name=media_encryption,json=mediaEncryption,proto3,enum=wirtual.SIPMediaEncryption" json:"media_encryption,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -1248,43 +1248,43 @@ var file_rpc_io_proto_goTypes = []any{
 	nil,                                       // 14: rpc.EvaluateSIPDispatchRulesResponse.HeadersEntry
 	nil,                                       // 15: rpc.EvaluateSIPDispatchRulesResponse.HeadersToAttributesEntry
 	nil,                                       // 16: rpc.EvaluateSIPDispatchRulesResponse.AttributesToHeadersEntry
-	(*livekit.EgressInfo)(nil),                // 17: livekit.EgressInfo
-	(*livekit.IngressInfo)(nil),               // 18: livekit.IngressInfo
-	(*livekit.IngressState)(nil),              // 19: livekit.IngressState
-	(livekit.SIPHeaderOptions)(0),             // 20: livekit.SIPHeaderOptions
-	(livekit.SIPFeature)(0),                   // 21: livekit.SIPFeature
+	(*livekit.EgressInfo)(nil),                // 17: wirtual.EgressInfo
+	(*livekit.IngressInfo)(nil),               // 18: wirtual.IngressInfo
+	(*livekit.IngressState)(nil),              // 19: wirtual.IngressState
+	(livekit.SIPHeaderOptions)(0),             // 20: wirtual.SIPHeaderOptions
+	(livekit.SIPFeature)(0),                   // 21: wirtual.SIPFeature
 	(*durationpb.Duration)(nil),               // 22: google.protobuf.Duration
-	(*livekit.RoomConfiguration)(nil),         // 23: livekit.RoomConfiguration
-	(livekit.SIPMediaEncryption)(0),           // 24: livekit.SIPMediaEncryption
-	(*livekit.SIPCallInfo)(nil),               // 25: livekit.SIPCallInfo
-	(*livekit.ListEgressRequest)(nil),         // 26: livekit.ListEgressRequest
+	(*livekit.RoomConfiguration)(nil),         // 23: wirtual.RoomConfiguration
+	(livekit.SIPMediaEncryption)(0),           // 24: wirtual.SIPMediaEncryption
+	(*livekit.SIPCallInfo)(nil),               // 25: wirtual.SIPCallInfo
+	(*livekit.ListEgressRequest)(nil),         // 26: wirtual.ListEgressRequest
 	(*emptypb.Empty)(nil),                     // 27: google.protobuf.Empty
-	(*livekit.ListEgressResponse)(nil),        // 28: livekit.ListEgressResponse
+	(*livekit.ListEgressResponse)(nil),        // 28: wirtual.ListEgressResponse
 }
 var file_rpc_io_proto_depIdxs = []int32{
-	17, // 0: rpc.UpdateMetricsRequest.info:type_name -> livekit.EgressInfo
-	18, // 1: rpc.GetIngressInfoResponse.info:type_name -> livekit.IngressInfo
+	17, // 0: rpc.UpdateMetricsRequest.info:type_name -> wirtual.EgressInfo
+	18, // 1: rpc.GetIngressInfoResponse.info:type_name -> wirtual.IngressInfo
 	11, // 2: rpc.GetIngressInfoResponse.logging_fields:type_name -> rpc.GetIngressInfoResponse.LoggingFieldsEntry
-	19, // 3: rpc.UpdateIngressStateRequest.state:type_name -> livekit.IngressState
+	19, // 3: rpc.UpdateIngressStateRequest.state:type_name -> wirtual.IngressState
 	12, // 4: rpc.EvaluateSIPDispatchRulesRequest.extra_attributes:type_name -> rpc.EvaluateSIPDispatchRulesRequest.ExtraAttributesEntry
 	13, // 5: rpc.EvaluateSIPDispatchRulesResponse.participant_attributes:type_name -> rpc.EvaluateSIPDispatchRulesResponse.ParticipantAttributesEntry
 	0,  // 6: rpc.EvaluateSIPDispatchRulesResponse.result:type_name -> rpc.SIPDispatchResult
 	14, // 7: rpc.EvaluateSIPDispatchRulesResponse.headers:type_name -> rpc.EvaluateSIPDispatchRulesResponse.HeadersEntry
 	15, // 8: rpc.EvaluateSIPDispatchRulesResponse.headers_to_attributes:type_name -> rpc.EvaluateSIPDispatchRulesResponse.HeadersToAttributesEntry
 	16, // 9: rpc.EvaluateSIPDispatchRulesResponse.attributes_to_headers:type_name -> rpc.EvaluateSIPDispatchRulesResponse.AttributesToHeadersEntry
-	20, // 10: rpc.EvaluateSIPDispatchRulesResponse.include_headers:type_name -> livekit.SIPHeaderOptions
-	21, // 11: rpc.EvaluateSIPDispatchRulesResponse.enabled_features:type_name -> livekit.SIPFeature
+	20, // 10: rpc.EvaluateSIPDispatchRulesResponse.include_headers:type_name -> wirtual.SIPHeaderOptions
+	21, // 11: rpc.EvaluateSIPDispatchRulesResponse.enabled_features:type_name -> wirtual.SIPFeature
 	22, // 12: rpc.EvaluateSIPDispatchRulesResponse.ringing_timeout:type_name -> google.protobuf.Duration
 	22, // 13: rpc.EvaluateSIPDispatchRulesResponse.max_call_duration:type_name -> google.protobuf.Duration
-	23, // 14: rpc.EvaluateSIPDispatchRulesResponse.room_config:type_name -> livekit.RoomConfiguration
-	24, // 15: rpc.EvaluateSIPDispatchRulesResponse.media_encryption:type_name -> livekit.SIPMediaEncryption
-	25, // 16: rpc.UpdateSIPCallStateRequest.call_info:type_name -> livekit.SIPCallInfo
-	17, // 17: rpc.IOInfo.CreateEgress:input_type -> livekit.EgressInfo
-	17, // 18: rpc.IOInfo.UpdateEgress:input_type -> livekit.EgressInfo
+	23, // 14: rpc.EvaluateSIPDispatchRulesResponse.room_config:type_name -> wirtual.RoomConfiguration
+	24, // 15: rpc.EvaluateSIPDispatchRulesResponse.media_encryption:type_name -> wirtual.SIPMediaEncryption
+	25, // 16: rpc.UpdateSIPCallStateRequest.call_info:type_name -> wirtual.SIPCallInfo
+	17, // 17: rpc.IOInfo.CreateEgress:input_type -> wirtual.EgressInfo
+	17, // 18: rpc.IOInfo.UpdateEgress:input_type -> wirtual.EgressInfo
 	1,  // 19: rpc.IOInfo.GetEgress:input_type -> rpc.GetEgressRequest
-	26, // 20: rpc.IOInfo.ListEgress:input_type -> livekit.ListEgressRequest
+	26, // 20: rpc.IOInfo.ListEgress:input_type -> wirtual.ListEgressRequest
 	2,  // 21: rpc.IOInfo.UpdateMetrics:input_type -> rpc.UpdateMetricsRequest
-	18, // 22: rpc.IOInfo.CreateIngress:input_type -> livekit.IngressInfo
+	18, // 22: rpc.IOInfo.CreateIngress:input_type -> wirtual.IngressInfo
 	3,  // 23: rpc.IOInfo.GetIngressInfo:input_type -> rpc.GetIngressInfoRequest
 	5,  // 24: rpc.IOInfo.UpdateIngressState:input_type -> rpc.UpdateIngressStateRequest
 	6,  // 25: rpc.IOInfo.GetSIPTrunkAuthentication:input_type -> rpc.GetSIPTrunkAuthenticationRequest
@@ -1292,8 +1292,8 @@ var file_rpc_io_proto_depIdxs = []int32{
 	10, // 27: rpc.IOInfo.UpdateSIPCallState:input_type -> rpc.UpdateSIPCallStateRequest
 	27, // 28: rpc.IOInfo.CreateEgress:output_type -> google.protobuf.Empty
 	27, // 29: rpc.IOInfo.UpdateEgress:output_type -> google.protobuf.Empty
-	17, // 30: rpc.IOInfo.GetEgress:output_type -> livekit.EgressInfo
-	28, // 31: rpc.IOInfo.ListEgress:output_type -> livekit.ListEgressResponse
+	17, // 30: rpc.IOInfo.GetEgress:output_type -> wirtual.EgressInfo
+	28, // 31: rpc.IOInfo.ListEgress:output_type -> wirtual.ListEgressResponse
 	27, // 32: rpc.IOInfo.UpdateMetrics:output_type -> google.protobuf.Empty
 	27, // 33: rpc.IOInfo.CreateIngress:output_type -> google.protobuf.Empty
 	4,  // 34: rpc.IOInfo.GetIngressInfo:output_type -> rpc.GetIngressInfoResponse

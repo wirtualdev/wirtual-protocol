@@ -36,14 +36,14 @@ func TestNewCreateSIPParticipantRequest(t *testing.T) {
 			"X-B": "B1",
 		},
 	}
-	res, err := NewCreateSIPParticipantRequest("p_123", "call-id", "xyz.sip.livekit.cloud", "url", "token", r, tr)
+	res, err := NewCreateSIPParticipantRequest("p_123", "call-id", "xyz.sip.wirtual.cloud", "url", "token", r, tr)
 	require.NoError(t, err)
 	require.Equal(t, &InternalCreateSIPParticipantRequest{
 		ProjectId:           "p_123",
 		SipCallId:           "call-id",
 		SipTrunkId:          "trunk",
 		Address:             "sip.example.com",
-		Hostname:            "xyz.sip.livekit.cloud",
+		Hostname:            "xyz.sip.wirtual.cloud",
 		Number:              "+1111",
 		CallTo:              "+3333",
 		Username:            "user",
@@ -69,14 +69,14 @@ func TestNewCreateSIPParticipantRequest(t *testing.T) {
 	}, res)
 
 	r.HidePhoneNumber = true
-	res, err = NewCreateSIPParticipantRequest("p_123", "call-id", "xyz.sip.livekit.cloud", "url", "token", r, tr)
+	res, err = NewCreateSIPParticipantRequest("p_123", "call-id", "xyz.sip.wirtual.cloud", "url", "token", r, tr)
 	require.NoError(t, err)
 	require.Equal(t, &InternalCreateSIPParticipantRequest{
 		ProjectId:           "p_123",
 		SipCallId:           "call-id",
 		SipTrunkId:          "trunk",
 		Address:             "sip.example.com",
-		Hostname:            "xyz.sip.livekit.cloud",
+		Hostname:            "xyz.sip.wirtual.cloud",
 		Number:              "+1111",
 		CallTo:              "+3333",
 		Username:            "user",

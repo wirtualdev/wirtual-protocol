@@ -16,11 +16,11 @@ syntax = "proto3";
 
 package rpc;
 
-option go_package = "github.com/livekit/protocol/rpc";
+option go_package = "github.com/wirtual/protocol/rpc";
 
 import "google/protobuf/empty.proto";
 import "options.proto";
-import "livekit_agent.proto";
+import "wirtual_agent.proto";
 
 service AgentInternal {
   rpc CheckEnabled(CheckEnabledRequest) returns (CheckEnabledResponse) {

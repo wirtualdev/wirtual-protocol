@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -56,12 +56,12 @@ var file_rpc_roommanager_proto_rawDesc = []byte{
 }
 
 var file_rpc_roommanager_proto_goTypes = []any{
-	(*livekit.CreateRoomRequest)(nil), // 0: livekit.CreateRoomRequest
-	(*livekit.Room)(nil),              // 1: livekit.Room
+	(*livekit.CreateRoomRequest)(nil), // 0: wirtual.CreateRoomRequest
+	(*livekit.Room)(nil),              // 1: wirtual.Room
 }
 var file_rpc_roommanager_proto_depIdxs = []int32{
-	0, // 0: rpc.RoomManager.CreateRoom:input_type -> livekit.CreateRoomRequest
-	1, // 1: rpc.RoomManager.CreateRoom:output_type -> livekit.Room
+	0, // 0: rpc.RoomManager.CreateRoom:input_type -> wirtual.CreateRoomRequest
+	1, // 1: rpc.RoomManager.CreateRoom:output_type -> wirtual.Room
 	1, // [1:2] is the sub-list for method output_type
 	0, // [0:1] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

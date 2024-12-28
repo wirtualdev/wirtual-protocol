@@ -10,7 +10,7 @@ import (
 )
 
 // NewCreateSIPParticipantRequest fills InternalCreateSIPParticipantRequest from
-// livekit.CreateSIPParticipantRequest and livekit.SIPTrunkInfo.
+// livekit.CreateSIPParticipantRequest and wirtual.SIPTrunkInfo.
 func NewCreateSIPParticipantRequest(
 	projectID, callID, host, wsUrl, token string,
 	req *livekit.CreateSIPParticipantRequest,
@@ -105,7 +105,7 @@ func NewCreateSIPParticipantRequest(
 }
 
 // NewTransferSIPParticipantRequest fills InternalTransferSIPParticipantRequest from
-// livekit.TransferSIPParticipantRequest.
+// wirtual.TransferSIPParticipantRequest.
 func NewTransferSIPParticipantRequest(
 	callID string,
 	req *livekit.TransferSIPParticipantRequest,

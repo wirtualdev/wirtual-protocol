@@ -28,7 +28,7 @@ import (
 )
 
 const (
-	livekitNamespace = "livekit"
+	livekitNamespace = "wirtual"
 )
 
 type psrpcMetrics struct {

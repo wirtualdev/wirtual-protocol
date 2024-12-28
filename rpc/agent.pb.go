@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -417,16 +417,16 @@ var file_rpc_agent_proto_goTypes = []any{
 	(*JobRequestResponse)(nil),   // 3: rpc.JobRequestResponse
 	(*JobTerminateRequest)(nil),  // 4: rpc.JobTerminateRequest
 	(*JobTerminateResponse)(nil), // 5: rpc.JobTerminateResponse
-	(*livekit.JobState)(nil),     // 6: livekit.JobState
-	(*livekit.Job)(nil),          // 7: livekit.Job
+	(*livekit.JobState)(nil),     // 6: wirtual.JobState
+	(*livekit.Job)(nil),          // 7: wirtual.Job
 	(*emptypb.Empty)(nil),        // 8: google.protobuf.Empty
 }
 var file_rpc_agent_proto_depIdxs = []int32{
-	6, // 0: rpc.JobRequestResponse.state:type_name -> livekit.JobState
+	6, // 0: rpc.JobRequestResponse.state:type_name -> wirtual.JobState
 	0, // 1: rpc.JobTerminateRequest.reason:type_name -> rpc.JobTerminateReason
-	6, // 2: rpc.JobTerminateResponse.state:type_name -> livekit.JobState
+	6, // 2: rpc.JobTerminateResponse.state:type_name -> wirtual.JobState
 	1, // 3: rpc.AgentInternal.CheckEnabled:input_type -> rpc.CheckEnabledRequest
-	7, // 4: rpc.AgentInternal.JobRequest:input_type -> livekit.Job
+	7, // 4: rpc.AgentInternal.JobRequest:input_type -> wirtual.Job
 	4, // 5: rpc.AgentInternal.JobTerminate:input_type -> rpc.JobTerminateRequest
 	8, // 6: rpc.AgentInternal.WorkerRegistered:input_type -> google.protobuf.Empty
 	2, // 7: rpc.AgentInternal.CheckEnabled:output_type -> rpc.CheckEnabledResponse

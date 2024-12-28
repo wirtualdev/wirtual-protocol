@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package replay;
 
-option go_package = "github.com/livekit/protocol/replay";
+option go_package = "github.com/wirtual/protocol/replay";
 option csharp_namespace = "LiveKit.Proto";
 option ruby_package = "LiveKit::Proto";
 

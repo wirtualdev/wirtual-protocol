@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -82,24 +82,24 @@ var file_rpc_participant_proto_rawDesc = []byte{
 }
 
 var file_rpc_participant_proto_goTypes = []any{
-	(*livekit.RoomParticipantIdentity)(nil),     // 0: livekit.RoomParticipantIdentity
-	(*livekit.MuteRoomTrackRequest)(nil),        // 1: livekit.MuteRoomTrackRequest
-	(*livekit.UpdateParticipantRequest)(nil),    // 2: livekit.UpdateParticipantRequest
-	(*livekit.UpdateSubscriptionsRequest)(nil),  // 3: livekit.UpdateSubscriptionsRequest
-	(*livekit.RemoveParticipantResponse)(nil),   // 4: livekit.RemoveParticipantResponse
-	(*livekit.MuteRoomTrackResponse)(nil),       // 5: livekit.MuteRoomTrackResponse
-	(*livekit.ParticipantInfo)(nil),             // 6: livekit.ParticipantInfo
-	(*livekit.UpdateSubscriptionsResponse)(nil), // 7: livekit.UpdateSubscriptionsResponse
+	(*livekit.RoomParticipantIdentity)(nil),     // 0: wirtual.RoomParticipantIdentity
+	(*livekit.MuteRoomTrackRequest)(nil),        // 1: wirtual.MuteRoomTrackRequest
+	(*livekit.UpdateParticipantRequest)(nil),    // 2: wirtual.UpdateParticipantRequest
+	(*livekit.UpdateSubscriptionsRequest)(nil),  // 3: wirtual.UpdateSubscriptionsRequest
+	(*livekit.RemoveParticipantResponse)(nil),   // 4: wirtual.RemoveParticipantResponse
+	(*livekit.MuteRoomTrackResponse)(nil),       // 5: wirtual.MuteRoomTrackResponse
+	(*livekit.ParticipantInfo)(nil),             // 6: wirtual.ParticipantInfo
+	(*livekit.UpdateSubscriptionsResponse)(nil), // 7: wirtual.UpdateSubscriptionsResponse
 }
 var file_rpc_participant_proto_depIdxs = []int32{
-	0, // 0: rpc.Participant.RemoveParticipant:input_type -> livekit.RoomParticipantIdentity
-	1, // 1: rpc.Participant.MutePublishedTrack:input_type -> livekit.MuteRoomTrackRequest
-	2, // 2: rpc.Participant.UpdateParticipant:input_type -> livekit.UpdateParticipantRequest
-	3, // 3: rpc.Participant.UpdateSubscriptions:input_type -> livekit.UpdateSubscriptionsRequest
-	4, // 4: rpc.Participant.RemoveParticipant:output_type -> livekit.RemoveParticipantResponse
-	5, // 5: rpc.Participant.MutePublishedTrack:output_type -> livekit.MuteRoomTrackResponse
-	6, // 6: rpc.Participant.UpdateParticipant:output_type -> livekit.ParticipantInfo
-	7, // 7: rpc.Participant.UpdateSubscriptions:output_type -> livekit.UpdateSubscriptionsResponse
+	0, // 0: rpc.Participant.RemoveParticipant:input_type -> wirtual.RoomParticipantIdentity
+	1, // 1: rpc.Participant.MutePublishedTrack:input_type -> wirtual.MuteRoomTrackRequest
+	2, // 2: rpc.Participant.UpdateParticipant:input_type -> wirtual.UpdateParticipantRequest
+	3, // 3: rpc.Participant.UpdateSubscriptions:input_type -> wirtual.UpdateSubscriptionsRequest
+	4, // 4: rpc.Participant.RemoveParticipant:output_type -> wirtual.RemoveParticipantResponse
+	5, // 5: rpc.Participant.MutePublishedTrack:output_type -> wirtual.MuteRoomTrackResponse
+	6, // 6: rpc.Participant.UpdateParticipant:output_type -> wirtual.ParticipantInfo
+	7, // 7: rpc.Participant.UpdateSubscriptions:output_type -> wirtual.UpdateSubscriptionsResponse
 	4, // [4:8] is the sub-list for method output_type
 	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

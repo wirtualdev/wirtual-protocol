@@ -13,8 +13,8 @@ import (
 	"github.com/livekit/psrpc/pkg/server"
 	"github.com/livekit/psrpc/version"
 )
-import livekit1 "github.com/livekit/protocol/livekit"
-import livekit6 "github.com/livekit/protocol/livekit"
+import livekit1 "github.com/wirtual/protocol/wirtual"
+import livekit6 "github.com/wirtual/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 

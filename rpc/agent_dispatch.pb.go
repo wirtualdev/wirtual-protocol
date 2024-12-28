@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -70,18 +70,18 @@ var file_rpc_agent_dispatch_proto_rawDesc = []byte{
 }
 
 var file_rpc_agent_dispatch_proto_goTypes = []any{
-	(*livekit.AgentDispatch)(nil),              // 0: livekit.AgentDispatch
-	(*livekit.DeleteAgentDispatchRequest)(nil), // 1: livekit.DeleteAgentDispatchRequest
-	(*livekit.ListAgentDispatchRequest)(nil),   // 2: livekit.ListAgentDispatchRequest
-	(*livekit.ListAgentDispatchResponse)(nil),  // 3: livekit.ListAgentDispatchResponse
+	(*livekit.AgentDispatch)(nil),              // 0: wirtual.AgentDispatch
+	(*livekit.DeleteAgentDispatchRequest)(nil), // 1: wirtual.DeleteAgentDispatchRequest
+	(*livekit.ListAgentDispatchRequest)(nil),   // 2: wirtual.ListAgentDispatchRequest
+	(*livekit.ListAgentDispatchResponse)(nil),  // 3: wirtual.ListAgentDispatchResponse
 }
 var file_rpc_agent_dispatch_proto_depIdxs = []int32{
-	0, // 0: rpc.AgentDispatchInternal.CreateDispatch:input_type -> livekit.AgentDispatch
-	1, // 1: rpc.AgentDispatchInternal.DeleteDispatch:input_type -> livekit.DeleteAgentDispatchRequest
-	2, // 2: rpc.AgentDispatchInternal.ListDispatch:input_type -> livekit.ListAgentDispatchRequest
-	0, // 3: rpc.AgentDispatchInternal.CreateDispatch:output_type -> livekit.AgentDispatch
-	0, // 4: rpc.AgentDispatchInternal.DeleteDispatch:output_type -> livekit.AgentDispatch
-	3, // 5: rpc.AgentDispatchInternal.ListDispatch:output_type -> livekit.ListAgentDispatchResponse
+	0, // 0: rpc.AgentDispatchInternal.CreateDispatch:input_type -> wirtual.AgentDispatch
+	1, // 1: rpc.AgentDispatchInternal.DeleteDispatch:input_type -> wirtual.DeleteAgentDispatchRequest
+	2, // 2: rpc.AgentDispatchInternal.ListDispatch:input_type -> wirtual.ListAgentDispatchRequest
+	0, // 3: rpc.AgentDispatchInternal.CreateDispatch:output_type -> wirtual.AgentDispatch
+	0, // 4: rpc.AgentDispatchInternal.DeleteDispatch:output_type -> wirtual.AgentDispatch
+	3, // 5: rpc.AgentDispatchInternal.ListDispatch:output_type -> wirtual.ListAgentDispatchResponse
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

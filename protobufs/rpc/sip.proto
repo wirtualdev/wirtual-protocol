@@ -16,12 +16,12 @@ syntax = "proto3";
 
 package rpc;
 
-option go_package = "github.com/livekit/protocol/rpc";
+option go_package = "github.com/wirtual/protocol/rpc";
 
 import "google/protobuf/empty.proto";
 import "google/protobuf/duration.proto";
 import "options.proto";
-import "livekit_sip.proto";
+import "wirtual_sip.proto";
 
 service SIPInternal {
   rpc CreateSIPParticipant(InternalCreateSIPParticipantRequest) returns (InternalCreateSIPParticipantResponse) {

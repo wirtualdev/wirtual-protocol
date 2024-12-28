@@ -15,10 +15,10 @@
 syntax = "proto3";
 
 package livekit;
-option go_package = "github.com/livekit/protocol/rpc";
+option go_package = "github.com/wirtual/protocol/rpc";
 
 import "google/protobuf/empty.proto";
-import "livekit_analytics.proto";
+import "wirtual_analytics.proto";
 
 service AnalyticsRecorderService {
   rpc IngestStats(stream livekit.AnalyticsStats) returns (google.protobuf.Empty){};

@@ -22,7 +22,7 @@ package rpc
 
 import (
 	context "context"
-	livekit "github.com/livekit/protocol/livekit"
+	livekit "github.com/wirtual/protocol/wirtual"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -35,9 +35,9 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	AnalyticsRecorderService_IngestStats_FullMethodName          = "/livekit.AnalyticsRecorderService/IngestStats"
-	AnalyticsRecorderService_IngestEvents_FullMethodName         = "/livekit.AnalyticsRecorderService/IngestEvents"
-	AnalyticsRecorderService_IngestNodeRoomStates_FullMethodName = "/livekit.AnalyticsRecorderService/IngestNodeRoomStates"
+	AnalyticsRecorderService_IngestStats_FullMethodName          = "/wirtual.AnalyticsRecorderService/IngestStats"
+	AnalyticsRecorderService_IngestEvents_FullMethodName         = "/wirtual.AnalyticsRecorderService/IngestEvents"
+	AnalyticsRecorderService_IngestNodeRoomStates_FullMethodName = "/wirtual.AnalyticsRecorderService/IngestNodeRoomStates"
 )
 
 // AnalyticsRecorderServiceClient is the client API for AnalyticsRecorderService service.
@@ -169,7 +169,7 @@ type AnalyticsRecorderService_IngestNodeRoomStatesServer = grpc.ClientStreamingS
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AnalyticsRecorderService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "livekit.AnalyticsRecorderService",
+	ServiceName: "wirtual.AnalyticsRecorderService",
 	HandlerType: (*AnalyticsRecorderServiceServer)(nil),
 	Methods:     []grpc.MethodDesc{},
 	Streams: []grpc.StreamDesc{

@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -389,29 +389,29 @@ var file_rpc_egress_proto_goTypes = []any{
 	(*StartEgressRequest)(nil),                  // 0: rpc.StartEgressRequest
 	(*ListActiveEgressRequest)(nil),             // 1: rpc.ListActiveEgressRequest
 	(*ListActiveEgressResponse)(nil),            // 2: rpc.ListActiveEgressResponse
-	(*livekit.RoomCompositeEgressRequest)(nil),  // 3: livekit.RoomCompositeEgressRequest
-	(*livekit.WebEgressRequest)(nil),            // 4: livekit.WebEgressRequest
-	(*livekit.ParticipantEgressRequest)(nil),    // 5: livekit.ParticipantEgressRequest
-	(*livekit.TrackCompositeEgressRequest)(nil), // 6: livekit.TrackCompositeEgressRequest
-	(*livekit.TrackEgressRequest)(nil),          // 7: livekit.TrackEgressRequest
-	(*livekit.UpdateStreamRequest)(nil),         // 8: livekit.UpdateStreamRequest
-	(*livekit.StopEgressRequest)(nil),           // 9: livekit.StopEgressRequest
-	(*livekit.EgressInfo)(nil),                  // 10: livekit.EgressInfo
+	(*livekit.RoomCompositeEgressRequest)(nil),  // 3: wirtual.RoomCompositeEgressRequest
+	(*livekit.WebEgressRequest)(nil),            // 4: wirtual.WebEgressRequest
+	(*livekit.ParticipantEgressRequest)(nil),    // 5: wirtual.ParticipantEgressRequest
+	(*livekit.TrackCompositeEgressRequest)(nil), // 6: wirtual.TrackCompositeEgressRequest
+	(*livekit.TrackEgressRequest)(nil),          // 7: wirtual.TrackEgressRequest
+	(*livekit.UpdateStreamRequest)(nil),         // 8: wirtual.UpdateStreamRequest
+	(*livekit.StopEgressRequest)(nil),           // 9: wirtual.StopEgressRequest
+	(*livekit.EgressInfo)(nil),                  // 10: wirtual.EgressInfo
 }
 var file_rpc_egress_proto_depIdxs = []int32{
-	3,  // 0: rpc.StartEgressRequest.room_composite:type_name -> livekit.RoomCompositeEgressRequest
-	4,  // 1: rpc.StartEgressRequest.web:type_name -> livekit.WebEgressRequest
-	5,  // 2: rpc.StartEgressRequest.participant:type_name -> livekit.ParticipantEgressRequest
-	6,  // 3: rpc.StartEgressRequest.track_composite:type_name -> livekit.TrackCompositeEgressRequest
-	7,  // 4: rpc.StartEgressRequest.track:type_name -> livekit.TrackEgressRequest
+	3,  // 0: rpc.StartEgressRequest.room_composite:type_name -> wirtual.RoomCompositeEgressRequest
+	4,  // 1: rpc.StartEgressRequest.web:type_name -> wirtual.WebEgressRequest
+	5,  // 2: rpc.StartEgressRequest.participant:type_name -> wirtual.ParticipantEgressRequest
+	6,  // 3: rpc.StartEgressRequest.track_composite:type_name -> wirtual.TrackCompositeEgressRequest
+	7,  // 4: rpc.StartEgressRequest.track:type_name -> wirtual.TrackEgressRequest
 	0,  // 5: rpc.EgressInternal.StartEgress:input_type -> rpc.StartEgressRequest
 	1,  // 6: rpc.EgressInternal.ListActiveEgress:input_type -> rpc.ListActiveEgressRequest
-	8,  // 7: rpc.EgressHandler.UpdateStream:input_type -> livekit.UpdateStreamRequest
-	9,  // 8: rpc.EgressHandler.StopEgress:input_type -> livekit.StopEgressRequest
-	10, // 9: rpc.EgressInternal.StartEgress:output_type -> livekit.EgressInfo
+	8,  // 7: rpc.EgressHandler.UpdateStream:input_type -> wirtual.UpdateStreamRequest
+	9,  // 8: rpc.EgressHandler.StopEgress:input_type -> wirtual.StopEgressRequest
+	10, // 9: rpc.EgressInternal.StartEgress:output_type -> wirtual.EgressInfo
 	2,  // 10: rpc.EgressInternal.ListActiveEgress:output_type -> rpc.ListActiveEgressResponse
-	10, // 11: rpc.EgressHandler.UpdateStream:output_type -> livekit.EgressInfo
-	10, // 12: rpc.EgressHandler.StopEgress:output_type -> livekit.EgressInfo
+	10, // 11: rpc.EgressHandler.UpdateStream:output_type -> wirtual.EgressInfo
+	10, // 12: rpc.EgressHandler.StopEgress:output_type -> wirtual.EgressInfo
 	9,  // [9:13] is the sub-list for method output_type
 	5,  // [5:9] is the sub-list for method input_type
 	5,  // [5:5] is the sub-list for extension type_name

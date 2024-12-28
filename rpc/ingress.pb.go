@@ -21,8 +21,8 @@
 package rpc
 
 import (
-	livekit "github.com/livekit/protocol/livekit"
-	_ "github.com/livekit/psrpc/protoc-gen-psrpc/options"
+	livekit "github.com/wirtual/protocol/wirtual"
+	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -601,29 +601,29 @@ var file_rpc_ingress_proto_goTypes = []any{
 	(*IngressSession)(nil),                 // 6: rpc.IngressSession
 	(*KillIngressSessionRequest)(nil),      // 7: rpc.KillIngressSessionRequest
 	nil,                                    // 8: rpc.StartIngressRequest.LoggingFieldsEntry
-	(*livekit.IngressInfo)(nil),            // 9: livekit.IngressInfo
-	(*livekit.UpdateIngressRequest)(nil),   // 10: livekit.UpdateIngressRequest
-	(*livekit.DeleteIngressRequest)(nil),   // 11: livekit.DeleteIngressRequest
+	(*livekit.IngressInfo)(nil),            // 9: wirtual.IngressInfo
+	(*livekit.UpdateIngressRequest)(nil),   // 10: wirtual.UpdateIngressRequest
+	(*livekit.DeleteIngressRequest)(nil),   // 11: wirtual.DeleteIngressRequest
 	(*emptypb.Empty)(nil),                  // 12: google.protobuf.Empty
-	(*livekit.IngressState)(nil),           // 13: livekit.IngressState
+	(*livekit.IngressState)(nil),           // 13: wirtual.IngressState
 }
 var file_rpc_ingress_proto_depIdxs = []int32{
 	6,  // 0: rpc.ListActiveIngressResponse.ingress_sessions:type_name -> rpc.IngressSession
-	9,  // 1: rpc.StartIngressRequest.info:type_name -> livekit.IngressInfo
+	9,  // 1: rpc.StartIngressRequest.info:type_name -> wirtual.IngressInfo
 	8,  // 2: rpc.StartIngressRequest.logging_fields:type_name -> rpc.StartIngressRequest.LoggingFieldsEntry
 	6,  // 3: rpc.KillIngressSessionRequest.session:type_name -> rpc.IngressSession
 	5,  // 4: rpc.IngressInternal.StartIngress:input_type -> rpc.StartIngressRequest
 	0,  // 5: rpc.IngressInternal.ListActiveIngress:input_type -> rpc.ListActiveIngressRequest
 	7,  // 6: rpc.IngressInternal.KillIngressSession:input_type -> rpc.KillIngressSessionRequest
-	10, // 7: rpc.IngressHandler.UpdateIngress:input_type -> livekit.UpdateIngressRequest
-	11, // 8: rpc.IngressHandler.DeleteIngress:input_type -> livekit.DeleteIngressRequest
+	10, // 7: rpc.IngressHandler.UpdateIngress:input_type -> wirtual.UpdateIngressRequest
+	11, // 8: rpc.IngressHandler.DeleteIngress:input_type -> wirtual.DeleteIngressRequest
 	2,  // 9: rpc.IngressHandler.DeleteWHIPResource:input_type -> rpc.DeleteWHIPResourceRequest
 	3,  // 10: rpc.IngressHandler.ICERestartWHIPResource:input_type -> rpc.ICERestartWHIPResourceRequest
-	9,  // 11: rpc.IngressInternal.StartIngress:output_type -> livekit.IngressInfo
+	9,  // 11: rpc.IngressInternal.StartIngress:output_type -> wirtual.IngressInfo
 	1,  // 12: rpc.IngressInternal.ListActiveIngress:output_type -> rpc.ListActiveIngressResponse
 	12, // 13: rpc.IngressInternal.KillIngressSession:output_type -> google.protobuf.Empty
-	13, // 14: rpc.IngressHandler.UpdateIngress:output_type -> livekit.IngressState
-	13, // 15: rpc.IngressHandler.DeleteIngress:output_type -> livekit.IngressState
+	13, // 14: rpc.IngressHandler.UpdateIngress:output_type -> wirtual.IngressState
+	13, // 15: rpc.IngressHandler.DeleteIngress:output_type -> wirtual.IngressState
 	12, // 16: rpc.IngressHandler.DeleteWHIPResource:output_type -> google.protobuf.Empty
 	4,  // 17: rpc.IngressHandler.ICERestartWHIPResource:output_type -> rpc.ICERestartWHIPResourceResponse
 	11, // [11:18] is the sub-list for method output_type

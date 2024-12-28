@@ -3,8 +3,8 @@ syntax = "proto3";
 package replay;
 
 option go_package = "github.com/wirtual/protocol/replay";
-option csharp_namespace = "LiveKit.Proto";
-option ruby_package = "LiveKit::Proto";
+option csharp_namespace = "Wirtual.Proto";
+option ruby_package = "Wirtual::Proto";
 
 import "google/protobuf/empty.proto";
 

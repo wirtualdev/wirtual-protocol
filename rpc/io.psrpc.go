@@ -6,16 +6,16 @@ package rpc
 import (
 	"context"
 
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/client"
-	"github.com/livekit/psrpc/pkg/info"
-	"github.com/livekit/psrpc/pkg/rand"
-	"github.com/livekit/psrpc/pkg/server"
-	"github.com/livekit/psrpc/version"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/client"
+	"github.com/wirtual/psrpc/pkg/info"
+	"github.com/wirtual/psrpc/pkg/rand"
+	"github.com/wirtual/psrpc/pkg/server"
+	"github.com/wirtual/psrpc/version"
 )
 import google_protobuf "google.golang.org/protobuf/types/known/emptypb"
-import livekit4 "github.com/wirtual/protocol/wirtual"
-import livekit5 "github.com/wirtual/protocol/wirtual"
+import wirtual4 "github.com/wirtual/protocol/wirtual"
+import wirtual5 "github.com/wirtual/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 
@@ -25,18 +25,18 @@ var _ = version.PsrpcVersion_0_6
 
 type IOInfoClient interface {
 	// egress
-	CreateEgress(ctx context.Context, req *livekit4.EgressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error)
+	CreateEgress(ctx context.Context, req *wirtual4.EgressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error)
 
-	UpdateEgress(ctx context.Context, req *livekit4.EgressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error)
+	UpdateEgress(ctx context.Context, req *wirtual4.EgressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error)
 
-	GetEgress(ctx context.Context, req *GetEgressRequest, opts ...psrpc.RequestOption) (*livekit4.EgressInfo, error)
+	GetEgress(ctx context.Context, req *GetEgressRequest, opts ...psrpc.RequestOption) (*wirtual4.EgressInfo, error)
 
-	ListEgress(ctx context.Context, req *livekit4.ListEgressRequest, opts ...psrpc.RequestOption) (*livekit4.ListEgressResponse, error)
+	ListEgress(ctx context.Context, req *wirtual4.ListEgressRequest, opts ...psrpc.RequestOption) (*wirtual4.ListEgressResponse, error)
 
 	UpdateMetrics(ctx context.Context, req *UpdateMetricsRequest, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error)
 
 	// ingress
-	CreateIngress(ctx context.Context, req *livekit5.IngressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error)
+	CreateIngress(ctx context.Context, req *wirtual5.IngressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error)
 
 	GetIngressInfo(ctx context.Context, req *GetIngressInfoRequest, opts ...psrpc.RequestOption) (*GetIngressInfoResponse, error)
 
@@ -59,18 +59,18 @@ type IOInfoClient interface {
 
 type IOInfoServerImpl interface {
 	// egress
-	CreateEgress(context.Context, *livekit4.EgressInfo) (*google_protobuf.Empty, error)
+	CreateEgress(context.Context, *wirtual4.EgressInfo) (*google_protobuf.Empty, error)
 
-	UpdateEgress(context.Context, *livekit4.EgressInfo) (*google_protobuf.Empty, error)
+	UpdateEgress(context.Context, *wirtual4.EgressInfo) (*google_protobuf.Empty, error)
 
-	GetEgress(context.Context, *GetEgressRequest) (*livekit4.EgressInfo, error)
+	GetEgress(context.Context, *GetEgressRequest) (*wirtual4.EgressInfo, error)
 
-	ListEgress(context.Context, *livekit4.ListEgressRequest) (*livekit4.ListEgressResponse, error)
+	ListEgress(context.Context, *wirtual4.ListEgressRequest) (*wirtual4.ListEgressResponse, error)
 
 	UpdateMetrics(context.Context, *UpdateMetricsRequest) (*google_protobuf.Empty, error)
 
 	// ingress
-	CreateIngress(context.Context, *livekit5.IngressInfo) (*google_protobuf.Empty, error)
+	CreateIngress(context.Context, *wirtual5.IngressInfo) (*google_protobuf.Empty, error)
 
 	GetIngressInfo(context.Context, *GetIngressInfoRequest) (*GetIngressInfoResponse, error)
 
@@ -134,27 +134,27 @@ func NewIOInfoClient(bus psrpc.MessageBus, opts ...psrpc.ClientOption) (IOInfoCl
 	}, nil
 }
 
-func (c *iOInfoClient) CreateEgress(ctx context.Context, req *livekit4.EgressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error) {
+func (c *iOInfoClient) CreateEgress(ctx context.Context, req *wirtual4.EgressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error) {
 	return client.RequestSingle[*google_protobuf.Empty](ctx, c.client, "CreateEgress", nil, req, opts...)
 }
 
-func (c *iOInfoClient) UpdateEgress(ctx context.Context, req *livekit4.EgressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error) {
+func (c *iOInfoClient) UpdateEgress(ctx context.Context, req *wirtual4.EgressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error) {
 	return client.RequestSingle[*google_protobuf.Empty](ctx, c.client, "UpdateEgress", nil, req, opts...)
 }
 
-func (c *iOInfoClient) GetEgress(ctx context.Context, req *GetEgressRequest, opts ...psrpc.RequestOption) (*livekit4.EgressInfo, error) {
-	return client.RequestSingle[*livekit4.EgressInfo](ctx, c.client, "GetEgress", nil, req, opts...)
+func (c *iOInfoClient) GetEgress(ctx context.Context, req *GetEgressRequest, opts ...psrpc.RequestOption) (*wirtual4.EgressInfo, error) {
+	return client.RequestSingle[*wirtual4.EgressInfo](ctx, c.client, "GetEgress", nil, req, opts...)
 }
 
-func (c *iOInfoClient) ListEgress(ctx context.Context, req *livekit4.ListEgressRequest, opts ...psrpc.RequestOption) (*livekit4.ListEgressResponse, error) {
-	return client.RequestSingle[*livekit4.ListEgressResponse](ctx, c.client, "ListEgress", nil, req, opts...)
+func (c *iOInfoClient) ListEgress(ctx context.Context, req *wirtual4.ListEgressRequest, opts ...psrpc.RequestOption) (*wirtual4.ListEgressResponse, error) {
+	return client.RequestSingle[*wirtual4.ListEgressResponse](ctx, c.client, "ListEgress", nil, req, opts...)
 }
 
 func (c *iOInfoClient) UpdateMetrics(ctx context.Context, req *UpdateMetricsRequest, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error) {
 	return client.RequestSingle[*google_protobuf.Empty](ctx, c.client, "UpdateMetrics", nil, req, opts...)
 }
 
-func (c *iOInfoClient) CreateIngress(ctx context.Context, req *livekit5.IngressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error) {
+func (c *iOInfoClient) CreateIngress(ctx context.Context, req *wirtual5.IngressInfo, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error) {
 	return client.RequestSingle[*google_protobuf.Empty](ctx, c.client, "CreateIngress", nil, req, opts...)
 }
 

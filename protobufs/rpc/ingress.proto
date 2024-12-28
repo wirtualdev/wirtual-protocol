@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import "wirtual_ingress.proto";
 import "google/protobuf/empty.proto";
 
 service IngressInternal {
-  rpc StartIngress(StartIngressRequest) returns (livekit.IngressInfo) {
+  rpc StartIngress(StartIngressRequest) returns (wirtual.IngressInfo) {
     option (psrpc.options).affinity_func = true;
   };
 
@@ -44,10 +44,10 @@ service IngressInternal {
 }
 
 service IngressHandler {
-  rpc UpdateIngress(livekit.UpdateIngressRequest) returns (livekit.IngressState) {
+  rpc UpdateIngress(wirtual.UpdateIngressRequest) returns (wirtual.IngressState) {
     option (psrpc.options).topics = true;
   };
-  rpc DeleteIngress(livekit.DeleteIngressRequest) returns (livekit.IngressState) {
+  rpc DeleteIngress(wirtual.DeleteIngressRequest) returns (wirtual.IngressState) {
     option (psrpc.options).topics = true;
   };
   rpc DeleteWHIPResource(DeleteWHIPResourceRequest) returns (google.protobuf.Empty) {
@@ -84,7 +84,7 @@ message ICERestartWHIPResourceResponse {
 }
 
 message StartIngressRequest {
-  livekit.IngressInfo info = 1;
+  wirtual.IngressInfo info = 1;
   string token = 2;
   string ws_url = 3;
   map<string,string> logging_fields = 4;

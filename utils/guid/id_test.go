@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 func TestMarshalUnmarshal(t *testing.T) {
-	id0 := livekit.TrackID(New(TrackPrefix))
+	id0 := wirtual.TrackID(New(TrackPrefix))
 	b0 := Marshal(id0)
-	id1 := Unmarshal[livekit.TrackID](b0)
+	id1 := Unmarshal[wirtual.TrackID](b0)
 	b1 := Marshal(id1)
 	require.EqualValues(t, id0, id1)
 	require.EqualValues(t, b0, b1)
 }
 
 func TestMarshalAppend(t *testing.T) {
-	id0 := livekit.RoomID(New(RoomPrefix))
-	id1 := livekit.RoomID(New(RoomPrefix))
+	id0 := wirtual.RoomID(New(RoomPrefix))
+	id1 := wirtual.RoomID(New(RoomPrefix))
 	var b []byte
 	b = MarshalAppend(b, id0)
 	b = MarshalAppend(b, id1)
-	require.Equal(t, id0, Unmarshal[livekit.RoomID](livekit.GuidBlock(b[0:])))
-	require.Equal(t, id1, Unmarshal[livekit.RoomID](livekit.GuidBlock(b[9:])))
+	require.Equal(t, id0, Unmarshal[wirtual.RoomID](wirtual.GuidBlock(b[0:])))
+	require.Equal(t, id1, Unmarshal[wirtual.RoomID](wirtual.GuidBlock(b[9:])))
 }
 
 func BenchmarkNew(b *testing.B) {

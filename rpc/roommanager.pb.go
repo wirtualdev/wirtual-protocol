@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -56,8 +56,8 @@ var file_rpc_roommanager_proto_rawDesc = []byte{
 }
 
 var file_rpc_roommanager_proto_goTypes = []any{
-	(*livekit.CreateRoomRequest)(nil), // 0: wirtual.CreateRoomRequest
-	(*livekit.Room)(nil),              // 1: wirtual.Room
+	(*wirtual.CreateRoomRequest)(nil), // 0: wirtual.CreateRoomRequest
+	(*wirtual.Room)(nil),              // 1: wirtual.Room
 }
 var file_rpc_roommanager_proto_depIdxs = []int32{
 	0, // 0: rpc.RoomManager.CreateRoom:input_type -> wirtual.CreateRoomRequest

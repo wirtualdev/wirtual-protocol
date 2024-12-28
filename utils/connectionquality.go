@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
 package utils
 
 import (
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
-func IsConnectionQualityLower(prev livekit.ConnectionQuality, curr livekit.ConnectionQuality) bool {
-	if prev != livekit.ConnectionQuality_LOST && curr == livekit.ConnectionQuality_LOST {
+func IsConnectionQualityLower(prev wirtual.ConnectionQuality, curr wirtual.ConnectionQuality) bool {
+	if prev != wirtual.ConnectionQuality_LOST && curr == wirtual.ConnectionQuality_LOST {
 		return true
 	}
 
-	if prev == livekit.ConnectionQuality_LOST && curr != livekit.ConnectionQuality_LOST {
+	if prev == wirtual.ConnectionQuality_LOST && curr != wirtual.ConnectionQuality_LOST {
 		return false
 	}
 
@@ -31,7 +31,7 @@ func IsConnectionQualityLower(prev livekit.ConnectionQuality, curr livekit.Conne
 	return curr < prev
 }
 
-func IsConnectionQualityHigher(prev livekit.ConnectionQuality, curr livekit.ConnectionQuality) bool {
+func IsConnectionQualityHigher(prev wirtual.ConnectionQuality, curr wirtual.ConnectionQuality) bool {
 	if IsConnectionQualityLower(prev, curr) {
 		return false
 	}

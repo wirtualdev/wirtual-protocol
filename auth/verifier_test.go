@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import (
 	"github.com/go-jose/go-jose/v3/json"
 	"github.com/stretchr/testify/require"
 
-	"github.com/livekit/protocol/auth"
+	"github.com/wirtualdev/wirtual-protocol/auth"
 )
 
 func TestVerifier(t *testing.T) {

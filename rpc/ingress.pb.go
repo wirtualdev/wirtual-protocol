@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -301,7 +301,7 @@ func (x *ICERestartWHIPResourceResponse) GetTrickleIceSdpfrag() string {
 
 type StartIngressRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Info          *livekit.IngressInfo   `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+	Info          *wirtual.IngressInfo   `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
 	Token         string                 `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
 	WsUrl         string                 `protobuf:"bytes,3,opt,name=ws_url,json=wsUrl,proto3" json:"ws_url,omitempty"`
 	LoggingFields map[string]string      `protobuf:"bytes,4,rep,name=logging_fields,json=loggingFields,proto3" json:"logging_fields,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
@@ -339,7 +339,7 @@ func (*StartIngressRequest) Descriptor() ([]byte, []int) {
 	return file_rpc_ingress_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *StartIngressRequest) GetInfo() *livekit.IngressInfo {
+func (x *StartIngressRequest) GetInfo() *wirtual.IngressInfo {
 	if x != nil {
 		return x.Info
 	}
@@ -601,11 +601,11 @@ var file_rpc_ingress_proto_goTypes = []any{
 	(*IngressSession)(nil),                 // 6: rpc.IngressSession
 	(*KillIngressSessionRequest)(nil),      // 7: rpc.KillIngressSessionRequest
 	nil,                                    // 8: rpc.StartIngressRequest.LoggingFieldsEntry
-	(*livekit.IngressInfo)(nil),            // 9: wirtual.IngressInfo
-	(*livekit.UpdateIngressRequest)(nil),   // 10: wirtual.UpdateIngressRequest
-	(*livekit.DeleteIngressRequest)(nil),   // 11: wirtual.DeleteIngressRequest
+	(*wirtual.IngressInfo)(nil),            // 9: wirtual.IngressInfo
+	(*wirtual.UpdateIngressRequest)(nil),   // 10: wirtual.UpdateIngressRequest
+	(*wirtual.DeleteIngressRequest)(nil),   // 11: wirtual.DeleteIngressRequest
 	(*emptypb.Empty)(nil),                  // 12: google.protobuf.Empty
-	(*livekit.IngressState)(nil),           // 13: wirtual.IngressState
+	(*wirtual.IngressState)(nil),           // 13: wirtual.IngressState
 }
 var file_rpc_ingress_proto_depIdxs = []int32{
 	6,  // 0: rpc.ListActiveIngressResponse.ingress_sessions:type_name -> rpc.IngressSession

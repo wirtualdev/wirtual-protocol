@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,9 +24,9 @@ import (
 	"github.com/go-jose/go-jose/v3/jwt"
 	"github.com/stretchr/testify/require"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/utils"
-	"github.com/livekit/protocol/utils/guid"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/utils"
+	"github.com/wirtualdev/wirtual-protocol/utils/guid"
 )
 
 func TestAccessToken(t *testing.T) {
@@ -46,7 +46,7 @@ func TestAccessToken(t *testing.T) {
 			AddGrant(videoGrant).
 			AddSIPGrant(sipGrant).
 			SetValidFor(time.Minute * 5).
-			SetKind(livekit.ParticipantInfo_AGENT).
+			SetKind(wirtual.ParticipantInfo_AGENT).
 			SetIdentity("user")
 		value, err := at.ToJWT()
 		//fmt.Println(raw)
@@ -62,7 +62,7 @@ func TestAccessToken(t *testing.T) {
 		err = token.UnsafeClaimsWithoutVerification(&decodedGrant)
 		require.NoError(t, err)
 
-		require.EqualValues(t, livekit.ParticipantInfo_AGENT, decodedGrant.GetParticipantKind())
+		require.EqualValues(t, wirtual.ParticipantInfo_AGENT, decodedGrant.GetParticipantKind())
 		require.EqualValues(t, videoGrant, decodedGrant.Video)
 		require.EqualValues(t, sipGrant, decodedGrant.SIP)
 	})
@@ -81,7 +81,7 @@ func TestAccessToken(t *testing.T) {
 		require.NoError(t, err)
 
 		// default validity
-		require.EqualValues(t, livekit.ParticipantInfo_STANDARD, decodedGrant.GetParticipantKind())
+		require.EqualValues(t, wirtual.ParticipantInfo_STANDARD, decodedGrant.GetParticipantKind())
 	})
 
 	t.Run("default validity should be more than a minute", func(t *testing.T) {
@@ -106,15 +106,15 @@ func TestAccessToken(t *testing.T) {
 
 	t.Run("room configuration serialization and deserialization", func(t *testing.T) {
 		apiKey, secret := apiKeypair()
-		roomConfig := &livekit.RoomConfiguration{
-			Agents: []*livekit.RoomAgentDispatch{{
+		roomConfig := &wirtual.RoomConfiguration{
+			Agents: []*wirtual.RoomAgentDispatch{{
 				AgentName: "agent1",
 				Metadata:  "metadata1",
 			}},
 			SyncStreams: true,
-			Egress: &livekit.RoomEgress{
-				Room: &livekit.RoomCompositeEgressRequest{
-					FileOutputs: []*livekit.EncodedFileOutput{{
+			Egress: &wirtual.RoomEgress{
+				Room: &wirtual.RoomCompositeEgressRequest{
+					FileOutputs: []*wirtual.EncodedFileOutput{{
 						DisableManifest: true,
 					}},
 				},
@@ -137,7 +137,7 @@ func TestAccessToken(t *testing.T) {
 		require.NoError(t, err)
 
 		// Check if the room configuration was correctly serialized and deserialized
-		roomDecoded := (*livekit.RoomConfiguration)(decodedGrant.RoomConfig)
+		roomDecoded := (*wirtual.RoomConfiguration)(decodedGrant.RoomConfig)
 		require.NotNil(t, roomDecoded)
 		agents := roomDecoded.Agents
 		require.NotNil(t, agents)

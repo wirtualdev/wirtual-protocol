@@ -6,15 +6,15 @@ package rpc
 import (
 	"context"
 
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/client"
-	"github.com/livekit/psrpc/pkg/info"
-	"github.com/livekit/psrpc/pkg/rand"
-	"github.com/livekit/psrpc/pkg/server"
-	"github.com/livekit/psrpc/version"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/client"
+	"github.com/wirtual/psrpc/pkg/info"
+	"github.com/wirtual/psrpc/pkg/rand"
+	"github.com/wirtual/psrpc/pkg/server"
+	"github.com/wirtual/psrpc/version"
 )
-import livekit1 "github.com/wirtual/protocol/wirtual"
-import livekit6 "github.com/wirtual/protocol/wirtual"
+import wirtual1 "github.com/wirtual/protocol/wirtual"
+import wirtual6 "github.com/wirtual/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 
@@ -23,13 +23,13 @@ var _ = version.PsrpcVersion_0_6
 // ============================
 
 type ParticipantClient[ParticipantTopicType ~string] interface {
-	RemoveParticipant(ctx context.Context, participant ParticipantTopicType, req *livekit6.RoomParticipantIdentity, opts ...psrpc.RequestOption) (*livekit6.RemoveParticipantResponse, error)
+	RemoveParticipant(ctx context.Context, participant ParticipantTopicType, req *wirtual6.RoomParticipantIdentity, opts ...psrpc.RequestOption) (*wirtual6.RemoveParticipantResponse, error)
 
-	MutePublishedTrack(ctx context.Context, participant ParticipantTopicType, req *livekit6.MuteRoomTrackRequest, opts ...psrpc.RequestOption) (*livekit6.MuteRoomTrackResponse, error)
+	MutePublishedTrack(ctx context.Context, participant ParticipantTopicType, req *wirtual6.MuteRoomTrackRequest, opts ...psrpc.RequestOption) (*wirtual6.MuteRoomTrackResponse, error)
 
-	UpdateParticipant(ctx context.Context, participant ParticipantTopicType, req *livekit6.UpdateParticipantRequest, opts ...psrpc.RequestOption) (*livekit1.ParticipantInfo, error)
+	UpdateParticipant(ctx context.Context, participant ParticipantTopicType, req *wirtual6.UpdateParticipantRequest, opts ...psrpc.RequestOption) (*wirtual1.ParticipantInfo, error)
 
-	UpdateSubscriptions(ctx context.Context, participant ParticipantTopicType, req *livekit6.UpdateSubscriptionsRequest, opts ...psrpc.RequestOption) (*livekit6.UpdateSubscriptionsResponse, error)
+	UpdateSubscriptions(ctx context.Context, participant ParticipantTopicType, req *wirtual6.UpdateSubscriptionsRequest, opts ...psrpc.RequestOption) (*wirtual6.UpdateSubscriptionsResponse, error)
 
 	// Close immediately, without waiting for pending RPCs
 	Close()
@@ -40,13 +40,13 @@ type ParticipantClient[ParticipantTopicType ~string] interface {
 // ================================
 
 type ParticipantServerImpl interface {
-	RemoveParticipant(context.Context, *livekit6.RoomParticipantIdentity) (*livekit6.RemoveParticipantResponse, error)
+	RemoveParticipant(context.Context, *wirtual6.RoomParticipantIdentity) (*wirtual6.RemoveParticipantResponse, error)
 
-	MutePublishedTrack(context.Context, *livekit6.MuteRoomTrackRequest) (*livekit6.MuteRoomTrackResponse, error)
+	MutePublishedTrack(context.Context, *wirtual6.MuteRoomTrackRequest) (*wirtual6.MuteRoomTrackResponse, error)
 
-	UpdateParticipant(context.Context, *livekit6.UpdateParticipantRequest) (*livekit1.ParticipantInfo, error)
+	UpdateParticipant(context.Context, *wirtual6.UpdateParticipantRequest) (*wirtual1.ParticipantInfo, error)
 
-	UpdateSubscriptions(context.Context, *livekit6.UpdateSubscriptionsRequest) (*livekit6.UpdateSubscriptionsResponse, error)
+	UpdateSubscriptions(context.Context, *wirtual6.UpdateSubscriptionsRequest) (*wirtual6.UpdateSubscriptionsResponse, error)
 }
 
 // ============================
@@ -102,20 +102,20 @@ func NewParticipantClient[ParticipantTopicType ~string](bus psrpc.MessageBus, op
 	}, nil
 }
 
-func (c *participantClient[ParticipantTopicType]) RemoveParticipant(ctx context.Context, participant ParticipantTopicType, req *livekit6.RoomParticipantIdentity, opts ...psrpc.RequestOption) (*livekit6.RemoveParticipantResponse, error) {
-	return client.RequestSingle[*livekit6.RemoveParticipantResponse](ctx, c.client, "RemoveParticipant", []string{string(participant)}, req, opts...)
+func (c *participantClient[ParticipantTopicType]) RemoveParticipant(ctx context.Context, participant ParticipantTopicType, req *wirtual6.RoomParticipantIdentity, opts ...psrpc.RequestOption) (*wirtual6.RemoveParticipantResponse, error) {
+	return client.RequestSingle[*wirtual6.RemoveParticipantResponse](ctx, c.client, "RemoveParticipant", []string{string(participant)}, req, opts...)
 }
 
-func (c *participantClient[ParticipantTopicType]) MutePublishedTrack(ctx context.Context, participant ParticipantTopicType, req *livekit6.MuteRoomTrackRequest, opts ...psrpc.RequestOption) (*livekit6.MuteRoomTrackResponse, error) {
-	return client.RequestSingle[*livekit6.MuteRoomTrackResponse](ctx, c.client, "MutePublishedTrack", []string{string(participant)}, req, opts...)
+func (c *participantClient[ParticipantTopicType]) MutePublishedTrack(ctx context.Context, participant ParticipantTopicType, req *wirtual6.MuteRoomTrackRequest, opts ...psrpc.RequestOption) (*wirtual6.MuteRoomTrackResponse, error) {
+	return client.RequestSingle[*wirtual6.MuteRoomTrackResponse](ctx, c.client, "MutePublishedTrack", []string{string(participant)}, req, opts...)
 }
 
-func (c *participantClient[ParticipantTopicType]) UpdateParticipant(ctx context.Context, participant ParticipantTopicType, req *livekit6.UpdateParticipantRequest, opts ...psrpc.RequestOption) (*livekit1.ParticipantInfo, error) {
-	return client.RequestSingle[*livekit1.ParticipantInfo](ctx, c.client, "UpdateParticipant", []string{string(participant)}, req, opts...)
+func (c *participantClient[ParticipantTopicType]) UpdateParticipant(ctx context.Context, participant ParticipantTopicType, req *wirtual6.UpdateParticipantRequest, opts ...psrpc.RequestOption) (*wirtual1.ParticipantInfo, error) {
+	return client.RequestSingle[*wirtual1.ParticipantInfo](ctx, c.client, "UpdateParticipant", []string{string(participant)}, req, opts...)
 }
 
-func (c *participantClient[ParticipantTopicType]) UpdateSubscriptions(ctx context.Context, participant ParticipantTopicType, req *livekit6.UpdateSubscriptionsRequest, opts ...psrpc.RequestOption) (*livekit6.UpdateSubscriptionsResponse, error) {
-	return client.RequestSingle[*livekit6.UpdateSubscriptionsResponse](ctx, c.client, "UpdateSubscriptions", []string{string(participant)}, req, opts...)
+func (c *participantClient[ParticipantTopicType]) UpdateSubscriptions(ctx context.Context, participant ParticipantTopicType, req *wirtual6.UpdateSubscriptionsRequest, opts ...psrpc.RequestOption) (*wirtual6.UpdateSubscriptionsResponse, error) {
+	return client.RequestSingle[*wirtual6.UpdateSubscriptionsResponse](ctx, c.client, "UpdateSubscriptions", []string{string(participant)}, req, opts...)
 }
 
 func (s *participantClient[ParticipantTopicType]) Close() {

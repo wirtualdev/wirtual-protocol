@@ -6,15 +6,15 @@ import (
 	"math/rand/v2"
 	"strings"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 // NewCreateSIPParticipantRequest fills InternalCreateSIPParticipantRequest from
-// livekit.CreateSIPParticipantRequest and wirtual.SIPTrunkInfo.
+// wirtual.CreateSIPParticipantRequest and wirtual.SIPTrunkInfo.
 func NewCreateSIPParticipantRequest(
 	projectID, callID, host, wsUrl, token string,
-	req *livekit.CreateSIPParticipantRequest,
-	trunk *livekit.SIPOutboundTrunkInfo,
+	req *wirtual.CreateSIPParticipantRequest,
+	trunk *wirtual.SIPOutboundTrunkInfo,
 ) (*InternalCreateSIPParticipantRequest, error) {
 	outboundNumber := req.SipNumber
 	if outboundNumber == "" {
@@ -38,20 +38,20 @@ func NewCreateSIPParticipantRequest(
 	if attrs == nil {
 		attrs = make(map[string]string)
 	}
-	attrs[livekit.AttrSIPCallID] = callID
+	attrs[wirtual.AttrSIPCallID] = callID
 	trunkID := req.SipTrunkId
 	if trunkID == "" {
 		trunkID = trunk.SipTrunkId
 	}
-	attrs[livekit.AttrSIPTrunkID] = trunkID
+	attrs[wirtual.AttrSIPTrunkID] = trunkID
 	if !req.HidePhoneNumber {
-		attrs[livekit.AttrSIPPhoneNumber] = req.SipCallTo
-		attrs[livekit.AttrSIPTrunkNumber] = outboundNumber
+		attrs[wirtual.AttrSIPPhoneNumber] = req.SipCallTo
+		attrs[wirtual.AttrSIPTrunkNumber] = outboundNumber
 	}
 
-	var features []livekit.SIPFeature
+	var features []wirtual.SIPFeature
 	if req.KrispEnabled {
-		features = append(features, livekit.SIPFeature_KRISP_ENABLED)
+		features = append(features, wirtual.SIPFeature_KRISP_ENABLED)
 	}
 	enc := trunk.MediaEncryption
 	if req.MediaEncryption != 0 {
@@ -108,7 +108,7 @@ func NewCreateSIPParticipantRequest(
 // wirtual.TransferSIPParticipantRequest.
 func NewTransferSIPParticipantRequest(
 	callID string,
-	req *livekit.TransferSIPParticipantRequest,
+	req *wirtual.TransferSIPParticipantRequest,
 ) (*InternalTransferSIPParticipantRequest, error) {
 	return &InternalTransferSIPParticipantRequest{
 		SipCallId:    callID,

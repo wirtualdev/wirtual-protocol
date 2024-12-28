@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -105,7 +105,7 @@ func (x *StartEgressRequest) GetRequest() isStartEgressRequest_Request {
 	return nil
 }
 
-func (x *StartEgressRequest) GetRoomComposite() *livekit.RoomCompositeEgressRequest {
+func (x *StartEgressRequest) GetRoomComposite() *wirtual.RoomCompositeEgressRequest {
 	if x != nil {
 		if x, ok := x.Request.(*StartEgressRequest_RoomComposite); ok {
 			return x.RoomComposite
@@ -114,7 +114,7 @@ func (x *StartEgressRequest) GetRoomComposite() *livekit.RoomCompositeEgressRequ
 	return nil
 }
 
-func (x *StartEgressRequest) GetWeb() *livekit.WebEgressRequest {
+func (x *StartEgressRequest) GetWeb() *wirtual.WebEgressRequest {
 	if x != nil {
 		if x, ok := x.Request.(*StartEgressRequest_Web); ok {
 			return x.Web
@@ -123,7 +123,7 @@ func (x *StartEgressRequest) GetWeb() *livekit.WebEgressRequest {
 	return nil
 }
 
-func (x *StartEgressRequest) GetParticipant() *livekit.ParticipantEgressRequest {
+func (x *StartEgressRequest) GetParticipant() *wirtual.ParticipantEgressRequest {
 	if x != nil {
 		if x, ok := x.Request.(*StartEgressRequest_Participant); ok {
 			return x.Participant
@@ -132,7 +132,7 @@ func (x *StartEgressRequest) GetParticipant() *livekit.ParticipantEgressRequest 
 	return nil
 }
 
-func (x *StartEgressRequest) GetTrackComposite() *livekit.TrackCompositeEgressRequest {
+func (x *StartEgressRequest) GetTrackComposite() *wirtual.TrackCompositeEgressRequest {
 	if x != nil {
 		if x, ok := x.Request.(*StartEgressRequest_TrackComposite); ok {
 			return x.TrackComposite
@@ -141,7 +141,7 @@ func (x *StartEgressRequest) GetTrackComposite() *livekit.TrackCompositeEgressRe
 	return nil
 }
 
-func (x *StartEgressRequest) GetTrack() *livekit.TrackEgressRequest {
+func (x *StartEgressRequest) GetTrack() *wirtual.TrackEgressRequest {
 	if x != nil {
 		if x, ok := x.Request.(*StartEgressRequest_Track); ok {
 			return x.Track
@@ -190,23 +190,23 @@ type isStartEgressRequest_Request interface {
 }
 
 type StartEgressRequest_RoomComposite struct {
-	RoomComposite *livekit.RoomCompositeEgressRequest `protobuf:"bytes,5,opt,name=room_composite,json=roomComposite,proto3,oneof"`
+	RoomComposite *wirtual.RoomCompositeEgressRequest `protobuf:"bytes,5,opt,name=room_composite,json=roomComposite,proto3,oneof"`
 }
 
 type StartEgressRequest_Web struct {
-	Web *livekit.WebEgressRequest `protobuf:"bytes,11,opt,name=web,proto3,oneof"`
+	Web *wirtual.WebEgressRequest `protobuf:"bytes,11,opt,name=web,proto3,oneof"`
 }
 
 type StartEgressRequest_Participant struct {
-	Participant *livekit.ParticipantEgressRequest `protobuf:"bytes,13,opt,name=participant,proto3,oneof"`
+	Participant *wirtual.ParticipantEgressRequest `protobuf:"bytes,13,opt,name=participant,proto3,oneof"`
 }
 
 type StartEgressRequest_TrackComposite struct {
-	TrackComposite *livekit.TrackCompositeEgressRequest `protobuf:"bytes,6,opt,name=track_composite,json=trackComposite,proto3,oneof"`
+	TrackComposite *wirtual.TrackCompositeEgressRequest `protobuf:"bytes,6,opt,name=track_composite,json=trackComposite,proto3,oneof"`
 }
 
 type StartEgressRequest_Track struct {
-	Track *livekit.TrackEgressRequest `protobuf:"bytes,7,opt,name=track,proto3,oneof"`
+	Track *wirtual.TrackEgressRequest `protobuf:"bytes,7,opt,name=track,proto3,oneof"`
 }
 
 func (*StartEgressRequest_RoomComposite) isStartEgressRequest_Request() {}
@@ -389,14 +389,14 @@ var file_rpc_egress_proto_goTypes = []any{
 	(*StartEgressRequest)(nil),                  // 0: rpc.StartEgressRequest
 	(*ListActiveEgressRequest)(nil),             // 1: rpc.ListActiveEgressRequest
 	(*ListActiveEgressResponse)(nil),            // 2: rpc.ListActiveEgressResponse
-	(*livekit.RoomCompositeEgressRequest)(nil),  // 3: wirtual.RoomCompositeEgressRequest
-	(*livekit.WebEgressRequest)(nil),            // 4: wirtual.WebEgressRequest
-	(*livekit.ParticipantEgressRequest)(nil),    // 5: wirtual.ParticipantEgressRequest
-	(*livekit.TrackCompositeEgressRequest)(nil), // 6: wirtual.TrackCompositeEgressRequest
-	(*livekit.TrackEgressRequest)(nil),          // 7: wirtual.TrackEgressRequest
-	(*livekit.UpdateStreamRequest)(nil),         // 8: wirtual.UpdateStreamRequest
-	(*livekit.StopEgressRequest)(nil),           // 9: wirtual.StopEgressRequest
-	(*livekit.EgressInfo)(nil),                  // 10: wirtual.EgressInfo
+	(*wirtual.RoomCompositeEgressRequest)(nil),  // 3: wirtual.RoomCompositeEgressRequest
+	(*wirtual.WebEgressRequest)(nil),            // 4: wirtual.WebEgressRequest
+	(*wirtual.ParticipantEgressRequest)(nil),    // 5: wirtual.ParticipantEgressRequest
+	(*wirtual.TrackCompositeEgressRequest)(nil), // 6: wirtual.TrackCompositeEgressRequest
+	(*wirtual.TrackEgressRequest)(nil),          // 7: wirtual.TrackEgressRequest
+	(*wirtual.UpdateStreamRequest)(nil),         // 8: wirtual.UpdateStreamRequest
+	(*wirtual.StopEgressRequest)(nil),           // 9: wirtual.StopEgressRequest
+	(*wirtual.EgressInfo)(nil),                  // 10: wirtual.EgressInfo
 }
 var file_rpc_egress_proto_depIdxs = []int32{
 	3,  // 0: rpc.StartEgressRequest.room_composite:type_name -> wirtual.RoomCompositeEgressRequest

@@ -3,76 +3,76 @@ package egress
 import (
 	"testing"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 	"github.com/stretchr/testify/require"
 )
 
 func TestGetOutputType(t *testing.T) {
-	roomReq := &livekit.RoomCompositeEgressRequest{
-		FileOutputs: []*livekit.EncodedFileOutput{
-			&livekit.EncodedFileOutput{},
+	roomReq := &wirtual.RoomCompositeEgressRequest{
+		FileOutputs: []*wirtual.EncodedFileOutput{
+			&wirtual.EncodedFileOutput{},
 		},
 	}
 
 	ot := GetOutputType(roomReq)
 	require.Equal(t, OutputTypeFile, ot)
 
-	roomReq = &livekit.RoomCompositeEgressRequest{
-		Output: &livekit.RoomCompositeEgressRequest_File{
-			File: &livekit.EncodedFileOutput{},
+	roomReq = &wirtual.RoomCompositeEgressRequest{
+		Output: &wirtual.RoomCompositeEgressRequest_File{
+			File: &wirtual.EncodedFileOutput{},
 		},
 	}
 
 	ot = GetOutputType(roomReq)
 	require.Equal(t, OutputTypeFile, ot)
 
-	trackReq := &livekit.TrackCompositeEgressRequest{
-		SegmentOutputs: []*livekit.SegmentedFileOutput{
-			&livekit.SegmentedFileOutput{},
+	trackReq := &wirtual.TrackCompositeEgressRequest{
+		SegmentOutputs: []*wirtual.SegmentedFileOutput{
+			&wirtual.SegmentedFileOutput{},
 		},
 	}
 
 	ot = GetOutputType(trackReq)
 	require.Equal(t, OutputTypeSegments, ot)
 
-	trackReq = &livekit.TrackCompositeEgressRequest{
-		Output: &livekit.TrackCompositeEgressRequest_Segments{
-			Segments: &livekit.SegmentedFileOutput{},
+	trackReq = &wirtual.TrackCompositeEgressRequest{
+		Output: &wirtual.TrackCompositeEgressRequest_Segments{
+			Segments: &wirtual.SegmentedFileOutput{},
 		},
 	}
 
 	ot = GetOutputType(trackReq)
 	require.Equal(t, OutputTypeSegments, ot)
 
-	webReq := &livekit.WebEgressRequest{
-		StreamOutputs: []*livekit.StreamOutput{
-			&livekit.StreamOutput{},
+	webReq := &wirtual.WebEgressRequest{
+		StreamOutputs: []*wirtual.StreamOutput{
+			&wirtual.StreamOutput{},
 		},
 	}
 
 	ot = GetOutputType(webReq)
 	require.Equal(t, OutputTypeStream, ot)
 
-	webReq = &livekit.WebEgressRequest{
-		Output: &livekit.WebEgressRequest_Stream{
-			Stream: &livekit.StreamOutput{},
+	webReq = &wirtual.WebEgressRequest{
+		Output: &wirtual.WebEgressRequest_Stream{
+			Stream: &wirtual.StreamOutput{},
 		},
 	}
 
 	ot = GetOutputType(webReq)
 	require.Equal(t, OutputTypeStream, ot)
 
-	participantReq := &livekit.ParticipantEgressRequest{
-		ImageOutputs: []*livekit.ImageOutput{
-			&livekit.ImageOutput{},
+	participantReq := &wirtual.ParticipantEgressRequest{
+		ImageOutputs: []*wirtual.ImageOutput{
+			&wirtual.ImageOutput{},
 		},
 	}
 
 	ot = GetOutputType(participantReq)
 	require.Equal(t, OutputTypeImages, ot)
 
-	participantReq.SegmentOutputs = []*livekit.SegmentedFileOutput{
-		&livekit.SegmentedFileOutput{},
+	participantReq.SegmentOutputs = []*wirtual.SegmentedFileOutput{
+		&wirtual.SegmentedFileOutput{},
 	}
 
 	ot = GetOutputType(participantReq)

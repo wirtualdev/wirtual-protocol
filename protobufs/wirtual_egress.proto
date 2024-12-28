@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,13 +14,13 @@
 
 syntax = "proto3";
 
-package livekit;
+package wirtual;
 
 import "wirtual_models.proto";
 
 option go_package = "github.com/wirtual/protocol/wirtual";
-option csharp_namespace = "LiveKit.Proto";
-option ruby_package = "LiveKit::Proto";
+option csharp_namespace = "Wirtual.Proto";
+option ruby_package = "Wirtual::Proto";
 
 service Egress {
   // start recording or streaming a room, participant, or tracks
@@ -49,7 +49,7 @@ message RoomCompositeEgressRequest {
   string layout = 2;            // (optional)
   bool audio_only = 3;          // (default false)
   bool video_only = 4;          // (default false)
-  string custom_base_url = 5;   // template base url (default https://recorder.livekit.io)
+  string custom_base_url = 5;   // template base url (default https://recorder.wirtual.io)
   oneof output {                // deprecated (use _output fields)
     EncodedFileOutput file = 6 [deprecated = true];
     StreamOutput stream = 7 [deprecated = true];

@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 
 package egress
 
-import "github.com/livekit/protocol/livekit"
+import "github.com/wirtualdev/wirtual-protocol/wirtual"
 
 const (
 	EgressTypeRoomComposite  = "room_composite"
@@ -34,49 +34,49 @@ const (
 
 // Outputs that can be used in egress that are started automatically on room creation
 type AutoEncodedOutput interface {
-	GetFileOutputs() []*livekit.EncodedFileOutput
-	GetSegmentOutputs() []*livekit.SegmentedFileOutput
+	GetFileOutputs() []*wirtual.EncodedFileOutput
+	GetSegmentOutputs() []*wirtual.SegmentedFileOutput
 }
 
 type EncodedOutput interface {
 	AutoEncodedOutput
-	GetStreamOutputs() []*livekit.StreamOutput
-	GetImageOutputs() []*livekit.ImageOutput
+	GetStreamOutputs() []*wirtual.StreamOutput
+	GetImageOutputs() []*wirtual.ImageOutput
 }
 
 type EncodedOutputDeprecated interface {
-	GetFile() *livekit.EncodedFileOutput
-	GetStream() *livekit.StreamOutput
-	GetSegments() *livekit.SegmentedFileOutput
+	GetFile() *wirtual.EncodedFileOutput
+	GetStream() *wirtual.StreamOutput
+	GetSegments() *wirtual.SegmentedFileOutput
 }
 
 type DirectOutput interface {
-	GetFile() *livekit.DirectFileOutput
+	GetFile() *wirtual.DirectFileOutput
 	GetWebsocketUrl() string
 }
 
 type UploadRequest interface {
-	GetS3() *livekit.S3Upload
-	GetGcp() *livekit.GCPUpload
-	GetAzure() *livekit.AzureBlobUpload
-	GetAliOSS() *livekit.AliOSSUpload
+	GetS3() *wirtual.S3Upload
+	GetGcp() *wirtual.GCPUpload
+	GetAzure() *wirtual.AzureBlobUpload
+	GetAliOSS() *wirtual.AliOSSUpload
 }
 
 func GetTypes(request interface{}) (string, string) {
 	switch req := request.(type) {
-	case *livekit.EgressInfo_RoomComposite:
+	case *wirtual.EgressInfo_RoomComposite:
 		return EgressTypeRoomComposite, GetOutputType(req.RoomComposite)
 
-	case *livekit.EgressInfo_Web:
+	case *wirtual.EgressInfo_Web:
 		return EgressTypeWeb, GetOutputType(req.Web)
 
-	case *livekit.EgressInfo_Participant:
+	case *wirtual.EgressInfo_Participant:
 		return EgressTypeParticipant, GetOutputType(req.Participant)
 
-	case *livekit.EgressInfo_TrackComposite:
+	case *wirtual.EgressInfo_TrackComposite:
 		return EgressTypeTrackComposite, GetOutputType(req.TrackComposite)
 
-	case *livekit.EgressInfo_Track:
+	case *wirtual.EgressInfo_Track:
 		return EgressTypeTrack, GetOutputType(req.Track)
 	}
 

@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,18 +15,18 @@
 package utils
 
 import (
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/logger"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/logger"
 	"github.com/pion/webrtc/v4"
 )
 
-func GetMimeTypeForVideoCodec(codec livekit.VideoCodec) string {
+func GetMimeTypeForVideoCodec(codec wirtual.VideoCodec) string {
 	switch codec {
-	case livekit.VideoCodec_H264_BASELINE,
-		livekit.VideoCodec_H264_MAIN,
-		livekit.VideoCodec_H264_HIGH:
+	case wirtual.VideoCodec_H264_BASELINE,
+		wirtual.VideoCodec_H264_MAIN,
+		wirtual.VideoCodec_H264_HIGH:
 		return webrtc.MimeTypeH264
-	case livekit.VideoCodec_VP8:
+	case wirtual.VideoCodec_VP8:
 		return webrtc.MimeTypeVP8
 	default:
 		logger.Errorw("GetMimeTypeForVideoCodec unimplemented", nil, "codec", codec.String())
@@ -34,11 +34,11 @@ func GetMimeTypeForVideoCodec(codec livekit.VideoCodec) string {
 	}
 }
 
-func GetMimeTypeForAudioCodec(codec livekit.AudioCodec) string {
+func GetMimeTypeForAudioCodec(codec wirtual.AudioCodec) string {
 	// AAC is not supported in webrtc
 
 	switch codec {
-	case livekit.AudioCodec_OPUS:
+	case wirtual.AudioCodec_OPUS:
 		return webrtc.MimeTypeOpus
 	default:
 		logger.Errorw("GetMimeTypeForAudioCodec unimplemented", nil, "codec", codec.String())

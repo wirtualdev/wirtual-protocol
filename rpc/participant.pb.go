@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -82,14 +82,14 @@ var file_rpc_participant_proto_rawDesc = []byte{
 }
 
 var file_rpc_participant_proto_goTypes = []any{
-	(*livekit.RoomParticipantIdentity)(nil),     // 0: wirtual.RoomParticipantIdentity
-	(*livekit.MuteRoomTrackRequest)(nil),        // 1: wirtual.MuteRoomTrackRequest
-	(*livekit.UpdateParticipantRequest)(nil),    // 2: wirtual.UpdateParticipantRequest
-	(*livekit.UpdateSubscriptionsRequest)(nil),  // 3: wirtual.UpdateSubscriptionsRequest
-	(*livekit.RemoveParticipantResponse)(nil),   // 4: wirtual.RemoveParticipantResponse
-	(*livekit.MuteRoomTrackResponse)(nil),       // 5: wirtual.MuteRoomTrackResponse
-	(*livekit.ParticipantInfo)(nil),             // 6: wirtual.ParticipantInfo
-	(*livekit.UpdateSubscriptionsResponse)(nil), // 7: wirtual.UpdateSubscriptionsResponse
+	(*wirtual.RoomParticipantIdentity)(nil),     // 0: wirtual.RoomParticipantIdentity
+	(*wirtual.MuteRoomTrackRequest)(nil),        // 1: wirtual.MuteRoomTrackRequest
+	(*wirtual.UpdateParticipantRequest)(nil),    // 2: wirtual.UpdateParticipantRequest
+	(*wirtual.UpdateSubscriptionsRequest)(nil),  // 3: wirtual.UpdateSubscriptionsRequest
+	(*wirtual.RemoveParticipantResponse)(nil),   // 4: wirtual.RemoveParticipantResponse
+	(*wirtual.MuteRoomTrackResponse)(nil),       // 5: wirtual.MuteRoomTrackResponse
+	(*wirtual.ParticipantInfo)(nil),             // 6: wirtual.ParticipantInfo
+	(*wirtual.UpdateSubscriptionsResponse)(nil), // 7: wirtual.UpdateSubscriptionsResponse
 }
 var file_rpc_participant_proto_depIdxs = []int32{
 	0, // 0: rpc.Participant.RemoveParticipant:input_type -> wirtual.RoomParticipantIdentity

@@ -1,5 +1,5 @@
 {
-  "name": "@livekit/protocol",
+  "name": "@wirtual/protocol",
   "version": "1.30.0",
   "description": "",
   "type": "module",
@@ -23,12 +23,12 @@
   "main": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "scripts": {
-    "generate:proto": "mkdir -p src/gen && protoc --es_out src/gen --es_opt target=dts+js -I=../../protobufs ../../protobufs/livekit_*.proto",
+    "generate:proto": "mkdir -p src/gen && protoc --es_out src/gen --es_opt target=dts+js -I=../../protobufs ../../protobufs/wirtual_*.proto",
     "generate:version": "genversion --esm --semi src/gen/version.js",
     "build": "pnpm generate:version && pnpm generate:proto && unbuild"
   },
   "keywords": [],
-  "author": "LiveKit",
+  "author": "Wirtual",
   "license": "Apache-2.0",
   "devDependencies": {
     "@bufbuild/protoc-gen-es": "^1.10.0",

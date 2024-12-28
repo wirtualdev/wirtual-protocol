@@ -6,15 +6,15 @@ package rpc
 import (
 	"context"
 
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/client"
-	"github.com/livekit/psrpc/pkg/info"
-	"github.com/livekit/psrpc/pkg/rand"
-	"github.com/livekit/psrpc/pkg/server"
-	"github.com/livekit/psrpc/version"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/client"
+	"github.com/wirtual/psrpc/pkg/info"
+	"github.com/wirtual/psrpc/pkg/rand"
+	"github.com/wirtual/psrpc/pkg/server"
+	"github.com/wirtual/psrpc/version"
 )
-import livekit1 "github.com/wirtual/protocol/wirtual"
-import livekit6 "github.com/wirtual/protocol/wirtual"
+import wirtual1 "github.com/wirtual/protocol/wirtual"
+import wirtual6 "github.com/wirtual/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 
@@ -23,7 +23,7 @@ var _ = version.PsrpcVersion_0_6
 // ============================
 
 type RoomManagerClient[NodeIdTopicType ~string] interface {
-	CreateRoom(ctx context.Context, nodeId NodeIdTopicType, req *livekit6.CreateRoomRequest, opts ...psrpc.RequestOption) (*livekit1.Room, error)
+	CreateRoom(ctx context.Context, nodeId NodeIdTopicType, req *wirtual6.CreateRoomRequest, opts ...psrpc.RequestOption) (*wirtual1.Room, error)
 
 	// Close immediately, without waiting for pending RPCs
 	Close()
@@ -34,7 +34,7 @@ type RoomManagerClient[NodeIdTopicType ~string] interface {
 // ================================
 
 type RoomManagerServerImpl interface {
-	CreateRoom(context.Context, *livekit6.CreateRoomRequest) (*livekit1.Room, error)
+	CreateRoom(context.Context, *wirtual6.CreateRoomRequest) (*wirtual1.Room, error)
 }
 
 // ============================
@@ -81,8 +81,8 @@ func NewRoomManagerClient[NodeIdTopicType ~string](bus psrpc.MessageBus, opts ..
 	}, nil
 }
 
-func (c *roomManagerClient[NodeIdTopicType]) CreateRoom(ctx context.Context, nodeId NodeIdTopicType, req *livekit6.CreateRoomRequest, opts ...psrpc.RequestOption) (*livekit1.Room, error) {
-	return client.RequestSingle[*livekit1.Room](ctx, c.client, "CreateRoom", []string{string(nodeId)}, req, opts...)
+func (c *roomManagerClient[NodeIdTopicType]) CreateRoom(ctx context.Context, nodeId NodeIdTopicType, req *wirtual6.CreateRoomRequest, opts ...psrpc.RequestOption) (*wirtual1.Room, error) {
+	return client.RequestSingle[*wirtual1.Room](ctx, c.client, "CreateRoom", []string{string(nodeId)}, req, opts...)
 }
 
 func (s *roomManagerClient[NodeIdTopicType]) Close() {

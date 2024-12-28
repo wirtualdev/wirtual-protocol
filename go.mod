@@ -1,4 +1,4 @@
-module github.com/livekit/protocol
+module github.com/wirtualdev/wirtual-protocol
 
 go 1.22.7
 
@@ -15,8 +15,8 @@ require (
 	github.com/hashicorp/go-retryablehttp v0.7.7
 	github.com/jxskiss/base62 v1.1.0
 	github.com/lithammer/shortuuid/v4 v4.0.0
-	github.com/livekit/mageutil v0.0.0-20230125210925-54e8a70427c1
-	github.com/livekit/psrpc v0.6.1-0.20241018124827-1efff3d113a8
+	github.com/wirtual/mageutil v0.0.0-20230125210925-54e8a70427c1
+	github.com/wirtual/psrpc v0.6.1-0.20241018124827-1efff3d113a8
 	github.com/mackerelio/go-osstat v0.2.5
 	github.com/maxbrunsfeld/counterfeiter/v6 v6.9.0
 	github.com/pion/logging v0.2.2

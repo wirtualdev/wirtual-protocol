@@ -3,14 +3,14 @@ package agent
 import (
 	"time"
 
-	"github.com/livekit/protocol/auth"
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/auth"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 func BuildAgentToken(
 	apiKey, secret, roomName, participantIdentity, participantName, participantMetadata string,
 	participantAttributes map[string]string,
-	permissions *livekit.ParticipantPermission,
+	permissions *wirtual.ParticipantPermission,
 ) (string, error) {
 	grant := &auth.VideoGrant{
 		RoomJoin:             true,
@@ -28,7 +28,7 @@ func BuildAgentToken(
 		AddGrant(grant).
 		SetIdentity(participantIdentity).
 		SetName(participantName).
-		SetKind(livekit.ParticipantInfo_AGENT).
+		SetKind(wirtual.ParticipantInfo_AGENT).
 		SetValidFor(1 * time.Hour).
 		SetMetadata(participantMetadata).
 		SetAttributes(participantAttributes)

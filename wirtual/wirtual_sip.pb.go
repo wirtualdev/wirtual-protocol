@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -72,11 +72,11 @@ func (x SIPTransport) String() string {
 }
 
 func (SIPTransport) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_sip_proto_enumTypes[0].Descriptor()
+	return file_wirtual_sip_proto_enumTypes[0].Descriptor()
 }
 
 func (SIPTransport) Type() protoreflect.EnumType {
-	return &file_livekit_sip_proto_enumTypes[0]
+	return &file_wirtual_sip_proto_enumTypes[0]
 }
 
 func (x SIPTransport) Number() protoreflect.EnumNumber {
@@ -85,7 +85,7 @@ func (x SIPTransport) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SIPTransport.Descriptor instead.
 func (SIPTransport) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{0}
 }
 
 type SIPHeaderOptions int32
@@ -121,11 +121,11 @@ func (x SIPHeaderOptions) String() string {
 }
 
 func (SIPHeaderOptions) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_sip_proto_enumTypes[1].Descriptor()
+	return file_wirtual_sip_proto_enumTypes[1].Descriptor()
 }
 
 func (SIPHeaderOptions) Type() protoreflect.EnumType {
-	return &file_livekit_sip_proto_enumTypes[1]
+	return &file_wirtual_sip_proto_enumTypes[1]
 }
 
 func (x SIPHeaderOptions) Number() protoreflect.EnumNumber {
@@ -134,7 +134,7 @@ func (x SIPHeaderOptions) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SIPHeaderOptions.Descriptor instead.
 func (SIPHeaderOptions) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{1}
 }
 
 type SIPMediaEncryption int32
@@ -170,11 +170,11 @@ func (x SIPMediaEncryption) String() string {
 }
 
 func (SIPMediaEncryption) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_sip_proto_enumTypes[2].Descriptor()
+	return file_wirtual_sip_proto_enumTypes[2].Descriptor()
 }
 
 func (SIPMediaEncryption) Type() protoreflect.EnumType {
-	return &file_livekit_sip_proto_enumTypes[2]
+	return &file_wirtual_sip_proto_enumTypes[2]
 }
 
 func (x SIPMediaEncryption) Number() protoreflect.EnumNumber {
@@ -183,15 +183,15 @@ func (x SIPMediaEncryption) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SIPMediaEncryption.Descriptor instead.
 func (SIPMediaEncryption) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{2}
 }
 
 type SIPCallStatus int32
 
 const (
-	SIPCallStatus_SCS_CALL_INCOMING      SIPCallStatus = 0 // Incoming call is being handled by the SIP service. The SIP participant hasn't joined a LiveKit room yet
+	SIPCallStatus_SCS_CALL_INCOMING      SIPCallStatus = 0 // Incoming call is being handled by the SIP service. The SIP participant hasn't joined a Wirtual room yet
 	SIPCallStatus_SCS_PARTICIPANT_JOINED SIPCallStatus = 1 // SIP participant for outgoing call has been created. The SIP outgoing call is being established
-	SIPCallStatus_SCS_ACTIVE             SIPCallStatus = 2 // Call is ongoing. SIP participant is active in the LiveKit room
+	SIPCallStatus_SCS_ACTIVE             SIPCallStatus = 2 // Call is ongoing. SIP participant is active in the Wirtual room
 	SIPCallStatus_SCS_DISCONNECTED       SIPCallStatus = 3 // Call has ended
 	SIPCallStatus_SCS_ERROR              SIPCallStatus = 4 // Call has ended or never succeeded because of an error
 )
@@ -225,11 +225,11 @@ func (x SIPCallStatus) String() string {
 }
 
 func (SIPCallStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_sip_proto_enumTypes[3].Descriptor()
+	return file_wirtual_sip_proto_enumTypes[3].Descriptor()
 }
 
 func (SIPCallStatus) Type() protoreflect.EnumType {
-	return &file_livekit_sip_proto_enumTypes[3]
+	return &file_wirtual_sip_proto_enumTypes[3]
 }
 
 func (x SIPCallStatus) Number() protoreflect.EnumNumber {
@@ -238,7 +238,7 @@ func (x SIPCallStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SIPCallStatus.Descriptor instead.
 func (SIPCallStatus) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{3}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{3}
 }
 
 type SIPFeature int32
@@ -271,11 +271,11 @@ func (x SIPFeature) String() string {
 }
 
 func (SIPFeature) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_sip_proto_enumTypes[4].Descriptor()
+	return file_wirtual_sip_proto_enumTypes[4].Descriptor()
 }
 
 func (SIPFeature) Type() protoreflect.EnumType {
-	return &file_livekit_sip_proto_enumTypes[4]
+	return &file_wirtual_sip_proto_enumTypes[4]
 }
 
 func (x SIPFeature) Number() protoreflect.EnumNumber {
@@ -284,7 +284,7 @@ func (x SIPFeature) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SIPFeature.Descriptor instead.
 func (SIPFeature) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{4}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{4}
 }
 
 type SIPTrunkInfo_TrunkKind int32
@@ -320,11 +320,11 @@ func (x SIPTrunkInfo_TrunkKind) String() string {
 }
 
 func (SIPTrunkInfo_TrunkKind) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_sip_proto_enumTypes[5].Descriptor()
+	return file_wirtual_sip_proto_enumTypes[5].Descriptor()
 }
 
 func (SIPTrunkInfo_TrunkKind) Type() protoreflect.EnumType {
-	return &file_livekit_sip_proto_enumTypes[5]
+	return &file_wirtual_sip_proto_enumTypes[5]
 }
 
 func (x SIPTrunkInfo_TrunkKind) Number() protoreflect.EnumNumber {
@@ -333,7 +333,7 @@ func (x SIPTrunkInfo_TrunkKind) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use SIPTrunkInfo_TrunkKind.Descriptor instead.
 func (SIPTrunkInfo_TrunkKind) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{1, 0}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{1, 0}
 }
 
 // Deprecated: Marked as deprecated in wirtual_sip.proto.
@@ -368,7 +368,7 @@ type CreateSIPTrunkRequest struct {
 
 func (x *CreateSIPTrunkRequest) Reset() {
 	*x = CreateSIPTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[0]
+	mi := &file_wirtual_sip_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -380,7 +380,7 @@ func (x *CreateSIPTrunkRequest) String() string {
 func (*CreateSIPTrunkRequest) ProtoMessage() {}
 
 func (x *CreateSIPTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[0]
+	mi := &file_wirtual_sip_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -393,7 +393,7 @@ func (x *CreateSIPTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSIPTrunkRequest.ProtoReflect.Descriptor instead.
 func (*CreateSIPTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateSIPTrunkRequest) GetInboundAddresses() []string {
@@ -510,7 +510,7 @@ type SIPTrunkInfo struct {
 
 func (x *SIPTrunkInfo) Reset() {
 	*x = SIPTrunkInfo{}
-	mi := &file_livekit_sip_proto_msgTypes[1]
+	mi := &file_wirtual_sip_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -522,7 +522,7 @@ func (x *SIPTrunkInfo) String() string {
 func (*SIPTrunkInfo) ProtoMessage() {}
 
 func (x *SIPTrunkInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[1]
+	mi := &file_wirtual_sip_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -535,7 +535,7 @@ func (x *SIPTrunkInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPTrunkInfo.ProtoReflect.Descriptor instead.
 func (*SIPTrunkInfo) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *SIPTrunkInfo) GetSipTrunkId() string {
@@ -646,7 +646,7 @@ type CreateSIPInboundTrunkRequest struct {
 
 func (x *CreateSIPInboundTrunkRequest) Reset() {
 	*x = CreateSIPInboundTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[2]
+	mi := &file_wirtual_sip_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -658,7 +658,7 @@ func (x *CreateSIPInboundTrunkRequest) String() string {
 func (*CreateSIPInboundTrunkRequest) ProtoMessage() {}
 
 func (x *CreateSIPInboundTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[2]
+	mi := &file_wirtual_sip_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -671,7 +671,7 @@ func (x *CreateSIPInboundTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSIPInboundTrunkRequest.ProtoReflect.Descriptor instead.
 func (*CreateSIPInboundTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *CreateSIPInboundTrunkRequest) GetTrunk() *SIPInboundTrunkInfo {
@@ -688,7 +688,7 @@ type SIPInboundTrunkInfo struct {
 	Name string `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	// User-defined metadata for the Trunk.
 	Metadata string `protobuf:"bytes,3,opt,name=metadata,proto3" json:"metadata,omitempty"`
-	// Numbers associated with LiveKit SIP. The Trunk will only accept calls made to these numbers.
+	// Numbers associated with Wirtual SIP. The Trunk will only accept calls made to these numbers.
 	// Creating multiple Trunks with different phone numbers allows having different rules for a single provider.
 	Numbers []string `protobuf:"bytes,4,rep,name=numbers,proto3" json:"numbers,omitempty"`
 	// CIDR or IPs that traffic is accepted from.
@@ -705,7 +705,7 @@ type SIPInboundTrunkInfo struct {
 	Headers map[string]string `protobuf:"bytes,9,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Map SIP X-* headers from INVITE to SIP participant attributes.
 	HeadersToAttributes map[string]string `protobuf:"bytes,10,rep,name=headers_to_attributes,json=headersToAttributes,proto3" json:"headers_to_attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// Map LiveKit attributes to SIP X-* headers when sending BYE or REFER requests.
+	// Map Wirtual attributes to SIP X-* headers when sending BYE or REFER requests.
 	// Keys are the names of attributes and values are the names of X-* headers they will be mapped to.
 	AttributesToHeaders map[string]string `protobuf:"bytes,14,rep,name=attributes_to_headers,json=attributesToHeaders,proto3" json:"attributes_to_headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Map SIP headers from INVITE to sip.h.* participant attributes automatically.
@@ -727,7 +727,7 @@ type SIPInboundTrunkInfo struct {
 
 func (x *SIPInboundTrunkInfo) Reset() {
 	*x = SIPInboundTrunkInfo{}
-	mi := &file_livekit_sip_proto_msgTypes[3]
+	mi := &file_wirtual_sip_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -739,7 +739,7 @@ func (x *SIPInboundTrunkInfo) String() string {
 func (*SIPInboundTrunkInfo) ProtoMessage() {}
 
 func (x *SIPInboundTrunkInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[3]
+	mi := &file_wirtual_sip_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -752,7 +752,7 @@ func (x *SIPInboundTrunkInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPInboundTrunkInfo.ProtoReflect.Descriptor instead.
 func (*SIPInboundTrunkInfo) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{3}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *SIPInboundTrunkInfo) GetSipTrunkId() string {
@@ -876,7 +876,7 @@ type CreateSIPOutboundTrunkRequest struct {
 
 func (x *CreateSIPOutboundTrunkRequest) Reset() {
 	*x = CreateSIPOutboundTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[4]
+	mi := &file_wirtual_sip_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -888,7 +888,7 @@ func (x *CreateSIPOutboundTrunkRequest) String() string {
 func (*CreateSIPOutboundTrunkRequest) ProtoMessage() {}
 
 func (x *CreateSIPOutboundTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[4]
+	mi := &file_wirtual_sip_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -901,7 +901,7 @@ func (x *CreateSIPOutboundTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSIPOutboundTrunkRequest.ProtoReflect.Descriptor instead.
 func (*CreateSIPOutboundTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{4}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *CreateSIPOutboundTrunkRequest) GetTrunk() *SIPOutboundTrunkInfo {
@@ -930,12 +930,12 @@ type SIPOutboundTrunkInfo struct {
 	AuthUsername string `protobuf:"bytes,7,opt,name=auth_username,json=authUsername,proto3" json:"auth_username,omitempty"`
 	AuthPassword string `protobuf:"bytes,8,opt,name=auth_password,json=authPassword,proto3" json:"auth_password,omitempty"`
 	// Include these SIP X-* headers in INVITE request.
-	// These headers are sent as-is and may help identify this call as coming from LiveKit for the other SIP endpoint.
+	// These headers are sent as-is and may help identify this call as coming from Wirtual for the other SIP endpoint.
 	Headers map[string]string `protobuf:"bytes,9,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Map SIP X-* headers from 200 OK to SIP participant attributes.
 	// Keys are the names of X-* headers and values are the names of attributes they will be mapped to.
 	HeadersToAttributes map[string]string `protobuf:"bytes,10,rep,name=headers_to_attributes,json=headersToAttributes,proto3" json:"headers_to_attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// Map LiveKit attributes to SIP X-* headers when sending BYE or REFER requests.
+	// Map Wirtual attributes to SIP X-* headers when sending BYE or REFER requests.
 	// Keys are the names of attributes and values are the names of X-* headers they will be mapped to.
 	AttributesToHeaders map[string]string `protobuf:"bytes,11,rep,name=attributes_to_headers,json=attributesToHeaders,proto3" json:"attributes_to_headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Map SIP headers from 200 OK to sip.h.* participant attributes automatically.
@@ -952,7 +952,7 @@ type SIPOutboundTrunkInfo struct {
 
 func (x *SIPOutboundTrunkInfo) Reset() {
 	*x = SIPOutboundTrunkInfo{}
-	mi := &file_livekit_sip_proto_msgTypes[5]
+	mi := &file_wirtual_sip_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -964,7 +964,7 @@ func (x *SIPOutboundTrunkInfo) String() string {
 func (*SIPOutboundTrunkInfo) ProtoMessage() {}
 
 func (x *SIPOutboundTrunkInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[5]
+	mi := &file_wirtual_sip_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -977,7 +977,7 @@ func (x *SIPOutboundTrunkInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPOutboundTrunkInfo.ProtoReflect.Descriptor instead.
 func (*SIPOutboundTrunkInfo) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{5}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *SIPOutboundTrunkInfo) GetSipTrunkId() string {
@@ -1080,7 +1080,7 @@ type GetSIPInboundTrunkRequest struct {
 
 func (x *GetSIPInboundTrunkRequest) Reset() {
 	*x = GetSIPInboundTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[6]
+	mi := &file_wirtual_sip_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1092,7 +1092,7 @@ func (x *GetSIPInboundTrunkRequest) String() string {
 func (*GetSIPInboundTrunkRequest) ProtoMessage() {}
 
 func (x *GetSIPInboundTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[6]
+	mi := &file_wirtual_sip_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1105,7 +1105,7 @@ func (x *GetSIPInboundTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSIPInboundTrunkRequest.ProtoReflect.Descriptor instead.
 func (*GetSIPInboundTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{6}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetSIPInboundTrunkRequest) GetSipTrunkId() string {
@@ -1124,7 +1124,7 @@ type GetSIPInboundTrunkResponse struct {
 
 func (x *GetSIPInboundTrunkResponse) Reset() {
 	*x = GetSIPInboundTrunkResponse{}
-	mi := &file_livekit_sip_proto_msgTypes[7]
+	mi := &file_wirtual_sip_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1136,7 +1136,7 @@ func (x *GetSIPInboundTrunkResponse) String() string {
 func (*GetSIPInboundTrunkResponse) ProtoMessage() {}
 
 func (x *GetSIPInboundTrunkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[7]
+	mi := &file_wirtual_sip_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1149,7 +1149,7 @@ func (x *GetSIPInboundTrunkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSIPInboundTrunkResponse.ProtoReflect.Descriptor instead.
 func (*GetSIPInboundTrunkResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{7}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetSIPInboundTrunkResponse) GetTrunk() *SIPInboundTrunkInfo {
@@ -1168,7 +1168,7 @@ type GetSIPOutboundTrunkRequest struct {
 
 func (x *GetSIPOutboundTrunkRequest) Reset() {
 	*x = GetSIPOutboundTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[8]
+	mi := &file_wirtual_sip_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1180,7 +1180,7 @@ func (x *GetSIPOutboundTrunkRequest) String() string {
 func (*GetSIPOutboundTrunkRequest) ProtoMessage() {}
 
 func (x *GetSIPOutboundTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[8]
+	mi := &file_wirtual_sip_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1193,7 +1193,7 @@ func (x *GetSIPOutboundTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSIPOutboundTrunkRequest.ProtoReflect.Descriptor instead.
 func (*GetSIPOutboundTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{8}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetSIPOutboundTrunkRequest) GetSipTrunkId() string {
@@ -1212,7 +1212,7 @@ type GetSIPOutboundTrunkResponse struct {
 
 func (x *GetSIPOutboundTrunkResponse) Reset() {
 	*x = GetSIPOutboundTrunkResponse{}
-	mi := &file_livekit_sip_proto_msgTypes[9]
+	mi := &file_wirtual_sip_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1224,7 +1224,7 @@ func (x *GetSIPOutboundTrunkResponse) String() string {
 func (*GetSIPOutboundTrunkResponse) ProtoMessage() {}
 
 func (x *GetSIPOutboundTrunkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[9]
+	mi := &file_wirtual_sip_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1237,7 +1237,7 @@ func (x *GetSIPOutboundTrunkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSIPOutboundTrunkResponse.ProtoReflect.Descriptor instead.
 func (*GetSIPOutboundTrunkResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{9}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetSIPOutboundTrunkResponse) GetTrunk() *SIPOutboundTrunkInfo {
@@ -1256,7 +1256,7 @@ type ListSIPTrunkRequest struct {
 
 func (x *ListSIPTrunkRequest) Reset() {
 	*x = ListSIPTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[10]
+	mi := &file_wirtual_sip_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1268,7 +1268,7 @@ func (x *ListSIPTrunkRequest) String() string {
 func (*ListSIPTrunkRequest) ProtoMessage() {}
 
 func (x *ListSIPTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[10]
+	mi := &file_wirtual_sip_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1281,7 +1281,7 @@ func (x *ListSIPTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSIPTrunkRequest.ProtoReflect.Descriptor instead.
 func (*ListSIPTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{10}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{10}
 }
 
 // Deprecated: Marked as deprecated in wirtual_sip.proto.
@@ -1294,7 +1294,7 @@ type ListSIPTrunkResponse struct {
 
 func (x *ListSIPTrunkResponse) Reset() {
 	*x = ListSIPTrunkResponse{}
-	mi := &file_livekit_sip_proto_msgTypes[11]
+	mi := &file_wirtual_sip_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1306,7 +1306,7 @@ func (x *ListSIPTrunkResponse) String() string {
 func (*ListSIPTrunkResponse) ProtoMessage() {}
 
 func (x *ListSIPTrunkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[11]
+	mi := &file_wirtual_sip_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1319,7 +1319,7 @@ func (x *ListSIPTrunkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSIPTrunkResponse.ProtoReflect.Descriptor instead.
 func (*ListSIPTrunkResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{11}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListSIPTrunkResponse) GetItems() []*SIPTrunkInfo {
@@ -1343,7 +1343,7 @@ type ListSIPInboundTrunkRequest struct {
 
 func (x *ListSIPInboundTrunkRequest) Reset() {
 	*x = ListSIPInboundTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[12]
+	mi := &file_wirtual_sip_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1355,7 +1355,7 @@ func (x *ListSIPInboundTrunkRequest) String() string {
 func (*ListSIPInboundTrunkRequest) ProtoMessage() {}
 
 func (x *ListSIPInboundTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[12]
+	mi := &file_wirtual_sip_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1368,7 +1368,7 @@ func (x *ListSIPInboundTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSIPInboundTrunkRequest.ProtoReflect.Descriptor instead.
 func (*ListSIPInboundTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{12}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ListSIPInboundTrunkRequest) GetTrunkIds() []string {
@@ -1394,7 +1394,7 @@ type ListSIPInboundTrunkResponse struct {
 
 func (x *ListSIPInboundTrunkResponse) Reset() {
 	*x = ListSIPInboundTrunkResponse{}
-	mi := &file_livekit_sip_proto_msgTypes[13]
+	mi := &file_wirtual_sip_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1406,7 +1406,7 @@ func (x *ListSIPInboundTrunkResponse) String() string {
 func (*ListSIPInboundTrunkResponse) ProtoMessage() {}
 
 func (x *ListSIPInboundTrunkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[13]
+	mi := &file_wirtual_sip_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1419,7 +1419,7 @@ func (x *ListSIPInboundTrunkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSIPInboundTrunkResponse.ProtoReflect.Descriptor instead.
 func (*ListSIPInboundTrunkResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{13}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ListSIPInboundTrunkResponse) GetItems() []*SIPInboundTrunkInfo {
@@ -1443,7 +1443,7 @@ type ListSIPOutboundTrunkRequest struct {
 
 func (x *ListSIPOutboundTrunkRequest) Reset() {
 	*x = ListSIPOutboundTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[14]
+	mi := &file_wirtual_sip_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1455,7 +1455,7 @@ func (x *ListSIPOutboundTrunkRequest) String() string {
 func (*ListSIPOutboundTrunkRequest) ProtoMessage() {}
 
 func (x *ListSIPOutboundTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[14]
+	mi := &file_wirtual_sip_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1468,7 +1468,7 @@ func (x *ListSIPOutboundTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSIPOutboundTrunkRequest.ProtoReflect.Descriptor instead.
 func (*ListSIPOutboundTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{14}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListSIPOutboundTrunkRequest) GetTrunkIds() []string {
@@ -1494,7 +1494,7 @@ type ListSIPOutboundTrunkResponse struct {
 
 func (x *ListSIPOutboundTrunkResponse) Reset() {
 	*x = ListSIPOutboundTrunkResponse{}
-	mi := &file_livekit_sip_proto_msgTypes[15]
+	mi := &file_wirtual_sip_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1506,7 +1506,7 @@ func (x *ListSIPOutboundTrunkResponse) String() string {
 func (*ListSIPOutboundTrunkResponse) ProtoMessage() {}
 
 func (x *ListSIPOutboundTrunkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[15]
+	mi := &file_wirtual_sip_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1519,7 +1519,7 @@ func (x *ListSIPOutboundTrunkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSIPOutboundTrunkResponse.ProtoReflect.Descriptor instead.
 func (*ListSIPOutboundTrunkResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{15}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ListSIPOutboundTrunkResponse) GetItems() []*SIPOutboundTrunkInfo {
@@ -1538,7 +1538,7 @@ type DeleteSIPTrunkRequest struct {
 
 func (x *DeleteSIPTrunkRequest) Reset() {
 	*x = DeleteSIPTrunkRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[16]
+	mi := &file_wirtual_sip_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1550,7 +1550,7 @@ func (x *DeleteSIPTrunkRequest) String() string {
 func (*DeleteSIPTrunkRequest) ProtoMessage() {}
 
 func (x *DeleteSIPTrunkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[16]
+	mi := &file_wirtual_sip_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1563,7 +1563,7 @@ func (x *DeleteSIPTrunkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteSIPTrunkRequest.ProtoReflect.Descriptor instead.
 func (*DeleteSIPTrunkRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{16}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *DeleteSIPTrunkRequest) GetSipTrunkId() string {
@@ -1585,7 +1585,7 @@ type SIPDispatchRuleDirect struct {
 
 func (x *SIPDispatchRuleDirect) Reset() {
 	*x = SIPDispatchRuleDirect{}
-	mi := &file_livekit_sip_proto_msgTypes[17]
+	mi := &file_wirtual_sip_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1597,7 +1597,7 @@ func (x *SIPDispatchRuleDirect) String() string {
 func (*SIPDispatchRuleDirect) ProtoMessage() {}
 
 func (x *SIPDispatchRuleDirect) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[17]
+	mi := &file_wirtual_sip_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1610,7 +1610,7 @@ func (x *SIPDispatchRuleDirect) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPDispatchRuleDirect.ProtoReflect.Descriptor instead.
 func (*SIPDispatchRuleDirect) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{17}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *SIPDispatchRuleDirect) GetRoomName() string {
@@ -1639,7 +1639,7 @@ type SIPDispatchRuleIndividual struct {
 
 func (x *SIPDispatchRuleIndividual) Reset() {
 	*x = SIPDispatchRuleIndividual{}
-	mi := &file_livekit_sip_proto_msgTypes[18]
+	mi := &file_wirtual_sip_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1651,7 +1651,7 @@ func (x *SIPDispatchRuleIndividual) String() string {
 func (*SIPDispatchRuleIndividual) ProtoMessage() {}
 
 func (x *SIPDispatchRuleIndividual) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[18]
+	mi := &file_wirtual_sip_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1664,7 +1664,7 @@ func (x *SIPDispatchRuleIndividual) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPDispatchRuleIndividual.ProtoReflect.Descriptor instead.
 func (*SIPDispatchRuleIndividual) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{18}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *SIPDispatchRuleIndividual) GetRoomPrefix() string {
@@ -1695,7 +1695,7 @@ type SIPDispatchRuleCallee struct {
 
 func (x *SIPDispatchRuleCallee) Reset() {
 	*x = SIPDispatchRuleCallee{}
-	mi := &file_livekit_sip_proto_msgTypes[19]
+	mi := &file_wirtual_sip_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1707,7 +1707,7 @@ func (x *SIPDispatchRuleCallee) String() string {
 func (*SIPDispatchRuleCallee) ProtoMessage() {}
 
 func (x *SIPDispatchRuleCallee) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[19]
+	mi := &file_wirtual_sip_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1720,7 +1720,7 @@ func (x *SIPDispatchRuleCallee) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPDispatchRuleCallee.ProtoReflect.Descriptor instead.
 func (*SIPDispatchRuleCallee) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{19}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *SIPDispatchRuleCallee) GetRoomPrefix() string {
@@ -1758,7 +1758,7 @@ type SIPDispatchRule struct {
 
 func (x *SIPDispatchRule) Reset() {
 	*x = SIPDispatchRule{}
-	mi := &file_livekit_sip_proto_msgTypes[20]
+	mi := &file_wirtual_sip_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1770,7 +1770,7 @@ func (x *SIPDispatchRule) String() string {
 func (*SIPDispatchRule) ProtoMessage() {}
 
 func (x *SIPDispatchRule) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[20]
+	mi := &file_wirtual_sip_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1783,7 +1783,7 @@ func (x *SIPDispatchRule) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPDispatchRule.ProtoReflect.Descriptor instead.
 func (*SIPDispatchRule) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{20}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *SIPDispatchRule) GetRule() isSIPDispatchRule_Rule {
@@ -1876,7 +1876,7 @@ type CreateSIPDispatchRuleRequest struct {
 
 func (x *CreateSIPDispatchRuleRequest) Reset() {
 	*x = CreateSIPDispatchRuleRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[21]
+	mi := &file_wirtual_sip_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1888,7 +1888,7 @@ func (x *CreateSIPDispatchRuleRequest) String() string {
 func (*CreateSIPDispatchRuleRequest) ProtoMessage() {}
 
 func (x *CreateSIPDispatchRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[21]
+	mi := &file_wirtual_sip_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1901,7 +1901,7 @@ func (x *CreateSIPDispatchRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSIPDispatchRuleRequest.ProtoReflect.Descriptor instead.
 func (*CreateSIPDispatchRuleRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{21}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *CreateSIPDispatchRuleRequest) GetRule() *SIPDispatchRule {
@@ -1995,7 +1995,7 @@ type SIPDispatchRuleInfo struct {
 
 func (x *SIPDispatchRuleInfo) Reset() {
 	*x = SIPDispatchRuleInfo{}
-	mi := &file_livekit_sip_proto_msgTypes[22]
+	mi := &file_wirtual_sip_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2007,7 +2007,7 @@ func (x *SIPDispatchRuleInfo) String() string {
 func (*SIPDispatchRuleInfo) ProtoMessage() {}
 
 func (x *SIPDispatchRuleInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[22]
+	mi := &file_wirtual_sip_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2020,7 +2020,7 @@ func (x *SIPDispatchRuleInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPDispatchRuleInfo.ProtoReflect.Descriptor instead.
 func (*SIPDispatchRuleInfo) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{22}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *SIPDispatchRuleInfo) GetSipDispatchRuleId() string {
@@ -2121,7 +2121,7 @@ type ListSIPDispatchRuleRequest struct {
 
 func (x *ListSIPDispatchRuleRequest) Reset() {
 	*x = ListSIPDispatchRuleRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[23]
+	mi := &file_wirtual_sip_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2133,7 +2133,7 @@ func (x *ListSIPDispatchRuleRequest) String() string {
 func (*ListSIPDispatchRuleRequest) ProtoMessage() {}
 
 func (x *ListSIPDispatchRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[23]
+	mi := &file_wirtual_sip_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2146,7 +2146,7 @@ func (x *ListSIPDispatchRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSIPDispatchRuleRequest.ProtoReflect.Descriptor instead.
 func (*ListSIPDispatchRuleRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{23}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *ListSIPDispatchRuleRequest) GetDispatchRuleIds() []string {
@@ -2172,7 +2172,7 @@ type ListSIPDispatchRuleResponse struct {
 
 func (x *ListSIPDispatchRuleResponse) Reset() {
 	*x = ListSIPDispatchRuleResponse{}
-	mi := &file_livekit_sip_proto_msgTypes[24]
+	mi := &file_wirtual_sip_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2184,7 +2184,7 @@ func (x *ListSIPDispatchRuleResponse) String() string {
 func (*ListSIPDispatchRuleResponse) ProtoMessage() {}
 
 func (x *ListSIPDispatchRuleResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[24]
+	mi := &file_wirtual_sip_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2197,7 +2197,7 @@ func (x *ListSIPDispatchRuleResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSIPDispatchRuleResponse.ProtoReflect.Descriptor instead.
 func (*ListSIPDispatchRuleResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{24}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{24}
 }
 
 func (x *ListSIPDispatchRuleResponse) GetItems() []*SIPDispatchRuleInfo {
@@ -2216,7 +2216,7 @@ type DeleteSIPDispatchRuleRequest struct {
 
 func (x *DeleteSIPDispatchRuleRequest) Reset() {
 	*x = DeleteSIPDispatchRuleRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[25]
+	mi := &file_wirtual_sip_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2228,7 +2228,7 @@ func (x *DeleteSIPDispatchRuleRequest) String() string {
 func (*DeleteSIPDispatchRuleRequest) ProtoMessage() {}
 
 func (x *DeleteSIPDispatchRuleRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[25]
+	mi := &file_wirtual_sip_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2241,7 +2241,7 @@ func (x *DeleteSIPDispatchRuleRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteSIPDispatchRuleRequest.ProtoReflect.Descriptor instead.
 func (*DeleteSIPDispatchRuleRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{25}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *DeleteSIPDispatchRuleRequest) GetSipDispatchRuleId() string {
@@ -2251,7 +2251,7 @@ func (x *DeleteSIPDispatchRuleRequest) GetSipDispatchRuleId() string {
 	return ""
 }
 
-// A SIP Participant is a singular SIP session connected to a LiveKit room via
+// A SIP Participant is a singular SIP session connected to a Wirtual room via
 // a SIP Trunk into a SIP DispatchRule
 type CreateSIPParticipantRequest struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
@@ -2261,11 +2261,11 @@ type CreateSIPParticipantRequest struct {
 	SipCallTo string `protobuf:"bytes,2,opt,name=sip_call_to,json=sipCallTo,proto3" json:"sip_call_to,omitempty"`
 	// Optional SIP From number to use. If empty, trunk number is used.
 	SipNumber string `protobuf:"bytes,15,opt,name=sip_number,json=sipNumber,proto3" json:"sip_number,omitempty"`
-	// What LiveKit room should this participant be connected too
+	// What Wirtual room should this participant be connected too
 	RoomName string `protobuf:"bytes,3,opt,name=room_name,json=roomName,proto3" json:"room_name,omitempty"`
-	// Optional identity of the participant in LiveKit room
+	// Optional identity of the participant in Wirtual room
 	ParticipantIdentity string `protobuf:"bytes,4,opt,name=participant_identity,json=participantIdentity,proto3" json:"participant_identity,omitempty"`
-	// Optional name of the participant in LiveKit room
+	// Optional name of the participant in Wirtual room
 	ParticipantName string `protobuf:"bytes,7,opt,name=participant_name,json=participantName,proto3" json:"participant_name,omitempty"`
 	// Optional user-defined metadata. Will be attached to a created Participant in the room.
 	ParticipantMetadata string `protobuf:"bytes,8,opt,name=participant_metadata,json=participantMetadata,proto3" json:"participant_metadata,omitempty"`
@@ -2282,7 +2282,7 @@ type CreateSIPParticipantRequest struct {
 	// By default the From value (Phone number) is used for participant name/identity (if not set) and added to attributes.
 	// If true, a random value for identity will be used and numbers will be omitted from attributes.
 	HidePhoneNumber bool `protobuf:"varint,10,opt,name=hide_phone_number,json=hidePhoneNumber,proto3" json:"hide_phone_number,omitempty"`
-	// These headers are sent as-is and may help identify this call as coming from LiveKit for the other SIP endpoint.
+	// These headers are sent as-is and may help identify this call as coming from Wirtual for the other SIP endpoint.
 	Headers map[string]string `protobuf:"bytes,16,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Map SIP headers from 200 OK to sip.h.* participant attributes automatically.
 	//
@@ -2304,7 +2304,7 @@ type CreateSIPParticipantRequest struct {
 
 func (x *CreateSIPParticipantRequest) Reset() {
 	*x = CreateSIPParticipantRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[26]
+	mi := &file_wirtual_sip_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2316,7 +2316,7 @@ func (x *CreateSIPParticipantRequest) String() string {
 func (*CreateSIPParticipantRequest) ProtoMessage() {}
 
 func (x *CreateSIPParticipantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[26]
+	mi := &file_wirtual_sip_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2329,7 +2329,7 @@ func (x *CreateSIPParticipantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSIPParticipantRequest.ProtoReflect.Descriptor instead.
 func (*CreateSIPParticipantRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{26}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *CreateSIPParticipantRequest) GetSipTrunkId() string {
@@ -2471,7 +2471,7 @@ type SIPParticipantInfo struct {
 
 func (x *SIPParticipantInfo) Reset() {
 	*x = SIPParticipantInfo{}
-	mi := &file_livekit_sip_proto_msgTypes[27]
+	mi := &file_wirtual_sip_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2483,7 +2483,7 @@ func (x *SIPParticipantInfo) String() string {
 func (*SIPParticipantInfo) ProtoMessage() {}
 
 func (x *SIPParticipantInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[27]
+	mi := &file_wirtual_sip_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2496,7 +2496,7 @@ func (x *SIPParticipantInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPParticipantInfo.ProtoReflect.Descriptor instead.
 func (*SIPParticipantInfo) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{27}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *SIPParticipantInfo) GetParticipantId() string {
@@ -2542,7 +2542,7 @@ type TransferSIPParticipantRequest struct {
 
 func (x *TransferSIPParticipantRequest) Reset() {
 	*x = TransferSIPParticipantRequest{}
-	mi := &file_livekit_sip_proto_msgTypes[28]
+	mi := &file_wirtual_sip_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2554,7 +2554,7 @@ func (x *TransferSIPParticipantRequest) String() string {
 func (*TransferSIPParticipantRequest) ProtoMessage() {}
 
 func (x *TransferSIPParticipantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[28]
+	mi := &file_wirtual_sip_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2567,7 +2567,7 @@ func (x *TransferSIPParticipantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TransferSIPParticipantRequest.ProtoReflect.Descriptor instead.
 func (*TransferSIPParticipantRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{28}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *TransferSIPParticipantRequest) GetParticipantIdentity() string {
@@ -2627,7 +2627,7 @@ type SIPCallInfo struct {
 
 func (x *SIPCallInfo) Reset() {
 	*x = SIPCallInfo{}
-	mi := &file_livekit_sip_proto_msgTypes[29]
+	mi := &file_wirtual_sip_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2639,7 +2639,7 @@ func (x *SIPCallInfo) String() string {
 func (*SIPCallInfo) ProtoMessage() {}
 
 func (x *SIPCallInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[29]
+	mi := &file_wirtual_sip_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2652,7 +2652,7 @@ func (x *SIPCallInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPCallInfo.ProtoReflect.Descriptor instead.
 func (*SIPCallInfo) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{29}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *SIPCallInfo) GetCallId() string {
@@ -2766,7 +2766,7 @@ type SIPUri struct {
 
 func (x *SIPUri) Reset() {
 	*x = SIPUri{}
-	mi := &file_livekit_sip_proto_msgTypes[30]
+	mi := &file_wirtual_sip_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2778,7 +2778,7 @@ func (x *SIPUri) String() string {
 func (*SIPUri) ProtoMessage() {}
 
 func (x *SIPUri) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_sip_proto_msgTypes[30]
+	mi := &file_wirtual_sip_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2791,7 +2791,7 @@ func (x *SIPUri) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SIPUri.ProtoReflect.Descriptor instead.
 func (*SIPUri) Descriptor() ([]byte, []int) {
-	return file_livekit_sip_proto_rawDescGZIP(), []int{30}
+	return file_wirtual_sip_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *SIPUri) GetUser() string {
@@ -2829,9 +2829,9 @@ func (x *SIPUri) GetTransport() SIPTransport {
 	return SIPTransport_SIP_TRANSPORT_AUTO
 }
 
-var File_livekit_sip_proto protoreflect.FileDescriptor
+var File_wirtual_sip_proto protoreflect.FileDescriptor
 
-var file_livekit_sip_proto_rawDesc = []byte{
+var file_wirtual_sip_proto_rawDesc = []byte{
 	0x0a, 0x11, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x73, 0x69, 0x70, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x1a, 0x1e, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x64, 0x75,
@@ -3475,20 +3475,20 @@ var file_livekit_sip_proto_rawDesc = []byte{
 }
 
 var (
-	file_livekit_sip_proto_rawDescOnce sync.Once
-	file_livekit_sip_proto_rawDescData = file_livekit_sip_proto_rawDesc
+	file_wirtual_sip_proto_rawDescOnce sync.Once
+	file_wirtual_sip_proto_rawDescData = file_wirtual_sip_proto_rawDesc
 )
 
-func file_livekit_sip_proto_rawDescGZIP() []byte {
-	file_livekit_sip_proto_rawDescOnce.Do(func() {
-		file_livekit_sip_proto_rawDescData = protoimpl.X.CompressGZIP(file_livekit_sip_proto_rawDescData)
+func file_wirtual_sip_proto_rawDescGZIP() []byte {
+	file_wirtual_sip_proto_rawDescOnce.Do(func() {
+		file_wirtual_sip_proto_rawDescData = protoimpl.X.CompressGZIP(file_wirtual_sip_proto_rawDescData)
 	})
-	return file_livekit_sip_proto_rawDescData
+	return file_wirtual_sip_proto_rawDescData
 }
 
-var file_livekit_sip_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
-var file_livekit_sip_proto_msgTypes = make([]protoimpl.MessageInfo, 42)
-var file_livekit_sip_proto_goTypes = []any{
+var file_wirtual_sip_proto_enumTypes = make([]protoimpl.EnumInfo, 6)
+var file_wirtual_sip_proto_msgTypes = make([]protoimpl.MessageInfo, 42)
+var file_wirtual_sip_proto_goTypes = []any{
 	(SIPTransport)(0),                     // 0: wirtual.SIPTransport
 	(SIPHeaderOptions)(0),                 // 1: wirtual.SIPHeaderOptions
 	(SIPMediaEncryption)(0),               // 2: wirtual.SIPMediaEncryption
@@ -3542,7 +3542,7 @@ var file_livekit_sip_proto_goTypes = []any{
 	(DisconnectReason)(0),                 // 50: wirtual.DisconnectReason
 	(*emptypb.Empty)(nil),                 // 51: google.protobuf.Empty
 }
-var file_livekit_sip_proto_depIdxs = []int32{
+var file_wirtual_sip_proto_depIdxs = []int32{
 	5,  // 0: wirtual.SIPTrunkInfo.kind:type_name -> wirtual.SIPTrunkInfo.TrunkKind
 	0,  // 1: wirtual.SIPTrunkInfo.transport:type_name -> wirtual.SIPTransport
 	9,  // 2: wirtual.CreateSIPInboundTrunkRequest.trunk:type_name -> wirtual.SIPInboundTrunkInfo
@@ -3622,14 +3622,14 @@ var file_livekit_sip_proto_depIdxs = []int32{
 	0,  // [0:46] is the sub-list for field type_name
 }
 
-func init() { file_livekit_sip_proto_init() }
-func file_livekit_sip_proto_init() {
-	if File_livekit_sip_proto != nil {
+func init() { file_wirtual_sip_proto_init() }
+func file_wirtual_sip_proto_init() {
+	if File_wirtual_sip_proto != nil {
 		return
 	}
-	file_livekit_models_proto_init()
-	file_livekit_room_proto_init()
-	file_livekit_sip_proto_msgTypes[20].OneofWrappers = []any{
+	file_wirtual_models_proto_init()
+	file_wirtual_room_proto_init()
+	file_wirtual_sip_proto_msgTypes[20].OneofWrappers = []any{
 		(*SIPDispatchRule_DispatchRuleDirect)(nil),
 		(*SIPDispatchRule_DispatchRuleIndividual)(nil),
 		(*SIPDispatchRule_DispatchRuleCallee)(nil),
@@ -3638,19 +3638,19 @@ func file_livekit_sip_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_livekit_sip_proto_rawDesc,
+			RawDescriptor: file_wirtual_sip_proto_rawDesc,
 			NumEnums:      6,
 			NumMessages:   42,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_livekit_sip_proto_goTypes,
-		DependencyIndexes: file_livekit_sip_proto_depIdxs,
-		EnumInfos:         file_livekit_sip_proto_enumTypes,
-		MessageInfos:      file_livekit_sip_proto_msgTypes,
+		GoTypes:           file_wirtual_sip_proto_goTypes,
+		DependencyIndexes: file_wirtual_sip_proto_depIdxs,
+		EnumInfos:         file_wirtual_sip_proto_enumTypes,
+		MessageInfos:      file_wirtual_sip_proto_msgTypes,
 	}.Build()
-	File_livekit_sip_proto = out.File
-	file_livekit_sip_proto_rawDesc = nil
-	file_livekit_sip_proto_goTypes = nil
-	file_livekit_sip_proto_depIdxs = nil
+	File_wirtual_sip_proto = out.File
+	file_wirtual_sip_proto_rawDesc = nil
+	file_wirtual_sip_proto_goTypes = nil
+	file_wirtual_sip_proto_depIdxs = nil
 }

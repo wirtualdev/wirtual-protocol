@@ -5,9 +5,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/rpc"
-	"github.com/livekit/psrpc"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/rpc"
+	"github.com/wirtual/psrpc"
 )
 
 type FakeKeepalivePubSub struct {
@@ -19,11 +19,11 @@ type FakeKeepalivePubSub struct {
 	killMutex       sync.RWMutex
 	killArgsForCall []struct {
 	}
-	PublishPingStub        func(context.Context, livekit.NodeID, *rpc.KeepalivePing) error
+	PublishPingStub        func(context.Context, wirtual.NodeID, *rpc.KeepalivePing) error
 	publishPingMutex       sync.RWMutex
 	publishPingArgsForCall []struct {
 		arg1 context.Context
-		arg2 livekit.NodeID
+		arg2 wirtual.NodeID
 		arg3 *rpc.KeepalivePing
 	}
 	publishPingReturns struct {
@@ -36,11 +36,11 @@ type FakeKeepalivePubSub struct {
 	shutdownMutex       sync.RWMutex
 	shutdownArgsForCall []struct {
 	}
-	SubscribePingStub        func(context.Context, livekit.NodeID) (psrpc.Subscription[*rpc.KeepalivePing], error)
+	SubscribePingStub        func(context.Context, wirtual.NodeID) (psrpc.Subscription[*rpc.KeepalivePing], error)
 	subscribePingMutex       sync.RWMutex
 	subscribePingArgsForCall []struct {
 		arg1 context.Context
-		arg2 livekit.NodeID
+		arg2 wirtual.NodeID
 	}
 	subscribePingReturns struct {
 		result1 psrpc.Subscription[*rpc.KeepalivePing]
@@ -102,12 +102,12 @@ func (fake *FakeKeepalivePubSub) KillCalls(stub func()) {
 	fake.KillStub = stub
 }
 
-func (fake *FakeKeepalivePubSub) PublishPing(arg1 context.Context, arg2 livekit.NodeID, arg3 *rpc.KeepalivePing) error {
+func (fake *FakeKeepalivePubSub) PublishPing(arg1 context.Context, arg2 wirtual.NodeID, arg3 *rpc.KeepalivePing) error {
 	fake.publishPingMutex.Lock()
 	ret, specificReturn := fake.publishPingReturnsOnCall[len(fake.publishPingArgsForCall)]
 	fake.publishPingArgsForCall = append(fake.publishPingArgsForCall, struct {
 		arg1 context.Context
-		arg2 livekit.NodeID
+		arg2 wirtual.NodeID
 		arg3 *rpc.KeepalivePing
 	}{arg1, arg2, arg3})
 	stub := fake.PublishPingStub
@@ -129,13 +129,13 @@ func (fake *FakeKeepalivePubSub) PublishPingCallCount() int {
 	return len(fake.publishPingArgsForCall)
 }
 
-func (fake *FakeKeepalivePubSub) PublishPingCalls(stub func(context.Context, livekit.NodeID, *rpc.KeepalivePing) error) {
+func (fake *FakeKeepalivePubSub) PublishPingCalls(stub func(context.Context, wirtual.NodeID, *rpc.KeepalivePing) error) {
 	fake.publishPingMutex.Lock()
 	defer fake.publishPingMutex.Unlock()
 	fake.PublishPingStub = stub
 }
 
-func (fake *FakeKeepalivePubSub) PublishPingArgsForCall(i int) (context.Context, livekit.NodeID, *rpc.KeepalivePing) {
+func (fake *FakeKeepalivePubSub) PublishPingArgsForCall(i int) (context.Context, wirtual.NodeID, *rpc.KeepalivePing) {
 	fake.publishPingMutex.RLock()
 	defer fake.publishPingMutex.RUnlock()
 	argsForCall := fake.publishPingArgsForCall[i]
@@ -189,12 +189,12 @@ func (fake *FakeKeepalivePubSub) ShutdownCalls(stub func()) {
 	fake.ShutdownStub = stub
 }
 
-func (fake *FakeKeepalivePubSub) SubscribePing(arg1 context.Context, arg2 livekit.NodeID) (psrpc.Subscription[*rpc.KeepalivePing], error) {
+func (fake *FakeKeepalivePubSub) SubscribePing(arg1 context.Context, arg2 wirtual.NodeID) (psrpc.Subscription[*rpc.KeepalivePing], error) {
 	fake.subscribePingMutex.Lock()
 	ret, specificReturn := fake.subscribePingReturnsOnCall[len(fake.subscribePingArgsForCall)]
 	fake.subscribePingArgsForCall = append(fake.subscribePingArgsForCall, struct {
 		arg1 context.Context
-		arg2 livekit.NodeID
+		arg2 wirtual.NodeID
 	}{arg1, arg2})
 	stub := fake.SubscribePingStub
 	fakeReturns := fake.subscribePingReturns
@@ -215,13 +215,13 @@ func (fake *FakeKeepalivePubSub) SubscribePingCallCount() int {
 	return len(fake.subscribePingArgsForCall)
 }
 
-func (fake *FakeKeepalivePubSub) SubscribePingCalls(stub func(context.Context, livekit.NodeID) (psrpc.Subscription[*rpc.KeepalivePing], error)) {
+func (fake *FakeKeepalivePubSub) SubscribePingCalls(stub func(context.Context, wirtual.NodeID) (psrpc.Subscription[*rpc.KeepalivePing], error)) {
 	fake.subscribePingMutex.Lock()
 	defer fake.subscribePingMutex.Unlock()
 	fake.SubscribePingStub = stub
 }
 
-func (fake *FakeKeepalivePubSub) SubscribePingArgsForCall(i int) (context.Context, livekit.NodeID) {
+func (fake *FakeKeepalivePubSub) SubscribePingArgsForCall(i int) (context.Context, wirtual.NodeID) {
 	fake.subscribePingMutex.RLock()
 	defer fake.subscribePingMutex.RUnlock()
 	argsForCall := fake.subscribePingArgsForCall[i]

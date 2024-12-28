@@ -1,4 +1,4 @@
-// Copyright 2024 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import (
 	"go.uber.org/atomic"
 	"gopkg.in/yaml.v3"
 
-	"github.com/livekit/protocol/logger"
-	"github.com/livekit/protocol/utils/events"
+	"github.com/wirtualdev/wirtual-protocol/logger"
+	"github.com/wirtualdev/wirtual-protocol/utils/events"
 )
 
 type ConfigBuilder[T any] interface {

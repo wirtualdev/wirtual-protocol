@@ -12,8 +12,8 @@ import (
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/livekit/protocol/logger/zaputil"
-	"github.com/livekit/protocol/utils/must"
+	"github.com/wirtualdev/wirtual-protocol/logger/zaputil"
+	"github.com/wirtualdev/wirtual-protocol/utils/must"
 )
 
 func zapLoggerCore(l Logger) zapcore.Core {

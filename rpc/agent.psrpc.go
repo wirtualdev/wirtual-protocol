@@ -6,15 +6,15 @@ package rpc
 import (
 	"context"
 
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/client"
-	"github.com/livekit/psrpc/pkg/info"
-	"github.com/livekit/psrpc/pkg/rand"
-	"github.com/livekit/psrpc/pkg/server"
-	"github.com/livekit/psrpc/version"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/client"
+	"github.com/wirtual/psrpc/pkg/info"
+	"github.com/wirtual/psrpc/pkg/rand"
+	"github.com/wirtual/psrpc/pkg/server"
+	"github.com/wirtual/psrpc/version"
 )
 import google_protobuf "google.golang.org/protobuf/types/known/emptypb"
-import livekit2 "github.com/wirtual/protocol/wirtual"
+import wirtual2 "github.com/wirtual/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 
@@ -25,7 +25,7 @@ var _ = version.PsrpcVersion_0_6
 type AgentInternalClient interface {
 	CheckEnabled(ctx context.Context, req *CheckEnabledRequest, opts ...psrpc.RequestOption) (<-chan *psrpc.Response[*CheckEnabledResponse], error)
 
-	JobRequest(ctx context.Context, namespace string, jobType string, req *livekit2.Job, opts ...psrpc.RequestOption) (*JobRequestResponse, error)
+	JobRequest(ctx context.Context, namespace string, jobType string, req *wirtual2.Job, opts ...psrpc.RequestOption) (*JobRequestResponse, error)
 
 	JobTerminate(ctx context.Context, jobId string, req *JobTerminateRequest, opts ...psrpc.RequestOption) (*JobTerminateResponse, error)
 
@@ -42,8 +42,8 @@ type AgentInternalClient interface {
 type AgentInternalServerImpl interface {
 	CheckEnabled(context.Context, *CheckEnabledRequest) (*CheckEnabledResponse, error)
 
-	JobRequest(context.Context, *livekit2.Job) (*JobRequestResponse, error)
-	JobRequestAffinity(context.Context, *livekit2.Job) float32
+	JobRequest(context.Context, *wirtual2.Job) (*JobRequestResponse, error)
+	JobRequestAffinity(context.Context, *wirtual2.Job) float32
 
 	JobTerminate(context.Context, *JobTerminateRequest) (*JobTerminateResponse, error)
 }
@@ -100,7 +100,7 @@ func (c *agentInternalClient) CheckEnabled(ctx context.Context, req *CheckEnable
 	return client.RequestMulti[*CheckEnabledResponse](ctx, c.client, "CheckEnabled", nil, req, opts...)
 }
 
-func (c *agentInternalClient) JobRequest(ctx context.Context, namespace string, jobType string, req *livekit2.Job, opts ...psrpc.RequestOption) (*JobRequestResponse, error) {
+func (c *agentInternalClient) JobRequest(ctx context.Context, namespace string, jobType string, req *wirtual2.Job, opts ...psrpc.RequestOption) (*JobRequestResponse, error) {
 	return client.RequestSingle[*JobRequestResponse](ctx, c.client, "JobRequest", []string{namespace, jobType}, req, opts...)
 }
 

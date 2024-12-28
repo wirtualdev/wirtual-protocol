@@ -6,15 +6,15 @@ package rpc
 import (
 	"context"
 
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/client"
-	"github.com/livekit/psrpc/pkg/info"
-	"github.com/livekit/psrpc/pkg/rand"
-	"github.com/livekit/psrpc/pkg/server"
-	"github.com/livekit/psrpc/version"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/client"
+	"github.com/wirtual/psrpc/pkg/info"
+	"github.com/wirtual/psrpc/pkg/rand"
+	"github.com/wirtual/psrpc/pkg/server"
+	"github.com/wirtual/psrpc/version"
 )
-import livekit1 "github.com/wirtual/protocol/wirtual"
-import livekit6 "github.com/wirtual/protocol/wirtual"
+import wirtual1 "github.com/wirtual/protocol/wirtual"
+import wirtual6 "github.com/wirtual/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 
@@ -23,11 +23,11 @@ var _ = version.PsrpcVersion_0_6
 // =====================
 
 type RoomClient[RoomTopicType ~string] interface {
-	DeleteRoom(ctx context.Context, room RoomTopicType, req *livekit6.DeleteRoomRequest, opts ...psrpc.RequestOption) (*livekit6.DeleteRoomResponse, error)
+	DeleteRoom(ctx context.Context, room RoomTopicType, req *wirtual6.DeleteRoomRequest, opts ...psrpc.RequestOption) (*wirtual6.DeleteRoomResponse, error)
 
-	SendData(ctx context.Context, room RoomTopicType, req *livekit6.SendDataRequest, opts ...psrpc.RequestOption) (*livekit6.SendDataResponse, error)
+	SendData(ctx context.Context, room RoomTopicType, req *wirtual6.SendDataRequest, opts ...psrpc.RequestOption) (*wirtual6.SendDataResponse, error)
 
-	UpdateRoomMetadata(ctx context.Context, room RoomTopicType, req *livekit6.UpdateRoomMetadataRequest, opts ...psrpc.RequestOption) (*livekit1.Room, error)
+	UpdateRoomMetadata(ctx context.Context, room RoomTopicType, req *wirtual6.UpdateRoomMetadataRequest, opts ...psrpc.RequestOption) (*wirtual1.Room, error)
 
 	// Close immediately, without waiting for pending RPCs
 	Close()
@@ -38,11 +38,11 @@ type RoomClient[RoomTopicType ~string] interface {
 // =========================
 
 type RoomServerImpl interface {
-	DeleteRoom(context.Context, *livekit6.DeleteRoomRequest) (*livekit6.DeleteRoomResponse, error)
+	DeleteRoom(context.Context, *wirtual6.DeleteRoomRequest) (*wirtual6.DeleteRoomResponse, error)
 
-	SendData(context.Context, *livekit6.SendDataRequest) (*livekit6.SendDataResponse, error)
+	SendData(context.Context, *wirtual6.SendDataRequest) (*wirtual6.SendDataResponse, error)
 
-	UpdateRoomMetadata(context.Context, *livekit6.UpdateRoomMetadataRequest) (*livekit1.Room, error)
+	UpdateRoomMetadata(context.Context, *wirtual6.UpdateRoomMetadataRequest) (*wirtual1.Room, error)
 }
 
 // =====================
@@ -95,16 +95,16 @@ func NewRoomClient[RoomTopicType ~string](bus psrpc.MessageBus, opts ...psrpc.Cl
 	}, nil
 }
 
-func (c *roomClient[RoomTopicType]) DeleteRoom(ctx context.Context, room RoomTopicType, req *livekit6.DeleteRoomRequest, opts ...psrpc.RequestOption) (*livekit6.DeleteRoomResponse, error) {
-	return client.RequestSingle[*livekit6.DeleteRoomResponse](ctx, c.client, "DeleteRoom", []string{string(room)}, req, opts...)
+func (c *roomClient[RoomTopicType]) DeleteRoom(ctx context.Context, room RoomTopicType, req *wirtual6.DeleteRoomRequest, opts ...psrpc.RequestOption) (*wirtual6.DeleteRoomResponse, error) {
+	return client.RequestSingle[*wirtual6.DeleteRoomResponse](ctx, c.client, "DeleteRoom", []string{string(room)}, req, opts...)
 }
 
-func (c *roomClient[RoomTopicType]) SendData(ctx context.Context, room RoomTopicType, req *livekit6.SendDataRequest, opts ...psrpc.RequestOption) (*livekit6.SendDataResponse, error) {
-	return client.RequestSingle[*livekit6.SendDataResponse](ctx, c.client, "SendData", []string{string(room)}, req, opts...)
+func (c *roomClient[RoomTopicType]) SendData(ctx context.Context, room RoomTopicType, req *wirtual6.SendDataRequest, opts ...psrpc.RequestOption) (*wirtual6.SendDataResponse, error) {
+	return client.RequestSingle[*wirtual6.SendDataResponse](ctx, c.client, "SendData", []string{string(room)}, req, opts...)
 }
 
-func (c *roomClient[RoomTopicType]) UpdateRoomMetadata(ctx context.Context, room RoomTopicType, req *livekit6.UpdateRoomMetadataRequest, opts ...psrpc.RequestOption) (*livekit1.Room, error) {
-	return client.RequestSingle[*livekit1.Room](ctx, c.client, "UpdateRoomMetadata", []string{string(room)}, req, opts...)
+func (c *roomClient[RoomTopicType]) UpdateRoomMetadata(ctx context.Context, room RoomTopicType, req *wirtual6.UpdateRoomMetadataRequest, opts ...psrpc.RequestOption) (*wirtual1.Room, error) {
+	return client.RequestSingle[*wirtual1.Room](ctx, c.client, "UpdateRoomMetadata", []string{string(room)}, req, opts...)
 }
 
 func (s *roomClient[RoomTopicType]) Close() {

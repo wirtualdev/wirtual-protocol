@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,11 +17,11 @@ package utils
 import (
 	"time"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
-func AggregateRTPStats(statsList []*livekit.RTPStats, gapHistogramSize int) *livekit.RTPStats {
+func AggregateRTPStats(statsList []*wirtual.RTPStats, gapHistogramSize int) *wirtual.RTPStats {
 	if len(statsList) == 0 {
 		return nil
 	}
@@ -144,7 +144,7 @@ func AggregateRTPStats(statsList []*livekit.RTPStats, gapHistogramSize int) *liv
 
 	frameRate := float64(frames) / elapsed
 
-	return &livekit.RTPStats{
+	return &wirtual.RTPStats{
 		StartTime:            timestamppb.New(startTime),
 		EndTime:              timestamppb.New(endTime),
 		Duration:             elapsed,

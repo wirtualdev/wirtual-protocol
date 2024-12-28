@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import "wirtual_models.proto";
 import "wirtual_room.proto";
 
 service RoomManager {
-  rpc CreateRoom(livekit.CreateRoomRequest) returns (livekit.Room) {
+  rpc CreateRoom(wirtual.CreateRoomRequest) returns (wirtual.Room) {
     option (psrpc.options) = {
       topics: true
       topic_params: {

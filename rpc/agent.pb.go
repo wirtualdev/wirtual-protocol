@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -191,7 +191,7 @@ func (x *CheckEnabledResponse) GetAgentNames() []string {
 
 type JobRequestResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	State         *livekit.JobState      `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	State         *wirtual.JobState      `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -226,7 +226,7 @@ func (*JobRequestResponse) Descriptor() ([]byte, []int) {
 	return file_rpc_agent_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *JobRequestResponse) GetState() *livekit.JobState {
+func (x *JobRequestResponse) GetState() *wirtual.JobState {
 	if x != nil {
 		return x.State
 	}
@@ -287,7 +287,7 @@ func (x *JobTerminateRequest) GetReason() JobTerminateReason {
 
 type JobTerminateResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	State         *livekit.JobState      `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
+	State         *wirtual.JobState      `protobuf:"bytes,1,opt,name=state,proto3" json:"state,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -322,7 +322,7 @@ func (*JobTerminateResponse) Descriptor() ([]byte, []int) {
 	return file_rpc_agent_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *JobTerminateResponse) GetState() *livekit.JobState {
+func (x *JobTerminateResponse) GetState() *wirtual.JobState {
 	if x != nil {
 		return x.State
 	}
@@ -417,8 +417,8 @@ var file_rpc_agent_proto_goTypes = []any{
 	(*JobRequestResponse)(nil),   // 3: rpc.JobRequestResponse
 	(*JobTerminateRequest)(nil),  // 4: rpc.JobTerminateRequest
 	(*JobTerminateResponse)(nil), // 5: rpc.JobTerminateResponse
-	(*livekit.JobState)(nil),     // 6: wirtual.JobState
-	(*livekit.Job)(nil),          // 7: wirtual.Job
+	(*wirtual.JobState)(nil),     // 6: wirtual.JobState
+	(*wirtual.Job)(nil),          // 7: wirtual.Job
 	(*emptypb.Empty)(nil),        // 8: google.protobuf.Empty
 }
 var file_rpc_agent_proto_depIdxs = []int32{

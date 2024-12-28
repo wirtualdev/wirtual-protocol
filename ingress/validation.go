@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,14 +15,14 @@
 package ingress
 
 import (
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 // This validates that ingress options have no consistency issues and provide enough parameters
 // to be usable by the ingress service. Options that pass this test may still need some fields to be poulated with default values
 // before being used in a media pipeline.
 
-func Validate(info *livekit.IngressInfo) error {
+func Validate(info *wirtual.IngressInfo) error {
 	if info == nil {
 		return ErrInvalidIngress("missing IngressInfo")
 	}
@@ -36,23 +36,23 @@ func Validate(info *livekit.IngressInfo) error {
 }
 
 // Sparse info with not all required fields populated are acceptable for serialization, provided values are consistent
-func ValidateForSerialization(info *livekit.IngressInfo) error {
+func ValidateForSerialization(info *wirtual.IngressInfo) error {
 	if info == nil {
 		return ErrInvalidIngress("missing IngressInfo")
 	}
 
-	if info.InputType != livekit.IngressInput_RTMP_INPUT && info.InputType != livekit.IngressInput_WHIP_INPUT && info.InputType != livekit.IngressInput_URL_INPUT {
+	if info.InputType != wirtual.IngressInput_RTMP_INPUT && info.InputType != wirtual.IngressInput_WHIP_INPUT && info.InputType != wirtual.IngressInput_URL_INPUT {
 		return ErrInvalidIngress("unsupported input type")
 	}
 
 	// Validate source
 	switch info.InputType {
-	case livekit.IngressInput_RTMP_INPUT,
-		livekit.IngressInput_WHIP_INPUT:
+	case wirtual.IngressInput_RTMP_INPUT,
+		wirtual.IngressInput_WHIP_INPUT:
 		if info.StreamKey == "" {
 			return ErrInvalidIngress("no stream key")
 		}
-	case livekit.IngressInput_URL_INPUT:
+	case wirtual.IngressInput_URL_INPUT:
 		if info.Url == "" {
 			return ErrInvalidIngress("no source URL")
 		}
@@ -86,12 +86,12 @@ func ValidateForSerialization(info *livekit.IngressInfo) error {
 
 }
 
-func ValidateBypassTranscoding(info *livekit.IngressInfo) error {
+func ValidateBypassTranscoding(info *wirtual.IngressInfo) error {
 	if !info.BypassTranscoding {
 		return nil
 	}
 
-	if info.InputType != livekit.IngressInput_WHIP_INPUT {
+	if info.InputType != wirtual.IngressInput_WHIP_INPUT {
 		return NewInvalidTranscodingBypassError("bypassing transcoding impossible with selected input type")
 	}
 
@@ -108,9 +108,9 @@ func ValidateBypassTranscoding(info *livekit.IngressInfo) error {
 	return nil
 }
 
-func ValidateEnableTranscoding(info *livekit.IngressInfo) error {
+func ValidateEnableTranscoding(info *wirtual.IngressInfo) error {
 	var enableTranscoding bool
-	if info.InputType == livekit.IngressInput_WHIP_INPUT {
+	if info.InputType == wirtual.IngressInput_WHIP_INPUT {
 		enableTranscoding = false
 		if info.EnableTranscoding != nil {
 			enableTranscoding = *info.EnableTranscoding
@@ -137,15 +137,15 @@ func ValidateEnableTranscoding(info *livekit.IngressInfo) error {
 	return nil
 }
 
-func ValidateVideoOptionsConsistency(options *livekit.IngressVideoOptions) error {
+func ValidateVideoOptionsConsistency(options *wirtual.IngressVideoOptions) error {
 	if options == nil {
 		return nil
 	}
 
 	switch options.Source {
-	case livekit.TrackSource_UNKNOWN,
-		livekit.TrackSource_CAMERA,
-		livekit.TrackSource_SCREEN_SHARE:
+	case wirtual.TrackSource_UNKNOWN,
+		wirtual.TrackSource_CAMERA,
+		wirtual.TrackSource_SCREEN_SHARE:
 		// continue
 	default:
 		return NewInvalidVideoParamsError("invalid track source")
@@ -154,13 +154,13 @@ func ValidateVideoOptionsConsistency(options *livekit.IngressVideoOptions) error
 	switch o := options.EncodingOptions.(type) {
 	case nil:
 		// Default, continue
-	case *livekit.IngressVideoOptions_Preset:
-		_, ok := livekit.IngressVideoEncodingPreset_name[int32(o.Preset)]
+	case *wirtual.IngressVideoOptions_Preset:
+		_, ok := wirtual.IngressVideoEncodingPreset_name[int32(o.Preset)]
 		if !ok {
 			return NewInvalidVideoParamsError("invalid preset")
 		}
 
-	case *livekit.IngressVideoOptions_Options:
+	case *wirtual.IngressVideoOptions_Options:
 		err := ValidateVideoEncodingOptionsConsistency(o.Options)
 		if err != nil {
 			return err
@@ -170,7 +170,7 @@ func ValidateVideoOptionsConsistency(options *livekit.IngressVideoOptions) error
 	return nil
 }
 
-func ValidateVideoEncodingOptionsConsistency(options *livekit.IngressVideoEncodingOptions) error {
+func ValidateVideoEncodingOptionsConsistency(options *wirtual.IngressVideoEncodingOptions) error {
 	if options == nil {
 		return NewInvalidVideoParamsError("empty options")
 	}
@@ -180,15 +180,15 @@ func ValidateVideoEncodingOptionsConsistency(options *livekit.IngressVideoEncodi
 	}
 
 	switch options.VideoCodec {
-	case livekit.VideoCodec_DEFAULT_VC,
-		livekit.VideoCodec_H264_BASELINE,
-		livekit.VideoCodec_VP8:
+	case wirtual.VideoCodec_DEFAULT_VC,
+		wirtual.VideoCodec_H264_BASELINE,
+		wirtual.VideoCodec_VP8:
 		// continue
 	default:
 		return NewInvalidVideoParamsError("video codec unsupported")
 	}
 
-	layersByQuality := make(map[livekit.VideoQuality]*livekit.VideoLayer)
+	layersByQuality := make(map[wirtual.VideoQuality]*wirtual.VideoLayer)
 
 	for _, layer := range options.Layers {
 		if layer.Height == 0 || layer.Width == 0 {
@@ -210,7 +210,7 @@ func ValidateVideoEncodingOptionsConsistency(options *livekit.IngressVideoEncodi
 	}
 
 	var oldW, oldH uint32
-	for q := livekit.VideoQuality_LOW; q <= livekit.VideoQuality_HIGH; q++ {
+	for q := wirtual.VideoQuality_LOW; q <= wirtual.VideoQuality_HIGH; q++ {
 		layer, ok := layersByQuality[q]
 		if !ok {
 			continue
@@ -229,15 +229,15 @@ func ValidateVideoEncodingOptionsConsistency(options *livekit.IngressVideoEncodi
 	return nil
 }
 
-func ValidateAudioOptionsConsistency(options *livekit.IngressAudioOptions) error {
+func ValidateAudioOptionsConsistency(options *wirtual.IngressAudioOptions) error {
 	if options == nil {
 		return nil
 	}
 
 	switch options.Source {
-	case livekit.TrackSource_UNKNOWN,
-		livekit.TrackSource_MICROPHONE,
-		livekit.TrackSource_SCREEN_SHARE_AUDIO:
+	case wirtual.TrackSource_UNKNOWN,
+		wirtual.TrackSource_MICROPHONE,
+		wirtual.TrackSource_SCREEN_SHARE_AUDIO:
 		// continue
 	default:
 		return NewInvalidAudioParamsError("invalid track source")
@@ -246,13 +246,13 @@ func ValidateAudioOptionsConsistency(options *livekit.IngressAudioOptions) error
 	switch o := options.EncodingOptions.(type) {
 	case nil:
 		// Default, continue
-	case *livekit.IngressAudioOptions_Preset:
-		_, ok := livekit.IngressAudioEncodingPreset_name[int32(o.Preset)]
+	case *wirtual.IngressAudioOptions_Preset:
+		_, ok := wirtual.IngressAudioEncodingPreset_name[int32(o.Preset)]
 		if !ok {
 			return NewInvalidAudioParamsError("invalid preset")
 		}
 
-	case *livekit.IngressAudioOptions_Options:
+	case *wirtual.IngressAudioOptions_Options:
 		err := ValidateAudioEncodingOptionsConsistency(o.Options)
 		if err != nil {
 			return err
@@ -262,14 +262,14 @@ func ValidateAudioOptionsConsistency(options *livekit.IngressAudioOptions) error
 	return nil
 }
 
-func ValidateAudioEncodingOptionsConsistency(options *livekit.IngressAudioEncodingOptions) error {
+func ValidateAudioEncodingOptionsConsistency(options *wirtual.IngressAudioEncodingOptions) error {
 	if options == nil {
 		return NewInvalidAudioParamsError("empty options")
 	}
 
 	switch options.AudioCodec {
-	case livekit.AudioCodec_DEFAULT_AC,
-		livekit.AudioCodec_OPUS:
+	case wirtual.AudioCodec_DEFAULT_AC,
+		wirtual.AudioCodec_OPUS:
 		// continue
 	default:
 		return NewInvalidAudioParamsError("audio codec unsupported")

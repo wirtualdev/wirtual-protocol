@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,7 +18,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 	"google.golang.org/protobuf/types/known/timestamppb"
 )
 
@@ -33,7 +33,7 @@ var (
 )
 
 type MetricsBatchBuilder struct {
-	*livekit.MetricsBatch
+	*wirtual.MetricsBatch
 
 	stringData       map[string]uint32
 	restrictedLabels MetricRestrictedLabels
@@ -41,12 +41,12 @@ type MetricsBatchBuilder struct {
 
 func NewMetricsBatchBuilder() *MetricsBatchBuilder {
 	return &MetricsBatchBuilder{
-		MetricsBatch: &livekit.MetricsBatch{},
+		MetricsBatch: &wirtual.MetricsBatch{},
 		stringData:   make(map[string]uint32),
 	}
 }
 
-func (m *MetricsBatchBuilder) ToProto() *livekit.MetricsBatch {
+func (m *MetricsBatchBuilder) ToProto() *wirtual.MetricsBatch {
 	return m.MetricsBatch
 }
 
@@ -56,13 +56,13 @@ func (m *MetricsBatchBuilder) SetTime(at time.Time, normalizedAt time.Time) {
 }
 
 type MetricLabelRange struct {
-	StartInclusive livekit.MetricLabel
-	EndInclusive   livekit.MetricLabel
+	StartInclusive wirtual.MetricLabel
+	EndInclusive   wirtual.MetricLabel
 }
 
 type MetricRestrictedLabels struct {
 	LabelRanges         []MetricLabelRange
-	ParticipantIdentity livekit.ParticipantIdentity
+	ParticipantIdentity wirtual.ParticipantIdentity
 }
 
 func (m *MetricsBatchBuilder) SetRestrictedLabels(mrl MetricRestrictedLabels) {
@@ -76,21 +76,21 @@ type MetricSample struct {
 }
 
 type TimeSeriesMetric struct {
-	MetricLabel         livekit.MetricLabel
+	MetricLabel         wirtual.MetricLabel
 	CustomMetricLabel   string
-	ParticipantIdentity livekit.ParticipantIdentity
-	TrackID             livekit.TrackID
+	ParticipantIdentity wirtual.ParticipantIdentity
+	TrackID             wirtual.TrackID
 	Samples             []MetricSample
 	Rid                 string
 }
 
 func (m *MetricsBatchBuilder) AddTimeSeriesMetric(tsm TimeSeriesMetric) (int, error) {
-	ptsm := &livekit.TimeSeriesMetric{}
+	ptsm := &wirtual.TimeSeriesMetric{}
 
 	if tsm.CustomMetricLabel != "" {
 		ptsm.Label = m.getStrDataIndex(tsm.CustomMetricLabel)
 	} else {
-		if tsm.MetricLabel >= livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE {
+		if tsm.MetricLabel >= wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE {
 			return MetricsBatchBuilderInvalidTimeSeriesMetricId, ErrInvalidMetricLabel
 		}
 
@@ -110,7 +110,7 @@ func (m *MetricsBatchBuilder) AddTimeSeriesMetric(tsm TimeSeriesMetric) (int, er
 	}
 
 	for _, sample := range tsm.Samples {
-		ptsm.Samples = append(ptsm.Samples, &livekit.MetricSample{
+		ptsm.Samples = append(ptsm.Samples, &wirtual.MetricSample{
 			TimestampMs:         sample.At.UnixMilli(),
 			NormalizedTimestamp: timestamppb.New(sample.NormalizedAt),
 			Value:               sample.Value,
@@ -132,7 +132,7 @@ func (m *MetricsBatchBuilder) AddMetricSamplesToTimeSeriesMetric(timeSeriesMetri
 
 	ptsm := m.MetricsBatch.TimeSeries[timeSeriesMetricIdx]
 	for _, sample := range samples {
-		ptsm.Samples = append(ptsm.Samples, &livekit.MetricSample{
+		ptsm.Samples = append(ptsm.Samples, &wirtual.MetricSample{
 			TimestampMs:         sample.At.UnixMilli(),
 			NormalizedTimestamp: timestamppb.New(sample.NormalizedAt),
 			Value:               sample.Value,
@@ -143,10 +143,10 @@ func (m *MetricsBatchBuilder) AddMetricSamplesToTimeSeriesMetric(timeSeriesMetri
 }
 
 type EventMetric struct {
-	MetricLabel         livekit.MetricLabel
+	MetricLabel         wirtual.MetricLabel
 	CustomMetricLabel   string
-	ParticipantIdentity livekit.ParticipantIdentity
-	TrackID             livekit.TrackID
+	ParticipantIdentity wirtual.ParticipantIdentity
+	TrackID             wirtual.TrackID
 	StartedAt           time.Time
 	EndedAt             time.Time
 	NormalizedStartedAt time.Time
@@ -156,12 +156,12 @@ type EventMetric struct {
 }
 
 func (m *MetricsBatchBuilder) AddEventMetric(em EventMetric) error {
-	pem := &livekit.EventMetric{}
+	pem := &wirtual.EventMetric{}
 
 	if em.CustomMetricLabel != "" {
 		pem.Label = m.getStrDataIndex(em.CustomMetricLabel)
 	} else {
-		if em.MetricLabel >= livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE {
+		if em.MetricLabel >= wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE {
 			return ErrInvalidMetricLabel
 		}
 
@@ -201,16 +201,16 @@ func (m *MetricsBatchBuilder) AddEventMetric(em EventMetric) error {
 	return nil
 }
 
-func (m *MetricsBatchBuilder) Merge(other *livekit.MetricsBatch) {
+func (m *MetricsBatchBuilder) Merge(other *wirtual.MetricsBatch) {
 	// Timestamp and NormalizedTimestamp are not merged
 
 	for _, optsm := range other.TimeSeries {
-		ptsm := &livekit.TimeSeriesMetric{
+		ptsm := &wirtual.TimeSeriesMetric{
 			Samples: optsm.Samples,
 		}
-		if optsm.Label < uint32(int(livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE)) {
+		if optsm.Label < uint32(int(wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE)) {
 			participantIdentity, ok := getStrDataForIndex(other, optsm.ParticipantIdentity)
-			if ok && m.isLabelFiltered(livekit.MetricLabel(optsm.Label), livekit.ParticipantIdentity(participantIdentity)) {
+			if ok && m.isLabelFiltered(wirtual.MetricLabel(optsm.Label), wirtual.ParticipantIdentity(participantIdentity)) {
 				continue
 			}
 
@@ -237,10 +237,10 @@ func (m *MetricsBatchBuilder) Merge(other *livekit.MetricsBatch) {
 	}
 
 	for _, opem := range other.Events {
-		pem := &livekit.EventMetric{}
-		if opem.Label < uint32(int(livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE)) {
+		pem := &wirtual.EventMetric{}
+		if opem.Label < uint32(int(wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE)) {
 			participantIdentity, ok := getStrDataForIndex(other, opem.ParticipantIdentity)
-			if ok && m.isLabelFiltered(livekit.MetricLabel(opem.Label), livekit.ParticipantIdentity(participantIdentity)) {
+			if ok && m.isLabelFiltered(wirtual.MetricLabel(opem.Label), wirtual.ParticipantIdentity(participantIdentity)) {
 				continue
 			}
 
@@ -278,7 +278,7 @@ func (m *MetricsBatchBuilder) IsEmpty() bool {
 	return len(m.MetricsBatch.TimeSeries) == 0 && len(m.MetricsBatch.Events) == 0
 }
 
-func (m *MetricsBatchBuilder) isLabelFiltered(label livekit.MetricLabel, participantIdentity livekit.ParticipantIdentity) bool {
+func (m *MetricsBatchBuilder) isLabelFiltered(label wirtual.MetricLabel, participantIdentity wirtual.ParticipantIdentity) bool {
 	if participantIdentity == m.restrictedLabels.ParticipantIdentity {
 		// all labels allowed for restricted participant
 		return false
@@ -297,18 +297,18 @@ func (m *MetricsBatchBuilder) getStrDataIndex(s string) uint32 {
 	idx, ok := m.stringData[s]
 	if !ok {
 		m.MetricsBatch.StrData = append(m.MetricsBatch.StrData, s)
-		idx = uint32(int(livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE) + len(m.MetricsBatch.StrData) - 1)
+		idx = uint32(int(wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE) + len(m.MetricsBatch.StrData) - 1)
 		m.stringData[s] = idx
 	}
 	return idx
 }
 
 func (m *MetricsBatchBuilder) translateStrDataIndex(strData []string, index uint32) (uint32, bool) {
-	if index < uint32(livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE) {
+	if index < uint32(wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE) {
 		return 0, false
 	}
 
-	baseIdx := index - uint32(livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE)
+	baseIdx := index - uint32(wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE)
 	if len(strData) <= int(baseIdx) {
 		return 0, false
 	}
@@ -319,12 +319,12 @@ func (m *MetricsBatchBuilder) translateStrDataIndex(strData []string, index uint
 
 // -----------------------------------------------------
 
-func getStrDataForIndex(mb *livekit.MetricsBatch, index uint32) (string, bool) {
-	if index < uint32(livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE) {
+func getStrDataForIndex(mb *wirtual.MetricsBatch, index uint32) (string, bool) {
+	if index < uint32(wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE) {
 		return "", false
 	}
 
-	baseIdx := index - uint32(livekit.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE)
+	baseIdx := index - uint32(wirtual.MetricLabel_METRIC_LABEL_PREDEFINED_MAX_VALUE)
 	if len(mb.StrData) <= int(baseIdx) {
 		return "", false
 	}

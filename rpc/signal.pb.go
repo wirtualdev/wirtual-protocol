@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -38,8 +38,8 @@ const (
 
 type RelaySignalRequest struct {
 	state         protoimpl.MessageState   `protogen:"open.v1"`
-	StartSession  *livekit.StartSession    `protobuf:"bytes,1,opt,name=start_session,json=startSession,proto3" json:"start_session,omitempty"`
-	Requests      []*livekit.SignalRequest `protobuf:"bytes,3,rep,name=requests,proto3" json:"requests,omitempty"`
+	StartSession  *wirtual.StartSession    `protobuf:"bytes,1,opt,name=start_session,json=startSession,proto3" json:"start_session,omitempty"`
+	Requests      []*wirtual.SignalRequest `protobuf:"bytes,3,rep,name=requests,proto3" json:"requests,omitempty"`
 	Seq           uint64                   `protobuf:"varint,4,opt,name=seq,proto3" json:"seq,omitempty"`
 	Close         bool                     `protobuf:"varint,5,opt,name=close,proto3" json:"close,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -76,14 +76,14 @@ func (*RelaySignalRequest) Descriptor() ([]byte, []int) {
 	return file_rpc_signal_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *RelaySignalRequest) GetStartSession() *livekit.StartSession {
+func (x *RelaySignalRequest) GetStartSession() *wirtual.StartSession {
 	if x != nil {
 		return x.StartSession
 	}
 	return nil
 }
 
-func (x *RelaySignalRequest) GetRequests() []*livekit.SignalRequest {
+func (x *RelaySignalRequest) GetRequests() []*wirtual.SignalRequest {
 	if x != nil {
 		return x.Requests
 	}
@@ -106,7 +106,7 @@ func (x *RelaySignalRequest) GetClose() bool {
 
 type RelaySignalResponse struct {
 	state         protoimpl.MessageState    `protogen:"open.v1"`
-	Responses     []*livekit.SignalResponse `protobuf:"bytes,2,rep,name=responses,proto3" json:"responses,omitempty"`
+	Responses     []*wirtual.SignalResponse `protobuf:"bytes,2,rep,name=responses,proto3" json:"responses,omitempty"`
 	Seq           uint64                    `protobuf:"varint,3,opt,name=seq,proto3" json:"seq,omitempty"`
 	Close         bool                      `protobuf:"varint,4,opt,name=close,proto3" json:"close,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -143,7 +143,7 @@ func (*RelaySignalResponse) Descriptor() ([]byte, []int) {
 	return file_rpc_signal_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *RelaySignalResponse) GetResponses() []*livekit.SignalResponse {
+func (x *RelaySignalResponse) GetResponses() []*wirtual.SignalResponse {
 	if x != nil {
 		return x.Responses
 	}
@@ -218,9 +218,9 @@ var file_rpc_signal_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_rpc_signal_proto_goTypes = []any{
 	(*RelaySignalRequest)(nil),     // 0: rpc.RelaySignalRequest
 	(*RelaySignalResponse)(nil),    // 1: rpc.RelaySignalResponse
-	(*livekit.StartSession)(nil),   // 2: wirtual.StartSession
-	(*livekit.SignalRequest)(nil),  // 3: wirtual.SignalRequest
-	(*livekit.SignalResponse)(nil), // 4: wirtual.SignalResponse
+	(*wirtual.StartSession)(nil),   // 2: wirtual.StartSession
+	(*wirtual.SignalRequest)(nil),  // 3: wirtual.SignalRequest
+	(*wirtual.SignalResponse)(nil), // 4: wirtual.SignalResponse
 }
 var file_rpc_signal_proto_depIdxs = []int32{
 	2, // 0: rpc.RelaySignalRequest.start_session:type_name -> wirtual.StartSession

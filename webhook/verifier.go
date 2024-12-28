@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import (
 
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"github.com/livekit/protocol/auth"
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/auth"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 // Receive reads and verifies incoming webhook is signed with key/secret pair
@@ -67,7 +67,7 @@ func Receive(r *http.Request, provider auth.KeyProvider) ([]byte, error) {
 }
 
 // ReceiveWebhookEvent reads and verifies incoming webhook, and returns a parsed WebhookEvent
-func ReceiveWebhookEvent(r *http.Request, provider auth.KeyProvider) (*livekit.WebhookEvent, error) {
+func ReceiveWebhookEvent(r *http.Request, provider auth.KeyProvider) (*wirtual.WebhookEvent, error) {
 	data, err := Receive(r, provider)
 	if err != nil {
 		return nil, err
@@ -76,7 +76,7 @@ func ReceiveWebhookEvent(r *http.Request, provider auth.KeyProvider) (*livekit.W
 		DiscardUnknown: true,
 		AllowPartial:   true,
 	}
-	event := livekit.WebhookEvent{}
+	event := wirtual.WebhookEvent{}
 	if err = unmarshalOpts.Unmarshal(data, &event); err != nil {
 		return nil, err
 	}

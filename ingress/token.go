@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package ingress
 import (
 	"time"
 
-	"github.com/livekit/protocol/auth"
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/auth"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 func BuildIngressToken(apiKey, secret, roomName, participantIdentity, participantName, participantMetadata string) (string, error) {
@@ -35,7 +35,7 @@ func BuildIngressToken(apiKey, secret, roomName, participantIdentity, participan
 		AddGrant(grant).
 		SetIdentity(participantIdentity).
 		SetName(participantName).
-		SetKind(livekit.ParticipantInfo_INGRESS).
+		SetKind(wirtual.ParticipantInfo_INGRESS).
 		SetValidFor(24 * time.Hour).
 		SetMetadata(participantMetadata)
 

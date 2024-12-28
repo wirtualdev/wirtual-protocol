@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
 package utils
 
 import (
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/utils/guid"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/utils/guid"
 )
 
 const (
@@ -56,10 +56,10 @@ func LocalNodeID() (string, error) {
 	return guid.LocalNodeID()
 }
 
-func MarshalGuid[T livekit.Guid](id T) livekit.GuidBlock {
+func MarshalGuid[T wirtual.Guid](id T) wirtual.GuidBlock {
 	return guid.Marshal(id)
 }
 
-func UnmarshalGuid[T livekit.Guid](b livekit.GuidBlock) T {
+func UnmarshalGuid[T wirtual.Guid](b wirtual.GuidBlock) T {
 	return guid.Unmarshal[T](b)
 }

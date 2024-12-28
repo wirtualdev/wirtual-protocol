@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import "options.proto";
 import "wirtual_agent_dispatch.proto";
 
 service AgentDispatchInternal {
-  rpc CreateDispatch(livekit.AgentDispatch) returns (livekit.AgentDispatch) {
+  rpc CreateDispatch(wirtual.AgentDispatch) returns (wirtual.AgentDispatch) {
     option (psrpc.options) = {
       topics: true
       topic_params: {
@@ -33,7 +33,7 @@ service AgentDispatchInternal {
     };
   };
 
-  rpc DeleteDispatch(livekit.DeleteAgentDispatchRequest) returns (livekit.AgentDispatch) {
+  rpc DeleteDispatch(wirtual.DeleteAgentDispatchRequest) returns (wirtual.AgentDispatch) {
     option (psrpc.options) = {
       topics: true
       topic_params: {
@@ -44,7 +44,7 @@ service AgentDispatchInternal {
     };
   };
 
-  rpc ListDispatch(livekit.ListAgentDispatchRequest) returns (livekit.ListAgentDispatchResponse) {
+  rpc ListDispatch(wirtual.ListAgentDispatchRequest) returns (wirtual.ListAgentDispatchResponse) {
     option (psrpc.options) = {
       topics: true
       topic_params: {

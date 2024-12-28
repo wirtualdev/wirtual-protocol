@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -60,7 +60,7 @@ type WebhookEvent struct {
 
 func (x *WebhookEvent) Reset() {
 	*x = WebhookEvent{}
-	mi := &file_livekit_webhook_proto_msgTypes[0]
+	mi := &file_wirtual_webhook_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -72,7 +72,7 @@ func (x *WebhookEvent) String() string {
 func (*WebhookEvent) ProtoMessage() {}
 
 func (x *WebhookEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_webhook_proto_msgTypes[0]
+	mi := &file_wirtual_webhook_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -85,7 +85,7 @@ func (x *WebhookEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WebhookEvent.ProtoReflect.Descriptor instead.
 func (*WebhookEvent) Descriptor() ([]byte, []int) {
-	return file_livekit_webhook_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_webhook_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *WebhookEvent) GetEvent() string {
@@ -151,9 +151,9 @@ func (x *WebhookEvent) GetNumDropped() int32 {
 	return 0
 }
 
-var File_livekit_webhook_proto protoreflect.FileDescriptor
+var File_wirtual_webhook_proto protoreflect.FileDescriptor
 
-var file_livekit_webhook_proto_rawDesc = []byte{
+var file_wirtual_webhook_proto_rawDesc = []byte{
 	0x0a, 0x15, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x77, 0x65, 0x62, 0x68, 0x6f, 0x6f,
 	0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74,
 	0x1a, 0x14, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73,
@@ -192,19 +192,19 @@ var file_livekit_webhook_proto_rawDesc = []byte{
 }
 
 var (
-	file_livekit_webhook_proto_rawDescOnce sync.Once
-	file_livekit_webhook_proto_rawDescData = file_livekit_webhook_proto_rawDesc
+	file_wirtual_webhook_proto_rawDescOnce sync.Once
+	file_wirtual_webhook_proto_rawDescData = file_wirtual_webhook_proto_rawDesc
 )
 
-func file_livekit_webhook_proto_rawDescGZIP() []byte {
-	file_livekit_webhook_proto_rawDescOnce.Do(func() {
-		file_livekit_webhook_proto_rawDescData = protoimpl.X.CompressGZIP(file_livekit_webhook_proto_rawDescData)
+func file_wirtual_webhook_proto_rawDescGZIP() []byte {
+	file_wirtual_webhook_proto_rawDescOnce.Do(func() {
+		file_wirtual_webhook_proto_rawDescData = protoimpl.X.CompressGZIP(file_wirtual_webhook_proto_rawDescData)
 	})
-	return file_livekit_webhook_proto_rawDescData
+	return file_wirtual_webhook_proto_rawDescData
 }
 
-var file_livekit_webhook_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_livekit_webhook_proto_goTypes = []any{
+var file_wirtual_webhook_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_wirtual_webhook_proto_goTypes = []any{
 	(*WebhookEvent)(nil),    // 0: wirtual.WebhookEvent
 	(*Room)(nil),            // 1: wirtual.Room
 	(*ParticipantInfo)(nil), // 2: wirtual.ParticipantInfo
@@ -212,7 +212,7 @@ var file_livekit_webhook_proto_goTypes = []any{
 	(*IngressInfo)(nil),     // 4: wirtual.IngressInfo
 	(*TrackInfo)(nil),       // 5: wirtual.TrackInfo
 }
-var file_livekit_webhook_proto_depIdxs = []int32{
+var file_wirtual_webhook_proto_depIdxs = []int32{
 	1, // 0: wirtual.WebhookEvent.room:type_name -> wirtual.Room
 	2, // 1: wirtual.WebhookEvent.participant:type_name -> wirtual.ParticipantInfo
 	3, // 2: wirtual.WebhookEvent.egress_info:type_name -> wirtual.EgressInfo
@@ -225,30 +225,30 @@ var file_livekit_webhook_proto_depIdxs = []int32{
 	0, // [0:5] is the sub-list for field type_name
 }
 
-func init() { file_livekit_webhook_proto_init() }
-func file_livekit_webhook_proto_init() {
-	if File_livekit_webhook_proto != nil {
+func init() { file_wirtual_webhook_proto_init() }
+func file_wirtual_webhook_proto_init() {
+	if File_wirtual_webhook_proto != nil {
 		return
 	}
-	file_livekit_models_proto_init()
-	file_livekit_egress_proto_init()
-	file_livekit_ingress_proto_init()
+	file_wirtual_models_proto_init()
+	file_wirtual_egress_proto_init()
+	file_wirtual_ingress_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_livekit_webhook_proto_rawDesc,
+			RawDescriptor: file_wirtual_webhook_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_livekit_webhook_proto_goTypes,
-		DependencyIndexes: file_livekit_webhook_proto_depIdxs,
-		MessageInfos:      file_livekit_webhook_proto_msgTypes,
+		GoTypes:           file_wirtual_webhook_proto_goTypes,
+		DependencyIndexes: file_wirtual_webhook_proto_depIdxs,
+		MessageInfos:      file_wirtual_webhook_proto_msgTypes,
 	}.Build()
-	File_livekit_webhook_proto = out.File
-	file_livekit_webhook_proto_rawDesc = nil
-	file_livekit_webhook_proto_goTypes = nil
-	file_livekit_webhook_proto_depIdxs = nil
+	File_wirtual_webhook_proto = out.File
+	file_wirtual_webhook_proto_rawDesc = nil
+	file_wirtual_webhook_proto_goTypes = nil
+	file_wirtual_webhook_proto_depIdxs = nil
 }

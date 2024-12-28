@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -65,11 +65,11 @@ func (x StreamType) String() string {
 }
 
 func (StreamType) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_analytics_proto_enumTypes[0].Descriptor()
+	return file_wirtual_analytics_proto_enumTypes[0].Descriptor()
 }
 
 func (StreamType) Type() protoreflect.EnumType {
-	return &file_livekit_analytics_proto_enumTypes[0]
+	return &file_wirtual_analytics_proto_enumTypes[0]
 }
 
 func (x StreamType) Number() protoreflect.EnumNumber {
@@ -78,7 +78,7 @@ func (x StreamType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use StreamType.Descriptor instead.
 func (StreamType) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{0}
 }
 
 type AnalyticsEventType int32
@@ -219,11 +219,11 @@ func (x AnalyticsEventType) String() string {
 }
 
 func (AnalyticsEventType) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_analytics_proto_enumTypes[1].Descriptor()
+	return file_wirtual_analytics_proto_enumTypes[1].Descriptor()
 }
 
 func (AnalyticsEventType) Type() protoreflect.EnumType {
-	return &file_livekit_analytics_proto_enumTypes[1]
+	return &file_wirtual_analytics_proto_enumTypes[1]
 }
 
 func (x AnalyticsEventType) Number() protoreflect.EnumNumber {
@@ -232,7 +232,7 @@ func (x AnalyticsEventType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use AnalyticsEventType.Descriptor instead.
 func (AnalyticsEventType) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{1}
 }
 
 type AnalyticsVideoLayer struct {
@@ -247,7 +247,7 @@ type AnalyticsVideoLayer struct {
 
 func (x *AnalyticsVideoLayer) Reset() {
 	*x = AnalyticsVideoLayer{}
-	mi := &file_livekit_analytics_proto_msgTypes[0]
+	mi := &file_wirtual_analytics_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -259,7 +259,7 @@ func (x *AnalyticsVideoLayer) String() string {
 func (*AnalyticsVideoLayer) ProtoMessage() {}
 
 func (x *AnalyticsVideoLayer) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[0]
+	mi := &file_wirtual_analytics_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -272,7 +272,7 @@ func (x *AnalyticsVideoLayer) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsVideoLayer.ProtoReflect.Descriptor instead.
 func (*AnalyticsVideoLayer) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AnalyticsVideoLayer) GetLayer() int32 {
@@ -329,7 +329,7 @@ type AnalyticsStream struct {
 
 func (x *AnalyticsStream) Reset() {
 	*x = AnalyticsStream{}
-	mi := &file_livekit_analytics_proto_msgTypes[1]
+	mi := &file_wirtual_analytics_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -341,7 +341,7 @@ func (x *AnalyticsStream) String() string {
 func (*AnalyticsStream) ProtoMessage() {}
 
 func (x *AnalyticsStream) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[1]
+	mi := &file_wirtual_analytics_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -354,7 +354,7 @@ func (x *AnalyticsStream) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsStream.ProtoReflect.Descriptor instead.
 func (*AnalyticsStream) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *AnalyticsStream) GetSsrc() uint32 {
@@ -506,7 +506,7 @@ type AnalyticsStat struct {
 
 func (x *AnalyticsStat) Reset() {
 	*x = AnalyticsStat{}
-	mi := &file_livekit_analytics_proto_msgTypes[2]
+	mi := &file_wirtual_analytics_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -518,7 +518,7 @@ func (x *AnalyticsStat) String() string {
 func (*AnalyticsStat) ProtoMessage() {}
 
 func (x *AnalyticsStat) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[2]
+	mi := &file_wirtual_analytics_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -531,7 +531,7 @@ func (x *AnalyticsStat) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsStat.ProtoReflect.Descriptor instead.
 func (*AnalyticsStat) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *AnalyticsStat) GetId() string {
@@ -641,7 +641,7 @@ type AnalyticsStats struct {
 
 func (x *AnalyticsStats) Reset() {
 	*x = AnalyticsStats{}
-	mi := &file_livekit_analytics_proto_msgTypes[3]
+	mi := &file_wirtual_analytics_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -653,7 +653,7 @@ func (x *AnalyticsStats) String() string {
 func (*AnalyticsStats) ProtoMessage() {}
 
 func (x *AnalyticsStats) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[3]
+	mi := &file_wirtual_analytics_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -666,7 +666,7 @@ func (x *AnalyticsStats) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsStats.ProtoReflect.Descriptor instead.
 func (*AnalyticsStats) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{3}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AnalyticsStats) GetStats() []*AnalyticsStat {
@@ -694,7 +694,7 @@ type AnalyticsClientMeta struct {
 
 func (x *AnalyticsClientMeta) Reset() {
 	*x = AnalyticsClientMeta{}
-	mi := &file_livekit_analytics_proto_msgTypes[4]
+	mi := &file_wirtual_analytics_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -706,7 +706,7 @@ func (x *AnalyticsClientMeta) String() string {
 func (*AnalyticsClientMeta) ProtoMessage() {}
 
 func (x *AnalyticsClientMeta) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[4]
+	mi := &file_wirtual_analytics_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -719,7 +719,7 @@ func (x *AnalyticsClientMeta) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsClientMeta.ProtoReflect.Descriptor instead.
 func (*AnalyticsClientMeta) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{4}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AnalyticsClientMeta) GetRegion() string {
@@ -824,7 +824,7 @@ type AnalyticsEvent struct {
 
 func (x *AnalyticsEvent) Reset() {
 	*x = AnalyticsEvent{}
-	mi := &file_livekit_analytics_proto_msgTypes[5]
+	mi := &file_wirtual_analytics_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -836,7 +836,7 @@ func (x *AnalyticsEvent) String() string {
 func (*AnalyticsEvent) ProtoMessage() {}
 
 func (x *AnalyticsEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[5]
+	mi := &file_wirtual_analytics_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -849,7 +849,7 @@ func (x *AnalyticsEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsEvent.ProtoReflect.Descriptor instead.
 func (*AnalyticsEvent) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{5}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *AnalyticsEvent) GetId() string {
@@ -1071,7 +1071,7 @@ type AnalyticsEvents struct {
 
 func (x *AnalyticsEvents) Reset() {
 	*x = AnalyticsEvents{}
-	mi := &file_livekit_analytics_proto_msgTypes[6]
+	mi := &file_wirtual_analytics_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1083,7 +1083,7 @@ func (x *AnalyticsEvents) String() string {
 func (*AnalyticsEvents) ProtoMessage() {}
 
 func (x *AnalyticsEvents) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[6]
+	mi := &file_wirtual_analytics_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1096,7 +1096,7 @@ func (x *AnalyticsEvents) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsEvents.ProtoReflect.Descriptor instead.
 func (*AnalyticsEvents) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{6}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *AnalyticsEvents) GetEvents() []*AnalyticsEvent {
@@ -1119,7 +1119,7 @@ type AnalyticsRoomParticipant struct {
 
 func (x *AnalyticsRoomParticipant) Reset() {
 	*x = AnalyticsRoomParticipant{}
-	mi := &file_livekit_analytics_proto_msgTypes[7]
+	mi := &file_wirtual_analytics_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1131,7 +1131,7 @@ func (x *AnalyticsRoomParticipant) String() string {
 func (*AnalyticsRoomParticipant) ProtoMessage() {}
 
 func (x *AnalyticsRoomParticipant) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[7]
+	mi := &file_wirtual_analytics_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1144,7 +1144,7 @@ func (x *AnalyticsRoomParticipant) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsRoomParticipant.ProtoReflect.Descriptor instead.
 func (*AnalyticsRoomParticipant) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{7}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *AnalyticsRoomParticipant) GetId() string {
@@ -1195,7 +1195,7 @@ type AnalyticsRoom struct {
 
 func (x *AnalyticsRoom) Reset() {
 	*x = AnalyticsRoom{}
-	mi := &file_livekit_analytics_proto_msgTypes[8]
+	mi := &file_wirtual_analytics_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1207,7 +1207,7 @@ func (x *AnalyticsRoom) String() string {
 func (*AnalyticsRoom) ProtoMessage() {}
 
 func (x *AnalyticsRoom) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[8]
+	mi := &file_wirtual_analytics_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1220,7 +1220,7 @@ func (x *AnalyticsRoom) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsRoom.ProtoReflect.Descriptor instead.
 func (*AnalyticsRoom) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{8}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *AnalyticsRoom) GetId() string {
@@ -1270,7 +1270,7 @@ type AnalyticsNodeRooms struct {
 
 func (x *AnalyticsNodeRooms) Reset() {
 	*x = AnalyticsNodeRooms{}
-	mi := &file_livekit_analytics_proto_msgTypes[9]
+	mi := &file_wirtual_analytics_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1282,7 +1282,7 @@ func (x *AnalyticsNodeRooms) String() string {
 func (*AnalyticsNodeRooms) ProtoMessage() {}
 
 func (x *AnalyticsNodeRooms) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_analytics_proto_msgTypes[9]
+	mi := &file_wirtual_analytics_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1295,7 +1295,7 @@ func (x *AnalyticsNodeRooms) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AnalyticsNodeRooms.ProtoReflect.Descriptor instead.
 func (*AnalyticsNodeRooms) Descriptor() ([]byte, []int) {
-	return file_livekit_analytics_proto_rawDescGZIP(), []int{9}
+	return file_wirtual_analytics_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *AnalyticsNodeRooms) GetNodeId() string {
@@ -1326,9 +1326,9 @@ func (x *AnalyticsNodeRooms) GetRooms() []*AnalyticsRoom {
 	return nil
 }
 
-var File_livekit_analytics_proto protoreflect.FileDescriptor
+var File_wirtual_analytics_proto protoreflect.FileDescriptor
 
-var file_livekit_analytics_proto_rawDesc = []byte{
+var file_wirtual_analytics_proto_rawDesc = []byte{
 	0x0a, 0x17, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x61, 0x6e, 0x61, 0x6c, 0x79, 0x74,
 	0x69, 0x63, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x6b,
 	0x69, 0x74, 0x1a, 0x1f, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
@@ -1644,20 +1644,20 @@ var file_livekit_analytics_proto_rawDesc = []byte{
 }
 
 var (
-	file_livekit_analytics_proto_rawDescOnce sync.Once
-	file_livekit_analytics_proto_rawDescData = file_livekit_analytics_proto_rawDesc
+	file_wirtual_analytics_proto_rawDescOnce sync.Once
+	file_wirtual_analytics_proto_rawDescData = file_wirtual_analytics_proto_rawDesc
 )
 
-func file_livekit_analytics_proto_rawDescGZIP() []byte {
-	file_livekit_analytics_proto_rawDescOnce.Do(func() {
-		file_livekit_analytics_proto_rawDescData = protoimpl.X.CompressGZIP(file_livekit_analytics_proto_rawDescData)
+func file_wirtual_analytics_proto_rawDescGZIP() []byte {
+	file_wirtual_analytics_proto_rawDescOnce.Do(func() {
+		file_wirtual_analytics_proto_rawDescData = protoimpl.X.CompressGZIP(file_wirtual_analytics_proto_rawDescData)
 	})
-	return file_livekit_analytics_proto_rawDescData
+	return file_wirtual_analytics_proto_rawDescData
 }
 
-var file_livekit_analytics_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_livekit_analytics_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
-var file_livekit_analytics_proto_goTypes = []any{
+var file_wirtual_analytics_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_wirtual_analytics_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_wirtual_analytics_proto_goTypes = []any{
 	(StreamType)(0),                  // 0: wirtual.StreamType
 	(AnalyticsEventType)(0),          // 1: wirtual.AnalyticsEventType
 	(*AnalyticsVideoLayer)(nil),      // 2: wirtual.AnalyticsVideoLayer
@@ -1686,7 +1686,7 @@ var file_livekit_analytics_proto_goTypes = []any{
 	(*SIPDispatchRuleInfo)(nil),      // 25: wirtual.SIPDispatchRuleInfo
 	(ParticipantInfo_State)(0),       // 26: wirtual.ParticipantInfo.State
 }
-var file_livekit_analytics_proto_depIdxs = []int32{
+var file_wirtual_analytics_proto_depIdxs = []int32{
 	2,  // 0: wirtual.AnalyticsStream.video_layers:type_name -> wirtual.AnalyticsVideoLayer
 	12, // 1: wirtual.AnalyticsStream.start_time:type_name -> google.protobuf.Timestamp
 	12, // 2: wirtual.AnalyticsStream.end_time:type_name -> google.protobuf.Timestamp
@@ -1725,33 +1725,33 @@ var file_livekit_analytics_proto_depIdxs = []int32{
 	0,  // [0:31] is the sub-list for field type_name
 }
 
-func init() { file_livekit_analytics_proto_init() }
-func file_livekit_analytics_proto_init() {
-	if File_livekit_analytics_proto != nil {
+func init() { file_wirtual_analytics_proto_init() }
+func file_wirtual_analytics_proto_init() {
+	if File_wirtual_analytics_proto != nil {
 		return
 	}
-	file_livekit_models_proto_init()
-	file_livekit_egress_proto_init()
-	file_livekit_ingress_proto_init()
-	file_livekit_sip_proto_init()
-	file_livekit_analytics_proto_msgTypes[4].OneofWrappers = []any{}
+	file_wirtual_models_proto_init()
+	file_wirtual_egress_proto_init()
+	file_wirtual_ingress_proto_init()
+	file_wirtual_sip_proto_init()
+	file_wirtual_analytics_proto_msgTypes[4].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_livekit_analytics_proto_rawDesc,
+			RawDescriptor: file_wirtual_analytics_proto_rawDesc,
 			NumEnums:      2,
 			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_livekit_analytics_proto_goTypes,
-		DependencyIndexes: file_livekit_analytics_proto_depIdxs,
-		EnumInfos:         file_livekit_analytics_proto_enumTypes,
-		MessageInfos:      file_livekit_analytics_proto_msgTypes,
+		GoTypes:           file_wirtual_analytics_proto_goTypes,
+		DependencyIndexes: file_wirtual_analytics_proto_depIdxs,
+		EnumInfos:         file_wirtual_analytics_proto_enumTypes,
+		MessageInfos:      file_wirtual_analytics_proto_msgTypes,
 	}.Build()
-	File_livekit_analytics_proto = out.File
-	file_livekit_analytics_proto_rawDesc = nil
-	file_livekit_analytics_proto_goTypes = nil
-	file_livekit_analytics_proto_depIdxs = nil
+	File_wirtual_analytics_proto = out.File
+	file_wirtual_analytics_proto_rawDesc = nil
+	file_wirtual_analytics_proto_goTypes = nil
+	file_wirtual_analytics_proto_depIdxs = nil
 }

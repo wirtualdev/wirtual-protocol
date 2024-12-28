@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,8 +19,8 @@ import (
 
 	"golang.org/x/exp/maps"
 
-	"github.com/livekit/protocol/logger"
-	"github.com/livekit/protocol/utils/options"
+	"github.com/wirtualdev/wirtual-protocol/logger"
+	"github.com/wirtualdev/wirtual-protocol/utils/options"
 )
 
 const DefaultQueueSize = 16

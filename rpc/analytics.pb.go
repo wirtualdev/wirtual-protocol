@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -65,9 +65,9 @@ var file_rpc_analytics_proto_rawDesc = []byte{
 }
 
 var file_rpc_analytics_proto_goTypes = []any{
-	(*livekit.AnalyticsStats)(nil),     // 0: wirtual.AnalyticsStats
-	(*livekit.AnalyticsEvents)(nil),    // 1: wirtual.AnalyticsEvents
-	(*livekit.AnalyticsNodeRooms)(nil), // 2: wirtual.AnalyticsNodeRooms
+	(*wirtual.AnalyticsStats)(nil),     // 0: wirtual.AnalyticsStats
+	(*wirtual.AnalyticsEvents)(nil),    // 1: wirtual.AnalyticsEvents
+	(*wirtual.AnalyticsNodeRooms)(nil), // 2: wirtual.AnalyticsNodeRooms
 	(*emptypb.Empty)(nil),              // 3: google.protobuf.Empty
 }
 var file_rpc_analytics_proto_depIdxs = []int32{

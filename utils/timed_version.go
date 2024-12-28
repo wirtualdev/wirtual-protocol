@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 const tickBits uint64 = 13
@@ -89,7 +89,7 @@ func (g *timedVersionGenerator) Next() TimedVersion {
 
 type TimedVersion uint64
 
-func TimedVersionFromProto(proto *livekit.TimedVersion) TimedVersion {
+func TimedVersionFromProto(proto *wirtual.TimedVersion) TimedVersion {
 	return timedVersionFromComponents(proto.GetUnixMicro(), proto.GetTicks())
 }
 
@@ -143,9 +143,9 @@ func (t TimedVersion) IsZero() bool {
 	return t == 0
 }
 
-func (t TimedVersion) ToProto() *livekit.TimedVersion {
+func (t TimedVersion) ToProto() *wirtual.TimedVersion {
 	ts, ticks := timedVersionComponents(t)
-	return &livekit.TimedVersion{
+	return &wirtual.TimedVersion{
 		UnixMicro: ts,
 		Ticks:     ticks,
 	}

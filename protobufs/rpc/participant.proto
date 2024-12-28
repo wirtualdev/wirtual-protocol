@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import "wirtual_models.proto";
 import "wirtual_room.proto";
 
 service Participant {
-  rpc RemoveParticipant(livekit.RoomParticipantIdentity) returns (livekit.RemoveParticipantResponse) {
+  rpc RemoveParticipant(wirtual.RoomParticipantIdentity) returns (wirtual.RemoveParticipantResponse) {
     option (psrpc.options) = {
       topics: true
       topic_params: {
@@ -33,7 +33,7 @@ service Participant {
       };
     };
   };
-  rpc MutePublishedTrack(livekit.MuteRoomTrackRequest) returns (livekit.MuteRoomTrackResponse) {
+  rpc MutePublishedTrack(wirtual.MuteRoomTrackRequest) returns (wirtual.MuteRoomTrackResponse) {
     option (psrpc.options) = {
       topics: true
       topic_params: {
@@ -43,7 +43,7 @@ service Participant {
       };
     };
   };
-  rpc UpdateParticipant(livekit.UpdateParticipantRequest) returns (livekit.ParticipantInfo) {
+  rpc UpdateParticipant(wirtual.UpdateParticipantRequest) returns (wirtual.ParticipantInfo) {
     option (psrpc.options) = {
       topics: true
       topic_params: {
@@ -53,7 +53,7 @@ service Participant {
       };
     };
   };
-  rpc UpdateSubscriptions(livekit.UpdateSubscriptionsRequest) returns (livekit.UpdateSubscriptionsResponse) {
+  rpc UpdateSubscriptions(wirtual.UpdateSubscriptionsRequest) returns (wirtual.UpdateSubscriptionsResponse) {
     option (psrpc.options) = {
       topics: true
       topic_params: {

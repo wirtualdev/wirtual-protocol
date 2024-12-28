@@ -1,8 +1,8 @@
 package egress
 
 import (
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/utils"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/utils"
 )
 
 func RedactUpload(req UploadRequest) {
@@ -66,7 +66,7 @@ func RedactDirectOutputs(out DirectOutput) {
 	}
 }
 
-func RedactStreamKeys(stream *livekit.StreamOutput) {
+func RedactStreamKeys(stream *wirtual.StreamOutput) {
 	for i, url := range stream.Urls {
 		if redacted, ok := utils.RedactStreamKey(url); ok {
 			stream.Urls[i] = redacted

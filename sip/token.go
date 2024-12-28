@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package sip
 import (
 	"time"
 
-	"github.com/livekit/protocol/auth"
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/auth"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 type SIPTokenParams struct {
@@ -30,7 +30,7 @@ type SIPTokenParams struct {
 	ParticipantMetadata   string
 	ParticipantAttributes map[string]string
 	RoomPreset            string
-	RoomConfig            *livekit.RoomConfiguration
+	RoomConfig            *wirtual.RoomConfiguration
 }
 
 func BuildSIPToken(params SIPTokenParams) (string, error) {
@@ -50,7 +50,7 @@ func BuildSIPToken(params SIPTokenParams) (string, error) {
 		SetAttributes(params.ParticipantAttributes).
 		SetRoomPreset(params.RoomPreset).
 		SetRoomConfig(params.RoomConfig).
-		SetKind(livekit.ParticipantInfo_SIP).
+		SetKind(wirtual.ParticipantInfo_SIP).
 		SetValidFor(24 * time.Hour)
 
 	return at.ToJWT()

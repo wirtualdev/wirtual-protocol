@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/livekit/mageutil"
-	"github.com/livekit/protocol/psrpc"
+	"github.com/wirtual/mageutil"
+	"github.com/wirtualdev/wirtual-protocol/psrpc"
 )
 
 var Default = Proto

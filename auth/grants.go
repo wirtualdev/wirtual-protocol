@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,12 +22,12 @@ import (
 	"golang.org/x/exp/slices"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/logger"
-	"github.com/livekit/protocol/utils"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/logger"
+	"github.com/wirtualdev/wirtual-protocol/utils"
 )
 
-type RoomConfiguration livekit.RoomConfiguration
+type RoomConfiguration wirtual.RoomConfiguration
 
 var tokenMarshaler = protojson.MarshalOptions{
 	EmitDefaultValues: false,
@@ -37,15 +37,15 @@ func (c *RoomConfiguration) Clone() *RoomConfiguration {
 	if c == nil {
 		return nil
 	}
-	return (*RoomConfiguration)(utils.CloneProto((*livekit.RoomConfiguration)(c)))
+	return (*RoomConfiguration)(utils.CloneProto((*wirtual.RoomConfiguration)(c)))
 }
 
 func (c *RoomConfiguration) MarshalJSON() ([]byte, error) {
-	return tokenMarshaler.Marshal((*livekit.RoomConfiguration)(c))
+	return tokenMarshaler.Marshal((*wirtual.RoomConfiguration)(c))
 }
 
 func (c *RoomConfiguration) UnmarshalJSON(data []byte) error {
-	return protojson.Unmarshal(data, (*livekit.RoomConfiguration)(c))
+	return protojson.Unmarshal(data, (*wirtual.RoomConfiguration)(c))
 }
 
 type ClaimGrants struct {
@@ -66,19 +66,19 @@ type ClaimGrants struct {
 	Attributes map[string]string `json:"attributes,omitempty"`
 }
 
-func (c *ClaimGrants) SetParticipantKind(kind livekit.ParticipantInfo_Kind) {
+func (c *ClaimGrants) SetParticipantKind(kind wirtual.ParticipantInfo_Kind) {
 	c.Kind = kindFromProto(kind)
 }
 
-func (c *ClaimGrants) GetParticipantKind() livekit.ParticipantInfo_Kind {
+func (c *ClaimGrants) GetParticipantKind() wirtual.ParticipantInfo_Kind {
 	return kindToProto(c.Kind)
 }
 
-func (c *ClaimGrants) GetRoomConfiguration() *livekit.RoomConfiguration {
+func (c *ClaimGrants) GetRoomConfiguration() *wirtual.RoomConfiguration {
 	if c.RoomConfig == nil {
 		return nil
 	}
-	return (*livekit.RoomConfiguration)(c.RoomConfig)
+	return (*wirtual.RoomConfiguration)(c.RoomConfig)
 }
 
 func (c *ClaimGrants) Clone() *ClaimGrants {
@@ -104,7 +104,7 @@ func (c *ClaimGrants) MarshalLogObject(e zapcore.ObjectEncoder) error {
 	e.AddString("Kind", c.Kind)
 	e.AddObject("Video", c.Video)
 	e.AddObject("SIP", c.SIP)
-	e.AddObject("RoomConfig", logger.Proto((*livekit.RoomConfiguration)(c.RoomConfig)))
+	e.AddObject("RoomConfig", logger.Proto((*wirtual.RoomConfiguration)(c.RoomConfig)))
 	e.AddString("RoomPreset", c.RoomPreset)
 	return nil
 }
@@ -159,7 +159,7 @@ func (v *VideoGrant) SetCanSubscribe(val bool) {
 	v.CanSubscribe = &val
 }
 
-func (v *VideoGrant) SetCanPublishSources(sources []livekit.TrackSource) {
+func (v *VideoGrant) SetCanPublishSources(sources []wirtual.TrackSource) {
 	v.CanPublishSources = make([]string, 0, len(sources))
 	for _, s := range sources {
 		v.CanPublishSources = append(v.CanPublishSources, sourceToString(s))
@@ -181,7 +181,7 @@ func (v *VideoGrant) GetCanPublish() bool {
 	return *v.CanPublish
 }
 
-func (v *VideoGrant) GetCanPublishSource(source livekit.TrackSource) bool {
+func (v *VideoGrant) GetCanPublishSource(source wirtual.TrackSource) bool {
 	if !v.GetCanPublish() {
 		return false
 	}
@@ -198,12 +198,12 @@ func (v *VideoGrant) GetCanPublishSource(source livekit.TrackSource) bool {
 	return false
 }
 
-func (v *VideoGrant) GetCanPublishSources() []livekit.TrackSource {
+func (v *VideoGrant) GetCanPublishSources() []wirtual.TrackSource {
 	if len(v.CanPublishSources) == 0 {
 		return nil
 	}
 
-	sources := make([]livekit.TrackSource, 0, len(v.CanPublishSources))
+	sources := make([]wirtual.TrackSource, 0, len(v.CanPublishSources))
 	for _, s := range v.CanPublishSources {
 		sources = append(sources, sourceToProto(s))
 	}
@@ -238,7 +238,7 @@ func (v *VideoGrant) GetCanSubscribeMetrics() bool {
 	return *v.CanSubscribeMetrics
 }
 
-func (v *VideoGrant) MatchesPermission(permission *livekit.ParticipantPermission) bool {
+func (v *VideoGrant) MatchesPermission(permission *wirtual.ParticipantPermission) bool {
 	if permission == nil {
 		return false
 	}
@@ -274,7 +274,7 @@ func (v *VideoGrant) MatchesPermission(permission *livekit.ParticipantPermission
 	return true
 }
 
-func (v *VideoGrant) UpdateFromPermission(permission *livekit.ParticipantPermission) {
+func (v *VideoGrant) UpdateFromPermission(permission *wirtual.ParticipantPermission) {
 	if permission == nil {
 		return
 	}
@@ -290,8 +290,8 @@ func (v *VideoGrant) UpdateFromPermission(permission *livekit.ParticipantPermiss
 	v.SetCanSubscribeMetrics(permission.CanSubscribeMetrics)
 }
 
-func (v *VideoGrant) ToPermission() *livekit.ParticipantPermission {
-	return &livekit.ParticipantPermission{
+func (v *VideoGrant) ToPermission() *wirtual.ParticipantPermission {
+	return &wirtual.ParticipantPermission{
 		CanPublish:          v.GetCanPublish(),
 		CanPublishData:      v.GetCanPublishData(),
 		CanSubscribe:        v.GetCanSubscribe(),
@@ -408,42 +408,42 @@ func (s *SIPGrant) MarshalLogObject(e zapcore.ObjectEncoder) error {
 
 // ------------------------------------------------------------------
 
-func sourceToString(source livekit.TrackSource) string {
+func sourceToString(source wirtual.TrackSource) string {
 	return strings.ToLower(source.String())
 }
 
-func sourceToProto(sourceStr string) livekit.TrackSource {
+func sourceToProto(sourceStr string) wirtual.TrackSource {
 	switch strings.ToLower(sourceStr) {
 	case "camera":
-		return livekit.TrackSource_CAMERA
+		return wirtual.TrackSource_CAMERA
 	case "microphone":
-		return livekit.TrackSource_MICROPHONE
+		return wirtual.TrackSource_MICROPHONE
 	case "screen_share":
-		return livekit.TrackSource_SCREEN_SHARE
+		return wirtual.TrackSource_SCREEN_SHARE
 	case "screen_share_audio":
-		return livekit.TrackSource_SCREEN_SHARE_AUDIO
+		return wirtual.TrackSource_SCREEN_SHARE_AUDIO
 	default:
-		return livekit.TrackSource_UNKNOWN
+		return wirtual.TrackSource_UNKNOWN
 	}
 }
 
-func kindFromProto(source livekit.ParticipantInfo_Kind) string {
+func kindFromProto(source wirtual.ParticipantInfo_Kind) string {
 	return strings.ToLower(source.String())
 }
 
-func kindToProto(sourceStr string) livekit.ParticipantInfo_Kind {
+func kindToProto(sourceStr string) wirtual.ParticipantInfo_Kind {
 	switch strings.ToLower(sourceStr) {
 	case "", "standard":
-		return livekit.ParticipantInfo_STANDARD
+		return wirtual.ParticipantInfo_STANDARD
 	case "ingress":
-		return livekit.ParticipantInfo_INGRESS
+		return wirtual.ParticipantInfo_INGRESS
 	case "egress":
-		return livekit.ParticipantInfo_EGRESS
+		return wirtual.ParticipantInfo_EGRESS
 	case "sip":
-		return livekit.ParticipantInfo_SIP
+		return wirtual.ParticipantInfo_SIP
 	case "agent":
-		return livekit.ParticipantInfo_AGENT
+		return wirtual.ParticipantInfo_AGENT
 	default:
-		return livekit.ParticipantInfo_STANDARD
+		return wirtual.ParticipantInfo_STANDARD
 	}
 }

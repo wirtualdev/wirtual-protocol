@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,11 +19,11 @@ import (
 	"crypto/tls"
 	"time"
 
-	"github.com/livekit/protocol/xtls"
+	"github.com/wirtualdev/wirtual-protocol/xtls"
 	"github.com/pkg/errors"
 	"github.com/redis/go-redis/v9"
 
-	"github.com/livekit/protocol/logger"
+	"github.com/wirtualdev/wirtual-protocol/logger"
 )
 
 var ErrNotConfigured = errors.New("Redis is not configured")

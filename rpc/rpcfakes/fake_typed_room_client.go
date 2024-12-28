@@ -5,9 +5,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/rpc"
-	"github.com/livekit/psrpc"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/rpc"
+	"github.com/wirtual/psrpc"
 )
 
 type FakeTypedRoomClient struct {
@@ -15,52 +15,52 @@ type FakeTypedRoomClient struct {
 	closeMutex       sync.RWMutex
 	closeArgsForCall []struct {
 	}
-	DeleteRoomStub        func(context.Context, rpc.RoomTopic, *livekit.DeleteRoomRequest, ...psrpc.RequestOption) (*livekit.DeleteRoomResponse, error)
+	DeleteRoomStub        func(context.Context, rpc.RoomTopic, *wirtual.DeleteRoomRequest, ...psrpc.RequestOption) (*wirtual.DeleteRoomResponse, error)
 	deleteRoomMutex       sync.RWMutex
 	deleteRoomArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.DeleteRoomRequest
+		arg3 *wirtual.DeleteRoomRequest
 		arg4 []psrpc.RequestOption
 	}
 	deleteRoomReturns struct {
-		result1 *livekit.DeleteRoomResponse
+		result1 *wirtual.DeleteRoomResponse
 		result2 error
 	}
 	deleteRoomReturnsOnCall map[int]struct {
-		result1 *livekit.DeleteRoomResponse
+		result1 *wirtual.DeleteRoomResponse
 		result2 error
 	}
-	SendDataStub        func(context.Context, rpc.RoomTopic, *livekit.SendDataRequest, ...psrpc.RequestOption) (*livekit.SendDataResponse, error)
+	SendDataStub        func(context.Context, rpc.RoomTopic, *wirtual.SendDataRequest, ...psrpc.RequestOption) (*wirtual.SendDataResponse, error)
 	sendDataMutex       sync.RWMutex
 	sendDataArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.SendDataRequest
+		arg3 *wirtual.SendDataRequest
 		arg4 []psrpc.RequestOption
 	}
 	sendDataReturns struct {
-		result1 *livekit.SendDataResponse
+		result1 *wirtual.SendDataResponse
 		result2 error
 	}
 	sendDataReturnsOnCall map[int]struct {
-		result1 *livekit.SendDataResponse
+		result1 *wirtual.SendDataResponse
 		result2 error
 	}
-	UpdateRoomMetadataStub        func(context.Context, rpc.RoomTopic, *livekit.UpdateRoomMetadataRequest, ...psrpc.RequestOption) (*livekit.Room, error)
+	UpdateRoomMetadataStub        func(context.Context, rpc.RoomTopic, *wirtual.UpdateRoomMetadataRequest, ...psrpc.RequestOption) (*wirtual.Room, error)
 	updateRoomMetadataMutex       sync.RWMutex
 	updateRoomMetadataArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.UpdateRoomMetadataRequest
+		arg3 *wirtual.UpdateRoomMetadataRequest
 		arg4 []psrpc.RequestOption
 	}
 	updateRoomMetadataReturns struct {
-		result1 *livekit.Room
+		result1 *wirtual.Room
 		result2 error
 	}
 	updateRoomMetadataReturnsOnCall map[int]struct {
-		result1 *livekit.Room
+		result1 *wirtual.Room
 		result2 error
 	}
 	invocations      map[string][][]interface{}
@@ -91,13 +91,13 @@ func (fake *FakeTypedRoomClient) CloseCalls(stub func()) {
 	fake.CloseStub = stub
 }
 
-func (fake *FakeTypedRoomClient) DeleteRoom(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *livekit.DeleteRoomRequest, arg4 ...psrpc.RequestOption) (*livekit.DeleteRoomResponse, error) {
+func (fake *FakeTypedRoomClient) DeleteRoom(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *wirtual.DeleteRoomRequest, arg4 ...psrpc.RequestOption) (*wirtual.DeleteRoomResponse, error) {
 	fake.deleteRoomMutex.Lock()
 	ret, specificReturn := fake.deleteRoomReturnsOnCall[len(fake.deleteRoomArgsForCall)]
 	fake.deleteRoomArgsForCall = append(fake.deleteRoomArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.DeleteRoomRequest
+		arg3 *wirtual.DeleteRoomRequest
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.DeleteRoomStub
@@ -119,52 +119,52 @@ func (fake *FakeTypedRoomClient) DeleteRoomCallCount() int {
 	return len(fake.deleteRoomArgsForCall)
 }
 
-func (fake *FakeTypedRoomClient) DeleteRoomCalls(stub func(context.Context, rpc.RoomTopic, *livekit.DeleteRoomRequest, ...psrpc.RequestOption) (*livekit.DeleteRoomResponse, error)) {
+func (fake *FakeTypedRoomClient) DeleteRoomCalls(stub func(context.Context, rpc.RoomTopic, *wirtual.DeleteRoomRequest, ...psrpc.RequestOption) (*wirtual.DeleteRoomResponse, error)) {
 	fake.deleteRoomMutex.Lock()
 	defer fake.deleteRoomMutex.Unlock()
 	fake.DeleteRoomStub = stub
 }
 
-func (fake *FakeTypedRoomClient) DeleteRoomArgsForCall(i int) (context.Context, rpc.RoomTopic, *livekit.DeleteRoomRequest, []psrpc.RequestOption) {
+func (fake *FakeTypedRoomClient) DeleteRoomArgsForCall(i int) (context.Context, rpc.RoomTopic, *wirtual.DeleteRoomRequest, []psrpc.RequestOption) {
 	fake.deleteRoomMutex.RLock()
 	defer fake.deleteRoomMutex.RUnlock()
 	argsForCall := fake.deleteRoomArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedRoomClient) DeleteRoomReturns(result1 *livekit.DeleteRoomResponse, result2 error) {
+func (fake *FakeTypedRoomClient) DeleteRoomReturns(result1 *wirtual.DeleteRoomResponse, result2 error) {
 	fake.deleteRoomMutex.Lock()
 	defer fake.deleteRoomMutex.Unlock()
 	fake.DeleteRoomStub = nil
 	fake.deleteRoomReturns = struct {
-		result1 *livekit.DeleteRoomResponse
+		result1 *wirtual.DeleteRoomResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedRoomClient) DeleteRoomReturnsOnCall(i int, result1 *livekit.DeleteRoomResponse, result2 error) {
+func (fake *FakeTypedRoomClient) DeleteRoomReturnsOnCall(i int, result1 *wirtual.DeleteRoomResponse, result2 error) {
 	fake.deleteRoomMutex.Lock()
 	defer fake.deleteRoomMutex.Unlock()
 	fake.DeleteRoomStub = nil
 	if fake.deleteRoomReturnsOnCall == nil {
 		fake.deleteRoomReturnsOnCall = make(map[int]struct {
-			result1 *livekit.DeleteRoomResponse
+			result1 *wirtual.DeleteRoomResponse
 			result2 error
 		})
 	}
 	fake.deleteRoomReturnsOnCall[i] = struct {
-		result1 *livekit.DeleteRoomResponse
+		result1 *wirtual.DeleteRoomResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedRoomClient) SendData(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *livekit.SendDataRequest, arg4 ...psrpc.RequestOption) (*livekit.SendDataResponse, error) {
+func (fake *FakeTypedRoomClient) SendData(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *wirtual.SendDataRequest, arg4 ...psrpc.RequestOption) (*wirtual.SendDataResponse, error) {
 	fake.sendDataMutex.Lock()
 	ret, specificReturn := fake.sendDataReturnsOnCall[len(fake.sendDataArgsForCall)]
 	fake.sendDataArgsForCall = append(fake.sendDataArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.SendDataRequest
+		arg3 *wirtual.SendDataRequest
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.SendDataStub
@@ -186,52 +186,52 @@ func (fake *FakeTypedRoomClient) SendDataCallCount() int {
 	return len(fake.sendDataArgsForCall)
 }
 
-func (fake *FakeTypedRoomClient) SendDataCalls(stub func(context.Context, rpc.RoomTopic, *livekit.SendDataRequest, ...psrpc.RequestOption) (*livekit.SendDataResponse, error)) {
+func (fake *FakeTypedRoomClient) SendDataCalls(stub func(context.Context, rpc.RoomTopic, *wirtual.SendDataRequest, ...psrpc.RequestOption) (*wirtual.SendDataResponse, error)) {
 	fake.sendDataMutex.Lock()
 	defer fake.sendDataMutex.Unlock()
 	fake.SendDataStub = stub
 }
 
-func (fake *FakeTypedRoomClient) SendDataArgsForCall(i int) (context.Context, rpc.RoomTopic, *livekit.SendDataRequest, []psrpc.RequestOption) {
+func (fake *FakeTypedRoomClient) SendDataArgsForCall(i int) (context.Context, rpc.RoomTopic, *wirtual.SendDataRequest, []psrpc.RequestOption) {
 	fake.sendDataMutex.RLock()
 	defer fake.sendDataMutex.RUnlock()
 	argsForCall := fake.sendDataArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedRoomClient) SendDataReturns(result1 *livekit.SendDataResponse, result2 error) {
+func (fake *FakeTypedRoomClient) SendDataReturns(result1 *wirtual.SendDataResponse, result2 error) {
 	fake.sendDataMutex.Lock()
 	defer fake.sendDataMutex.Unlock()
 	fake.SendDataStub = nil
 	fake.sendDataReturns = struct {
-		result1 *livekit.SendDataResponse
+		result1 *wirtual.SendDataResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedRoomClient) SendDataReturnsOnCall(i int, result1 *livekit.SendDataResponse, result2 error) {
+func (fake *FakeTypedRoomClient) SendDataReturnsOnCall(i int, result1 *wirtual.SendDataResponse, result2 error) {
 	fake.sendDataMutex.Lock()
 	defer fake.sendDataMutex.Unlock()
 	fake.SendDataStub = nil
 	if fake.sendDataReturnsOnCall == nil {
 		fake.sendDataReturnsOnCall = make(map[int]struct {
-			result1 *livekit.SendDataResponse
+			result1 *wirtual.SendDataResponse
 			result2 error
 		})
 	}
 	fake.sendDataReturnsOnCall[i] = struct {
-		result1 *livekit.SendDataResponse
+		result1 *wirtual.SendDataResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedRoomClient) UpdateRoomMetadata(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *livekit.UpdateRoomMetadataRequest, arg4 ...psrpc.RequestOption) (*livekit.Room, error) {
+func (fake *FakeTypedRoomClient) UpdateRoomMetadata(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *wirtual.UpdateRoomMetadataRequest, arg4 ...psrpc.RequestOption) (*wirtual.Room, error) {
 	fake.updateRoomMetadataMutex.Lock()
 	ret, specificReturn := fake.updateRoomMetadataReturnsOnCall[len(fake.updateRoomMetadataArgsForCall)]
 	fake.updateRoomMetadataArgsForCall = append(fake.updateRoomMetadataArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.UpdateRoomMetadataRequest
+		arg3 *wirtual.UpdateRoomMetadataRequest
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.UpdateRoomMetadataStub
@@ -253,41 +253,41 @@ func (fake *FakeTypedRoomClient) UpdateRoomMetadataCallCount() int {
 	return len(fake.updateRoomMetadataArgsForCall)
 }
 
-func (fake *FakeTypedRoomClient) UpdateRoomMetadataCalls(stub func(context.Context, rpc.RoomTopic, *livekit.UpdateRoomMetadataRequest, ...psrpc.RequestOption) (*livekit.Room, error)) {
+func (fake *FakeTypedRoomClient) UpdateRoomMetadataCalls(stub func(context.Context, rpc.RoomTopic, *wirtual.UpdateRoomMetadataRequest, ...psrpc.RequestOption) (*wirtual.Room, error)) {
 	fake.updateRoomMetadataMutex.Lock()
 	defer fake.updateRoomMetadataMutex.Unlock()
 	fake.UpdateRoomMetadataStub = stub
 }
 
-func (fake *FakeTypedRoomClient) UpdateRoomMetadataArgsForCall(i int) (context.Context, rpc.RoomTopic, *livekit.UpdateRoomMetadataRequest, []psrpc.RequestOption) {
+func (fake *FakeTypedRoomClient) UpdateRoomMetadataArgsForCall(i int) (context.Context, rpc.RoomTopic, *wirtual.UpdateRoomMetadataRequest, []psrpc.RequestOption) {
 	fake.updateRoomMetadataMutex.RLock()
 	defer fake.updateRoomMetadataMutex.RUnlock()
 	argsForCall := fake.updateRoomMetadataArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedRoomClient) UpdateRoomMetadataReturns(result1 *livekit.Room, result2 error) {
+func (fake *FakeTypedRoomClient) UpdateRoomMetadataReturns(result1 *wirtual.Room, result2 error) {
 	fake.updateRoomMetadataMutex.Lock()
 	defer fake.updateRoomMetadataMutex.Unlock()
 	fake.UpdateRoomMetadataStub = nil
 	fake.updateRoomMetadataReturns = struct {
-		result1 *livekit.Room
+		result1 *wirtual.Room
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedRoomClient) UpdateRoomMetadataReturnsOnCall(i int, result1 *livekit.Room, result2 error) {
+func (fake *FakeTypedRoomClient) UpdateRoomMetadataReturnsOnCall(i int, result1 *wirtual.Room, result2 error) {
 	fake.updateRoomMetadataMutex.Lock()
 	defer fake.updateRoomMetadataMutex.Unlock()
 	fake.UpdateRoomMetadataStub = nil
 	if fake.updateRoomMetadataReturnsOnCall == nil {
 		fake.updateRoomMetadataReturnsOnCall = make(map[int]struct {
-			result1 *livekit.Room
+			result1 *wirtual.Room
 			result2 error
 		})
 	}
 	fake.updateRoomMetadataReturnsOnCall[i] = struct {
-		result1 *livekit.Room
+		result1 *wirtual.Room
 		result2 error
 	}{result1, result2}
 }

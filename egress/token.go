@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@ package egress
 import (
 	"time"
 
-	"github.com/livekit/protocol/auth"
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/auth"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 func BuildEgressToken(egressID, apiKey, secret, roomName string) (string, error) {
@@ -37,7 +37,7 @@ func BuildEgressToken(egressID, apiKey, secret, roomName string) (string, error)
 	at := auth.NewAccessToken(apiKey, secret).
 		AddGrant(grant).
 		SetIdentity(egressID).
-		SetKind(livekit.ParticipantInfo_EGRESS).
+		SetKind(wirtual.ParticipantInfo_EGRESS).
 		SetValidFor(24 * time.Hour)
 
 	return at.ToJWT()

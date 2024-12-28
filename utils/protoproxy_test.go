@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 func TestProtoProxy(t *testing.T) {
@@ -112,7 +112,7 @@ func TestProtoProxy(t *testing.T) {
 	})
 
 	t.Run("await resolve when there is no change", func(t *testing.T) {
-		proxy := NewProtoProxy[*livekit.Room](10*time.Millisecond, func() *livekit.Room { return nil })
+		proxy := NewProtoProxy[*wirtual.Room](10*time.Millisecond, func() *wirtual.Room { return nil })
 		done := proxy.MarkDirty(true)
 		time.Sleep(100 * time.Millisecond)
 		select {
@@ -123,17 +123,17 @@ func TestProtoProxy(t *testing.T) {
 	})
 }
 
-func createTestProxy() (*ProtoProxy[*livekit.Room], *atomic.Uint32, *atomic.Bool) {
+func createTestProxy() (*ProtoProxy[*wirtual.Room], *atomic.Uint32, *atomic.Bool) {
 	// uses an update func that increments numParticipants each time
 	var numParticipants atomic.Uint32
 	var freeze atomic.Bool
-	return NewProtoProxy[*livekit.Room](
+	return NewProtoProxy[*wirtual.Room](
 		10*time.Millisecond,
-		func() *livekit.Room {
+		func() *wirtual.Room {
 			if !freeze.Load() {
 				defer numParticipants.Add(1)
 			}
-			return &livekit.Room{
+			return &wirtual.Room{
 				NumParticipants: numParticipants.Load(),
 			}
 		},

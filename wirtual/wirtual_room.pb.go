@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -68,7 +68,7 @@ type CreateRoomRequest struct {
 
 func (x *CreateRoomRequest) Reset() {
 	*x = CreateRoomRequest{}
-	mi := &file_livekit_room_proto_msgTypes[0]
+	mi := &file_wirtual_room_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -80,7 +80,7 @@ func (x *CreateRoomRequest) String() string {
 func (*CreateRoomRequest) ProtoMessage() {}
 
 func (x *CreateRoomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[0]
+	mi := &file_wirtual_room_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -93,7 +93,7 @@ func (x *CreateRoomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateRoomRequest.ProtoReflect.Descriptor instead.
 func (*CreateRoomRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateRoomRequest) GetName() string {
@@ -198,7 +198,7 @@ type RoomEgress struct {
 
 func (x *RoomEgress) Reset() {
 	*x = RoomEgress{}
-	mi := &file_livekit_room_proto_msgTypes[1]
+	mi := &file_wirtual_room_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -210,7 +210,7 @@ func (x *RoomEgress) String() string {
 func (*RoomEgress) ProtoMessage() {}
 
 func (x *RoomEgress) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[1]
+	mi := &file_wirtual_room_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -223,7 +223,7 @@ func (x *RoomEgress) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RoomEgress.ProtoReflect.Descriptor instead.
 func (*RoomEgress) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RoomEgress) GetRoom() *RoomCompositeEgressRequest {
@@ -256,7 +256,7 @@ type RoomAgent struct {
 
 func (x *RoomAgent) Reset() {
 	*x = RoomAgent{}
-	mi := &file_livekit_room_proto_msgTypes[2]
+	mi := &file_wirtual_room_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -268,7 +268,7 @@ func (x *RoomAgent) String() string {
 func (*RoomAgent) ProtoMessage() {}
 
 func (x *RoomAgent) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[2]
+	mi := &file_wirtual_room_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -281,7 +281,7 @@ func (x *RoomAgent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RoomAgent.ProtoReflect.Descriptor instead.
 func (*RoomAgent) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *RoomAgent) GetDispatches() []*RoomAgentDispatch {
@@ -301,7 +301,7 @@ type ListRoomsRequest struct {
 
 func (x *ListRoomsRequest) Reset() {
 	*x = ListRoomsRequest{}
-	mi := &file_livekit_room_proto_msgTypes[3]
+	mi := &file_wirtual_room_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -313,7 +313,7 @@ func (x *ListRoomsRequest) String() string {
 func (*ListRoomsRequest) ProtoMessage() {}
 
 func (x *ListRoomsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[3]
+	mi := &file_wirtual_room_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +326,7 @@ func (x *ListRoomsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRoomsRequest.ProtoReflect.Descriptor instead.
 func (*ListRoomsRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{3}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ListRoomsRequest) GetNames() []string {
@@ -345,7 +345,7 @@ type ListRoomsResponse struct {
 
 func (x *ListRoomsResponse) Reset() {
 	*x = ListRoomsResponse{}
-	mi := &file_livekit_room_proto_msgTypes[4]
+	mi := &file_wirtual_room_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -357,7 +357,7 @@ func (x *ListRoomsResponse) String() string {
 func (*ListRoomsResponse) ProtoMessage() {}
 
 func (x *ListRoomsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[4]
+	mi := &file_wirtual_room_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -370,7 +370,7 @@ func (x *ListRoomsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRoomsResponse.ProtoReflect.Descriptor instead.
 func (*ListRoomsResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{4}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ListRoomsResponse) GetRooms() []*Room {
@@ -390,7 +390,7 @@ type DeleteRoomRequest struct {
 
 func (x *DeleteRoomRequest) Reset() {
 	*x = DeleteRoomRequest{}
-	mi := &file_livekit_room_proto_msgTypes[5]
+	mi := &file_wirtual_room_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -402,7 +402,7 @@ func (x *DeleteRoomRequest) String() string {
 func (*DeleteRoomRequest) ProtoMessage() {}
 
 func (x *DeleteRoomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[5]
+	mi := &file_wirtual_room_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -415,7 +415,7 @@ func (x *DeleteRoomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRoomRequest.ProtoReflect.Descriptor instead.
 func (*DeleteRoomRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{5}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DeleteRoomRequest) GetRoom() string {
@@ -433,7 +433,7 @@ type DeleteRoomResponse struct {
 
 func (x *DeleteRoomResponse) Reset() {
 	*x = DeleteRoomResponse{}
-	mi := &file_livekit_room_proto_msgTypes[6]
+	mi := &file_wirtual_room_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -445,7 +445,7 @@ func (x *DeleteRoomResponse) String() string {
 func (*DeleteRoomResponse) ProtoMessage() {}
 
 func (x *DeleteRoomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[6]
+	mi := &file_wirtual_room_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -458,7 +458,7 @@ func (x *DeleteRoomResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteRoomResponse.ProtoReflect.Descriptor instead.
 func (*DeleteRoomResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{6}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{6}
 }
 
 type ListParticipantsRequest struct {
@@ -471,7 +471,7 @@ type ListParticipantsRequest struct {
 
 func (x *ListParticipantsRequest) Reset() {
 	*x = ListParticipantsRequest{}
-	mi := &file_livekit_room_proto_msgTypes[7]
+	mi := &file_wirtual_room_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -483,7 +483,7 @@ func (x *ListParticipantsRequest) String() string {
 func (*ListParticipantsRequest) ProtoMessage() {}
 
 func (x *ListParticipantsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[7]
+	mi := &file_wirtual_room_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -496,7 +496,7 @@ func (x *ListParticipantsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListParticipantsRequest.ProtoReflect.Descriptor instead.
 func (*ListParticipantsRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{7}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListParticipantsRequest) GetRoom() string {
@@ -515,7 +515,7 @@ type ListParticipantsResponse struct {
 
 func (x *ListParticipantsResponse) Reset() {
 	*x = ListParticipantsResponse{}
-	mi := &file_livekit_room_proto_msgTypes[8]
+	mi := &file_wirtual_room_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -527,7 +527,7 @@ func (x *ListParticipantsResponse) String() string {
 func (*ListParticipantsResponse) ProtoMessage() {}
 
 func (x *ListParticipantsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[8]
+	mi := &file_wirtual_room_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -540,7 +540,7 @@ func (x *ListParticipantsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListParticipantsResponse.ProtoReflect.Descriptor instead.
 func (*ListParticipantsResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{8}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ListParticipantsResponse) GetParticipants() []*ParticipantInfo {
@@ -562,7 +562,7 @@ type RoomParticipantIdentity struct {
 
 func (x *RoomParticipantIdentity) Reset() {
 	*x = RoomParticipantIdentity{}
-	mi := &file_livekit_room_proto_msgTypes[9]
+	mi := &file_wirtual_room_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -574,7 +574,7 @@ func (x *RoomParticipantIdentity) String() string {
 func (*RoomParticipantIdentity) ProtoMessage() {}
 
 func (x *RoomParticipantIdentity) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[9]
+	mi := &file_wirtual_room_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -587,7 +587,7 @@ func (x *RoomParticipantIdentity) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RoomParticipantIdentity.ProtoReflect.Descriptor instead.
 func (*RoomParticipantIdentity) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{9}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *RoomParticipantIdentity) GetRoom() string {
@@ -612,7 +612,7 @@ type RemoveParticipantResponse struct {
 
 func (x *RemoveParticipantResponse) Reset() {
 	*x = RemoveParticipantResponse{}
-	mi := &file_livekit_room_proto_msgTypes[10]
+	mi := &file_wirtual_room_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -624,7 +624,7 @@ func (x *RemoveParticipantResponse) String() string {
 func (*RemoveParticipantResponse) ProtoMessage() {}
 
 func (x *RemoveParticipantResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[10]
+	mi := &file_wirtual_room_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -637,7 +637,7 @@ func (x *RemoveParticipantResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveParticipantResponse.ProtoReflect.Descriptor instead.
 func (*RemoveParticipantResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{10}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{10}
 }
 
 type MuteRoomTrackRequest struct {
@@ -655,7 +655,7 @@ type MuteRoomTrackRequest struct {
 
 func (x *MuteRoomTrackRequest) Reset() {
 	*x = MuteRoomTrackRequest{}
-	mi := &file_livekit_room_proto_msgTypes[11]
+	mi := &file_wirtual_room_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -667,7 +667,7 @@ func (x *MuteRoomTrackRequest) String() string {
 func (*MuteRoomTrackRequest) ProtoMessage() {}
 
 func (x *MuteRoomTrackRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[11]
+	mi := &file_wirtual_room_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -680,7 +680,7 @@ func (x *MuteRoomTrackRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MuteRoomTrackRequest.ProtoReflect.Descriptor instead.
 func (*MuteRoomTrackRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{11}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *MuteRoomTrackRequest) GetRoom() string {
@@ -720,7 +720,7 @@ type MuteRoomTrackResponse struct {
 
 func (x *MuteRoomTrackResponse) Reset() {
 	*x = MuteRoomTrackResponse{}
-	mi := &file_livekit_room_proto_msgTypes[12]
+	mi := &file_wirtual_room_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -732,7 +732,7 @@ func (x *MuteRoomTrackResponse) String() string {
 func (*MuteRoomTrackResponse) ProtoMessage() {}
 
 func (x *MuteRoomTrackResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[12]
+	mi := &file_wirtual_room_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -745,7 +745,7 @@ func (x *MuteRoomTrackResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MuteRoomTrackResponse.ProtoReflect.Descriptor instead.
 func (*MuteRoomTrackResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{12}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *MuteRoomTrackResponse) GetTrack() *TrackInfo {
@@ -774,7 +774,7 @@ type UpdateParticipantRequest struct {
 
 func (x *UpdateParticipantRequest) Reset() {
 	*x = UpdateParticipantRequest{}
-	mi := &file_livekit_room_proto_msgTypes[13]
+	mi := &file_wirtual_room_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -786,7 +786,7 @@ func (x *UpdateParticipantRequest) String() string {
 func (*UpdateParticipantRequest) ProtoMessage() {}
 
 func (x *UpdateParticipantRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[13]
+	mi := &file_wirtual_room_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -799,7 +799,7 @@ func (x *UpdateParticipantRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateParticipantRequest.ProtoReflect.Descriptor instead.
 func (*UpdateParticipantRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{13}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *UpdateParticipantRequest) GetRoom() string {
@@ -860,7 +860,7 @@ type UpdateSubscriptionsRequest struct {
 
 func (x *UpdateSubscriptionsRequest) Reset() {
 	*x = UpdateSubscriptionsRequest{}
-	mi := &file_livekit_room_proto_msgTypes[14]
+	mi := &file_wirtual_room_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -872,7 +872,7 @@ func (x *UpdateSubscriptionsRequest) String() string {
 func (*UpdateSubscriptionsRequest) ProtoMessage() {}
 
 func (x *UpdateSubscriptionsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[14]
+	mi := &file_wirtual_room_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -885,7 +885,7 @@ func (x *UpdateSubscriptionsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSubscriptionsRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSubscriptionsRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{14}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *UpdateSubscriptionsRequest) GetRoom() string {
@@ -931,7 +931,7 @@ type UpdateSubscriptionsResponse struct {
 
 func (x *UpdateSubscriptionsResponse) Reset() {
 	*x = UpdateSubscriptionsResponse{}
-	mi := &file_livekit_room_proto_msgTypes[15]
+	mi := &file_wirtual_room_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -943,7 +943,7 @@ func (x *UpdateSubscriptionsResponse) String() string {
 func (*UpdateSubscriptionsResponse) ProtoMessage() {}
 
 func (x *UpdateSubscriptionsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[15]
+	mi := &file_wirtual_room_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -956,7 +956,7 @@ func (x *UpdateSubscriptionsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSubscriptionsResponse.ProtoReflect.Descriptor instead.
 func (*UpdateSubscriptionsResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{15}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{15}
 }
 
 type SendDataRequest struct {
@@ -977,7 +977,7 @@ type SendDataRequest struct {
 
 func (x *SendDataRequest) Reset() {
 	*x = SendDataRequest{}
-	mi := &file_livekit_room_proto_msgTypes[16]
+	mi := &file_wirtual_room_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -989,7 +989,7 @@ func (x *SendDataRequest) String() string {
 func (*SendDataRequest) ProtoMessage() {}
 
 func (x *SendDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[16]
+	mi := &file_wirtual_room_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1002,7 +1002,7 @@ func (x *SendDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendDataRequest.ProtoReflect.Descriptor instead.
 func (*SendDataRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{16}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *SendDataRequest) GetRoom() string {
@@ -1056,7 +1056,7 @@ type SendDataResponse struct {
 
 func (x *SendDataResponse) Reset() {
 	*x = SendDataResponse{}
-	mi := &file_livekit_room_proto_msgTypes[17]
+	mi := &file_wirtual_room_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1068,7 +1068,7 @@ func (x *SendDataResponse) String() string {
 func (*SendDataResponse) ProtoMessage() {}
 
 func (x *SendDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[17]
+	mi := &file_wirtual_room_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1081,7 +1081,7 @@ func (x *SendDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SendDataResponse.ProtoReflect.Descriptor instead.
 func (*SendDataResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{17}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{17}
 }
 
 type UpdateRoomMetadataRequest struct {
@@ -1095,7 +1095,7 @@ type UpdateRoomMetadataRequest struct {
 
 func (x *UpdateRoomMetadataRequest) Reset() {
 	*x = UpdateRoomMetadataRequest{}
-	mi := &file_livekit_room_proto_msgTypes[18]
+	mi := &file_wirtual_room_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1107,7 +1107,7 @@ func (x *UpdateRoomMetadataRequest) String() string {
 func (*UpdateRoomMetadataRequest) ProtoMessage() {}
 
 func (x *UpdateRoomMetadataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[18]
+	mi := &file_wirtual_room_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1120,7 +1120,7 @@ func (x *UpdateRoomMetadataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateRoomMetadataRequest.ProtoReflect.Descriptor instead.
 func (*UpdateRoomMetadataRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{18}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *UpdateRoomMetadataRequest) GetRoom() string {
@@ -1162,7 +1162,7 @@ type RoomConfiguration struct {
 
 func (x *RoomConfiguration) Reset() {
 	*x = RoomConfiguration{}
-	mi := &file_livekit_room_proto_msgTypes[19]
+	mi := &file_wirtual_room_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1174,7 +1174,7 @@ func (x *RoomConfiguration) String() string {
 func (*RoomConfiguration) ProtoMessage() {}
 
 func (x *RoomConfiguration) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_room_proto_msgTypes[19]
+	mi := &file_wirtual_room_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1187,7 +1187,7 @@ func (x *RoomConfiguration) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RoomConfiguration.ProtoReflect.Descriptor instead.
 func (*RoomConfiguration) Descriptor() ([]byte, []int) {
-	return file_livekit_room_proto_rawDescGZIP(), []int{19}
+	return file_wirtual_room_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *RoomConfiguration) GetName() string {
@@ -1253,9 +1253,9 @@ func (x *RoomConfiguration) GetAgents() []*RoomAgentDispatch {
 	return nil
 }
 
-var File_livekit_room_proto protoreflect.FileDescriptor
+var File_wirtual_room_proto protoreflect.FileDescriptor
 
-var file_livekit_room_proto_rawDesc = []byte{
+var file_wirtual_room_proto_rawDesc = []byte{
 	0x0a, 0x12, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x72, 0x6f, 0x6f, 0x6d, 0x2e, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x1a, 0x14, 0x6c,
 	0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72,
@@ -1493,19 +1493,19 @@ var file_livekit_room_proto_rawDesc = []byte{
 }
 
 var (
-	file_livekit_room_proto_rawDescOnce sync.Once
-	file_livekit_room_proto_rawDescData = file_livekit_room_proto_rawDesc
+	file_wirtual_room_proto_rawDescOnce sync.Once
+	file_wirtual_room_proto_rawDescData = file_wirtual_room_proto_rawDesc
 )
 
-func file_livekit_room_proto_rawDescGZIP() []byte {
-	file_livekit_room_proto_rawDescOnce.Do(func() {
-		file_livekit_room_proto_rawDescData = protoimpl.X.CompressGZIP(file_livekit_room_proto_rawDescData)
+func file_wirtual_room_proto_rawDescGZIP() []byte {
+	file_wirtual_room_proto_rawDescOnce.Do(func() {
+		file_wirtual_room_proto_rawDescData = protoimpl.X.CompressGZIP(file_wirtual_room_proto_rawDescData)
 	})
-	return file_livekit_room_proto_rawDescData
+	return file_wirtual_room_proto_rawDescData
 }
 
-var file_livekit_room_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
-var file_livekit_room_proto_goTypes = []any{
+var file_wirtual_room_proto_msgTypes = make([]protoimpl.MessageInfo, 21)
+var file_wirtual_room_proto_goTypes = []any{
 	(*CreateRoomRequest)(nil),           // 0: wirtual.CreateRoomRequest
 	(*RoomEgress)(nil),                  // 1: wirtual.RoomEgress
 	(*RoomAgent)(nil),                   // 2: wirtual.RoomAgent
@@ -1538,7 +1538,7 @@ var file_livekit_room_proto_goTypes = []any{
 	(*ParticipantTracks)(nil),           // 29: wirtual.ParticipantTracks
 	(DataPacket_Kind)(0),                // 30: wirtual.DataPacket.Kind
 }
-var file_livekit_room_proto_depIdxs = []int32{
+var file_wirtual_room_proto_depIdxs = []int32{
 	1,  // 0: wirtual.CreateRoomRequest.egress:type_name -> wirtual.RoomEgress
 	21, // 1: wirtual.CreateRoomRequest.agents:type_name -> wirtual.RoomAgentDispatch
 	22, // 2: wirtual.RoomEgress.room:type_name -> wirtual.RoomCompositeEgressRequest
@@ -1583,31 +1583,31 @@ var file_livekit_room_proto_depIdxs = []int32{
 	0,  // [0:15] is the sub-list for field type_name
 }
 
-func init() { file_livekit_room_proto_init() }
-func file_livekit_room_proto_init() {
-	if File_livekit_room_proto != nil {
+func init() { file_wirtual_room_proto_init() }
+func file_wirtual_room_proto_init() {
+	if File_wirtual_room_proto != nil {
 		return
 	}
-	file_livekit_models_proto_init()
-	file_livekit_egress_proto_init()
-	file_livekit_agent_dispatch_proto_init()
-	file_livekit_room_proto_msgTypes[16].OneofWrappers = []any{}
+	file_wirtual_models_proto_init()
+	file_wirtual_egress_proto_init()
+	file_wirtual_agent_dispatch_proto_init()
+	file_wirtual_room_proto_msgTypes[16].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_livekit_room_proto_rawDesc,
+			RawDescriptor: file_wirtual_room_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   21,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_livekit_room_proto_goTypes,
-		DependencyIndexes: file_livekit_room_proto_depIdxs,
-		MessageInfos:      file_livekit_room_proto_msgTypes,
+		GoTypes:           file_wirtual_room_proto_goTypes,
+		DependencyIndexes: file_wirtual_room_proto_depIdxs,
+		MessageInfos:      file_wirtual_room_proto_msgTypes,
 	}.Build()
-	File_livekit_room_proto = out.File
-	file_livekit_room_proto_rawDesc = nil
-	file_livekit_room_proto_goTypes = nil
-	file_livekit_room_proto_depIdxs = nil
+	File_wirtual_room_proto = out.File
+	file_wirtual_room_proto_rawDesc = nil
+	file_wirtual_room_proto_goTypes = nil
+	file_wirtual_room_proto_depIdxs = nil
 }

@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,14 +14,14 @@
 
 syntax = "proto3";
 
-package livekit;
+package wirtual;
 option go_package = "github.com/wirtual/protocol/rpc";
 
 import "google/protobuf/empty.proto";
 import "wirtual_analytics.proto";
 
 service AnalyticsRecorderService {
-  rpc IngestStats(stream livekit.AnalyticsStats) returns (google.protobuf.Empty){};
-  rpc IngestEvents(stream livekit.AnalyticsEvents) returns (google.protobuf.Empty){};
-  rpc IngestNodeRoomStates(stream livekit.AnalyticsNodeRooms) returns (google.protobuf.Empty){};
+  rpc IngestStats(stream wirtual.AnalyticsStats) returns (google.protobuf.Empty){};
+  rpc IngestEvents(stream wirtual.AnalyticsEvents) returns (google.protobuf.Empty){};
+  rpc IngestNodeRoomStates(stream wirtual.AnalyticsNodeRooms) returns (google.protobuf.Empty){};
 }

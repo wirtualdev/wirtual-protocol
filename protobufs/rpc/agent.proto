@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ service AgentInternal {
   rpc CheckEnabled(CheckEnabledRequest) returns (CheckEnabledResponse) {
     option (psrpc.options).multi = true;
   };
-  rpc JobRequest(livekit.Job) returns (JobRequestResponse) {
+  rpc JobRequest(wirtual.Job) returns (JobRequestResponse) {
     option (psrpc.options) = {
       affinity_func: true
       topics: true
@@ -73,7 +73,7 @@ message CheckEnabledResponse {
 }
 
 message JobRequestResponse {
-  livekit.JobState state = 1;
+  wirtual.JobState state = 1;
 }
 
 message JobTerminateRequest {
@@ -82,6 +82,6 @@ message JobTerminateRequest {
 }
 
 message JobTerminateResponse {
-  livekit.JobState state = 1;
+  wirtual.JobState state = 1;
 }
 

@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	durationpb "google.golang.org/protobuf/types/known/durationpb"
@@ -138,7 +138,7 @@ func (x *GetEgressRequest) GetEgressId() string {
 
 type UpdateMetricsRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Info          *livekit.EgressInfo    `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+	Info          *wirtual.EgressInfo    `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
 	AvgCpuUsage   float32                `protobuf:"fixed32,3,opt,name=avg_cpu_usage,json=avgCpuUsage,proto3" json:"avg_cpu_usage,omitempty"`
 	MaxCpuUsage   float32                `protobuf:"fixed32,4,opt,name=max_cpu_usage,json=maxCpuUsage,proto3" json:"max_cpu_usage,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -175,7 +175,7 @@ func (*UpdateMetricsRequest) Descriptor() ([]byte, []int) {
 	return file_rpc_io_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *UpdateMetricsRequest) GetInfo() *livekit.EgressInfo {
+func (x *UpdateMetricsRequest) GetInfo() *wirtual.EgressInfo {
 	if x != nil {
 		return x.Info
 	}
@@ -251,7 +251,7 @@ func (x *GetIngressInfoRequest) GetStreamKey() string {
 
 type GetIngressInfoResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Info          *livekit.IngressInfo   `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
+	Info          *wirtual.IngressInfo   `protobuf:"bytes,1,opt,name=info,proto3" json:"info,omitempty"`
 	Token         string                 `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
 	WsUrl         string                 `protobuf:"bytes,3,opt,name=ws_url,json=wsUrl,proto3" json:"ws_url,omitempty"`
 	LoggingFields map[string]string      `protobuf:"bytes,4,rep,name=logging_fields,json=loggingFields,proto3" json:"logging_fields,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
@@ -289,7 +289,7 @@ func (*GetIngressInfoResponse) Descriptor() ([]byte, []int) {
 	return file_rpc_io_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *GetIngressInfoResponse) GetInfo() *livekit.IngressInfo {
+func (x *GetIngressInfoResponse) GetInfo() *wirtual.IngressInfo {
 	if x != nil {
 		return x.Info
 	}
@@ -321,7 +321,7 @@ func (x *GetIngressInfoResponse) GetLoggingFields() map[string]string {
 type UpdateIngressStateRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	IngressId     string                 `protobuf:"bytes,1,opt,name=ingress_id,json=ingressId,proto3" json:"ingress_id,omitempty"`
-	State         *livekit.IngressState  `protobuf:"bytes,2,opt,name=state,proto3" json:"state,omitempty"`
+	State         *wirtual.IngressState  `protobuf:"bytes,2,opt,name=state,proto3" json:"state,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -363,7 +363,7 @@ func (x *UpdateIngressStateRequest) GetIngressId() string {
 	return ""
 }
 
-func (x *UpdateIngressStateRequest) GetState() *livekit.IngressState {
+func (x *UpdateIngressStateRequest) GetState() *wirtual.IngressState {
 	if x != nil {
 		return x.State
 	}
@@ -660,19 +660,19 @@ type EvaluateSIPDispatchRulesResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// non-empty string if SIPParticipant should be placed a room
 	RoomName string `protobuf:"bytes,1,opt,name=room_name,json=roomName,proto3" json:"room_name,omitempty"`
-	// What should be used for the LiveKit participant identity
+	// What should be used for the Wirtual participant identity
 	ParticipantIdentity string `protobuf:"bytes,2,opt,name=participant_identity,json=participantIdentity,proto3" json:"participant_identity,omitempty"`
-	// What should be used for the LiveKit participant name
+	// What should be used for the Wirtual participant name
 	ParticipantName string `protobuf:"bytes,7,opt,name=participant_name,json=participantName,proto3" json:"participant_name,omitempty"`
-	// What should be used for the LiveKit participant metadata
+	// What should be used for the Wirtual participant metadata
 	ParticipantMetadata string `protobuf:"bytes,8,opt,name=participant_metadata,json=participantMetadata,proto3" json:"participant_metadata,omitempty"`
-	// What should be used for the LiveKit participant attributes
+	// What should be used for the Wirtual participant attributes
 	ParticipantAttributes map[string]string `protobuf:"bytes,11,rep,name=participant_attributes,json=participantAttributes,proto3" json:"participant_attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Deprecated: Marked as deprecated in rpc/io.proto.
 	RequestPin bool `protobuf:"varint,3,opt,name=request_pin,json=requestPin,proto3" json:"request_pin,omitempty"` // see result
-	// optional token that should be used when creating LiveKit participant
+	// optional token that should be used when creating Wirtual participant
 	Token string `protobuf:"bytes,4,opt,name=token,proto3" json:"token,omitempty"`
-	// optional websocket url that should be used when creating LiveKit participant
+	// optional websocket url that should be used when creating Wirtual participant
 	WsUrl  string            `protobuf:"bytes,5,opt,name=ws_url,json=wsUrl,proto3" json:"ws_url,omitempty"`
 	Result SIPDispatchResult `protobuf:"varint,6,opt,name=result,proto3,enum=rpc.SIPDispatchResult" json:"result,omitempty"`
 	// Trunk used to fulfill this request
@@ -682,12 +682,12 @@ type EvaluateSIPDispatchRulesResponse struct {
 	// Used in Cloud only
 	ProjectId string `protobuf:"bytes,12,opt,name=project_id,json=projectId,proto3" json:"project_id,omitempty"`
 	// Include these SIP X-* headers in 200 OK response to INVITE.
-	// These headers are included as-is and may help identify triggered LiveKit Dispatch Rule for the other SIP endpoint.
+	// These headers are included as-is and may help identify triggered Wirtual Dispatch Rule for the other SIP endpoint.
 	Headers map[string]string `protobuf:"bytes,13,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Map SIP X-* headers from INVITE to SIP participant attributes.
 	// Keys are the names of X-* headers and values are the names of attributes they will be mapped to.
 	HeadersToAttributes map[string]string `protobuf:"bytes,14,rep,name=headers_to_attributes,json=headersToAttributes,proto3" json:"headers_to_attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// Map LiveKit attributes to SIP X-* headers when sending BYE or REFER requests.
+	// Map Wirtual attributes to SIP X-* headers when sending BYE or REFER requests.
 	// Keys are the names of attributes and values are the names of X-* headers they will be mapped to.
 	AttributesToHeaders map[string]string `protobuf:"bytes,18,rep,name=attributes_to_headers,json=attributesToHeaders,proto3" json:"attributes_to_headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Map SIP headers from INVITE to sip.h.* participant attributes automatically.
@@ -696,8 +696,8 @@ type EvaluateSIPDispatchRulesResponse struct {
 	//
 	// When mapping INVITE headers to response headers with attributes_to_headers map,
 	// lowercase header names should be used, for example: sip.h.x-custom-header.
-	IncludeHeaders  livekit.SIPHeaderOptions `protobuf:"varint,19,opt,name=include_headers,json=includeHeaders,proto3,enum=wirtual.SIPHeaderOptions" json:"include_headers,omitempty"`
-	EnabledFeatures []livekit.SIPFeature     `protobuf:"varint,15,rep,packed,name=enabled_features,json=enabledFeatures,proto3,enum=wirtual.SIPFeature" json:"enabled_features,omitempty"`
+	IncludeHeaders  wirtual.SIPHeaderOptions `protobuf:"varint,19,opt,name=include_headers,json=includeHeaders,proto3,enum=wirtual.SIPHeaderOptions" json:"include_headers,omitempty"`
+	EnabledFeatures []wirtual.SIPFeature     `protobuf:"varint,15,rep,packed,name=enabled_features,json=enabledFeatures,proto3,enum=wirtual.SIPFeature" json:"enabled_features,omitempty"`
 	// Max time for the caller to wait for track subscription.
 	RingingTimeout *durationpb.Duration `protobuf:"bytes,16,opt,name=ringing_timeout,json=ringingTimeout,proto3" json:"ringing_timeout,omitempty"`
 	// Max call duration.
@@ -706,8 +706,8 @@ type EvaluateSIPDispatchRulesResponse struct {
 	// once tokens are returned by this response consistently, it will no longer
 	// be needed
 	RoomPreset      string                     `protobuf:"bytes,20,opt,name=room_preset,json=roomPreset,proto3" json:"room_preset,omitempty"`
-	RoomConfig      *livekit.RoomConfiguration `protobuf:"bytes,21,opt,name=room_config,json=roomConfig,proto3" json:"room_config,omitempty"`
-	MediaEncryption livekit.SIPMediaEncryption `protobuf:"varint,22,opt,name=media_encryption,json=mediaEncryption,proto3,enum=wirtual.SIPMediaEncryption" json:"media_encryption,omitempty"`
+	RoomConfig      *wirtual.RoomConfiguration `protobuf:"bytes,21,opt,name=room_config,json=roomConfig,proto3" json:"room_config,omitempty"`
+	MediaEncryption wirtual.SIPMediaEncryption `protobuf:"varint,22,opt,name=media_encryption,json=mediaEncryption,proto3,enum=wirtual.SIPMediaEncryption" json:"media_encryption,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -848,14 +848,14 @@ func (x *EvaluateSIPDispatchRulesResponse) GetAttributesToHeaders() map[string]s
 	return nil
 }
 
-func (x *EvaluateSIPDispatchRulesResponse) GetIncludeHeaders() livekit.SIPHeaderOptions {
+func (x *EvaluateSIPDispatchRulesResponse) GetIncludeHeaders() wirtual.SIPHeaderOptions {
 	if x != nil {
 		return x.IncludeHeaders
 	}
-	return livekit.SIPHeaderOptions(0)
+	return wirtual.SIPHeaderOptions(0)
 }
 
-func (x *EvaluateSIPDispatchRulesResponse) GetEnabledFeatures() []livekit.SIPFeature {
+func (x *EvaluateSIPDispatchRulesResponse) GetEnabledFeatures() []wirtual.SIPFeature {
 	if x != nil {
 		return x.EnabledFeatures
 	}
@@ -883,23 +883,23 @@ func (x *EvaluateSIPDispatchRulesResponse) GetRoomPreset() string {
 	return ""
 }
 
-func (x *EvaluateSIPDispatchRulesResponse) GetRoomConfig() *livekit.RoomConfiguration {
+func (x *EvaluateSIPDispatchRulesResponse) GetRoomConfig() *wirtual.RoomConfiguration {
 	if x != nil {
 		return x.RoomConfig
 	}
 	return nil
 }
 
-func (x *EvaluateSIPDispatchRulesResponse) GetMediaEncryption() livekit.SIPMediaEncryption {
+func (x *EvaluateSIPDispatchRulesResponse) GetMediaEncryption() wirtual.SIPMediaEncryption {
 	if x != nil {
 		return x.MediaEncryption
 	}
-	return livekit.SIPMediaEncryption(0)
+	return wirtual.SIPMediaEncryption(0)
 }
 
 type UpdateSIPCallStateRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	CallInfo      *livekit.SIPCallInfo   `protobuf:"bytes,1,opt,name=call_info,json=callInfo,proto3" json:"call_info,omitempty"`
+	CallInfo      *wirtual.SIPCallInfo   `protobuf:"bytes,1,opt,name=call_info,json=callInfo,proto3" json:"call_info,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -934,7 +934,7 @@ func (*UpdateSIPCallStateRequest) Descriptor() ([]byte, []int) {
 	return file_rpc_io_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *UpdateSIPCallStateRequest) GetCallInfo() *livekit.SIPCallInfo {
+func (x *UpdateSIPCallStateRequest) GetCallInfo() *wirtual.SIPCallInfo {
 	if x != nil {
 		return x.CallInfo
 	}
@@ -1248,18 +1248,18 @@ var file_rpc_io_proto_goTypes = []any{
 	nil,                                       // 14: rpc.EvaluateSIPDispatchRulesResponse.HeadersEntry
 	nil,                                       // 15: rpc.EvaluateSIPDispatchRulesResponse.HeadersToAttributesEntry
 	nil,                                       // 16: rpc.EvaluateSIPDispatchRulesResponse.AttributesToHeadersEntry
-	(*livekit.EgressInfo)(nil),                // 17: wirtual.EgressInfo
-	(*livekit.IngressInfo)(nil),               // 18: wirtual.IngressInfo
-	(*livekit.IngressState)(nil),              // 19: wirtual.IngressState
-	(livekit.SIPHeaderOptions)(0),             // 20: wirtual.SIPHeaderOptions
-	(livekit.SIPFeature)(0),                   // 21: wirtual.SIPFeature
+	(*wirtual.EgressInfo)(nil),                // 17: wirtual.EgressInfo
+	(*wirtual.IngressInfo)(nil),               // 18: wirtual.IngressInfo
+	(*wirtual.IngressState)(nil),              // 19: wirtual.IngressState
+	(wirtual.SIPHeaderOptions)(0),             // 20: wirtual.SIPHeaderOptions
+	(wirtual.SIPFeature)(0),                   // 21: wirtual.SIPFeature
 	(*durationpb.Duration)(nil),               // 22: google.protobuf.Duration
-	(*livekit.RoomConfiguration)(nil),         // 23: wirtual.RoomConfiguration
-	(livekit.SIPMediaEncryption)(0),           // 24: wirtual.SIPMediaEncryption
-	(*livekit.SIPCallInfo)(nil),               // 25: wirtual.SIPCallInfo
-	(*livekit.ListEgressRequest)(nil),         // 26: wirtual.ListEgressRequest
+	(*wirtual.RoomConfiguration)(nil),         // 23: wirtual.RoomConfiguration
+	(wirtual.SIPMediaEncryption)(0),           // 24: wirtual.SIPMediaEncryption
+	(*wirtual.SIPCallInfo)(nil),               // 25: wirtual.SIPCallInfo
+	(*wirtual.ListEgressRequest)(nil),         // 26: wirtual.ListEgressRequest
 	(*emptypb.Empty)(nil),                     // 27: google.protobuf.Empty
-	(*livekit.ListEgressResponse)(nil),        // 28: wirtual.ListEgressResponse
+	(*wirtual.ListEgressResponse)(nil),        // 28: wirtual.ListEgressResponse
 }
 var file_rpc_io_proto_depIdxs = []int32{
 	17, // 0: rpc.UpdateMetricsRequest.info:type_name -> wirtual.EgressInfo

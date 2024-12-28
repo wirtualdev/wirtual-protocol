@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,9 +21,9 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/middleware"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/middleware"
 )
 
 const (
@@ -99,7 +99,7 @@ func NewEgressClient(params ClientParams) (EgressClient, error) {
 	}, nil
 }
 
-func (c *egressClient) StartEgress(ctx context.Context, topic string, req *StartEgressRequest, opts ...psrpc.RequestOption) (*livekit.EgressInfo, error) {
+func (c *egressClient) StartEgress(ctx context.Context, topic string, req *StartEgressRequest, opts ...psrpc.RequestOption) (*wirtual.EgressInfo, error) {
 	o := append([]psrpc.RequestOption{
 		psrpc.WithSelectionOpts(psrpc.SelectionOpts{
 			MaximumAffinity:     1,

@@ -5,9 +5,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/rpc"
-	"github.com/livekit/psrpc"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/rpc"
+	"github.com/wirtual/psrpc"
 )
 
 type FakeTypedParticipantClient struct {
@@ -15,68 +15,68 @@ type FakeTypedParticipantClient struct {
 	closeMutex       sync.RWMutex
 	closeArgsForCall []struct {
 	}
-	MutePublishedTrackStub        func(context.Context, rpc.ParticipantTopic, *livekit.MuteRoomTrackRequest, ...psrpc.RequestOption) (*livekit.MuteRoomTrackResponse, error)
+	MutePublishedTrackStub        func(context.Context, rpc.ParticipantTopic, *wirtual.MuteRoomTrackRequest, ...psrpc.RequestOption) (*wirtual.MuteRoomTrackResponse, error)
 	mutePublishedTrackMutex       sync.RWMutex
 	mutePublishedTrackArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.ParticipantTopic
-		arg3 *livekit.MuteRoomTrackRequest
+		arg3 *wirtual.MuteRoomTrackRequest
 		arg4 []psrpc.RequestOption
 	}
 	mutePublishedTrackReturns struct {
-		result1 *livekit.MuteRoomTrackResponse
+		result1 *wirtual.MuteRoomTrackResponse
 		result2 error
 	}
 	mutePublishedTrackReturnsOnCall map[int]struct {
-		result1 *livekit.MuteRoomTrackResponse
+		result1 *wirtual.MuteRoomTrackResponse
 		result2 error
 	}
-	RemoveParticipantStub        func(context.Context, rpc.ParticipantTopic, *livekit.RoomParticipantIdentity, ...psrpc.RequestOption) (*livekit.RemoveParticipantResponse, error)
+	RemoveParticipantStub        func(context.Context, rpc.ParticipantTopic, *wirtual.RoomParticipantIdentity, ...psrpc.RequestOption) (*wirtual.RemoveParticipantResponse, error)
 	removeParticipantMutex       sync.RWMutex
 	removeParticipantArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.ParticipantTopic
-		arg3 *livekit.RoomParticipantIdentity
+		arg3 *wirtual.RoomParticipantIdentity
 		arg4 []psrpc.RequestOption
 	}
 	removeParticipantReturns struct {
-		result1 *livekit.RemoveParticipantResponse
+		result1 *wirtual.RemoveParticipantResponse
 		result2 error
 	}
 	removeParticipantReturnsOnCall map[int]struct {
-		result1 *livekit.RemoveParticipantResponse
+		result1 *wirtual.RemoveParticipantResponse
 		result2 error
 	}
-	UpdateParticipantStub        func(context.Context, rpc.ParticipantTopic, *livekit.UpdateParticipantRequest, ...psrpc.RequestOption) (*livekit.ParticipantInfo, error)
+	UpdateParticipantStub        func(context.Context, rpc.ParticipantTopic, *wirtual.UpdateParticipantRequest, ...psrpc.RequestOption) (*wirtual.ParticipantInfo, error)
 	updateParticipantMutex       sync.RWMutex
 	updateParticipantArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.ParticipantTopic
-		arg3 *livekit.UpdateParticipantRequest
+		arg3 *wirtual.UpdateParticipantRequest
 		arg4 []psrpc.RequestOption
 	}
 	updateParticipantReturns struct {
-		result1 *livekit.ParticipantInfo
+		result1 *wirtual.ParticipantInfo
 		result2 error
 	}
 	updateParticipantReturnsOnCall map[int]struct {
-		result1 *livekit.ParticipantInfo
+		result1 *wirtual.ParticipantInfo
 		result2 error
 	}
-	UpdateSubscriptionsStub        func(context.Context, rpc.ParticipantTopic, *livekit.UpdateSubscriptionsRequest, ...psrpc.RequestOption) (*livekit.UpdateSubscriptionsResponse, error)
+	UpdateSubscriptionsStub        func(context.Context, rpc.ParticipantTopic, *wirtual.UpdateSubscriptionsRequest, ...psrpc.RequestOption) (*wirtual.UpdateSubscriptionsResponse, error)
 	updateSubscriptionsMutex       sync.RWMutex
 	updateSubscriptionsArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.ParticipantTopic
-		arg3 *livekit.UpdateSubscriptionsRequest
+		arg3 *wirtual.UpdateSubscriptionsRequest
 		arg4 []psrpc.RequestOption
 	}
 	updateSubscriptionsReturns struct {
-		result1 *livekit.UpdateSubscriptionsResponse
+		result1 *wirtual.UpdateSubscriptionsResponse
 		result2 error
 	}
 	updateSubscriptionsReturnsOnCall map[int]struct {
-		result1 *livekit.UpdateSubscriptionsResponse
+		result1 *wirtual.UpdateSubscriptionsResponse
 		result2 error
 	}
 	invocations      map[string][][]interface{}
@@ -107,13 +107,13 @@ func (fake *FakeTypedParticipantClient) CloseCalls(stub func()) {
 	fake.CloseStub = stub
 }
 
-func (fake *FakeTypedParticipantClient) MutePublishedTrack(arg1 context.Context, arg2 rpc.ParticipantTopic, arg3 *livekit.MuteRoomTrackRequest, arg4 ...psrpc.RequestOption) (*livekit.MuteRoomTrackResponse, error) {
+func (fake *FakeTypedParticipantClient) MutePublishedTrack(arg1 context.Context, arg2 rpc.ParticipantTopic, arg3 *wirtual.MuteRoomTrackRequest, arg4 ...psrpc.RequestOption) (*wirtual.MuteRoomTrackResponse, error) {
 	fake.mutePublishedTrackMutex.Lock()
 	ret, specificReturn := fake.mutePublishedTrackReturnsOnCall[len(fake.mutePublishedTrackArgsForCall)]
 	fake.mutePublishedTrackArgsForCall = append(fake.mutePublishedTrackArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.ParticipantTopic
-		arg3 *livekit.MuteRoomTrackRequest
+		arg3 *wirtual.MuteRoomTrackRequest
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.MutePublishedTrackStub
@@ -135,52 +135,52 @@ func (fake *FakeTypedParticipantClient) MutePublishedTrackCallCount() int {
 	return len(fake.mutePublishedTrackArgsForCall)
 }
 
-func (fake *FakeTypedParticipantClient) MutePublishedTrackCalls(stub func(context.Context, rpc.ParticipantTopic, *livekit.MuteRoomTrackRequest, ...psrpc.RequestOption) (*livekit.MuteRoomTrackResponse, error)) {
+func (fake *FakeTypedParticipantClient) MutePublishedTrackCalls(stub func(context.Context, rpc.ParticipantTopic, *wirtual.MuteRoomTrackRequest, ...psrpc.RequestOption) (*wirtual.MuteRoomTrackResponse, error)) {
 	fake.mutePublishedTrackMutex.Lock()
 	defer fake.mutePublishedTrackMutex.Unlock()
 	fake.MutePublishedTrackStub = stub
 }
 
-func (fake *FakeTypedParticipantClient) MutePublishedTrackArgsForCall(i int) (context.Context, rpc.ParticipantTopic, *livekit.MuteRoomTrackRequest, []psrpc.RequestOption) {
+func (fake *FakeTypedParticipantClient) MutePublishedTrackArgsForCall(i int) (context.Context, rpc.ParticipantTopic, *wirtual.MuteRoomTrackRequest, []psrpc.RequestOption) {
 	fake.mutePublishedTrackMutex.RLock()
 	defer fake.mutePublishedTrackMutex.RUnlock()
 	argsForCall := fake.mutePublishedTrackArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedParticipantClient) MutePublishedTrackReturns(result1 *livekit.MuteRoomTrackResponse, result2 error) {
+func (fake *FakeTypedParticipantClient) MutePublishedTrackReturns(result1 *wirtual.MuteRoomTrackResponse, result2 error) {
 	fake.mutePublishedTrackMutex.Lock()
 	defer fake.mutePublishedTrackMutex.Unlock()
 	fake.MutePublishedTrackStub = nil
 	fake.mutePublishedTrackReturns = struct {
-		result1 *livekit.MuteRoomTrackResponse
+		result1 *wirtual.MuteRoomTrackResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedParticipantClient) MutePublishedTrackReturnsOnCall(i int, result1 *livekit.MuteRoomTrackResponse, result2 error) {
+func (fake *FakeTypedParticipantClient) MutePublishedTrackReturnsOnCall(i int, result1 *wirtual.MuteRoomTrackResponse, result2 error) {
 	fake.mutePublishedTrackMutex.Lock()
 	defer fake.mutePublishedTrackMutex.Unlock()
 	fake.MutePublishedTrackStub = nil
 	if fake.mutePublishedTrackReturnsOnCall == nil {
 		fake.mutePublishedTrackReturnsOnCall = make(map[int]struct {
-			result1 *livekit.MuteRoomTrackResponse
+			result1 *wirtual.MuteRoomTrackResponse
 			result2 error
 		})
 	}
 	fake.mutePublishedTrackReturnsOnCall[i] = struct {
-		result1 *livekit.MuteRoomTrackResponse
+		result1 *wirtual.MuteRoomTrackResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedParticipantClient) RemoveParticipant(arg1 context.Context, arg2 rpc.ParticipantTopic, arg3 *livekit.RoomParticipantIdentity, arg4 ...psrpc.RequestOption) (*livekit.RemoveParticipantResponse, error) {
+func (fake *FakeTypedParticipantClient) RemoveParticipant(arg1 context.Context, arg2 rpc.ParticipantTopic, arg3 *wirtual.RoomParticipantIdentity, arg4 ...psrpc.RequestOption) (*wirtual.RemoveParticipantResponse, error) {
 	fake.removeParticipantMutex.Lock()
 	ret, specificReturn := fake.removeParticipantReturnsOnCall[len(fake.removeParticipantArgsForCall)]
 	fake.removeParticipantArgsForCall = append(fake.removeParticipantArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.ParticipantTopic
-		arg3 *livekit.RoomParticipantIdentity
+		arg3 *wirtual.RoomParticipantIdentity
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.RemoveParticipantStub
@@ -202,52 +202,52 @@ func (fake *FakeTypedParticipantClient) RemoveParticipantCallCount() int {
 	return len(fake.removeParticipantArgsForCall)
 }
 
-func (fake *FakeTypedParticipantClient) RemoveParticipantCalls(stub func(context.Context, rpc.ParticipantTopic, *livekit.RoomParticipantIdentity, ...psrpc.RequestOption) (*livekit.RemoveParticipantResponse, error)) {
+func (fake *FakeTypedParticipantClient) RemoveParticipantCalls(stub func(context.Context, rpc.ParticipantTopic, *wirtual.RoomParticipantIdentity, ...psrpc.RequestOption) (*wirtual.RemoveParticipantResponse, error)) {
 	fake.removeParticipantMutex.Lock()
 	defer fake.removeParticipantMutex.Unlock()
 	fake.RemoveParticipantStub = stub
 }
 
-func (fake *FakeTypedParticipantClient) RemoveParticipantArgsForCall(i int) (context.Context, rpc.ParticipantTopic, *livekit.RoomParticipantIdentity, []psrpc.RequestOption) {
+func (fake *FakeTypedParticipantClient) RemoveParticipantArgsForCall(i int) (context.Context, rpc.ParticipantTopic, *wirtual.RoomParticipantIdentity, []psrpc.RequestOption) {
 	fake.removeParticipantMutex.RLock()
 	defer fake.removeParticipantMutex.RUnlock()
 	argsForCall := fake.removeParticipantArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedParticipantClient) RemoveParticipantReturns(result1 *livekit.RemoveParticipantResponse, result2 error) {
+func (fake *FakeTypedParticipantClient) RemoveParticipantReturns(result1 *wirtual.RemoveParticipantResponse, result2 error) {
 	fake.removeParticipantMutex.Lock()
 	defer fake.removeParticipantMutex.Unlock()
 	fake.RemoveParticipantStub = nil
 	fake.removeParticipantReturns = struct {
-		result1 *livekit.RemoveParticipantResponse
+		result1 *wirtual.RemoveParticipantResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedParticipantClient) RemoveParticipantReturnsOnCall(i int, result1 *livekit.RemoveParticipantResponse, result2 error) {
+func (fake *FakeTypedParticipantClient) RemoveParticipantReturnsOnCall(i int, result1 *wirtual.RemoveParticipantResponse, result2 error) {
 	fake.removeParticipantMutex.Lock()
 	defer fake.removeParticipantMutex.Unlock()
 	fake.RemoveParticipantStub = nil
 	if fake.removeParticipantReturnsOnCall == nil {
 		fake.removeParticipantReturnsOnCall = make(map[int]struct {
-			result1 *livekit.RemoveParticipantResponse
+			result1 *wirtual.RemoveParticipantResponse
 			result2 error
 		})
 	}
 	fake.removeParticipantReturnsOnCall[i] = struct {
-		result1 *livekit.RemoveParticipantResponse
+		result1 *wirtual.RemoveParticipantResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedParticipantClient) UpdateParticipant(arg1 context.Context, arg2 rpc.ParticipantTopic, arg3 *livekit.UpdateParticipantRequest, arg4 ...psrpc.RequestOption) (*livekit.ParticipantInfo, error) {
+func (fake *FakeTypedParticipantClient) UpdateParticipant(arg1 context.Context, arg2 rpc.ParticipantTopic, arg3 *wirtual.UpdateParticipantRequest, arg4 ...psrpc.RequestOption) (*wirtual.ParticipantInfo, error) {
 	fake.updateParticipantMutex.Lock()
 	ret, specificReturn := fake.updateParticipantReturnsOnCall[len(fake.updateParticipantArgsForCall)]
 	fake.updateParticipantArgsForCall = append(fake.updateParticipantArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.ParticipantTopic
-		arg3 *livekit.UpdateParticipantRequest
+		arg3 *wirtual.UpdateParticipantRequest
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.UpdateParticipantStub
@@ -269,52 +269,52 @@ func (fake *FakeTypedParticipantClient) UpdateParticipantCallCount() int {
 	return len(fake.updateParticipantArgsForCall)
 }
 
-func (fake *FakeTypedParticipantClient) UpdateParticipantCalls(stub func(context.Context, rpc.ParticipantTopic, *livekit.UpdateParticipantRequest, ...psrpc.RequestOption) (*livekit.ParticipantInfo, error)) {
+func (fake *FakeTypedParticipantClient) UpdateParticipantCalls(stub func(context.Context, rpc.ParticipantTopic, *wirtual.UpdateParticipantRequest, ...psrpc.RequestOption) (*wirtual.ParticipantInfo, error)) {
 	fake.updateParticipantMutex.Lock()
 	defer fake.updateParticipantMutex.Unlock()
 	fake.UpdateParticipantStub = stub
 }
 
-func (fake *FakeTypedParticipantClient) UpdateParticipantArgsForCall(i int) (context.Context, rpc.ParticipantTopic, *livekit.UpdateParticipantRequest, []psrpc.RequestOption) {
+func (fake *FakeTypedParticipantClient) UpdateParticipantArgsForCall(i int) (context.Context, rpc.ParticipantTopic, *wirtual.UpdateParticipantRequest, []psrpc.RequestOption) {
 	fake.updateParticipantMutex.RLock()
 	defer fake.updateParticipantMutex.RUnlock()
 	argsForCall := fake.updateParticipantArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedParticipantClient) UpdateParticipantReturns(result1 *livekit.ParticipantInfo, result2 error) {
+func (fake *FakeTypedParticipantClient) UpdateParticipantReturns(result1 *wirtual.ParticipantInfo, result2 error) {
 	fake.updateParticipantMutex.Lock()
 	defer fake.updateParticipantMutex.Unlock()
 	fake.UpdateParticipantStub = nil
 	fake.updateParticipantReturns = struct {
-		result1 *livekit.ParticipantInfo
+		result1 *wirtual.ParticipantInfo
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedParticipantClient) UpdateParticipantReturnsOnCall(i int, result1 *livekit.ParticipantInfo, result2 error) {
+func (fake *FakeTypedParticipantClient) UpdateParticipantReturnsOnCall(i int, result1 *wirtual.ParticipantInfo, result2 error) {
 	fake.updateParticipantMutex.Lock()
 	defer fake.updateParticipantMutex.Unlock()
 	fake.UpdateParticipantStub = nil
 	if fake.updateParticipantReturnsOnCall == nil {
 		fake.updateParticipantReturnsOnCall = make(map[int]struct {
-			result1 *livekit.ParticipantInfo
+			result1 *wirtual.ParticipantInfo
 			result2 error
 		})
 	}
 	fake.updateParticipantReturnsOnCall[i] = struct {
-		result1 *livekit.ParticipantInfo
+		result1 *wirtual.ParticipantInfo
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedParticipantClient) UpdateSubscriptions(arg1 context.Context, arg2 rpc.ParticipantTopic, arg3 *livekit.UpdateSubscriptionsRequest, arg4 ...psrpc.RequestOption) (*livekit.UpdateSubscriptionsResponse, error) {
+func (fake *FakeTypedParticipantClient) UpdateSubscriptions(arg1 context.Context, arg2 rpc.ParticipantTopic, arg3 *wirtual.UpdateSubscriptionsRequest, arg4 ...psrpc.RequestOption) (*wirtual.UpdateSubscriptionsResponse, error) {
 	fake.updateSubscriptionsMutex.Lock()
 	ret, specificReturn := fake.updateSubscriptionsReturnsOnCall[len(fake.updateSubscriptionsArgsForCall)]
 	fake.updateSubscriptionsArgsForCall = append(fake.updateSubscriptionsArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.ParticipantTopic
-		arg3 *livekit.UpdateSubscriptionsRequest
+		arg3 *wirtual.UpdateSubscriptionsRequest
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.UpdateSubscriptionsStub
@@ -336,41 +336,41 @@ func (fake *FakeTypedParticipantClient) UpdateSubscriptionsCallCount() int {
 	return len(fake.updateSubscriptionsArgsForCall)
 }
 
-func (fake *FakeTypedParticipantClient) UpdateSubscriptionsCalls(stub func(context.Context, rpc.ParticipantTopic, *livekit.UpdateSubscriptionsRequest, ...psrpc.RequestOption) (*livekit.UpdateSubscriptionsResponse, error)) {
+func (fake *FakeTypedParticipantClient) UpdateSubscriptionsCalls(stub func(context.Context, rpc.ParticipantTopic, *wirtual.UpdateSubscriptionsRequest, ...psrpc.RequestOption) (*wirtual.UpdateSubscriptionsResponse, error)) {
 	fake.updateSubscriptionsMutex.Lock()
 	defer fake.updateSubscriptionsMutex.Unlock()
 	fake.UpdateSubscriptionsStub = stub
 }
 
-func (fake *FakeTypedParticipantClient) UpdateSubscriptionsArgsForCall(i int) (context.Context, rpc.ParticipantTopic, *livekit.UpdateSubscriptionsRequest, []psrpc.RequestOption) {
+func (fake *FakeTypedParticipantClient) UpdateSubscriptionsArgsForCall(i int) (context.Context, rpc.ParticipantTopic, *wirtual.UpdateSubscriptionsRequest, []psrpc.RequestOption) {
 	fake.updateSubscriptionsMutex.RLock()
 	defer fake.updateSubscriptionsMutex.RUnlock()
 	argsForCall := fake.updateSubscriptionsArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedParticipantClient) UpdateSubscriptionsReturns(result1 *livekit.UpdateSubscriptionsResponse, result2 error) {
+func (fake *FakeTypedParticipantClient) UpdateSubscriptionsReturns(result1 *wirtual.UpdateSubscriptionsResponse, result2 error) {
 	fake.updateSubscriptionsMutex.Lock()
 	defer fake.updateSubscriptionsMutex.Unlock()
 	fake.UpdateSubscriptionsStub = nil
 	fake.updateSubscriptionsReturns = struct {
-		result1 *livekit.UpdateSubscriptionsResponse
+		result1 *wirtual.UpdateSubscriptionsResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedParticipantClient) UpdateSubscriptionsReturnsOnCall(i int, result1 *livekit.UpdateSubscriptionsResponse, result2 error) {
+func (fake *FakeTypedParticipantClient) UpdateSubscriptionsReturnsOnCall(i int, result1 *wirtual.UpdateSubscriptionsResponse, result2 error) {
 	fake.updateSubscriptionsMutex.Lock()
 	defer fake.updateSubscriptionsMutex.Unlock()
 	fake.UpdateSubscriptionsStub = nil
 	if fake.updateSubscriptionsReturnsOnCall == nil {
 		fake.updateSubscriptionsReturnsOnCall = make(map[int]struct {
-			result1 *livekit.UpdateSubscriptionsResponse
+			result1 *wirtual.UpdateSubscriptionsResponse
 			result2 error
 		})
 	}
 	fake.updateSubscriptionsReturnsOnCall[i] = struct {
-		result1 *livekit.UpdateSubscriptionsResponse
+		result1 *wirtual.UpdateSubscriptionsResponse
 		result2 error
 	}{result1, result2}
 }

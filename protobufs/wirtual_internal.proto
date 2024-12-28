@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,10 +14,10 @@
 
 syntax = "proto3";
 
-package livekit;
+package wirtual;
 option go_package = "github.com/wirtual/protocol/wirtual";
-option csharp_namespace = "LiveKit.Proto";
-option ruby_package = "LiveKit::Proto";
+option csharp_namespace = "Wirtual.Proto";
+option ruby_package = "Wirtual::Proto";
 
 // internal protos, not exposed to clients
 import "wirtual_models.proto";
@@ -137,7 +137,7 @@ message StartSession {
   ReconnectReason reconnect_reason = 17;
   optional bool subscriber_allow_pause = 18;
   bool disable_ice_lite = 19;
-  livekit.CreateRoomRequest create_room = 20;
+  wirtual.CreateRoomRequest create_room = 20;
 }
 
 // room info that should not be returned to clients

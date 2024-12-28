@@ -6,14 +6,14 @@ package rpc
 import (
 	"context"
 
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/client"
-	"github.com/livekit/psrpc/pkg/info"
-	"github.com/livekit/psrpc/pkg/rand"
-	"github.com/livekit/psrpc/pkg/server"
-	"github.com/livekit/psrpc/version"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/client"
+	"github.com/wirtual/psrpc/pkg/info"
+	"github.com/wirtual/psrpc/pkg/rand"
+	"github.com/wirtual/psrpc/pkg/server"
+	"github.com/wirtual/psrpc/version"
 )
-import livekit3 "github.com/wirtual/protocol/wirtual"
+import wirtual3 "github.com/wirtual/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 
@@ -22,11 +22,11 @@ var _ = version.PsrpcVersion_0_6
 // ======================================
 
 type AgentDispatchInternalClient[RoomTopicType ~string] interface {
-	CreateDispatch(ctx context.Context, room RoomTopicType, req *livekit3.AgentDispatch, opts ...psrpc.RequestOption) (*livekit3.AgentDispatch, error)
+	CreateDispatch(ctx context.Context, room RoomTopicType, req *wirtual3.AgentDispatch, opts ...psrpc.RequestOption) (*wirtual3.AgentDispatch, error)
 
-	DeleteDispatch(ctx context.Context, room RoomTopicType, req *livekit3.DeleteAgentDispatchRequest, opts ...psrpc.RequestOption) (*livekit3.AgentDispatch, error)
+	DeleteDispatch(ctx context.Context, room RoomTopicType, req *wirtual3.DeleteAgentDispatchRequest, opts ...psrpc.RequestOption) (*wirtual3.AgentDispatch, error)
 
-	ListDispatch(ctx context.Context, room RoomTopicType, req *livekit3.ListAgentDispatchRequest, opts ...psrpc.RequestOption) (*livekit3.ListAgentDispatchResponse, error)
+	ListDispatch(ctx context.Context, room RoomTopicType, req *wirtual3.ListAgentDispatchRequest, opts ...psrpc.RequestOption) (*wirtual3.ListAgentDispatchResponse, error)
 
 	// Close immediately, without waiting for pending RPCs
 	Close()
@@ -37,11 +37,11 @@ type AgentDispatchInternalClient[RoomTopicType ~string] interface {
 // ==========================================
 
 type AgentDispatchInternalServerImpl interface {
-	CreateDispatch(context.Context, *livekit3.AgentDispatch) (*livekit3.AgentDispatch, error)
+	CreateDispatch(context.Context, *wirtual3.AgentDispatch) (*wirtual3.AgentDispatch, error)
 
-	DeleteDispatch(context.Context, *livekit3.DeleteAgentDispatchRequest) (*livekit3.AgentDispatch, error)
+	DeleteDispatch(context.Context, *wirtual3.DeleteAgentDispatchRequest) (*wirtual3.AgentDispatch, error)
 
-	ListDispatch(context.Context, *livekit3.ListAgentDispatchRequest) (*livekit3.ListAgentDispatchResponse, error)
+	ListDispatch(context.Context, *wirtual3.ListAgentDispatchRequest) (*wirtual3.ListAgentDispatchResponse, error)
 }
 
 // ======================================
@@ -94,16 +94,16 @@ func NewAgentDispatchInternalClient[RoomTopicType ~string](bus psrpc.MessageBus,
 	}, nil
 }
 
-func (c *agentDispatchInternalClient[RoomTopicType]) CreateDispatch(ctx context.Context, room RoomTopicType, req *livekit3.AgentDispatch, opts ...psrpc.RequestOption) (*livekit3.AgentDispatch, error) {
-	return client.RequestSingle[*livekit3.AgentDispatch](ctx, c.client, "CreateDispatch", []string{string(room)}, req, opts...)
+func (c *agentDispatchInternalClient[RoomTopicType]) CreateDispatch(ctx context.Context, room RoomTopicType, req *wirtual3.AgentDispatch, opts ...psrpc.RequestOption) (*wirtual3.AgentDispatch, error) {
+	return client.RequestSingle[*wirtual3.AgentDispatch](ctx, c.client, "CreateDispatch", []string{string(room)}, req, opts...)
 }
 
-func (c *agentDispatchInternalClient[RoomTopicType]) DeleteDispatch(ctx context.Context, room RoomTopicType, req *livekit3.DeleteAgentDispatchRequest, opts ...psrpc.RequestOption) (*livekit3.AgentDispatch, error) {
-	return client.RequestSingle[*livekit3.AgentDispatch](ctx, c.client, "DeleteDispatch", []string{string(room)}, req, opts...)
+func (c *agentDispatchInternalClient[RoomTopicType]) DeleteDispatch(ctx context.Context, room RoomTopicType, req *wirtual3.DeleteAgentDispatchRequest, opts ...psrpc.RequestOption) (*wirtual3.AgentDispatch, error) {
+	return client.RequestSingle[*wirtual3.AgentDispatch](ctx, c.client, "DeleteDispatch", []string{string(room)}, req, opts...)
 }
 
-func (c *agentDispatchInternalClient[RoomTopicType]) ListDispatch(ctx context.Context, room RoomTopicType, req *livekit3.ListAgentDispatchRequest, opts ...psrpc.RequestOption) (*livekit3.ListAgentDispatchResponse, error) {
-	return client.RequestSingle[*livekit3.ListAgentDispatchResponse](ctx, c.client, "ListDispatch", []string{string(room)}, req, opts...)
+func (c *agentDispatchInternalClient[RoomTopicType]) ListDispatch(ctx context.Context, room RoomTopicType, req *wirtual3.ListAgentDispatchRequest, opts ...psrpc.RequestOption) (*wirtual3.ListAgentDispatchResponse, error) {
+	return client.RequestSingle[*wirtual3.ListAgentDispatchResponse](ctx, c.client, "ListDispatch", []string{string(room)}, req, opts...)
 }
 
 func (s *agentDispatchInternalClient[RoomTopicType]) Close() {

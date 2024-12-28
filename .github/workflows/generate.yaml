@@ -1,4 +1,4 @@
-# Copyright 2023 LiveKit, Inc.
+# Copyright 2024 Xtressials Corporation, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -65,7 +65,7 @@ jobs:
 
       - name: Test generate JS files
         run: |
-          pnpm --filter @livekit/protocol run generate:proto
+          pnpm --filter @wirtual/protocol run generate:proto
 
       - name: Add changes
         uses: EndBug/add-and-commit@v9

@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ import (
 	"github.com/go-jose/go-jose/v3"
 	"github.com/go-jose/go-jose/v3/jwt"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 const (
@@ -57,7 +57,7 @@ func (t *AccessToken) SetName(name string) *AccessToken {
 	return t
 }
 
-func (t *AccessToken) SetKind(kind livekit.ParticipantInfo_Kind) *AccessToken {
+func (t *AccessToken) SetKind(kind wirtual.ParticipantInfo_Kind) *AccessToken {
 	t.grant.SetParticipantKind(kind)
 	return t
 }
@@ -110,7 +110,7 @@ func (t *AccessToken) SetRoomPreset(preset string) *AccessToken {
 	return t
 }
 
-func (t *AccessToken) SetRoomConfig(config *livekit.RoomConfiguration) *AccessToken {
+func (t *AccessToken) SetRoomConfig(config *wirtual.RoomConfiguration) *AccessToken {
 	if config == nil {
 		t.grant.RoomConfig = nil
 	} else {
@@ -120,7 +120,7 @@ func (t *AccessToken) SetRoomConfig(config *livekit.RoomConfiguration) *AccessTo
 }
 
 // SetAgents is a shortcut for setting agents in room configuration
-func (t *AccessToken) SetAgents(agents ...*livekit.RoomAgentDispatch) *AccessToken {
+func (t *AccessToken) SetAgents(agents ...*wirtual.RoomAgentDispatch) *AccessToken {
 	if t.grant.RoomConfig == nil {
 		t.grant.RoomConfig = &RoomConfiguration{}
 	}

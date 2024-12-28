@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import "wirtual_models.proto";
 import "wirtual_room.proto";
 
 service Room {
-  rpc DeleteRoom(livekit.DeleteRoomRequest) returns (livekit.DeleteRoomResponse) {
+  rpc DeleteRoom(wirtual.DeleteRoomRequest) returns (wirtual.DeleteRoomResponse) {
     option (psrpc.options) = {
       topics: true
       topic_params: {
@@ -33,7 +33,7 @@ service Room {
       };
     };
   };
-  rpc SendData(livekit.SendDataRequest) returns (livekit.SendDataResponse) {
+  rpc SendData(wirtual.SendDataRequest) returns (wirtual.SendDataResponse) {
     option (psrpc.options) = {
       topics: true
       topic_params: {
@@ -43,7 +43,7 @@ service Room {
       };
     };
   };
-  rpc UpdateRoomMetadata (livekit.UpdateRoomMetadataRequest) returns (livekit.Room) {
+  rpc UpdateRoomMetadata (wirtual.UpdateRoomMetadataRequest) returns (wirtual.Room) {
     option (psrpc.options) = {
       topics: true
       topic_params: {

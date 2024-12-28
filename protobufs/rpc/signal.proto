@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -38,14 +38,14 @@ service Signal {
 }
 
 message RelaySignalRequest {
-  livekit.StartSession start_session = 1;
-  repeated livekit.SignalRequest requests = 3;
+  wirtual.StartSession start_session = 1;
+  repeated wirtual.SignalRequest requests = 3;
   uint64 seq = 4;
   bool close = 5;
 }
 
 message RelaySignalResponse {
-  repeated livekit.SignalResponse responses = 2;
+  repeated wirtual.SignalResponse responses = 2;
   uint64 seq = 3;
   bool close = 4;
 }

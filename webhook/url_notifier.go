@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,9 +26,9 @@ import (
 	"go.uber.org/atomic"
 	"google.golang.org/protobuf/encoding/protojson"
 
-	"github.com/livekit/protocol/auth"
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/logger"
+	"github.com/wirtualdev/wirtual-protocol/auth"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/logger"
 )
 
 const (
@@ -105,7 +105,7 @@ func (n *URLNotifier) SetKeys(apiKey, apiSecret string) {
 	n.params.APISecret = apiSecret
 }
 
-func (n *URLNotifier) QueueNotify(event *livekit.WebhookEvent) error {
+func (n *URLNotifier) QueueNotify(event *wirtual.WebhookEvent) error {
 	enqueuedAt := time.Now()
 
 	n.pool.Submit(n.eventKey(event), func() {
@@ -127,7 +127,7 @@ func (n *URLNotifier) QueueNotify(event *livekit.WebhookEvent) error {
 	return nil
 }
 
-func (c *URLNotifier) eventKey(event *livekit.WebhookEvent) string {
+func (c *URLNotifier) eventKey(event *wirtual.WebhookEvent) string {
 	if event.EgressInfo != nil {
 		return event.EgressInfo.EgressId
 	}
@@ -154,7 +154,7 @@ func (n *URLNotifier) Stop(force bool) {
 	}
 }
 
-func (n *URLNotifier) send(event *livekit.WebhookEvent) error {
+func (n *URLNotifier) send(event *wirtual.WebhookEvent) error {
 	// set dropped count
 	event.NumDropped = n.dropped.Swap(0)
 	encoded, err := protojson.Marshal(event)
@@ -197,7 +197,7 @@ type logAdapter struct{}
 
 func (l *logAdapter) Printf(string, ...interface{}) {}
 
-func logFields(event *livekit.WebhookEvent) []interface{} {
+func logFields(event *wirtual.WebhookEvent) []interface{} {
 	fields := make([]interface{}, 0, 20)
 	fields = append(fields,
 		"event", event.Event,

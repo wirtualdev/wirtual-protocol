@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,11 +14,11 @@
 
 syntax = "proto3";
 
-package livekit;
+package wirtual;
 
 option go_package = "github.com/wirtual/protocol/wirtual";
-option csharp_namespace = "LiveKit.Proto";
-option ruby_package = "LiveKit::Proto";
+option csharp_namespace = "Wirtual.Proto";
+option ruby_package = "Wirtual::Proto";
 
 import "google/protobuf/duration.proto";
 import "google/protobuf/empty.proto";
@@ -26,7 +26,7 @@ import "wirtual_models.proto";
 import "wirtual_room.proto";
 
 /*
-   LiveKit's SIP API is built with 3 high level primitives
+   Wirtual's SIP API is built with 3 high level primitives
    - SIP Trunk
    - SIP Dispatch Rule
    - SIP Participant
@@ -39,14 +39,14 @@ import "wirtual_room.proto";
 
 
    The `SIP Dispatch Rule` is a list of rules that dictate how a incoming SIP call should be handled.
-   LiveKit currently supports 2 types, but may support more in the future.
+   Wirtual currently supports 2 types, but may support more in the future.
 
    - `Direct Dispatch` puts a caller into a existing room, possibly choosing between multiple rooms with a pin
    - `Individual Dispatch` puts a caller into a new room created for the call
 
 
    The `SIP Participant` represents an active SIP Session. These SIP Sessions are always associated with
-   a Participant on LiveKit side. Inbound calls create Participants directly (with a `SIP` kind), while outbound
+   a Participant on Wirtual side. Inbound calls create Participants directly (with a `SIP` kind), while outbound
    calls must be initiated with `CreateSIPParticipant`.
 */
 
@@ -183,7 +183,7 @@ message SIPInboundTrunkInfo {
   // User-defined metadata for the Trunk.
   string metadata = 3;
 
-  // Numbers associated with LiveKit SIP. The Trunk will only accept calls made to these numbers.
+  // Numbers associated with Wirtual SIP. The Trunk will only accept calls made to these numbers.
   // Creating multiple Trunks with different phone numbers allows having different rules for a single provider.
   repeated string numbers = 4;
 
@@ -204,7 +204,7 @@ message SIPInboundTrunkInfo {
   map<string, string> headers = 9;
   // Map SIP X-* headers from INVITE to SIP participant attributes.
   map<string, string> headers_to_attributes = 10;
-  // Map LiveKit attributes to SIP X-* headers when sending BYE or REFER requests.
+  // Map Wirtual attributes to SIP X-* headers when sending BYE or REFER requests.
   // Keys are the names of attributes and values are the names of X-* headers they will be mapped to.
   map<string, string> attributes_to_headers = 14;
   // Map SIP headers from INVITE to sip.h.* participant attributes automatically.
@@ -254,12 +254,12 @@ message SIPOutboundTrunkInfo {
   string auth_password = 8;
 
   // Include these SIP X-* headers in INVITE request.
-  // These headers are sent as-is and may help identify this call as coming from LiveKit for the other SIP endpoint.
+  // These headers are sent as-is and may help identify this call as coming from Wirtual for the other SIP endpoint.
   map<string, string> headers = 9;
   // Map SIP X-* headers from 200 OK to SIP participant attributes.
   // Keys are the names of X-* headers and values are the names of attributes they will be mapped to.
   map<string, string> headers_to_attributes = 10;
-  // Map LiveKit attributes to SIP X-* headers when sending BYE or REFER requests.
+  // Map Wirtual attributes to SIP X-* headers when sending BYE or REFER requests.
   // Keys are the names of attributes and values are the names of X-* headers they will be mapped to.
   map<string, string> attributes_to_headers = 11;
   // Map SIP headers from 200 OK to sip.h.* participant attributes automatically.
@@ -449,7 +449,7 @@ message DeleteSIPDispatchRuleRequest {
   string sip_dispatch_rule_id = 1;
 }
 
-// A SIP Participant is a singular SIP session connected to a LiveKit room via
+// A SIP Participant is a singular SIP session connected to a Wirtual room via
 // a SIP Trunk into a SIP DispatchRule
 message CreateSIPParticipantRequest {
   // What SIP Trunk should be used to dial the user
@@ -461,13 +461,13 @@ message CreateSIPParticipantRequest {
   // Optional SIP From number to use. If empty, trunk number is used.
   string sip_number = 15;
 
-  // What LiveKit room should this participant be connected too
+  // What Wirtual room should this participant be connected too
   string room_name = 3;
 
-  // Optional identity of the participant in LiveKit room
+  // Optional identity of the participant in Wirtual room
   string participant_identity = 4;
 
-  // Optional name of the participant in LiveKit room
+  // Optional name of the participant in Wirtual room
   string participant_name = 7;
 
   // Optional user-defined metadata. Will be attached to a created Participant in the room.
@@ -487,7 +487,7 @@ message CreateSIPParticipantRequest {
   // If true, a random value for identity will be used and numbers will be omitted from attributes.
   bool hide_phone_number = 10;
 
-  // These headers are sent as-is and may help identify this call as coming from LiveKit for the other SIP endpoint.
+  // These headers are sent as-is and may help identify this call as coming from Wirtual for the other SIP endpoint.
   map<string, string> headers = 16;
   // Map SIP headers from 200 OK to sip.h.* participant attributes automatically.
   //
@@ -556,9 +556,9 @@ message SIPUri {
 }
 
 enum SIPCallStatus {
-  SCS_CALL_INCOMING = 0; // Incoming call is being handled by the SIP service. The SIP participant hasn't joined a LiveKit room yet
+  SCS_CALL_INCOMING = 0; // Incoming call is being handled by the SIP service. The SIP participant hasn't joined a Wirtual room yet
   SCS_PARTICIPANT_JOINED = 1; // SIP participant for outgoing call has been created. The SIP outgoing call is being established
-  SCS_ACTIVE = 2; // Call is ongoing. SIP participant is active in the LiveKit room
+  SCS_ACTIVE = 2; // Call is ongoing. SIP participant is active in the Wirtual room
   SCS_DISCONNECTED = 3; // Call has ended
   SCS_ERROR = 4; // Call has ended or never succeeded because of an error
 }

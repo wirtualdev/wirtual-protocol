@@ -5,9 +5,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/rpc"
-	"github.com/livekit/psrpc"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/rpc"
+	"github.com/wirtual/psrpc"
 )
 
 type FakeTypedAgentDispatchInternalClient struct {
@@ -15,52 +15,52 @@ type FakeTypedAgentDispatchInternalClient struct {
 	closeMutex       sync.RWMutex
 	closeArgsForCall []struct {
 	}
-	CreateDispatchStub        func(context.Context, rpc.RoomTopic, *livekit.AgentDispatch, ...psrpc.RequestOption) (*livekit.AgentDispatch, error)
+	CreateDispatchStub        func(context.Context, rpc.RoomTopic, *wirtual.AgentDispatch, ...psrpc.RequestOption) (*wirtual.AgentDispatch, error)
 	createDispatchMutex       sync.RWMutex
 	createDispatchArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.AgentDispatch
+		arg3 *wirtual.AgentDispatch
 		arg4 []psrpc.RequestOption
 	}
 	createDispatchReturns struct {
-		result1 *livekit.AgentDispatch
+		result1 *wirtual.AgentDispatch
 		result2 error
 	}
 	createDispatchReturnsOnCall map[int]struct {
-		result1 *livekit.AgentDispatch
+		result1 *wirtual.AgentDispatch
 		result2 error
 	}
-	DeleteDispatchStub        func(context.Context, rpc.RoomTopic, *livekit.DeleteAgentDispatchRequest, ...psrpc.RequestOption) (*livekit.AgentDispatch, error)
+	DeleteDispatchStub        func(context.Context, rpc.RoomTopic, *wirtual.DeleteAgentDispatchRequest, ...psrpc.RequestOption) (*wirtual.AgentDispatch, error)
 	deleteDispatchMutex       sync.RWMutex
 	deleteDispatchArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.DeleteAgentDispatchRequest
+		arg3 *wirtual.DeleteAgentDispatchRequest
 		arg4 []psrpc.RequestOption
 	}
 	deleteDispatchReturns struct {
-		result1 *livekit.AgentDispatch
+		result1 *wirtual.AgentDispatch
 		result2 error
 	}
 	deleteDispatchReturnsOnCall map[int]struct {
-		result1 *livekit.AgentDispatch
+		result1 *wirtual.AgentDispatch
 		result2 error
 	}
-	ListDispatchStub        func(context.Context, rpc.RoomTopic, *livekit.ListAgentDispatchRequest, ...psrpc.RequestOption) (*livekit.ListAgentDispatchResponse, error)
+	ListDispatchStub        func(context.Context, rpc.RoomTopic, *wirtual.ListAgentDispatchRequest, ...psrpc.RequestOption) (*wirtual.ListAgentDispatchResponse, error)
 	listDispatchMutex       sync.RWMutex
 	listDispatchArgsForCall []struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.ListAgentDispatchRequest
+		arg3 *wirtual.ListAgentDispatchRequest
 		arg4 []psrpc.RequestOption
 	}
 	listDispatchReturns struct {
-		result1 *livekit.ListAgentDispatchResponse
+		result1 *wirtual.ListAgentDispatchResponse
 		result2 error
 	}
 	listDispatchReturnsOnCall map[int]struct {
-		result1 *livekit.ListAgentDispatchResponse
+		result1 *wirtual.ListAgentDispatchResponse
 		result2 error
 	}
 	invocations      map[string][][]interface{}
@@ -91,13 +91,13 @@ func (fake *FakeTypedAgentDispatchInternalClient) CloseCalls(stub func()) {
 	fake.CloseStub = stub
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatch(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *livekit.AgentDispatch, arg4 ...psrpc.RequestOption) (*livekit.AgentDispatch, error) {
+func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatch(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *wirtual.AgentDispatch, arg4 ...psrpc.RequestOption) (*wirtual.AgentDispatch, error) {
 	fake.createDispatchMutex.Lock()
 	ret, specificReturn := fake.createDispatchReturnsOnCall[len(fake.createDispatchArgsForCall)]
 	fake.createDispatchArgsForCall = append(fake.createDispatchArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.AgentDispatch
+		arg3 *wirtual.AgentDispatch
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.CreateDispatchStub
@@ -119,52 +119,52 @@ func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchCallCount() int 
 	return len(fake.createDispatchArgsForCall)
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchCalls(stub func(context.Context, rpc.RoomTopic, *livekit.AgentDispatch, ...psrpc.RequestOption) (*livekit.AgentDispatch, error)) {
+func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchCalls(stub func(context.Context, rpc.RoomTopic, *wirtual.AgentDispatch, ...psrpc.RequestOption) (*wirtual.AgentDispatch, error)) {
 	fake.createDispatchMutex.Lock()
 	defer fake.createDispatchMutex.Unlock()
 	fake.CreateDispatchStub = stub
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchArgsForCall(i int) (context.Context, rpc.RoomTopic, *livekit.AgentDispatch, []psrpc.RequestOption) {
+func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchArgsForCall(i int) (context.Context, rpc.RoomTopic, *wirtual.AgentDispatch, []psrpc.RequestOption) {
 	fake.createDispatchMutex.RLock()
 	defer fake.createDispatchMutex.RUnlock()
 	argsForCall := fake.createDispatchArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchReturns(result1 *livekit.AgentDispatch, result2 error) {
+func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchReturns(result1 *wirtual.AgentDispatch, result2 error) {
 	fake.createDispatchMutex.Lock()
 	defer fake.createDispatchMutex.Unlock()
 	fake.CreateDispatchStub = nil
 	fake.createDispatchReturns = struct {
-		result1 *livekit.AgentDispatch
+		result1 *wirtual.AgentDispatch
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchReturnsOnCall(i int, result1 *livekit.AgentDispatch, result2 error) {
+func (fake *FakeTypedAgentDispatchInternalClient) CreateDispatchReturnsOnCall(i int, result1 *wirtual.AgentDispatch, result2 error) {
 	fake.createDispatchMutex.Lock()
 	defer fake.createDispatchMutex.Unlock()
 	fake.CreateDispatchStub = nil
 	if fake.createDispatchReturnsOnCall == nil {
 		fake.createDispatchReturnsOnCall = make(map[int]struct {
-			result1 *livekit.AgentDispatch
+			result1 *wirtual.AgentDispatch
 			result2 error
 		})
 	}
 	fake.createDispatchReturnsOnCall[i] = struct {
-		result1 *livekit.AgentDispatch
+		result1 *wirtual.AgentDispatch
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatch(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *livekit.DeleteAgentDispatchRequest, arg4 ...psrpc.RequestOption) (*livekit.AgentDispatch, error) {
+func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatch(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *wirtual.DeleteAgentDispatchRequest, arg4 ...psrpc.RequestOption) (*wirtual.AgentDispatch, error) {
 	fake.deleteDispatchMutex.Lock()
 	ret, specificReturn := fake.deleteDispatchReturnsOnCall[len(fake.deleteDispatchArgsForCall)]
 	fake.deleteDispatchArgsForCall = append(fake.deleteDispatchArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.DeleteAgentDispatchRequest
+		arg3 *wirtual.DeleteAgentDispatchRequest
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.DeleteDispatchStub
@@ -186,52 +186,52 @@ func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchCallCount() int 
 	return len(fake.deleteDispatchArgsForCall)
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchCalls(stub func(context.Context, rpc.RoomTopic, *livekit.DeleteAgentDispatchRequest, ...psrpc.RequestOption) (*livekit.AgentDispatch, error)) {
+func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchCalls(stub func(context.Context, rpc.RoomTopic, *wirtual.DeleteAgentDispatchRequest, ...psrpc.RequestOption) (*wirtual.AgentDispatch, error)) {
 	fake.deleteDispatchMutex.Lock()
 	defer fake.deleteDispatchMutex.Unlock()
 	fake.DeleteDispatchStub = stub
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchArgsForCall(i int) (context.Context, rpc.RoomTopic, *livekit.DeleteAgentDispatchRequest, []psrpc.RequestOption) {
+func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchArgsForCall(i int) (context.Context, rpc.RoomTopic, *wirtual.DeleteAgentDispatchRequest, []psrpc.RequestOption) {
 	fake.deleteDispatchMutex.RLock()
 	defer fake.deleteDispatchMutex.RUnlock()
 	argsForCall := fake.deleteDispatchArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchReturns(result1 *livekit.AgentDispatch, result2 error) {
+func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchReturns(result1 *wirtual.AgentDispatch, result2 error) {
 	fake.deleteDispatchMutex.Lock()
 	defer fake.deleteDispatchMutex.Unlock()
 	fake.DeleteDispatchStub = nil
 	fake.deleteDispatchReturns = struct {
-		result1 *livekit.AgentDispatch
+		result1 *wirtual.AgentDispatch
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchReturnsOnCall(i int, result1 *livekit.AgentDispatch, result2 error) {
+func (fake *FakeTypedAgentDispatchInternalClient) DeleteDispatchReturnsOnCall(i int, result1 *wirtual.AgentDispatch, result2 error) {
 	fake.deleteDispatchMutex.Lock()
 	defer fake.deleteDispatchMutex.Unlock()
 	fake.DeleteDispatchStub = nil
 	if fake.deleteDispatchReturnsOnCall == nil {
 		fake.deleteDispatchReturnsOnCall = make(map[int]struct {
-			result1 *livekit.AgentDispatch
+			result1 *wirtual.AgentDispatch
 			result2 error
 		})
 	}
 	fake.deleteDispatchReturnsOnCall[i] = struct {
-		result1 *livekit.AgentDispatch
+		result1 *wirtual.AgentDispatch
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) ListDispatch(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *livekit.ListAgentDispatchRequest, arg4 ...psrpc.RequestOption) (*livekit.ListAgentDispatchResponse, error) {
+func (fake *FakeTypedAgentDispatchInternalClient) ListDispatch(arg1 context.Context, arg2 rpc.RoomTopic, arg3 *wirtual.ListAgentDispatchRequest, arg4 ...psrpc.RequestOption) (*wirtual.ListAgentDispatchResponse, error) {
 	fake.listDispatchMutex.Lock()
 	ret, specificReturn := fake.listDispatchReturnsOnCall[len(fake.listDispatchArgsForCall)]
 	fake.listDispatchArgsForCall = append(fake.listDispatchArgsForCall, struct {
 		arg1 context.Context
 		arg2 rpc.RoomTopic
-		arg3 *livekit.ListAgentDispatchRequest
+		arg3 *wirtual.ListAgentDispatchRequest
 		arg4 []psrpc.RequestOption
 	}{arg1, arg2, arg3, arg4})
 	stub := fake.ListDispatchStub
@@ -253,41 +253,41 @@ func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchCallCount() int {
 	return len(fake.listDispatchArgsForCall)
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchCalls(stub func(context.Context, rpc.RoomTopic, *livekit.ListAgentDispatchRequest, ...psrpc.RequestOption) (*livekit.ListAgentDispatchResponse, error)) {
+func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchCalls(stub func(context.Context, rpc.RoomTopic, *wirtual.ListAgentDispatchRequest, ...psrpc.RequestOption) (*wirtual.ListAgentDispatchResponse, error)) {
 	fake.listDispatchMutex.Lock()
 	defer fake.listDispatchMutex.Unlock()
 	fake.ListDispatchStub = stub
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchArgsForCall(i int) (context.Context, rpc.RoomTopic, *livekit.ListAgentDispatchRequest, []psrpc.RequestOption) {
+func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchArgsForCall(i int) (context.Context, rpc.RoomTopic, *wirtual.ListAgentDispatchRequest, []psrpc.RequestOption) {
 	fake.listDispatchMutex.RLock()
 	defer fake.listDispatchMutex.RUnlock()
 	argsForCall := fake.listDispatchArgsForCall[i]
 	return argsForCall.arg1, argsForCall.arg2, argsForCall.arg3, argsForCall.arg4
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchReturns(result1 *livekit.ListAgentDispatchResponse, result2 error) {
+func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchReturns(result1 *wirtual.ListAgentDispatchResponse, result2 error) {
 	fake.listDispatchMutex.Lock()
 	defer fake.listDispatchMutex.Unlock()
 	fake.ListDispatchStub = nil
 	fake.listDispatchReturns = struct {
-		result1 *livekit.ListAgentDispatchResponse
+		result1 *wirtual.ListAgentDispatchResponse
 		result2 error
 	}{result1, result2}
 }
 
-func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchReturnsOnCall(i int, result1 *livekit.ListAgentDispatchResponse, result2 error) {
+func (fake *FakeTypedAgentDispatchInternalClient) ListDispatchReturnsOnCall(i int, result1 *wirtual.ListAgentDispatchResponse, result2 error) {
 	fake.listDispatchMutex.Lock()
 	defer fake.listDispatchMutex.Unlock()
 	fake.ListDispatchStub = nil
 	if fake.listDispatchReturnsOnCall == nil {
 		fake.listDispatchReturnsOnCall = make(map[int]struct {
-			result1 *livekit.ListAgentDispatchResponse
+			result1 *wirtual.ListAgentDispatchResponse
 			result2 error
 		})
 	}
 	fake.listDispatchReturnsOnCall[i] = struct {
-		result1 *livekit.ListAgentDispatchResponse
+		result1 *wirtual.ListAgentDispatchResponse
 		result2 error
 	}{result1, result2}
 }

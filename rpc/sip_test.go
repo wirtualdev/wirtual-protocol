@@ -5,11 +5,11 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 func TestNewCreateSIPParticipantRequest(t *testing.T) {
-	r := &livekit.CreateSIPParticipantRequest{
+	r := &wirtual.CreateSIPParticipantRequest{
 		SipCallTo:           "+3333",
 		RoomName:            "room",
 		ParticipantIdentity: "",
@@ -25,7 +25,7 @@ func TestNewCreateSIPParticipantRequest(t *testing.T) {
 		Dtmf:         "1234#",
 		PlayDialtone: true,
 	}
-	tr := &livekit.SIPOutboundTrunkInfo{
+	tr := &wirtual.SIPOutboundTrunkInfo{
 		SipTrunkId:   "trunk",
 		Address:      "sip.example.com",
 		Numbers:      []string{"+1111"},
@@ -56,10 +56,10 @@ func TestNewCreateSIPParticipantRequest(t *testing.T) {
 		PlayDialtone:        true,
 		ParticipantAttributes: map[string]string{
 			"extra":                    "1",
-			livekit.AttrSIPCallID:      "call-id",
-			livekit.AttrSIPTrunkID:     "trunk",
-			livekit.AttrSIPTrunkNumber: "+1111",
-			livekit.AttrSIPPhoneNumber: "+3333",
+			wirtual.AttrSIPCallID:      "call-id",
+			wirtual.AttrSIPTrunkID:     "trunk",
+			wirtual.AttrSIPTrunkNumber: "+1111",
+			wirtual.AttrSIPPhoneNumber: "+3333",
 		},
 		Headers: map[string]string{
 			"X-A": "A",
@@ -89,8 +89,8 @@ func TestNewCreateSIPParticipantRequest(t *testing.T) {
 		PlayDialtone:        true,
 		ParticipantAttributes: map[string]string{
 			"extra":                "1",
-			livekit.AttrSIPCallID:  "call-id",
-			livekit.AttrSIPTrunkID: "trunk",
+			wirtual.AttrSIPCallID:  "call-id",
+			wirtual.AttrSIPTrunkID: "trunk",
 		},
 		Headers: map[string]string{
 			"X-A": "A",

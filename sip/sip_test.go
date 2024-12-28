@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/rpc"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/rpc"
 )
 
 const (
@@ -36,7 +36,7 @@ const (
 
 var trunkCases = []struct {
 	name    string
-	trunks  []*livekit.SIPTrunkInfo
+	trunks  []*wirtual.SIPTrunkInfo
 	exp     int
 	expErr  bool
 	invalid bool
@@ -51,49 +51,49 @@ var trunkCases = []struct {
 	},
 	{
 		name: "one wildcard",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa"},
 		},
 		exp: 0,
 	},
 	{
 		name: "matching",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber2},
 		},
 		exp: 0,
 	},
 	{
 		name: "matching inbound",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber2, InboundNumbers: []string{sipNumber1}},
 		},
 		exp: 0,
 	},
 	{
 		name: "matching regexp",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber2, InboundNumbersRegex: []string{`^\d+ \d+$`}},
 		},
 		exp: 0,
 	},
 	{
 		name: "not matching",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber3},
 		},
 		exp: -1,
 	},
 	{
 		name: "not matching inbound",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber2, InboundNumbers: []string{sipNumber1 + "1"}},
 		},
 		exp: -1,
 	},
 	{
 		name: "one match",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber3},
 			{SipTrunkId: "bbb", OutboundNumber: sipNumber2},
 		},
@@ -101,7 +101,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "many matches",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber3},
 			{SipTrunkId: "bbb", OutboundNumber: sipNumber2},
 			{SipTrunkId: "ccc", OutboundNumber: sipNumber2},
@@ -111,7 +111,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "many matches default",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber3},
 			{SipTrunkId: "bbb"},
 			{SipTrunkId: "ccc", OutboundNumber: sipNumber2},
@@ -122,7 +122,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "inbound",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber3},
 			{SipTrunkId: "bbb", OutboundNumber: sipNumber2},
 			{SipTrunkId: "ccc", OutboundNumber: sipNumber2, InboundNumbers: []string{sipNumber1 + "1"}},
@@ -131,7 +131,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "multiple defaults",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber3},
 			{SipTrunkId: "bbb"},
 			{SipTrunkId: "ccc"},
@@ -141,7 +141,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "inbound with ip exact",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "bbb", OutboundNumber: sipNumber2, InboundAddresses: []string{
 				"10.10.10.10",
 				"1.1.1.1",
@@ -151,7 +151,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "inbound with ip exact miss",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "bbb", OutboundNumber: sipNumber2, InboundAddresses: []string{
 				"10.10.10.10",
 			}},
@@ -160,7 +160,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "inbound with ip mask",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "bbb", OutboundNumber: sipNumber2, InboundAddresses: []string{
 				"10.10.10.0/24",
 				"1.1.1.0/24",
@@ -170,7 +170,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "inbound with ip mask miss",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "bbb", OutboundNumber: sipNumber2, InboundAddresses: []string{
 				"10.10.10.0/24",
 			}},
@@ -179,7 +179,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "inbound with plus",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: "+" + sipNumber3},
 			{SipTrunkId: "bbb", OutboundNumber: "+" + sipNumber2},
 		},
@@ -187,7 +187,7 @@ var trunkCases = []struct {
 	},
 	{
 		name: "inbound without plus",
-		trunks: []*livekit.SIPTrunkInfo{
+		trunks: []*wirtual.SIPTrunkInfo{
 			{SipTrunkId: "aaa", OutboundNumber: sipNumber3},
 			{SipTrunkId: "bbb", OutboundNumber: sipNumber2},
 		},
@@ -197,8 +197,8 @@ var trunkCases = []struct {
 	},
 }
 
-func toInboundTrunks(trunks []*livekit.SIPTrunkInfo) []*livekit.SIPInboundTrunkInfo {
-	out := make([]*livekit.SIPInboundTrunkInfo, 0, len(trunks))
+func toInboundTrunks(trunks []*wirtual.SIPTrunkInfo) []*wirtual.SIPInboundTrunkInfo {
+	out := make([]*wirtual.SIPInboundTrunkInfo, 0, len(trunks))
 	for _, t := range trunks {
 		out = append(out, t.AsInbound())
 	}
@@ -232,7 +232,7 @@ func TestSIPMatchTrunk(t *testing.T) {
 				require.Nil(t, got)
 				t.Log(err)
 			} else {
-				var exp *livekit.SIPInboundTrunkInfo
+				var exp *wirtual.SIPInboundTrunkInfo
 				if c.exp >= 0 {
 					exp = trunks[c.exp]
 				}
@@ -262,8 +262,8 @@ func TestSIPValidateTrunks(t *testing.T) {
 	}
 }
 
-func newSIPTrunkDispatch() *livekit.SIPTrunkInfo {
-	return &livekit.SIPTrunkInfo{
+func newSIPTrunkDispatch() *wirtual.SIPTrunkInfo {
+	return &wirtual.SIPTrunkInfo{
 		SipTrunkId:     sipTrunkID1,
 		OutboundNumber: sipNumber2,
 	}
@@ -278,20 +278,20 @@ func newSIPReqDispatch(pin string, noPin bool) *rpc.EvaluateSIPDispatchRulesRequ
 	}
 }
 
-func newDirectDispatch(room, pin string) *livekit.SIPDispatchRule {
-	return &livekit.SIPDispatchRule{
-		Rule: &livekit.SIPDispatchRule_DispatchRuleDirect{
-			DispatchRuleDirect: &livekit.SIPDispatchRuleDirect{
+func newDirectDispatch(room, pin string) *wirtual.SIPDispatchRule {
+	return &wirtual.SIPDispatchRule{
+		Rule: &wirtual.SIPDispatchRule_DispatchRuleDirect{
+			DispatchRuleDirect: &wirtual.SIPDispatchRuleDirect{
 				RoomName: room, Pin: pin,
 			},
 		},
 	}
 }
 
-func newIndividualDispatch(roomPref, pin string) *livekit.SIPDispatchRule {
-	return &livekit.SIPDispatchRule{
-		Rule: &livekit.SIPDispatchRule_DispatchRuleIndividual{
-			DispatchRuleIndividual: &livekit.SIPDispatchRuleIndividual{
+func newIndividualDispatch(roomPref, pin string) *wirtual.SIPDispatchRule {
+	return &wirtual.SIPDispatchRule{
+		Rule: &wirtual.SIPDispatchRule_DispatchRuleIndividual{
+			DispatchRuleIndividual: &wirtual.SIPDispatchRuleIndividual{
 				RoomPrefix: roomPref, Pin: pin,
 			},
 		},
@@ -300,8 +300,8 @@ func newIndividualDispatch(roomPref, pin string) *livekit.SIPDispatchRule {
 
 var dispatchCases = []struct {
 	name    string
-	trunk   *livekit.SIPTrunkInfo
-	rules   []*livekit.SIPDispatchRuleInfo
+	trunk   *wirtual.SIPTrunkInfo
+	rules   []*wirtual.SIPDispatchRuleInfo
 	reqPin  string
 	noPin   bool
 	exp     int
@@ -325,7 +325,7 @@ var dispatchCases = []struct {
 	{
 		name:  "one rule/no trunk",
 		trunk: nil,
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip", "")},
 		},
 		exp: 0,
@@ -334,7 +334,7 @@ var dispatchCases = []struct {
 	{
 		name:  "one rule/default trunk",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip", "")},
 		},
 		exp: 0,
@@ -343,7 +343,7 @@ var dispatchCases = []struct {
 	{
 		name:  "one rule/specific trunk",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: []string{sipTrunkID1, sipTrunkID2}, Rule: newDirectDispatch("sip", "")},
 		},
 		exp: 0,
@@ -352,7 +352,7 @@ var dispatchCases = []struct {
 	{
 		name:  "one rule/wrong trunk",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: []string{"zzz"}, Rule: newDirectDispatch("sip", "")},
 		},
 		expErr: true,
@@ -361,7 +361,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct pin/correct",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: []string{sipTrunkID1}, Rule: newDirectDispatch("sip", "123")},
 			{TrunkIds: []string{sipTrunkID2}, Rule: newDirectDispatch("sip", "456")},
 		},
@@ -372,7 +372,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct pin/wrong",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: []string{sipTrunkID1}, Rule: newDirectDispatch("sip", "123")},
 			{TrunkIds: []string{sipTrunkID2}, Rule: newDirectDispatch("sip", "456")},
 		},
@@ -383,7 +383,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct pin/conflict",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: []string{sipTrunkID1}, Rule: newDirectDispatch("sip1", "123")},
 			{TrunkIds: []string{sipTrunkID1, sipTrunkID2}, Rule: newDirectDispatch("sip2", "123")},
 		},
@@ -395,7 +395,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct pin/no conflict on different trunk",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: []string{sipTrunkID1}, Rule: newDirectDispatch("sip1", "123")},
 			{TrunkIds: []string{sipTrunkID2}, Rule: newDirectDispatch("sip2", "123")},
 		},
@@ -406,7 +406,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct pin/default and specific",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", "123")},
 			{TrunkIds: []string{sipTrunkID1}, Rule: newDirectDispatch("sip2", "123")},
 		},
@@ -417,7 +417,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct/default and specific",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", "")},
 			{TrunkIds: []string{sipTrunkID1}, Rule: newDirectDispatch("sip2", "")},
 		},
@@ -427,7 +427,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct/default and specific/mixed 1",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", "123")},
 			{TrunkIds: []string{sipTrunkID1}, Rule: newDirectDispatch("sip2", "")},
 		},
@@ -436,7 +436,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct/default and specific/mixed 2",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", "")},
 			{TrunkIds: []string{sipTrunkID1}, Rule: newDirectDispatch("sip2", "123")},
 		},
@@ -446,7 +446,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct/multiple defaults",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", "")},
 			{TrunkIds: nil, Rule: newDirectDispatch("sip2", "")},
 		},
@@ -457,7 +457,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct/number specific",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", "")},
 			{TrunkIds: nil, Rule: newDirectDispatch("sip2", ""), InboundNumbers: []string{sipNumber1}},
 		},
@@ -466,7 +466,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct/number specific pin",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", "123")},
 			{TrunkIds: nil, Rule: newDirectDispatch("sip2", "123"), InboundNumbers: []string{sipNumber1}},
 		},
@@ -475,7 +475,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct/number specific conflict",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", ""), InboundNumbers: []string{sipNumber1}},
 			{TrunkIds: nil, Rule: newDirectDispatch("sip2", ""), InboundNumbers: []string{sipNumber1, sipNumber2}},
 		},
@@ -486,7 +486,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct/open specific vs pin generic",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newDirectDispatch("sip1", "123")},
 			{TrunkIds: nil, Rule: newDirectDispatch("sip2", ""), InboundNumbers: []string{sipNumber1}},
 		},
@@ -496,7 +496,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct vs individual/private",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newIndividualDispatch("pref_", "123")},
 			{TrunkIds: nil, Rule: newDirectDispatch("sip", "123")},
 		},
@@ -506,7 +506,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct vs individual/open",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newIndividualDispatch("pref_", "")},
 			{TrunkIds: nil, Rule: newDirectDispatch("sip", "")},
 		},
@@ -517,7 +517,7 @@ var dispatchCases = []struct {
 	{
 		name:  "direct vs individual/priority",
 		trunk: newSIPTrunkDispatch(),
-		rules: []*livekit.SIPDispatchRuleInfo{
+		rules: []*wirtual.SIPDispatchRuleInfo{
 			{TrunkIds: nil, Rule: newIndividualDispatch("pref_", "123")},
 			{TrunkIds: nil, Rule: newDirectDispatch("sip", "456")},
 		},
@@ -553,7 +553,7 @@ func TestSIPMatchDispatchRule(t *testing.T) {
 						require.Nil(t, got)
 						t.Log(err)
 					} else {
-						var exp *livekit.SIPDispatchRuleInfo
+						var exp *wirtual.SIPDispatchRuleInfo
 						if c.exp >= 0 {
 							exp = c.rules[c.exp]
 						}
@@ -586,7 +586,7 @@ func TestSIPValidateDispatchRules(t *testing.T) {
 }
 
 func TestEvaluateDispatchRule(t *testing.T) {
-	d := &livekit.SIPDispatchRuleInfo{
+	d := &wirtual.SIPDispatchRuleInfo{
 		SipDispatchRuleId: "rule",
 		Rule:              newDirectDispatch("room", ""),
 		HidePhoneNumber:   false,
@@ -605,7 +605,7 @@ func TestEvaluateDispatchRule(t *testing.T) {
 			"prov-attr": "1",
 		},
 	}
-	tr := &livekit.SIPInboundTrunkInfo{SipTrunkId: "trunk"}
+	tr := &wirtual.SIPInboundTrunkInfo{SipTrunkId: "trunk"}
 	res, err := EvaluateDispatchRule("p_123", tr, d, r)
 	require.NoError(t, err)
 	require.Equal(t, &rpc.EvaluateSIPDispatchRulesResponse{
@@ -620,11 +620,11 @@ func TestEvaluateDispatchRule(t *testing.T) {
 		ParticipantAttributes: map[string]string{
 			"rule-attr":                   "1",
 			"prov-attr":                   "1",
-			livekit.AttrSIPCallID:         "call-id",
-			livekit.AttrSIPTrunkID:        "trunk",
-			livekit.AttrSIPDispatchRuleID: "rule",
-			livekit.AttrSIPPhoneNumber:    "+11112222",
-			livekit.AttrSIPTrunkNumber:    "+3333",
+			wirtual.AttrSIPCallID:         "call-id",
+			wirtual.AttrSIPTrunkID:        "trunk",
+			wirtual.AttrSIPDispatchRuleID: "rule",
+			wirtual.AttrSIPPhoneNumber:    "+11112222",
+			wirtual.AttrSIPTrunkNumber:    "+3333",
 		},
 	}, res)
 
@@ -643,9 +643,9 @@ func TestEvaluateDispatchRule(t *testing.T) {
 		ParticipantAttributes: map[string]string{
 			"rule-attr":                   "1",
 			"prov-attr":                   "1",
-			livekit.AttrSIPCallID:         "call-id",
-			livekit.AttrSIPTrunkID:        "trunk",
-			livekit.AttrSIPDispatchRuleID: "rule",
+			wirtual.AttrSIPCallID:         "call-id",
+			wirtual.AttrSIPTrunkID:        "trunk",
+			wirtual.AttrSIPDispatchRuleID: "rule",
 		},
 	}, res)
 }

@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,11 +19,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/logger"
-	"github.com/livekit/protocol/utils/must"
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/middleware"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/logger"
+	"github.com/wirtualdev/wirtual-protocol/utils/must"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/middleware"
 )
 
 type PSRPCConfig struct {
@@ -102,36 +102,36 @@ func WithDefaultServerOptions(psrpcConfig PSRPCConfig, logger logger.Logger) psr
 
 //go:generate go run github.com/maxbrunsfeld/counterfeiter/v6 -generate
 
-type TypedSignalClient = SignalClient[livekit.NodeID]
-type TypedSignalServer = SignalServer[livekit.NodeID]
+type TypedSignalClient = SignalClient[wirtual.NodeID]
+type TypedSignalServer = SignalServer[wirtual.NodeID]
 
-func NewTypedSignalClient(nodeID livekit.NodeID, bus psrpc.MessageBus, opts ...psrpc.ClientOption) (TypedSignalClient, error) {
-	return NewSignalClient[livekit.NodeID](bus, psrpc.WithClientOptions(opts...), psrpc.WithClientID(string(nodeID)))
+func NewTypedSignalClient(nodeID wirtual.NodeID, bus psrpc.MessageBus, opts ...psrpc.ClientOption) (TypedSignalClient, error) {
+	return NewSignalClient[wirtual.NodeID](bus, psrpc.WithClientOptions(opts...), psrpc.WithClientID(string(nodeID)))
 }
 
-func NewTypedSignalServer(nodeID livekit.NodeID, svc SignalServerImpl, bus psrpc.MessageBus, opts ...psrpc.ServerOption) (TypedSignalServer, error) {
-	return NewSignalServer[livekit.NodeID](svc, bus, psrpc.WithServerOptions(opts...), psrpc.WithServerID(string(nodeID)))
+func NewTypedSignalServer(nodeID wirtual.NodeID, svc SignalServerImpl, bus psrpc.MessageBus, opts ...psrpc.ServerOption) (TypedSignalServer, error) {
+	return NewSignalServer[wirtual.NodeID](svc, bus, psrpc.WithServerOptions(opts...), psrpc.WithServerID(string(nodeID)))
 }
 
-type TypedRoomManagerClient = RoomManagerClient[livekit.NodeID]
-type TypedRoomManagerServer = RoomManagerServer[livekit.NodeID]
+type TypedRoomManagerClient = RoomManagerClient[wirtual.NodeID]
+type TypedRoomManagerServer = RoomManagerServer[wirtual.NodeID]
 
 func NewTypedRoomManagerClient(bus psrpc.MessageBus, opts ...psrpc.ClientOption) (TypedRoomManagerClient, error) {
-	return NewRoomManagerClient[livekit.NodeID](bus, opts...)
+	return NewRoomManagerClient[wirtual.NodeID](bus, opts...)
 }
 
 func NewTypedRoomManagerServer(svc RoomManagerServerImpl, bus psrpc.MessageBus, opts ...psrpc.ServerOption) (TypedRoomManagerServer, error) {
-	return NewRoomManagerServer[livekit.NodeID](svc, bus, opts...)
+	return NewRoomManagerServer[wirtual.NodeID](svc, bus, opts...)
 }
 
 type ParticipantTopic string
 type RoomTopic string
 
-func FormatParticipantTopic(roomName livekit.RoomName, identity livekit.ParticipantIdentity) ParticipantTopic {
+func FormatParticipantTopic(roomName wirtual.RoomName, identity wirtual.ParticipantIdentity) ParticipantTopic {
 	return ParticipantTopic(fmt.Sprintf("%s_%s", roomName, identity))
 }
 
-func FormatRoomTopic(roomName livekit.RoomName) RoomTopic {
+func FormatRoomTopic(roomName wirtual.RoomName) RoomTopic {
 	return RoomTopic(roomName)
 }
 
@@ -141,17 +141,17 @@ func NewTopicFormatter() TopicFormatter {
 	return topicFormatter{}
 }
 
-func (f topicFormatter) ParticipantTopic(ctx context.Context, roomName livekit.RoomName, identity livekit.ParticipantIdentity) ParticipantTopic {
+func (f topicFormatter) ParticipantTopic(ctx context.Context, roomName wirtual.RoomName, identity wirtual.ParticipantIdentity) ParticipantTopic {
 	return FormatParticipantTopic(roomName, identity)
 }
 
-func (f topicFormatter) RoomTopic(ctx context.Context, roomName livekit.RoomName) RoomTopic {
+func (f topicFormatter) RoomTopic(ctx context.Context, roomName wirtual.RoomName) RoomTopic {
 	return FormatRoomTopic(roomName)
 }
 
 type TopicFormatter interface {
-	ParticipantTopic(ctx context.Context, roomName livekit.RoomName, identity livekit.ParticipantIdentity) ParticipantTopic
-	RoomTopic(ctx context.Context, roomName livekit.RoomName) RoomTopic
+	ParticipantTopic(ctx context.Context, roomName wirtual.RoomName, identity wirtual.ParticipantIdentity) ParticipantTopic
+	RoomTopic(ctx context.Context, roomName wirtual.RoomName) RoomTopic
 }
 
 //counterfeiter:generate . TypedRoomClient
@@ -192,20 +192,20 @@ func NewTypedAgentDispatchInternalServer(svc AgentDispatchInternalServerImpl, bu
 
 //counterfeiter:generate . KeepalivePubSub
 type KeepalivePubSub interface {
-	KeepaliveClient[livekit.NodeID]
-	KeepaliveServer[livekit.NodeID]
+	KeepaliveClient[wirtual.NodeID]
+	KeepaliveServer[wirtual.NodeID]
 }
 
 type keepalivePubSub struct {
-	KeepaliveClient[livekit.NodeID]
-	KeepaliveServer[livekit.NodeID]
+	KeepaliveClient[wirtual.NodeID]
+	KeepaliveServer[wirtual.NodeID]
 }
 
 func NewKeepalivePubSub(params ClientParams) (KeepalivePubSub, error) {
-	client, err := NewKeepaliveClient[livekit.NodeID](params.Args())
+	client, err := NewKeepaliveClient[wirtual.NodeID](params.Args())
 	if err != nil {
 		return nil, err
 	}
-	server := must.Get(NewKeepaliveServer[livekit.NodeID](nil, params.Bus))
+	server := must.Get(NewKeepaliveServer[wirtual.NodeID](nil, params.Bus))
 	return &keepalivePubSub{client, server}, nil
 }

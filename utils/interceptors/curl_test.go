@@ -7,7 +7,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 func TestCurlPrinter(t *testing.T) {
@@ -16,7 +16,7 @@ func TestCurlPrinter(t *testing.T) {
 		"http://localhost:8080",
 		"example", "Service", "Do",
 		http.Header{"X-Test": {"true"}},
-		&livekit.Room{Name: "test"},
+		&wirtual.Room{Name: "test"},
 	)
 	require.NoError(t, err)
 	require.Equal(t, `curl -X POST \

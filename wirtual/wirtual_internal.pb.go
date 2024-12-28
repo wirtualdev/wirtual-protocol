@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -76,11 +76,11 @@ func (x NodeType) String() string {
 }
 
 func (NodeType) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_internal_proto_enumTypes[0].Descriptor()
+	return file_wirtual_internal_proto_enumTypes[0].Descriptor()
 }
 
 func (NodeType) Type() protoreflect.EnumType {
-	return &file_livekit_internal_proto_enumTypes[0]
+	return &file_wirtual_internal_proto_enumTypes[0]
 }
 
 func (x NodeType) Number() protoreflect.EnumNumber {
@@ -89,7 +89,7 @@ func (x NodeType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NodeType.Descriptor instead.
 func (NodeType) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_internal_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_internal_proto_rawDescGZIP(), []int{0}
 }
 
 type NodeState int32
@@ -125,11 +125,11 @@ func (x NodeState) String() string {
 }
 
 func (NodeState) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_internal_proto_enumTypes[1].Descriptor()
+	return file_wirtual_internal_proto_enumTypes[1].Descriptor()
 }
 
 func (NodeState) Type() protoreflect.EnumType {
-	return &file_livekit_internal_proto_enumTypes[1]
+	return &file_wirtual_internal_proto_enumTypes[1]
 }
 
 func (x NodeState) Number() protoreflect.EnumNumber {
@@ -138,7 +138,7 @@ func (x NodeState) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use NodeState.Descriptor instead.
 func (NodeState) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_internal_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_internal_proto_rawDescGZIP(), []int{1}
 }
 
 type ICECandidateType int32
@@ -174,11 +174,11 @@ func (x ICECandidateType) String() string {
 }
 
 func (ICECandidateType) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_internal_proto_enumTypes[2].Descriptor()
+	return file_wirtual_internal_proto_enumTypes[2].Descriptor()
 }
 
 func (ICECandidateType) Type() protoreflect.EnumType {
-	return &file_livekit_internal_proto_enumTypes[2]
+	return &file_wirtual_internal_proto_enumTypes[2]
 }
 
 func (x ICECandidateType) Number() protoreflect.EnumNumber {
@@ -187,7 +187,7 @@ func (x ICECandidateType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ICECandidateType.Descriptor instead.
 func (ICECandidateType) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_internal_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_internal_proto_rawDescGZIP(), []int{2}
 }
 
 type Node struct {
@@ -205,7 +205,7 @@ type Node struct {
 
 func (x *Node) Reset() {
 	*x = Node{}
-	mi := &file_livekit_internal_proto_msgTypes[0]
+	mi := &file_wirtual_internal_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -217,7 +217,7 @@ func (x *Node) String() string {
 func (*Node) ProtoMessage() {}
 
 func (x *Node) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_internal_proto_msgTypes[0]
+	mi := &file_wirtual_internal_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -230,7 +230,7 @@ func (x *Node) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Node.ProtoReflect.Descriptor instead.
 func (*Node) Descriptor() ([]byte, []int) {
-	return file_livekit_internal_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_internal_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Node) GetId() string {
@@ -347,7 +347,7 @@ type NodeStats struct {
 
 func (x *NodeStats) Reset() {
 	*x = NodeStats{}
-	mi := &file_livekit_internal_proto_msgTypes[1]
+	mi := &file_wirtual_internal_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -359,7 +359,7 @@ func (x *NodeStats) String() string {
 func (*NodeStats) ProtoMessage() {}
 
 func (x *NodeStats) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_internal_proto_msgTypes[1]
+	mi := &file_wirtual_internal_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -372,7 +372,7 @@ func (x *NodeStats) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NodeStats.ProtoReflect.Descriptor instead.
 func (*NodeStats) Descriptor() ([]byte, []int) {
-	return file_livekit_internal_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_internal_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *NodeStats) GetStartedAt() int64 {
@@ -745,7 +745,7 @@ type StartSession struct {
 
 func (x *StartSession) Reset() {
 	*x = StartSession{}
-	mi := &file_livekit_internal_proto_msgTypes[2]
+	mi := &file_wirtual_internal_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -757,7 +757,7 @@ func (x *StartSession) String() string {
 func (*StartSession) ProtoMessage() {}
 
 func (x *StartSession) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_internal_proto_msgTypes[2]
+	mi := &file_wirtual_internal_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -770,7 +770,7 @@ func (x *StartSession) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartSession.ProtoReflect.Descriptor instead.
 func (*StartSession) Descriptor() ([]byte, []int) {
-	return file_livekit_internal_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_internal_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *StartSession) GetRoomName() string {
@@ -900,7 +900,7 @@ type RoomInternal struct {
 
 func (x *RoomInternal) Reset() {
 	*x = RoomInternal{}
-	mi := &file_livekit_internal_proto_msgTypes[3]
+	mi := &file_wirtual_internal_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -912,7 +912,7 @@ func (x *RoomInternal) String() string {
 func (*RoomInternal) ProtoMessage() {}
 
 func (x *RoomInternal) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_internal_proto_msgTypes[3]
+	mi := &file_wirtual_internal_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -925,7 +925,7 @@ func (x *RoomInternal) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RoomInternal.ProtoReflect.Descriptor instead.
 func (*RoomInternal) Descriptor() ([]byte, []int) {
-	return file_livekit_internal_proto_rawDescGZIP(), []int{3}
+	return file_wirtual_internal_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *RoomInternal) GetTrackEgress() *AutoTrackEgress {
@@ -980,7 +980,7 @@ type ICEConfig struct {
 
 func (x *ICEConfig) Reset() {
 	*x = ICEConfig{}
-	mi := &file_livekit_internal_proto_msgTypes[4]
+	mi := &file_wirtual_internal_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -992,7 +992,7 @@ func (x *ICEConfig) String() string {
 func (*ICEConfig) ProtoMessage() {}
 
 func (x *ICEConfig) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_internal_proto_msgTypes[4]
+	mi := &file_wirtual_internal_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1005,7 +1005,7 @@ func (x *ICEConfig) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ICEConfig.ProtoReflect.Descriptor instead.
 func (*ICEConfig) Descriptor() ([]byte, []int) {
-	return file_livekit_internal_proto_rawDescGZIP(), []int{4}
+	return file_wirtual_internal_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ICEConfig) GetPreferenceSubscriber() ICECandidateType {
@@ -1022,9 +1022,9 @@ func (x *ICEConfig) GetPreferencePublisher() ICECandidateType {
 	return ICECandidateType_ICT_NONE
 }
 
-var File_livekit_internal_proto protoreflect.FileDescriptor
+var File_wirtual_internal_proto protoreflect.FileDescriptor
 
-var file_livekit_internal_proto_rawDesc = []byte{
+var file_wirtual_internal_proto_rawDesc = []byte{
 	0x0a, 0x16, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x6e,
 	0x61, 0x6c, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69,
 	0x74, 0x1a, 0x14, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x65, 0x6c,
@@ -1291,20 +1291,20 @@ var file_livekit_internal_proto_rawDesc = []byte{
 }
 
 var (
-	file_livekit_internal_proto_rawDescOnce sync.Once
-	file_livekit_internal_proto_rawDescData = file_livekit_internal_proto_rawDesc
+	file_wirtual_internal_proto_rawDescOnce sync.Once
+	file_wirtual_internal_proto_rawDescData = file_wirtual_internal_proto_rawDesc
 )
 
-func file_livekit_internal_proto_rawDescGZIP() []byte {
-	file_livekit_internal_proto_rawDescOnce.Do(func() {
-		file_livekit_internal_proto_rawDescData = protoimpl.X.CompressGZIP(file_livekit_internal_proto_rawDescData)
+func file_wirtual_internal_proto_rawDescGZIP() []byte {
+	file_wirtual_internal_proto_rawDescOnce.Do(func() {
+		file_wirtual_internal_proto_rawDescData = protoimpl.X.CompressGZIP(file_wirtual_internal_proto_rawDescData)
 	})
-	return file_livekit_internal_proto_rawDescData
+	return file_wirtual_internal_proto_rawDescData
 }
 
-var file_livekit_internal_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_livekit_internal_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
-var file_livekit_internal_proto_goTypes = []any{
+var file_wirtual_internal_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_wirtual_internal_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_wirtual_internal_proto_goTypes = []any{
 	(NodeType)(0),                 // 0: wirtual.NodeType
 	(NodeState)(0),                // 1: wirtual.NodeState
 	(ICECandidateType)(0),         // 2: wirtual.ICECandidateType
@@ -1321,7 +1321,7 @@ var file_livekit_internal_proto_goTypes = []any{
 	(*PlayoutDelay)(nil),          // 13: wirtual.PlayoutDelay
 	(*RoomAgentDispatch)(nil),     // 14: wirtual.RoomAgentDispatch
 }
-var file_livekit_internal_proto_depIdxs = []int32{
+var file_wirtual_internal_proto_depIdxs = []int32{
 	4,  // 0: wirtual.Node.stats:type_name -> wirtual.NodeStats
 	0,  // 1: wirtual.Node.type:type_name -> wirtual.NodeType
 	1,  // 2: wirtual.Node.state:type_name -> wirtual.NodeState
@@ -1341,33 +1341,33 @@ var file_livekit_internal_proto_depIdxs = []int32{
 	0,  // [0:12] is the sub-list for field type_name
 }
 
-func init() { file_livekit_internal_proto_init() }
-func file_livekit_internal_proto_init() {
-	if File_livekit_internal_proto != nil {
+func init() { file_wirtual_internal_proto_init() }
+func file_wirtual_internal_proto_init() {
+	if File_wirtual_internal_proto != nil {
 		return
 	}
-	file_livekit_models_proto_init()
-	file_livekit_egress_proto_init()
-	file_livekit_agent_dispatch_proto_init()
-	file_livekit_room_proto_init()
-	file_livekit_internal_proto_msgTypes[2].OneofWrappers = []any{}
+	file_wirtual_models_proto_init()
+	file_wirtual_egress_proto_init()
+	file_wirtual_agent_dispatch_proto_init()
+	file_wirtual_room_proto_init()
+	file_wirtual_internal_proto_msgTypes[2].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_livekit_internal_proto_rawDesc,
+			RawDescriptor: file_wirtual_internal_proto_rawDesc,
 			NumEnums:      3,
 			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_livekit_internal_proto_goTypes,
-		DependencyIndexes: file_livekit_internal_proto_depIdxs,
-		EnumInfos:         file_livekit_internal_proto_enumTypes,
-		MessageInfos:      file_livekit_internal_proto_msgTypes,
+		GoTypes:           file_wirtual_internal_proto_goTypes,
+		DependencyIndexes: file_wirtual_internal_proto_depIdxs,
+		EnumInfos:         file_wirtual_internal_proto_enumTypes,
+		MessageInfos:      file_wirtual_internal_proto_msgTypes,
 	}.Build()
-	File_livekit_internal_proto = out.File
-	file_livekit_internal_proto_rawDesc = nil
-	file_livekit_internal_proto_goTypes = nil
-	file_livekit_internal_proto_depIdxs = nil
+	File_wirtual_internal_proto = out.File
+	file_wirtual_internal_proto_rawDesc = nil
+	file_wirtual_internal_proto_goTypes = nil
+	file_wirtual_internal_proto_depIdxs = nil
 }

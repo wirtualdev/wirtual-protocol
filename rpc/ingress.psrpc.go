@@ -6,15 +6,15 @@ package rpc
 import (
 	"context"
 
-	"github.com/livekit/psrpc"
-	"github.com/livekit/psrpc/pkg/client"
-	"github.com/livekit/psrpc/pkg/info"
-	"github.com/livekit/psrpc/pkg/rand"
-	"github.com/livekit/psrpc/pkg/server"
-	"github.com/livekit/psrpc/version"
+	"github.com/wirtual/psrpc"
+	"github.com/wirtual/psrpc/pkg/client"
+	"github.com/wirtual/psrpc/pkg/info"
+	"github.com/wirtual/psrpc/pkg/rand"
+	"github.com/wirtual/psrpc/pkg/server"
+	"github.com/wirtual/psrpc/version"
 )
 import google_protobuf "google.golang.org/protobuf/types/known/emptypb"
-import livekit5 "github.com/wirtual/protocol/wirtual"
+import wirtual5 "github.com/wirtual/protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 
@@ -23,7 +23,7 @@ var _ = version.PsrpcVersion_0_6
 // ================================
 
 type IngressInternalClient interface {
-	StartIngress(ctx context.Context, req *StartIngressRequest, opts ...psrpc.RequestOption) (*livekit5.IngressInfo, error)
+	StartIngress(ctx context.Context, req *StartIngressRequest, opts ...psrpc.RequestOption) (*wirtual5.IngressInfo, error)
 
 	ListActiveIngress(ctx context.Context, topic string, req *ListActiveIngressRequest, opts ...psrpc.RequestOption) (<-chan *psrpc.Response[*ListActiveIngressResponse], error)
 
@@ -38,7 +38,7 @@ type IngressInternalClient interface {
 // ====================================
 
 type IngressInternalServerImpl interface {
-	StartIngress(context.Context, *StartIngressRequest) (*livekit5.IngressInfo, error)
+	StartIngress(context.Context, *StartIngressRequest) (*wirtual5.IngressInfo, error)
 	StartIngressAffinity(context.Context, *StartIngressRequest) float32
 
 	ListActiveIngress(context.Context, *ListActiveIngressRequest) (*ListActiveIngressResponse, error)
@@ -92,8 +92,8 @@ func NewIngressInternalClient(bus psrpc.MessageBus, opts ...psrpc.ClientOption) 
 	}, nil
 }
 
-func (c *ingressInternalClient) StartIngress(ctx context.Context, req *StartIngressRequest, opts ...psrpc.RequestOption) (*livekit5.IngressInfo, error) {
-	return client.RequestSingle[*livekit5.IngressInfo](ctx, c.client, "StartIngress", nil, req, opts...)
+func (c *ingressInternalClient) StartIngress(ctx context.Context, req *StartIngressRequest, opts ...psrpc.RequestOption) (*wirtual5.IngressInfo, error) {
+	return client.RequestSingle[*wirtual5.IngressInfo](ctx, c.client, "StartIngress", nil, req, opts...)
 }
 
 func (c *ingressInternalClient) ListActiveIngress(ctx context.Context, topic string, req *ListActiveIngressRequest, opts ...psrpc.RequestOption) (<-chan *psrpc.Response[*ListActiveIngressResponse], error) {
@@ -172,9 +172,9 @@ func (s *ingressInternalServer) Kill() {
 // ===============================
 
 type IngressHandlerClient interface {
-	UpdateIngress(ctx context.Context, topic string, req *livekit5.UpdateIngressRequest, opts ...psrpc.RequestOption) (*livekit5.IngressState, error)
+	UpdateIngress(ctx context.Context, topic string, req *wirtual5.UpdateIngressRequest, opts ...psrpc.RequestOption) (*wirtual5.IngressState, error)
 
-	DeleteIngress(ctx context.Context, topic string, req *livekit5.DeleteIngressRequest, opts ...psrpc.RequestOption) (*livekit5.IngressState, error)
+	DeleteIngress(ctx context.Context, topic string, req *wirtual5.DeleteIngressRequest, opts ...psrpc.RequestOption) (*wirtual5.IngressState, error)
 
 	DeleteWHIPResource(ctx context.Context, topic string, req *DeleteWHIPResourceRequest, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error)
 
@@ -189,9 +189,9 @@ type IngressHandlerClient interface {
 // ===================================
 
 type IngressHandlerServerImpl interface {
-	UpdateIngress(context.Context, *livekit5.UpdateIngressRequest) (*livekit5.IngressState, error)
+	UpdateIngress(context.Context, *wirtual5.UpdateIngressRequest) (*wirtual5.IngressState, error)
 
-	DeleteIngress(context.Context, *livekit5.DeleteIngressRequest) (*livekit5.IngressState, error)
+	DeleteIngress(context.Context, *wirtual5.DeleteIngressRequest) (*wirtual5.IngressState, error)
 
 	DeleteWHIPResource(context.Context, *DeleteWHIPResourceRequest) (*google_protobuf.Empty, error)
 
@@ -249,12 +249,12 @@ func NewIngressHandlerClient(bus psrpc.MessageBus, opts ...psrpc.ClientOption) (
 	}, nil
 }
 
-func (c *ingressHandlerClient) UpdateIngress(ctx context.Context, topic string, req *livekit5.UpdateIngressRequest, opts ...psrpc.RequestOption) (*livekit5.IngressState, error) {
-	return client.RequestSingle[*livekit5.IngressState](ctx, c.client, "UpdateIngress", []string{topic}, req, opts...)
+func (c *ingressHandlerClient) UpdateIngress(ctx context.Context, topic string, req *wirtual5.UpdateIngressRequest, opts ...psrpc.RequestOption) (*wirtual5.IngressState, error) {
+	return client.RequestSingle[*wirtual5.IngressState](ctx, c.client, "UpdateIngress", []string{topic}, req, opts...)
 }
 
-func (c *ingressHandlerClient) DeleteIngress(ctx context.Context, topic string, req *livekit5.DeleteIngressRequest, opts ...psrpc.RequestOption) (*livekit5.IngressState, error) {
-	return client.RequestSingle[*livekit5.IngressState](ctx, c.client, "DeleteIngress", []string{topic}, req, opts...)
+func (c *ingressHandlerClient) DeleteIngress(ctx context.Context, topic string, req *wirtual5.DeleteIngressRequest, opts ...psrpc.RequestOption) (*wirtual5.IngressState, error) {
+	return client.RequestSingle[*wirtual5.IngressState](ctx, c.client, "DeleteIngress", []string{topic}, req, opts...)
 }
 
 func (c *ingressHandlerClient) DeleteWHIPResource(ctx context.Context, topic string, req *DeleteWHIPResourceRequest, opts ...psrpc.RequestOption) (*google_protobuf.Empty, error) {

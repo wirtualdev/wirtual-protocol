@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -70,10 +70,10 @@ var file_rpc_agent_dispatch_proto_rawDesc = []byte{
 }
 
 var file_rpc_agent_dispatch_proto_goTypes = []any{
-	(*livekit.AgentDispatch)(nil),              // 0: wirtual.AgentDispatch
-	(*livekit.DeleteAgentDispatchRequest)(nil), // 1: wirtual.DeleteAgentDispatchRequest
-	(*livekit.ListAgentDispatchRequest)(nil),   // 2: wirtual.ListAgentDispatchRequest
-	(*livekit.ListAgentDispatchResponse)(nil),  // 3: wirtual.ListAgentDispatchResponse
+	(*wirtual.AgentDispatch)(nil),              // 0: wirtual.AgentDispatch
+	(*wirtual.DeleteAgentDispatchRequest)(nil), // 1: wirtual.DeleteAgentDispatchRequest
+	(*wirtual.ListAgentDispatchRequest)(nil),   // 2: wirtual.ListAgentDispatchRequest
+	(*wirtual.ListAgentDispatchResponse)(nil),  // 3: wirtual.ListAgentDispatchResponse
 }
 var file_rpc_agent_dispatch_proto_depIdxs = []int32{
 	0, // 0: rpc.AgentDispatchInternal.CreateDispatch:input_type -> wirtual.AgentDispatch

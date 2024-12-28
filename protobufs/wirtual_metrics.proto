@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-package livekit;
+package wirtual;
 option go_package = "github.com/wirtual/protocol/wirtual";
-option csharp_namespace = "LiveKit.Proto";
-option ruby_package = "LiveKit::Proto";
+option csharp_namespace = "Wirtual.Proto";
+option ruby_package = "Wirtual::Proto";
 
 import "google/protobuf/timestamp.proto";
 

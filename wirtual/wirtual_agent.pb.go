@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -64,11 +64,11 @@ func (x JobType) String() string {
 }
 
 func (JobType) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_agent_proto_enumTypes[0].Descriptor()
+	return file_wirtual_agent_proto_enumTypes[0].Descriptor()
 }
 
 func (JobType) Type() protoreflect.EnumType {
-	return &file_livekit_agent_proto_enumTypes[0]
+	return &file_wirtual_agent_proto_enumTypes[0]
 }
 
 func (x JobType) Number() protoreflect.EnumNumber {
@@ -77,7 +77,7 @@ func (x JobType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use JobType.Descriptor instead.
 func (JobType) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{0}
 }
 
 type WorkerStatus int32
@@ -110,11 +110,11 @@ func (x WorkerStatus) String() string {
 }
 
 func (WorkerStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_agent_proto_enumTypes[1].Descriptor()
+	return file_wirtual_agent_proto_enumTypes[1].Descriptor()
 }
 
 func (WorkerStatus) Type() protoreflect.EnumType {
-	return &file_livekit_agent_proto_enumTypes[1]
+	return &file_wirtual_agent_proto_enumTypes[1]
 }
 
 func (x WorkerStatus) Number() protoreflect.EnumNumber {
@@ -123,7 +123,7 @@ func (x WorkerStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use WorkerStatus.Descriptor instead.
 func (WorkerStatus) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{1}
 }
 
 type JobStatus int32
@@ -162,11 +162,11 @@ func (x JobStatus) String() string {
 }
 
 func (JobStatus) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_agent_proto_enumTypes[2].Descriptor()
+	return file_wirtual_agent_proto_enumTypes[2].Descriptor()
 }
 
 func (JobStatus) Type() protoreflect.EnumType {
-	return &file_livekit_agent_proto_enumTypes[2]
+	return &file_wirtual_agent_proto_enumTypes[2]
 }
 
 func (x JobStatus) Number() protoreflect.EnumNumber {
@@ -175,7 +175,7 @@ func (x JobStatus) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use JobStatus.Descriptor instead.
 func (JobStatus) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{2}
 }
 
 type Job struct {
@@ -196,7 +196,7 @@ type Job struct {
 
 func (x *Job) Reset() {
 	*x = Job{}
-	mi := &file_livekit_agent_proto_msgTypes[0]
+	mi := &file_wirtual_agent_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -208,7 +208,7 @@ func (x *Job) String() string {
 func (*Job) ProtoMessage() {}
 
 func (x *Job) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[0]
+	mi := &file_wirtual_agent_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -221,7 +221,7 @@ func (x *Job) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Job.ProtoReflect.Descriptor instead.
 func (*Job) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Job) GetId() string {
@@ -302,7 +302,7 @@ type JobState struct {
 
 func (x *JobState) Reset() {
 	*x = JobState{}
-	mi := &file_livekit_agent_proto_msgTypes[1]
+	mi := &file_wirtual_agent_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -314,7 +314,7 @@ func (x *JobState) String() string {
 func (*JobState) ProtoMessage() {}
 
 func (x *JobState) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[1]
+	mi := &file_wirtual_agent_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -327,7 +327,7 @@ func (x *JobState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JobState.ProtoReflect.Descriptor instead.
 func (*JobState) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *JobState) GetStatus() JobStatus {
@@ -391,7 +391,7 @@ type WorkerMessage struct {
 
 func (x *WorkerMessage) Reset() {
 	*x = WorkerMessage{}
-	mi := &file_livekit_agent_proto_msgTypes[2]
+	mi := &file_wirtual_agent_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -403,7 +403,7 @@ func (x *WorkerMessage) String() string {
 func (*WorkerMessage) ProtoMessage() {}
 
 func (x *WorkerMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[2]
+	mi := &file_wirtual_agent_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -416,7 +416,7 @@ func (x *WorkerMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WorkerMessage.ProtoReflect.Descriptor instead.
 func (*WorkerMessage) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *WorkerMessage) GetMessage() isWorkerMessage_Message {
@@ -556,7 +556,7 @@ type ServerMessage struct {
 
 func (x *ServerMessage) Reset() {
 	*x = ServerMessage{}
-	mi := &file_livekit_agent_proto_msgTypes[3]
+	mi := &file_wirtual_agent_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -568,7 +568,7 @@ func (x *ServerMessage) String() string {
 func (*ServerMessage) ProtoMessage() {}
 
 func (x *ServerMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[3]
+	mi := &file_wirtual_agent_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -581,7 +581,7 @@ func (x *ServerMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServerMessage.ProtoReflect.Descriptor instead.
 func (*ServerMessage) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{3}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ServerMessage) GetMessage() isServerMessage_Message {
@@ -683,7 +683,7 @@ type SimulateJobRequest struct {
 
 func (x *SimulateJobRequest) Reset() {
 	*x = SimulateJobRequest{}
-	mi := &file_livekit_agent_proto_msgTypes[4]
+	mi := &file_wirtual_agent_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -695,7 +695,7 @@ func (x *SimulateJobRequest) String() string {
 func (*SimulateJobRequest) ProtoMessage() {}
 
 func (x *SimulateJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[4]
+	mi := &file_wirtual_agent_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -708,7 +708,7 @@ func (x *SimulateJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SimulateJobRequest.ProtoReflect.Descriptor instead.
 func (*SimulateJobRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{4}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *SimulateJobRequest) GetType() JobType {
@@ -741,7 +741,7 @@ type WorkerPing struct {
 
 func (x *WorkerPing) Reset() {
 	*x = WorkerPing{}
-	mi := &file_livekit_agent_proto_msgTypes[5]
+	mi := &file_wirtual_agent_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -753,7 +753,7 @@ func (x *WorkerPing) String() string {
 func (*WorkerPing) ProtoMessage() {}
 
 func (x *WorkerPing) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[5]
+	mi := &file_wirtual_agent_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -766,7 +766,7 @@ func (x *WorkerPing) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WorkerPing.ProtoReflect.Descriptor instead.
 func (*WorkerPing) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{5}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *WorkerPing) GetTimestamp() int64 {
@@ -786,7 +786,7 @@ type WorkerPong struct {
 
 func (x *WorkerPong) Reset() {
 	*x = WorkerPong{}
-	mi := &file_livekit_agent_proto_msgTypes[6]
+	mi := &file_wirtual_agent_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -798,7 +798,7 @@ func (x *WorkerPong) String() string {
 func (*WorkerPong) ProtoMessage() {}
 
 func (x *WorkerPong) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[6]
+	mi := &file_wirtual_agent_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -811,7 +811,7 @@ func (x *WorkerPong) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WorkerPong.ProtoReflect.Descriptor instead.
 func (*WorkerPong) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{6}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *WorkerPong) GetLastTimestamp() int64 {
@@ -844,7 +844,7 @@ type RegisterWorkerRequest struct {
 
 func (x *RegisterWorkerRequest) Reset() {
 	*x = RegisterWorkerRequest{}
-	mi := &file_livekit_agent_proto_msgTypes[7]
+	mi := &file_wirtual_agent_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -856,7 +856,7 @@ func (x *RegisterWorkerRequest) String() string {
 func (*RegisterWorkerRequest) ProtoMessage() {}
 
 func (x *RegisterWorkerRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[7]
+	mi := &file_wirtual_agent_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -869,7 +869,7 @@ func (x *RegisterWorkerRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterWorkerRequest.ProtoReflect.Descriptor instead.
 func (*RegisterWorkerRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{7}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *RegisterWorkerRequest) GetType() JobType {
@@ -924,7 +924,7 @@ type RegisterWorkerResponse struct {
 
 func (x *RegisterWorkerResponse) Reset() {
 	*x = RegisterWorkerResponse{}
-	mi := &file_livekit_agent_proto_msgTypes[8]
+	mi := &file_wirtual_agent_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -936,7 +936,7 @@ func (x *RegisterWorkerResponse) String() string {
 func (*RegisterWorkerResponse) ProtoMessage() {}
 
 func (x *RegisterWorkerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[8]
+	mi := &file_wirtual_agent_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -949,7 +949,7 @@ func (x *RegisterWorkerResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterWorkerResponse.ProtoReflect.Descriptor instead.
 func (*RegisterWorkerResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{8}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *RegisterWorkerResponse) GetWorkerId() string {
@@ -976,7 +976,7 @@ type MigrateJobRequest struct {
 
 func (x *MigrateJobRequest) Reset() {
 	*x = MigrateJobRequest{}
-	mi := &file_livekit_agent_proto_msgTypes[9]
+	mi := &file_wirtual_agent_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -988,7 +988,7 @@ func (x *MigrateJobRequest) String() string {
 func (*MigrateJobRequest) ProtoMessage() {}
 
 func (x *MigrateJobRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[9]
+	mi := &file_wirtual_agent_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1001,7 +1001,7 @@ func (x *MigrateJobRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use MigrateJobRequest.ProtoReflect.Descriptor instead.
 func (*MigrateJobRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{9}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *MigrateJobRequest) GetJobIds() []string {
@@ -1023,7 +1023,7 @@ type AvailabilityRequest struct {
 
 func (x *AvailabilityRequest) Reset() {
 	*x = AvailabilityRequest{}
-	mi := &file_livekit_agent_proto_msgTypes[10]
+	mi := &file_wirtual_agent_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1035,7 +1035,7 @@ func (x *AvailabilityRequest) String() string {
 func (*AvailabilityRequest) ProtoMessage() {}
 
 func (x *AvailabilityRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[10]
+	mi := &file_wirtual_agent_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1048,7 +1048,7 @@ func (x *AvailabilityRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AvailabilityRequest.ProtoReflect.Descriptor instead.
 func (*AvailabilityRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{10}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *AvailabilityRequest) GetJob() *Job {
@@ -1080,7 +1080,7 @@ type AvailabilityResponse struct {
 
 func (x *AvailabilityResponse) Reset() {
 	*x = AvailabilityResponse{}
-	mi := &file_livekit_agent_proto_msgTypes[11]
+	mi := &file_wirtual_agent_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1092,7 +1092,7 @@ func (x *AvailabilityResponse) String() string {
 func (*AvailabilityResponse) ProtoMessage() {}
 
 func (x *AvailabilityResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[11]
+	mi := &file_wirtual_agent_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1105,7 +1105,7 @@ func (x *AvailabilityResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AvailabilityResponse.ProtoReflect.Descriptor instead.
 func (*AvailabilityResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{11}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *AvailabilityResponse) GetJobId() string {
@@ -1170,7 +1170,7 @@ type UpdateJobStatus struct {
 
 func (x *UpdateJobStatus) Reset() {
 	*x = UpdateJobStatus{}
-	mi := &file_livekit_agent_proto_msgTypes[12]
+	mi := &file_wirtual_agent_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1182,7 +1182,7 @@ func (x *UpdateJobStatus) String() string {
 func (*UpdateJobStatus) ProtoMessage() {}
 
 func (x *UpdateJobStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[12]
+	mi := &file_wirtual_agent_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1195,7 +1195,7 @@ func (x *UpdateJobStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateJobStatus.ProtoReflect.Descriptor instead.
 func (*UpdateJobStatus) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{12}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *UpdateJobStatus) GetJobId() string {
@@ -1231,7 +1231,7 @@ type UpdateWorkerStatus struct {
 
 func (x *UpdateWorkerStatus) Reset() {
 	*x = UpdateWorkerStatus{}
-	mi := &file_livekit_agent_proto_msgTypes[13]
+	mi := &file_wirtual_agent_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1243,7 +1243,7 @@ func (x *UpdateWorkerStatus) String() string {
 func (*UpdateWorkerStatus) ProtoMessage() {}
 
 func (x *UpdateWorkerStatus) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[13]
+	mi := &file_wirtual_agent_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1256,7 +1256,7 @@ func (x *UpdateWorkerStatus) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateWorkerStatus.ProtoReflect.Descriptor instead.
 func (*UpdateWorkerStatus) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{13}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *UpdateWorkerStatus) GetStatus() WorkerStatus {
@@ -1291,7 +1291,7 @@ type JobAssignment struct {
 
 func (x *JobAssignment) Reset() {
 	*x = JobAssignment{}
-	mi := &file_livekit_agent_proto_msgTypes[14]
+	mi := &file_wirtual_agent_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1303,7 +1303,7 @@ func (x *JobAssignment) String() string {
 func (*JobAssignment) ProtoMessage() {}
 
 func (x *JobAssignment) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[14]
+	mi := &file_wirtual_agent_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1316,7 +1316,7 @@ func (x *JobAssignment) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JobAssignment.ProtoReflect.Descriptor instead.
 func (*JobAssignment) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{14}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *JobAssignment) GetJob() *Job {
@@ -1349,7 +1349,7 @@ type JobTermination struct {
 
 func (x *JobTermination) Reset() {
 	*x = JobTermination{}
-	mi := &file_livekit_agent_proto_msgTypes[15]
+	mi := &file_wirtual_agent_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1361,7 +1361,7 @@ func (x *JobTermination) String() string {
 func (*JobTermination) ProtoMessage() {}
 
 func (x *JobTermination) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_proto_msgTypes[15]
+	mi := &file_wirtual_agent_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1374,7 +1374,7 @@ func (x *JobTermination) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use JobTermination.ProtoReflect.Descriptor instead.
 func (*JobTermination) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_proto_rawDescGZIP(), []int{15}
+	return file_wirtual_agent_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *JobTermination) GetJobId() string {
@@ -1384,9 +1384,9 @@ func (x *JobTermination) GetJobId() string {
 	return ""
 }
 
-var File_livekit_agent_proto protoreflect.FileDescriptor
+var File_wirtual_agent_proto protoreflect.FileDescriptor
 
-var file_livekit_agent_proto_rawDesc = []byte{
+var file_wirtual_agent_proto_rawDesc = []byte{
 	0x0a, 0x13, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x1a, 0x14,
 	0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70,
@@ -1596,20 +1596,20 @@ var file_livekit_agent_proto_rawDesc = []byte{
 }
 
 var (
-	file_livekit_agent_proto_rawDescOnce sync.Once
-	file_livekit_agent_proto_rawDescData = file_livekit_agent_proto_rawDesc
+	file_wirtual_agent_proto_rawDescOnce sync.Once
+	file_wirtual_agent_proto_rawDescData = file_wirtual_agent_proto_rawDesc
 )
 
-func file_livekit_agent_proto_rawDescGZIP() []byte {
-	file_livekit_agent_proto_rawDescOnce.Do(func() {
-		file_livekit_agent_proto_rawDescData = protoimpl.X.CompressGZIP(file_livekit_agent_proto_rawDescData)
+func file_wirtual_agent_proto_rawDescGZIP() []byte {
+	file_wirtual_agent_proto_rawDescOnce.Do(func() {
+		file_wirtual_agent_proto_rawDescData = protoimpl.X.CompressGZIP(file_wirtual_agent_proto_rawDescData)
 	})
-	return file_livekit_agent_proto_rawDescData
+	return file_wirtual_agent_proto_rawDescData
 }
 
-var file_livekit_agent_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_livekit_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
-var file_livekit_agent_proto_goTypes = []any{
+var file_wirtual_agent_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_wirtual_agent_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_wirtual_agent_proto_goTypes = []any{
 	(JobType)(0),                   // 0: wirtual.JobType
 	(WorkerStatus)(0),              // 1: wirtual.WorkerStatus
 	(JobStatus)(0),                 // 2: wirtual.JobStatus
@@ -1635,7 +1635,7 @@ var file_livekit_agent_proto_goTypes = []any{
 	(*ParticipantPermission)(nil),  // 22: wirtual.ParticipantPermission
 	(*ServerInfo)(nil),             // 23: wirtual.ServerInfo
 }
-var file_livekit_agent_proto_depIdxs = []int32{
+var file_wirtual_agent_proto_depIdxs = []int32{
 	0,  // 0: wirtual.Job.type:type_name -> wirtual.JobType
 	20, // 1: wirtual.Job.room:type_name -> wirtual.Room
 	21, // 2: wirtual.Job.participant:type_name -> wirtual.ParticipantInfo
@@ -1671,14 +1671,14 @@ var file_livekit_agent_proto_depIdxs = []int32{
 	0,  // [0:28] is the sub-list for field type_name
 }
 
-func init() { file_livekit_agent_proto_init() }
-func file_livekit_agent_proto_init() {
-	if File_livekit_agent_proto != nil {
+func init() { file_wirtual_agent_proto_init() }
+func file_wirtual_agent_proto_init() {
+	if File_wirtual_agent_proto != nil {
 		return
 	}
-	file_livekit_models_proto_init()
-	file_livekit_agent_proto_msgTypes[0].OneofWrappers = []any{}
-	file_livekit_agent_proto_msgTypes[2].OneofWrappers = []any{
+	file_wirtual_models_proto_init()
+	file_wirtual_agent_proto_msgTypes[0].OneofWrappers = []any{}
+	file_wirtual_agent_proto_msgTypes[2].OneofWrappers = []any{
 		(*WorkerMessage_Register)(nil),
 		(*WorkerMessage_Availability)(nil),
 		(*WorkerMessage_UpdateWorker)(nil),
@@ -1687,33 +1687,33 @@ func file_livekit_agent_proto_init() {
 		(*WorkerMessage_SimulateJob)(nil),
 		(*WorkerMessage_MigrateJob)(nil),
 	}
-	file_livekit_agent_proto_msgTypes[3].OneofWrappers = []any{
+	file_wirtual_agent_proto_msgTypes[3].OneofWrappers = []any{
 		(*ServerMessage_Register)(nil),
 		(*ServerMessage_Availability)(nil),
 		(*ServerMessage_Assignment)(nil),
 		(*ServerMessage_Termination)(nil),
 		(*ServerMessage_Pong)(nil),
 	}
-	file_livekit_agent_proto_msgTypes[7].OneofWrappers = []any{}
-	file_livekit_agent_proto_msgTypes[13].OneofWrappers = []any{}
-	file_livekit_agent_proto_msgTypes[14].OneofWrappers = []any{}
+	file_wirtual_agent_proto_msgTypes[7].OneofWrappers = []any{}
+	file_wirtual_agent_proto_msgTypes[13].OneofWrappers = []any{}
+	file_wirtual_agent_proto_msgTypes[14].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_livekit_agent_proto_rawDesc,
+			RawDescriptor: file_wirtual_agent_proto_rawDesc,
 			NumEnums:      3,
 			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_livekit_agent_proto_goTypes,
-		DependencyIndexes: file_livekit_agent_proto_depIdxs,
-		EnumInfos:         file_livekit_agent_proto_enumTypes,
-		MessageInfos:      file_livekit_agent_proto_msgTypes,
+		GoTypes:           file_wirtual_agent_proto_goTypes,
+		DependencyIndexes: file_wirtual_agent_proto_depIdxs,
+		EnumInfos:         file_wirtual_agent_proto_enumTypes,
+		MessageInfos:      file_wirtual_agent_proto_msgTypes,
 	}.Build()
-	File_livekit_agent_proto = out.File
-	file_livekit_agent_proto_rawDesc = nil
-	file_livekit_agent_proto_goTypes = nil
-	file_livekit_agent_proto_depIdxs = nil
+	File_wirtual_agent_proto = out.File
+	file_wirtual_agent_proto_rawDesc = nil
+	file_wirtual_agent_proto_goTypes = nil
+	file_wirtual_agent_proto_depIdxs = nil
 }

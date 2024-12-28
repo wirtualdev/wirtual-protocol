@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import "options.proto";
 import "wirtual_egress.proto";
 
 service EgressInternal {
-  rpc StartEgress(StartEgressRequest) returns (livekit.EgressInfo) {
+  rpc StartEgress(StartEgressRequest) returns (wirtual.EgressInfo) {
     option (psrpc.options).affinity_func = true;
     option (psrpc.options).topics = true;
   };
@@ -33,10 +33,10 @@ service EgressInternal {
 }
 
 service EgressHandler {
-  rpc UpdateStream(livekit.UpdateStreamRequest) returns (livekit.EgressInfo) {
+  rpc UpdateStream(wirtual.UpdateStreamRequest) returns (wirtual.EgressInfo) {
     option (psrpc.options).topics = true;
   }
-  rpc StopEgress(livekit.StopEgressRequest) returns (livekit.EgressInfo) {
+  rpc StopEgress(wirtual.StopEgressRequest) returns (wirtual.EgressInfo) {
     option (psrpc.options).topics = true;
   }
 }
@@ -47,11 +47,11 @@ message StartEgressRequest {
 
   // request
   oneof request {
-    livekit.RoomCompositeEgressRequest room_composite = 5;
-    livekit.WebEgressRequest web = 11;
-    livekit.ParticipantEgressRequest participant = 13;
-    livekit.TrackCompositeEgressRequest track_composite = 6;
-    livekit.TrackEgressRequest track = 7;
+    wirtual.RoomCompositeEgressRequest room_composite = 5;
+    wirtual.WebEgressRequest web = 11;
+    wirtual.ParticipantEgressRequest participant = 13;
+    wirtual.TrackCompositeEgressRequest track_composite = 6;
+    wirtual.TrackEgressRequest track = 7;
   }
 
   // connection info

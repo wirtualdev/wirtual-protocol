@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,12 +18,12 @@ import (
 	"context"
 	"sync"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/logger"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/logger"
 )
 
 type QueuedNotifier interface {
-	QueueNotify(ctx context.Context, event *livekit.WebhookEvent) error
+	QueueNotify(ctx context.Context, event *wirtual.WebhookEvent) error
 }
 
 type DefaultNotifier struct {
@@ -56,7 +56,7 @@ func (n *DefaultNotifier) Stop(force bool) {
 	wg.Wait()
 }
 
-func (n *DefaultNotifier) QueueNotify(_ context.Context, event *livekit.WebhookEvent) error {
+func (n *DefaultNotifier) QueueNotify(_ context.Context, event *wirtual.WebhookEvent) error {
 	for _, u := range n.urlNotifiers {
 		if err := u.QueueNotify(event); err != nil {
 			return err

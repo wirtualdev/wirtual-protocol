@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -27,14 +27,14 @@ import "google/protobuf/duration.proto";
 
 service IOInfo {
   // egress
-  rpc CreateEgress(livekit.EgressInfo) returns (google.protobuf.Empty);
-  rpc UpdateEgress(livekit.EgressInfo) returns (google.protobuf.Empty);
-  rpc GetEgress(GetEgressRequest) returns (livekit.EgressInfo);
-  rpc ListEgress(livekit.ListEgressRequest) returns (livekit.ListEgressResponse);
+  rpc CreateEgress(wirtual.EgressInfo) returns (google.protobuf.Empty);
+  rpc UpdateEgress(wirtual.EgressInfo) returns (google.protobuf.Empty);
+  rpc GetEgress(GetEgressRequest) returns (wirtual.EgressInfo);
+  rpc ListEgress(wirtual.ListEgressRequest) returns (wirtual.ListEgressResponse);
   rpc UpdateMetrics(UpdateMetricsRequest) returns (google.protobuf.Empty);
 
   // ingress
-  rpc CreateIngress(livekit.IngressInfo) returns (google.protobuf.Empty);
+  rpc CreateIngress(wirtual.IngressInfo) returns (google.protobuf.Empty);
   rpc GetIngressInfo(GetIngressInfoRequest) returns (GetIngressInfoResponse);
   rpc UpdateIngressState(UpdateIngressStateRequest) returns (google.protobuf.Empty);
 
@@ -49,7 +49,7 @@ message GetEgressRequest {
 }
 
 message UpdateMetricsRequest {
-  livekit.EgressInfo info = 1;
+  wirtual.EgressInfo info = 1;
   float avg_cpu_usage = 3;
   float max_cpu_usage = 4;
 }
@@ -61,7 +61,7 @@ message GetIngressInfoRequest {
 }
 
 message GetIngressInfoResponse {
-  livekit.IngressInfo info = 1;
+  wirtual.IngressInfo info = 1;
   string token = 2;
   string ws_url = 3;
   map<string,string> logging_fields = 4;
@@ -70,7 +70,7 @@ message GetIngressInfoResponse {
 // Request to store an update to the ingress state ingress -> service
 message UpdateIngressStateRequest {
   string ingress_id = 1;
-  livekit.IngressState state = 2;
+  wirtual.IngressState state = 2;
 }
 
 message GetSIPTrunkAuthenticationRequest {
@@ -136,21 +136,21 @@ message EvaluateSIPDispatchRulesResponse {
   // non-empty string if SIPParticipant should be placed a room
   string room_name = 1;
 
-  // What should be used for the LiveKit participant identity
+  // What should be used for the Wirtual participant identity
   string participant_identity = 2;
-  // What should be used for the LiveKit participant name
+  // What should be used for the Wirtual participant name
   string participant_name = 7;
-  // What should be used for the LiveKit participant metadata
+  // What should be used for the Wirtual participant metadata
   string participant_metadata = 8;
-  // What should be used for the LiveKit participant attributes
+  // What should be used for the Wirtual participant attributes
   map<string, string> participant_attributes = 11;
 
   bool request_pin = 3 [deprecated=true]; // see result
 
-  // optional token that should be used when creating LiveKit participant
+  // optional token that should be used when creating Wirtual participant
   string token = 4;
 
-  // optional websocket url that should be used when creating LiveKit participant
+  // optional websocket url that should be used when creating Wirtual participant
   string ws_url = 5;
 
   SIPDispatchResult result = 6;
@@ -164,12 +164,12 @@ message EvaluateSIPDispatchRulesResponse {
   string project_id = 12;
 
   // Include these SIP X-* headers in 200 OK response to INVITE.
-  // These headers are included as-is and may help identify triggered LiveKit Dispatch Rule for the other SIP endpoint.
+  // These headers are included as-is and may help identify triggered Wirtual Dispatch Rule for the other SIP endpoint.
   map<string, string> headers = 13;
   // Map SIP X-* headers from INVITE to SIP participant attributes.
   // Keys are the names of X-* headers and values are the names of attributes they will be mapped to.
   map<string, string> headers_to_attributes = 14;
-  // Map LiveKit attributes to SIP X-* headers when sending BYE or REFER requests.
+  // Map Wirtual attributes to SIP X-* headers when sending BYE or REFER requests.
   // Keys are the names of attributes and values are the names of X-* headers they will be mapped to.
   map<string, string> attributes_to_headers = 18;
   // Map SIP headers from INVITE to sip.h.* participant attributes automatically.
@@ -178,9 +178,9 @@ message EvaluateSIPDispatchRulesResponse {
   //
   // When mapping INVITE headers to response headers with attributes_to_headers map,
   // lowercase header names should be used, for example: sip.h.x-custom-header.
-  livekit.SIPHeaderOptions include_headers = 19;
+  wirtual.SIPHeaderOptions include_headers = 19;
 
-  repeated livekit.SIPFeature enabled_features = 15;
+  repeated wirtual.SIPFeature enabled_features = 15;
 
   // Max time for the caller to wait for track subscription.
   google.protobuf.Duration ringing_timeout = 16;
@@ -191,15 +191,15 @@ message EvaluateSIPDispatchRulesResponse {
   // once tokens are returned by this response consistently, it will no longer
   // be needed
   string room_preset = 20;
-  livekit.RoomConfiguration room_config = 21;
+  wirtual.RoomConfiguration room_config = 21;
 
-  livekit.SIPMediaEncryption media_encryption = 22;
+  wirtual.SIPMediaEncryption media_encryption = 22;
 
   // NEXT ID: 23
 }
 
 message UpdateSIPCallStateRequest {
-  livekit.SIPCallInfo call_info = 1;
+  wirtual.SIPCallInfo call_info = 1;
 
    // NEXT ID: 2
 }

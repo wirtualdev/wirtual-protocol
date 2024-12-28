@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -25,8 +25,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/atomic"
 
-	"github.com/livekit/protocol/auth"
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/auth"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 const (
@@ -49,12 +49,12 @@ func TestWebHook(t *testing.T) {
 	notifier := NewDefaultNotifier(apiKey, apiSecret, []string{testUrl})
 
 	t.Run("test event payload", func(t *testing.T) {
-		event := &livekit.WebhookEvent{
+		event := &wirtual.WebhookEvent{
 			Event: EventTrackPublished,
-			Participant: &livekit.ParticipantInfo{
+			Participant: &wirtual.ParticipantInfo{
 				Identity: "test",
 			},
-			Track: &livekit.TrackInfo{
+			Track: &wirtual.TrackInfo{
 				Sid: "TR_abcde",
 			},
 		}
@@ -91,9 +91,9 @@ func TestURLNotifierDropped(t *testing.T) {
 	}
 	// send multiple notifications
 	for i := 0; i < 10; i++ {
-		_ = urlNotifier.QueueNotify(&livekit.WebhookEvent{Event: EventRoomStarted})
-		_ = urlNotifier.QueueNotify(&livekit.WebhookEvent{Event: EventParticipantJoined})
-		_ = urlNotifier.QueueNotify(&livekit.WebhookEvent{Event: EventRoomFinished})
+		_ = urlNotifier.QueueNotify(&wirtual.WebhookEvent{Event: EventRoomStarted})
+		_ = urlNotifier.QueueNotify(&wirtual.WebhookEvent{Event: EventParticipantJoined})
+		_ = urlNotifier.QueueNotify(&wirtual.WebhookEvent{Event: EventRoomFinished})
 	}
 
 	time.Sleep(webhookCheckInterval)
@@ -120,8 +120,8 @@ func TestURLNotifierLifecycle(t *testing.T) {
 			numCalled.Inc()
 		}
 		for i := 0; i < 10; i++ {
-			_ = urlNotifier.QueueNotify(&livekit.WebhookEvent{Event: EventRoomStarted})
-			_ = urlNotifier.QueueNotify(&livekit.WebhookEvent{Event: EventRoomFinished})
+			_ = urlNotifier.QueueNotify(&wirtual.WebhookEvent{Event: EventRoomStarted})
+			_ = urlNotifier.QueueNotify(&wirtual.WebhookEvent{Event: EventRoomFinished})
 		}
 		urlNotifier.Stop(false)
 		require.Eventually(t, func() bool { return numCalled.Load() == 20 }, 5*time.Second, webhookCheckInterval)
@@ -134,8 +134,8 @@ func TestURLNotifierLifecycle(t *testing.T) {
 			numCalled.Inc()
 		}
 		for i := 0; i < 10; i++ {
-			_ = urlNotifier.QueueNotify(&livekit.WebhookEvent{Event: EventRoomStarted})
-			_ = urlNotifier.QueueNotify(&livekit.WebhookEvent{Event: EventRoomFinished})
+			_ = urlNotifier.QueueNotify(&wirtual.WebhookEvent{Event: EventRoomStarted})
+			_ = urlNotifier.QueueNotify(&wirtual.WebhookEvent{Event: EventRoomFinished})
 		}
 		urlNotifier.Stop(true)
 		time.Sleep(time.Second)
@@ -169,7 +169,7 @@ func TestURLNotifierLifecycle(t *testing.T) {
 		}
 		defer urlNotifier.Stop(false)
 
-		err := urlNotifier.send(&livekit.WebhookEvent{Event: EventRoomStarted})
+		err := urlNotifier.send(&wirtual.WebhookEvent{Event: EventRoomStarted})
 		require.Error(t, err)
 	})
 
@@ -190,7 +190,7 @@ func TestURLNotifierLifecycle(t *testing.T) {
 		defer urlNotifier.Stop(false)
 
 		startedAt := time.Now()
-		err = urlNotifier.send(&livekit.WebhookEvent{Event: EventRoomStarted})
+		err = urlNotifier.send(&wirtual.WebhookEvent{Event: EventRoomStarted})
 		require.Error(t, err)
 		require.Less(t, time.Since(startedAt).Seconds(), float64(2))
 	})

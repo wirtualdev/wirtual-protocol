@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ type CreateAgentDispatchRequest struct {
 
 func (x *CreateAgentDispatchRequest) Reset() {
 	*x = CreateAgentDispatchRequest{}
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[0]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -57,7 +57,7 @@ func (x *CreateAgentDispatchRequest) String() string {
 func (*CreateAgentDispatchRequest) ProtoMessage() {}
 
 func (x *CreateAgentDispatchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[0]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *CreateAgentDispatchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateAgentDispatchRequest.ProtoReflect.Descriptor instead.
 func (*CreateAgentDispatchRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_dispatch_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_agent_dispatch_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateAgentDispatchRequest) GetAgentName() string {
@@ -104,7 +104,7 @@ type RoomAgentDispatch struct {
 
 func (x *RoomAgentDispatch) Reset() {
 	*x = RoomAgentDispatch{}
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[1]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -116,7 +116,7 @@ func (x *RoomAgentDispatch) String() string {
 func (*RoomAgentDispatch) ProtoMessage() {}
 
 func (x *RoomAgentDispatch) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[1]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -129,7 +129,7 @@ func (x *RoomAgentDispatch) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RoomAgentDispatch.ProtoReflect.Descriptor instead.
 func (*RoomAgentDispatch) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_dispatch_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_agent_dispatch_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RoomAgentDispatch) GetAgentName() string {
@@ -156,7 +156,7 @@ type DeleteAgentDispatchRequest struct {
 
 func (x *DeleteAgentDispatchRequest) Reset() {
 	*x = DeleteAgentDispatchRequest{}
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[2]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -168,7 +168,7 @@ func (x *DeleteAgentDispatchRequest) String() string {
 func (*DeleteAgentDispatchRequest) ProtoMessage() {}
 
 func (x *DeleteAgentDispatchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[2]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -181,7 +181,7 @@ func (x *DeleteAgentDispatchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteAgentDispatchRequest.ProtoReflect.Descriptor instead.
 func (*DeleteAgentDispatchRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_dispatch_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_agent_dispatch_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *DeleteAgentDispatchRequest) GetDispatchId() string {
@@ -208,7 +208,7 @@ type ListAgentDispatchRequest struct {
 
 func (x *ListAgentDispatchRequest) Reset() {
 	*x = ListAgentDispatchRequest{}
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[3]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -220,7 +220,7 @@ func (x *ListAgentDispatchRequest) String() string {
 func (*ListAgentDispatchRequest) ProtoMessage() {}
 
 func (x *ListAgentDispatchRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[3]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -233,7 +233,7 @@ func (x *ListAgentDispatchRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAgentDispatchRequest.ProtoReflect.Descriptor instead.
 func (*ListAgentDispatchRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_dispatch_proto_rawDescGZIP(), []int{3}
+	return file_wirtual_agent_dispatch_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ListAgentDispatchRequest) GetDispatchId() string {
@@ -259,7 +259,7 @@ type ListAgentDispatchResponse struct {
 
 func (x *ListAgentDispatchResponse) Reset() {
 	*x = ListAgentDispatchResponse{}
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[4]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -271,7 +271,7 @@ func (x *ListAgentDispatchResponse) String() string {
 func (*ListAgentDispatchResponse) ProtoMessage() {}
 
 func (x *ListAgentDispatchResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[4]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -284,7 +284,7 @@ func (x *ListAgentDispatchResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAgentDispatchResponse.ProtoReflect.Descriptor instead.
 func (*ListAgentDispatchResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_dispatch_proto_rawDescGZIP(), []int{4}
+	return file_wirtual_agent_dispatch_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ListAgentDispatchResponse) GetAgentDispatches() []*AgentDispatch {
@@ -307,7 +307,7 @@ type AgentDispatch struct {
 
 func (x *AgentDispatch) Reset() {
 	*x = AgentDispatch{}
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[5]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -319,7 +319,7 @@ func (x *AgentDispatch) String() string {
 func (*AgentDispatch) ProtoMessage() {}
 
 func (x *AgentDispatch) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[5]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -332,7 +332,7 @@ func (x *AgentDispatch) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AgentDispatch.ProtoReflect.Descriptor instead.
 func (*AgentDispatch) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_dispatch_proto_rawDescGZIP(), []int{5}
+	return file_wirtual_agent_dispatch_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *AgentDispatch) GetId() string {
@@ -383,7 +383,7 @@ type AgentDispatchState struct {
 
 func (x *AgentDispatchState) Reset() {
 	*x = AgentDispatchState{}
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[6]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -395,7 +395,7 @@ func (x *AgentDispatchState) String() string {
 func (*AgentDispatchState) ProtoMessage() {}
 
 func (x *AgentDispatchState) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_agent_dispatch_proto_msgTypes[6]
+	mi := &file_wirtual_agent_dispatch_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -408,7 +408,7 @@ func (x *AgentDispatchState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AgentDispatchState.ProtoReflect.Descriptor instead.
 func (*AgentDispatchState) Descriptor() ([]byte, []int) {
-	return file_livekit_agent_dispatch_proto_rawDescGZIP(), []int{6}
+	return file_wirtual_agent_dispatch_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *AgentDispatchState) GetJobs() []*Job {
@@ -432,9 +432,9 @@ func (x *AgentDispatchState) GetDeletedAt() int64 {
 	return 0
 }
 
-var File_livekit_agent_dispatch_proto protoreflect.FileDescriptor
+var File_wirtual_agent_dispatch_proto protoreflect.FileDescriptor
 
-var file_livekit_agent_dispatch_proto_rawDesc = []byte{
+var file_wirtual_agent_dispatch_proto_rawDesc = []byte{
 	0x0a, 0x1c, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x61, 0x67, 0x65, 0x6e, 0x74, 0x5f,
 	0x64, 0x69, 0x73, 0x70, 0x61, 0x74, 0x63, 0x68, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07,
 	0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x1a, 0x13, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74,
@@ -510,19 +510,19 @@ var file_livekit_agent_dispatch_proto_rawDesc = []byte{
 }
 
 var (
-	file_livekit_agent_dispatch_proto_rawDescOnce sync.Once
-	file_livekit_agent_dispatch_proto_rawDescData = file_livekit_agent_dispatch_proto_rawDesc
+	file_wirtual_agent_dispatch_proto_rawDescOnce sync.Once
+	file_wirtual_agent_dispatch_proto_rawDescData = file_wirtual_agent_dispatch_proto_rawDesc
 )
 
-func file_livekit_agent_dispatch_proto_rawDescGZIP() []byte {
-	file_livekit_agent_dispatch_proto_rawDescOnce.Do(func() {
-		file_livekit_agent_dispatch_proto_rawDescData = protoimpl.X.CompressGZIP(file_livekit_agent_dispatch_proto_rawDescData)
+func file_wirtual_agent_dispatch_proto_rawDescGZIP() []byte {
+	file_wirtual_agent_dispatch_proto_rawDescOnce.Do(func() {
+		file_wirtual_agent_dispatch_proto_rawDescData = protoimpl.X.CompressGZIP(file_wirtual_agent_dispatch_proto_rawDescData)
 	})
-	return file_livekit_agent_dispatch_proto_rawDescData
+	return file_wirtual_agent_dispatch_proto_rawDescData
 }
 
-var file_livekit_agent_dispatch_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
-var file_livekit_agent_dispatch_proto_goTypes = []any{
+var file_wirtual_agent_dispatch_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_wirtual_agent_dispatch_proto_goTypes = []any{
 	(*CreateAgentDispatchRequest)(nil), // 0: wirtual.CreateAgentDispatchRequest
 	(*RoomAgentDispatch)(nil),          // 1: wirtual.RoomAgentDispatch
 	(*DeleteAgentDispatchRequest)(nil), // 2: wirtual.DeleteAgentDispatchRequest
@@ -532,7 +532,7 @@ var file_livekit_agent_dispatch_proto_goTypes = []any{
 	(*AgentDispatchState)(nil),         // 6: wirtual.AgentDispatchState
 	(*Job)(nil),                        // 7: wirtual.Job
 }
-var file_livekit_agent_dispatch_proto_depIdxs = []int32{
+var file_wirtual_agent_dispatch_proto_depIdxs = []int32{
 	5, // 0: wirtual.ListAgentDispatchResponse.agent_dispatches:type_name -> wirtual.AgentDispatch
 	6, // 1: wirtual.AgentDispatch.state:type_name -> wirtual.AgentDispatchState
 	7, // 2: wirtual.AgentDispatchState.jobs:type_name -> wirtual.Job
@@ -549,28 +549,28 @@ var file_livekit_agent_dispatch_proto_depIdxs = []int32{
 	0, // [0:3] is the sub-list for field type_name
 }
 
-func init() { file_livekit_agent_dispatch_proto_init() }
-func file_livekit_agent_dispatch_proto_init() {
-	if File_livekit_agent_dispatch_proto != nil {
+func init() { file_wirtual_agent_dispatch_proto_init() }
+func file_wirtual_agent_dispatch_proto_init() {
+	if File_wirtual_agent_dispatch_proto != nil {
 		return
 	}
-	file_livekit_agent_proto_init()
+	file_wirtual_agent_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_livekit_agent_dispatch_proto_rawDesc,
+			RawDescriptor: file_wirtual_agent_dispatch_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_livekit_agent_dispatch_proto_goTypes,
-		DependencyIndexes: file_livekit_agent_dispatch_proto_depIdxs,
-		MessageInfos:      file_livekit_agent_dispatch_proto_msgTypes,
+		GoTypes:           file_wirtual_agent_dispatch_proto_goTypes,
+		DependencyIndexes: file_wirtual_agent_dispatch_proto_depIdxs,
+		MessageInfos:      file_wirtual_agent_dispatch_proto_msgTypes,
 	}.Build()
-	File_livekit_agent_dispatch_proto = out.File
-	file_livekit_agent_dispatch_proto_rawDesc = nil
-	file_livekit_agent_dispatch_proto_goTypes = nil
-	file_livekit_agent_dispatch_proto_depIdxs = nil
+	File_wirtual_agent_dispatch_proto = out.File
+	file_wirtual_agent_dispatch_proto_rawDesc = nil
+	file_wirtual_agent_dispatch_proto_goTypes = nil
+	file_wirtual_agent_dispatch_proto_depIdxs = nil
 }

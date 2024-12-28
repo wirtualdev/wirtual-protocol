@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -67,11 +67,11 @@ func (x IngressInput) String() string {
 }
 
 func (IngressInput) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_ingress_proto_enumTypes[0].Descriptor()
+	return file_wirtual_ingress_proto_enumTypes[0].Descriptor()
 }
 
 func (IngressInput) Type() protoreflect.EnumType {
-	return &file_livekit_ingress_proto_enumTypes[0]
+	return &file_wirtual_ingress_proto_enumTypes[0]
 }
 
 func (x IngressInput) Number() protoreflect.EnumNumber {
@@ -80,7 +80,7 @@ func (x IngressInput) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use IngressInput.Descriptor instead.
 func (IngressInput) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{0}
 }
 
 type IngressAudioEncodingPreset int32
@@ -113,11 +113,11 @@ func (x IngressAudioEncodingPreset) String() string {
 }
 
 func (IngressAudioEncodingPreset) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_ingress_proto_enumTypes[1].Descriptor()
+	return file_wirtual_ingress_proto_enumTypes[1].Descriptor()
 }
 
 func (IngressAudioEncodingPreset) Type() protoreflect.EnumType {
-	return &file_livekit_ingress_proto_enumTypes[1]
+	return &file_wirtual_ingress_proto_enumTypes[1]
 }
 
 func (x IngressAudioEncodingPreset) Number() protoreflect.EnumNumber {
@@ -126,7 +126,7 @@ func (x IngressAudioEncodingPreset) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use IngressAudioEncodingPreset.Descriptor instead.
 func (IngressAudioEncodingPreset) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{1}
 }
 
 type IngressVideoEncodingPreset int32
@@ -183,11 +183,11 @@ func (x IngressVideoEncodingPreset) String() string {
 }
 
 func (IngressVideoEncodingPreset) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_ingress_proto_enumTypes[2].Descriptor()
+	return file_wirtual_ingress_proto_enumTypes[2].Descriptor()
 }
 
 func (IngressVideoEncodingPreset) Type() protoreflect.EnumType {
-	return &file_livekit_ingress_proto_enumTypes[2]
+	return &file_wirtual_ingress_proto_enumTypes[2]
 }
 
 func (x IngressVideoEncodingPreset) Number() protoreflect.EnumNumber {
@@ -196,7 +196,7 @@ func (x IngressVideoEncodingPreset) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use IngressVideoEncodingPreset.Descriptor instead.
 func (IngressVideoEncodingPreset) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{2}
 }
 
 type IngressState_Status int32
@@ -238,11 +238,11 @@ func (x IngressState_Status) String() string {
 }
 
 func (IngressState_Status) Descriptor() protoreflect.EnumDescriptor {
-	return file_livekit_ingress_proto_enumTypes[3].Descriptor()
+	return file_wirtual_ingress_proto_enumTypes[3].Descriptor()
 }
 
 func (IngressState_Status) Type() protoreflect.EnumType {
-	return &file_livekit_ingress_proto_enumTypes[3]
+	return &file_wirtual_ingress_proto_enumTypes[3]
 }
 
 func (x IngressState_Status) Number() protoreflect.EnumNumber {
@@ -251,7 +251,7 @@ func (x IngressState_Status) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use IngressState_Status.Descriptor instead.
 func (IngressState_Status) EnumDescriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{6, 0}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{6, 0}
 }
 
 type CreateIngressRequest struct {
@@ -283,7 +283,7 @@ type CreateIngressRequest struct {
 
 func (x *CreateIngressRequest) Reset() {
 	*x = CreateIngressRequest{}
-	mi := &file_livekit_ingress_proto_msgTypes[0]
+	mi := &file_wirtual_ingress_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -295,7 +295,7 @@ func (x *CreateIngressRequest) String() string {
 func (*CreateIngressRequest) ProtoMessage() {}
 
 func (x *CreateIngressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[0]
+	mi := &file_wirtual_ingress_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -308,7 +308,7 @@ func (x *CreateIngressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateIngressRequest.ProtoReflect.Descriptor instead.
 func (*CreateIngressRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{0}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateIngressRequest) GetInputType() IngressInput {
@@ -404,7 +404,7 @@ type IngressAudioOptions struct {
 
 func (x *IngressAudioOptions) Reset() {
 	*x = IngressAudioOptions{}
-	mi := &file_livekit_ingress_proto_msgTypes[1]
+	mi := &file_wirtual_ingress_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -416,7 +416,7 @@ func (x *IngressAudioOptions) String() string {
 func (*IngressAudioOptions) ProtoMessage() {}
 
 func (x *IngressAudioOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[1]
+	mi := &file_wirtual_ingress_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -429,7 +429,7 @@ func (x *IngressAudioOptions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IngressAudioOptions.ProtoReflect.Descriptor instead.
 func (*IngressAudioOptions) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{1}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *IngressAudioOptions) GetName() string {
@@ -502,7 +502,7 @@ type IngressVideoOptions struct {
 
 func (x *IngressVideoOptions) Reset() {
 	*x = IngressVideoOptions{}
-	mi := &file_livekit_ingress_proto_msgTypes[2]
+	mi := &file_wirtual_ingress_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -514,7 +514,7 @@ func (x *IngressVideoOptions) String() string {
 func (*IngressVideoOptions) ProtoMessage() {}
 
 func (x *IngressVideoOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[2]
+	mi := &file_wirtual_ingress_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -527,7 +527,7 @@ func (x *IngressVideoOptions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IngressVideoOptions.ProtoReflect.Descriptor instead.
 func (*IngressVideoOptions) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{2}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *IngressVideoOptions) GetName() string {
@@ -598,7 +598,7 @@ type IngressAudioEncodingOptions struct {
 
 func (x *IngressAudioEncodingOptions) Reset() {
 	*x = IngressAudioEncodingOptions{}
-	mi := &file_livekit_ingress_proto_msgTypes[3]
+	mi := &file_wirtual_ingress_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -610,7 +610,7 @@ func (x *IngressAudioEncodingOptions) String() string {
 func (*IngressAudioEncodingOptions) ProtoMessage() {}
 
 func (x *IngressAudioEncodingOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[3]
+	mi := &file_wirtual_ingress_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -623,7 +623,7 @@ func (x *IngressAudioEncodingOptions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IngressAudioEncodingOptions.ProtoReflect.Descriptor instead.
 func (*IngressAudioEncodingOptions) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{3}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *IngressAudioEncodingOptions) GetAudioCodec() AudioCodec {
@@ -667,7 +667,7 @@ type IngressVideoEncodingOptions struct {
 
 func (x *IngressVideoEncodingOptions) Reset() {
 	*x = IngressVideoEncodingOptions{}
-	mi := &file_livekit_ingress_proto_msgTypes[4]
+	mi := &file_wirtual_ingress_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -679,7 +679,7 @@ func (x *IngressVideoEncodingOptions) String() string {
 func (*IngressVideoEncodingOptions) ProtoMessage() {}
 
 func (x *IngressVideoEncodingOptions) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[4]
+	mi := &file_wirtual_ingress_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -692,7 +692,7 @@ func (x *IngressVideoEncodingOptions) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IngressVideoEncodingOptions.ProtoReflect.Descriptor instead.
 func (*IngressVideoEncodingOptions) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{4}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *IngressVideoEncodingOptions) GetVideoCodec() VideoCodec {
@@ -743,7 +743,7 @@ type IngressInfo struct {
 
 func (x *IngressInfo) Reset() {
 	*x = IngressInfo{}
-	mi := &file_livekit_ingress_proto_msgTypes[5]
+	mi := &file_wirtual_ingress_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -755,7 +755,7 @@ func (x *IngressInfo) String() string {
 func (*IngressInfo) ProtoMessage() {}
 
 func (x *IngressInfo) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[5]
+	mi := &file_wirtual_ingress_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -768,7 +768,7 @@ func (x *IngressInfo) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IngressInfo.ProtoReflect.Descriptor instead.
 func (*IngressInfo) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{5}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *IngressInfo) GetIngressId() string {
@@ -895,7 +895,7 @@ type IngressState struct {
 
 func (x *IngressState) Reset() {
 	*x = IngressState{}
-	mi := &file_livekit_ingress_proto_msgTypes[6]
+	mi := &file_wirtual_ingress_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -907,7 +907,7 @@ func (x *IngressState) String() string {
 func (*IngressState) ProtoMessage() {}
 
 func (x *IngressState) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[6]
+	mi := &file_wirtual_ingress_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -920,7 +920,7 @@ func (x *IngressState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IngressState.ProtoReflect.Descriptor instead.
 func (*IngressState) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{6}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *IngressState) GetStatus() IngressState_Status {
@@ -1006,7 +1006,7 @@ type InputVideoState struct {
 
 func (x *InputVideoState) Reset() {
 	*x = InputVideoState{}
-	mi := &file_livekit_ingress_proto_msgTypes[7]
+	mi := &file_wirtual_ingress_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1018,7 +1018,7 @@ func (x *InputVideoState) String() string {
 func (*InputVideoState) ProtoMessage() {}
 
 func (x *InputVideoState) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[7]
+	mi := &file_wirtual_ingress_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1031,7 +1031,7 @@ func (x *InputVideoState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InputVideoState.ProtoReflect.Descriptor instead.
 func (*InputVideoState) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{7}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *InputVideoState) GetMimeType() string {
@@ -1081,7 +1081,7 @@ type InputAudioState struct {
 
 func (x *InputAudioState) Reset() {
 	*x = InputAudioState{}
-	mi := &file_livekit_ingress_proto_msgTypes[8]
+	mi := &file_wirtual_ingress_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1093,7 +1093,7 @@ func (x *InputAudioState) String() string {
 func (*InputAudioState) ProtoMessage() {}
 
 func (x *InputAudioState) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[8]
+	mi := &file_wirtual_ingress_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1106,7 +1106,7 @@ func (x *InputAudioState) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InputAudioState.ProtoReflect.Descriptor instead.
 func (*InputAudioState) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{8}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *InputAudioState) GetMimeType() string {
@@ -1156,7 +1156,7 @@ type UpdateIngressRequest struct {
 
 func (x *UpdateIngressRequest) Reset() {
 	*x = UpdateIngressRequest{}
-	mi := &file_livekit_ingress_proto_msgTypes[9]
+	mi := &file_wirtual_ingress_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1168,7 +1168,7 @@ func (x *UpdateIngressRequest) String() string {
 func (*UpdateIngressRequest) ProtoMessage() {}
 
 func (x *UpdateIngressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[9]
+	mi := &file_wirtual_ingress_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1181,7 +1181,7 @@ func (x *UpdateIngressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateIngressRequest.ProtoReflect.Descriptor instead.
 func (*UpdateIngressRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{9}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *UpdateIngressRequest) GetIngressId() string {
@@ -1266,7 +1266,7 @@ type ListIngressRequest struct {
 
 func (x *ListIngressRequest) Reset() {
 	*x = ListIngressRequest{}
-	mi := &file_livekit_ingress_proto_msgTypes[10]
+	mi := &file_wirtual_ingress_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1278,7 +1278,7 @@ func (x *ListIngressRequest) String() string {
 func (*ListIngressRequest) ProtoMessage() {}
 
 func (x *ListIngressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[10]
+	mi := &file_wirtual_ingress_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1291,7 +1291,7 @@ func (x *ListIngressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListIngressRequest.ProtoReflect.Descriptor instead.
 func (*ListIngressRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{10}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ListIngressRequest) GetRoomName() string {
@@ -1317,7 +1317,7 @@ type ListIngressResponse struct {
 
 func (x *ListIngressResponse) Reset() {
 	*x = ListIngressResponse{}
-	mi := &file_livekit_ingress_proto_msgTypes[11]
+	mi := &file_wirtual_ingress_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1329,7 +1329,7 @@ func (x *ListIngressResponse) String() string {
 func (*ListIngressResponse) ProtoMessage() {}
 
 func (x *ListIngressResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[11]
+	mi := &file_wirtual_ingress_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1342,7 +1342,7 @@ func (x *ListIngressResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListIngressResponse.ProtoReflect.Descriptor instead.
 func (*ListIngressResponse) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{11}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListIngressResponse) GetItems() []*IngressInfo {
@@ -1361,7 +1361,7 @@ type DeleteIngressRequest struct {
 
 func (x *DeleteIngressRequest) Reset() {
 	*x = DeleteIngressRequest{}
-	mi := &file_livekit_ingress_proto_msgTypes[12]
+	mi := &file_wirtual_ingress_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1373,7 +1373,7 @@ func (x *DeleteIngressRequest) String() string {
 func (*DeleteIngressRequest) ProtoMessage() {}
 
 func (x *DeleteIngressRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_livekit_ingress_proto_msgTypes[12]
+	mi := &file_wirtual_ingress_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1386,7 +1386,7 @@ func (x *DeleteIngressRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteIngressRequest.ProtoReflect.Descriptor instead.
 func (*DeleteIngressRequest) Descriptor() ([]byte, []int) {
-	return file_livekit_ingress_proto_rawDescGZIP(), []int{12}
+	return file_wirtual_ingress_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DeleteIngressRequest) GetIngressId() string {
@@ -1396,9 +1396,9 @@ func (x *DeleteIngressRequest) GetIngressId() string {
 	return ""
 }
 
-var File_livekit_ingress_proto protoreflect.FileDescriptor
+var File_wirtual_ingress_proto protoreflect.FileDescriptor
 
-var file_livekit_ingress_proto_rawDesc = []byte{
+var file_wirtual_ingress_proto_rawDesc = []byte{
 	0x0a, 0x15, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x69, 0x6e, 0x67, 0x72, 0x65, 0x73,
 	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x07, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74,
 	0x1a, 0x14, 0x6c, 0x69, 0x76, 0x65, 0x6b, 0x69, 0x74, 0x5f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73,
@@ -1682,20 +1682,20 @@ var file_livekit_ingress_proto_rawDesc = []byte{
 }
 
 var (
-	file_livekit_ingress_proto_rawDescOnce sync.Once
-	file_livekit_ingress_proto_rawDescData = file_livekit_ingress_proto_rawDesc
+	file_wirtual_ingress_proto_rawDescOnce sync.Once
+	file_wirtual_ingress_proto_rawDescData = file_wirtual_ingress_proto_rawDesc
 )
 
-func file_livekit_ingress_proto_rawDescGZIP() []byte {
-	file_livekit_ingress_proto_rawDescOnce.Do(func() {
-		file_livekit_ingress_proto_rawDescData = protoimpl.X.CompressGZIP(file_livekit_ingress_proto_rawDescData)
+func file_wirtual_ingress_proto_rawDescGZIP() []byte {
+	file_wirtual_ingress_proto_rawDescOnce.Do(func() {
+		file_wirtual_ingress_proto_rawDescData = protoimpl.X.CompressGZIP(file_wirtual_ingress_proto_rawDescData)
 	})
-	return file_livekit_ingress_proto_rawDescData
+	return file_wirtual_ingress_proto_rawDescData
 }
 
-var file_livekit_ingress_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
-var file_livekit_ingress_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
-var file_livekit_ingress_proto_goTypes = []any{
+var file_wirtual_ingress_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_wirtual_ingress_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
+var file_wirtual_ingress_proto_goTypes = []any{
 	(IngressInput)(0),                   // 0: wirtual.IngressInput
 	(IngressAudioEncodingPreset)(0),     // 1: wirtual.IngressAudioEncodingPreset
 	(IngressVideoEncodingPreset)(0),     // 2: wirtual.IngressVideoEncodingPreset
@@ -1719,7 +1719,7 @@ var file_livekit_ingress_proto_goTypes = []any{
 	(*VideoLayer)(nil),                  // 20: wirtual.VideoLayer
 	(*TrackInfo)(nil),                   // 21: wirtual.TrackInfo
 }
-var file_livekit_ingress_proto_depIdxs = []int32{
+var file_wirtual_ingress_proto_depIdxs = []int32{
 	0,  // 0: wirtual.CreateIngressRequest.input_type:type_name -> wirtual.IngressInput
 	5,  // 1: wirtual.CreateIngressRequest.audio:type_name -> wirtual.IngressAudioOptions
 	6,  // 2: wirtual.CreateIngressRequest.video:type_name -> wirtual.IngressVideoOptions
@@ -1758,40 +1758,40 @@ var file_livekit_ingress_proto_depIdxs = []int32{
 	0,  // [0:23] is the sub-list for field type_name
 }
 
-func init() { file_livekit_ingress_proto_init() }
-func file_livekit_ingress_proto_init() {
-	if File_livekit_ingress_proto != nil {
+func init() { file_wirtual_ingress_proto_init() }
+func file_wirtual_ingress_proto_init() {
+	if File_wirtual_ingress_proto != nil {
 		return
 	}
-	file_livekit_models_proto_init()
-	file_livekit_ingress_proto_msgTypes[0].OneofWrappers = []any{}
-	file_livekit_ingress_proto_msgTypes[1].OneofWrappers = []any{
+	file_wirtual_models_proto_init()
+	file_wirtual_ingress_proto_msgTypes[0].OneofWrappers = []any{}
+	file_wirtual_ingress_proto_msgTypes[1].OneofWrappers = []any{
 		(*IngressAudioOptions_Preset)(nil),
 		(*IngressAudioOptions_Options)(nil),
 	}
-	file_livekit_ingress_proto_msgTypes[2].OneofWrappers = []any{
+	file_wirtual_ingress_proto_msgTypes[2].OneofWrappers = []any{
 		(*IngressVideoOptions_Preset)(nil),
 		(*IngressVideoOptions_Options)(nil),
 	}
-	file_livekit_ingress_proto_msgTypes[5].OneofWrappers = []any{}
-	file_livekit_ingress_proto_msgTypes[9].OneofWrappers = []any{}
+	file_wirtual_ingress_proto_msgTypes[5].OneofWrappers = []any{}
+	file_wirtual_ingress_proto_msgTypes[9].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_livekit_ingress_proto_rawDesc,
+			RawDescriptor: file_wirtual_ingress_proto_rawDesc,
 			NumEnums:      4,
 			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_livekit_ingress_proto_goTypes,
-		DependencyIndexes: file_livekit_ingress_proto_depIdxs,
-		EnumInfos:         file_livekit_ingress_proto_enumTypes,
-		MessageInfos:      file_livekit_ingress_proto_msgTypes,
+		GoTypes:           file_wirtual_ingress_proto_goTypes,
+		DependencyIndexes: file_wirtual_ingress_proto_depIdxs,
+		EnumInfos:         file_wirtual_ingress_proto_enumTypes,
+		MessageInfos:      file_wirtual_ingress_proto_msgTypes,
 	}.Build()
-	File_livekit_ingress_proto = out.File
-	file_livekit_ingress_proto_rawDesc = nil
-	file_livekit_ingress_proto_goTypes = nil
-	file_livekit_ingress_proto_depIdxs = nil
+	File_wirtual_ingress_proto = out.File
+	file_wirtual_ingress_proto_rawDesc = nil
+	file_wirtual_ingress_proto_goTypes = nil
+	file_wirtual_ingress_proto_depIdxs = nil
 }

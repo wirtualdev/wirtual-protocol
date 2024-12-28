@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
 package rpc
 
 import (
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	_ "github.com/wirtual/psrpc/protoc-gen-psrpc/options"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -48,7 +48,7 @@ type InternalCreateSIPParticipantRequest struct {
 	Address string `protobuf:"bytes,2,opt,name=address,proto3" json:"address,omitempty"`
 	// Hostname for the 'From' SIP address in INVITE
 	Hostname  string               `protobuf:"bytes,20,opt,name=hostname,proto3" json:"hostname,omitempty"`
-	Transport livekit.SIPTransport `protobuf:"varint,16,opt,name=transport,proto3,enum=wirtual.SIPTransport" json:"transport,omitempty"`
+	Transport wirtual.SIPTransport `protobuf:"varint,16,opt,name=transport,proto3,enum=wirtual.SIPTransport" json:"transport,omitempty"`
 	// Number used to make the call
 	Number string `protobuf:"bytes,3,opt,name=number,proto3" json:"number,omitempty"`
 	// Number to call to
@@ -60,9 +60,9 @@ type InternalCreateSIPParticipantRequest struct {
 	ParticipantName       string            `protobuf:"bytes,14,opt,name=participant_name,json=participantName,proto3" json:"participant_name,omitempty"`
 	ParticipantMetadata   string            `protobuf:"bytes,15,opt,name=participant_metadata,json=participantMetadata,proto3" json:"participant_metadata,omitempty"`
 	ParticipantAttributes map[string]string `protobuf:"bytes,17,rep,name=participant_attributes,json=participantAttributes,proto3" json:"participant_attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// optional token that should be used when creating LiveKit participant
+	// optional token that should be used when creating Wirtual participant
 	Token string `protobuf:"bytes,9,opt,name=token,proto3" json:"token,omitempty"`
-	// optional websocket url that should be used when creating LiveKit participant
+	// optional websocket url that should be used when creating Wirtual participant
 	WsUrl string `protobuf:"bytes,10,opt,name=ws_url,json=wsUrl,proto3" json:"ws_url,omitempty"`
 	// Optionally send following DTMF digits (extension codes) when making a call.
 	// Character 'w' can be used to add a 0.5 sec delay.
@@ -71,7 +71,7 @@ type InternalCreateSIPParticipantRequest struct {
 	PlayDialtone        bool              `protobuf:"varint,12,opt,name=play_dialtone,json=playDialtone,proto3" json:"play_dialtone,omitempty"`
 	Headers             map[string]string `protobuf:"bytes,21,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	HeadersToAttributes map[string]string `protobuf:"bytes,22,rep,name=headers_to_attributes,json=headersToAttributes,proto3" json:"headers_to_attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	// Map LiveKit attributes to SIP X-* headers when sending BYE or REFER requests.
+	// Map Wirtual attributes to SIP X-* headers when sending BYE or REFER requests.
 	// Keys are the names of attributes and values are the names of X-* headers they will be mapped to.
 	AttributesToHeaders map[string]string `protobuf:"bytes,26,rep,name=attributes_to_headers,json=attributesToHeaders,proto3" json:"attributes_to_headers,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Map SIP headers from 200 OK to sip.h.* participant attributes automatically.
@@ -80,13 +80,13 @@ type InternalCreateSIPParticipantRequest struct {
 	//
 	// When mapping 200 OK headers to follow-up request headers with attributes_to_headers map,
 	// lowercase header names should be used, for example: sip.h.x-custom-header.
-	IncludeHeaders  livekit.SIPHeaderOptions `protobuf:"varint,27,opt,name=include_headers,json=includeHeaders,proto3,enum=wirtual.SIPHeaderOptions" json:"include_headers,omitempty"`
-	EnabledFeatures []livekit.SIPFeature     `protobuf:"varint,25,rep,packed,name=enabled_features,json=enabledFeatures,proto3,enum=wirtual.SIPFeature" json:"enabled_features,omitempty"`
+	IncludeHeaders  wirtual.SIPHeaderOptions `protobuf:"varint,27,opt,name=include_headers,json=includeHeaders,proto3,enum=wirtual.SIPHeaderOptions" json:"include_headers,omitempty"`
+	EnabledFeatures []wirtual.SIPFeature     `protobuf:"varint,25,rep,packed,name=enabled_features,json=enabledFeatures,proto3,enum=wirtual.SIPFeature" json:"enabled_features,omitempty"`
 	// Max time for the callee to answer the call.
 	RingingTimeout *durationpb.Duration `protobuf:"bytes,23,opt,name=ringing_timeout,json=ringingTimeout,proto3" json:"ringing_timeout,omitempty"`
 	// Max call duration.
 	MaxCallDuration *durationpb.Duration       `protobuf:"bytes,24,opt,name=max_call_duration,json=maxCallDuration,proto3" json:"max_call_duration,omitempty"`
-	MediaEncryption livekit.SIPMediaEncryption `protobuf:"varint,28,opt,name=media_encryption,json=mediaEncryption,proto3,enum=wirtual.SIPMediaEncryption" json:"media_encryption,omitempty"`
+	MediaEncryption wirtual.SIPMediaEncryption `protobuf:"varint,28,opt,name=media_encryption,json=mediaEncryption,proto3,enum=wirtual.SIPMediaEncryption" json:"media_encryption,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -156,11 +156,11 @@ func (x *InternalCreateSIPParticipantRequest) GetHostname() string {
 	return ""
 }
 
-func (x *InternalCreateSIPParticipantRequest) GetTransport() livekit.SIPTransport {
+func (x *InternalCreateSIPParticipantRequest) GetTransport() wirtual.SIPTransport {
 	if x != nil {
 		return x.Transport
 	}
-	return livekit.SIPTransport(0)
+	return wirtual.SIPTransport(0)
 }
 
 func (x *InternalCreateSIPParticipantRequest) GetNumber() string {
@@ -275,14 +275,14 @@ func (x *InternalCreateSIPParticipantRequest) GetAttributesToHeaders() map[strin
 	return nil
 }
 
-func (x *InternalCreateSIPParticipantRequest) GetIncludeHeaders() livekit.SIPHeaderOptions {
+func (x *InternalCreateSIPParticipantRequest) GetIncludeHeaders() wirtual.SIPHeaderOptions {
 	if x != nil {
 		return x.IncludeHeaders
 	}
-	return livekit.SIPHeaderOptions(0)
+	return wirtual.SIPHeaderOptions(0)
 }
 
-func (x *InternalCreateSIPParticipantRequest) GetEnabledFeatures() []livekit.SIPFeature {
+func (x *InternalCreateSIPParticipantRequest) GetEnabledFeatures() []wirtual.SIPFeature {
 	if x != nil {
 		return x.EnabledFeatures
 	}
@@ -303,11 +303,11 @@ func (x *InternalCreateSIPParticipantRequest) GetMaxCallDuration() *durationpb.D
 	return nil
 }
 
-func (x *InternalCreateSIPParticipantRequest) GetMediaEncryption() livekit.SIPMediaEncryption {
+func (x *InternalCreateSIPParticipantRequest) GetMediaEncryption() wirtual.SIPMediaEncryption {
 	if x != nil {
 		return x.MediaEncryption
 	}
-	return livekit.SIPMediaEncryption(0)
+	return wirtual.SIPMediaEncryption(0)
 }
 
 type InternalCreateSIPParticipantResponse struct {
@@ -627,11 +627,11 @@ var file_rpc_sip_proto_goTypes = []any{
 	nil,                             // 5: rpc.InternalCreateSIPParticipantRequest.HeadersToAttributesEntry
 	nil,                             // 6: rpc.InternalCreateSIPParticipantRequest.AttributesToHeadersEntry
 	nil,                             // 7: rpc.InternalTransferSIPParticipantRequest.HeadersEntry
-	(livekit.SIPTransport)(0),       // 8: wirtual.SIPTransport
-	(livekit.SIPHeaderOptions)(0),   // 9: wirtual.SIPHeaderOptions
-	(livekit.SIPFeature)(0),         // 10: wirtual.SIPFeature
+	(wirtual.SIPTransport)(0),       // 8: wirtual.SIPTransport
+	(wirtual.SIPHeaderOptions)(0),   // 9: wirtual.SIPHeaderOptions
+	(wirtual.SIPFeature)(0),         // 10: wirtual.SIPFeature
 	(*durationpb.Duration)(nil),     // 11: google.protobuf.Duration
-	(livekit.SIPMediaEncryption)(0), // 12: wirtual.SIPMediaEncryption
+	(wirtual.SIPMediaEncryption)(0), // 12: wirtual.SIPMediaEncryption
 	(*emptypb.Empty)(nil),           // 13: google.protobuf.Empty
 }
 var file_rpc_sip_proto_depIdxs = []int32{

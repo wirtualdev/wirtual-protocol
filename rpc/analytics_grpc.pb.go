@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ package rpc
 
 import (
 	context "context"
-	livekit "github.com/wirtual/protocol/wirtual"
+	wirtual "github.com/wirtual/protocol/wirtual"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -44,9 +44,9 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type AnalyticsRecorderServiceClient interface {
-	IngestStats(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[livekit.AnalyticsStats, emptypb.Empty], error)
-	IngestEvents(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[livekit.AnalyticsEvents, emptypb.Empty], error)
-	IngestNodeRoomStates(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[livekit.AnalyticsNodeRooms, emptypb.Empty], error)
+	IngestStats(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[wirtual.AnalyticsStats, emptypb.Empty], error)
+	IngestEvents(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[wirtual.AnalyticsEvents, emptypb.Empty], error)
+	IngestNodeRoomStates(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[wirtual.AnalyticsNodeRooms, emptypb.Empty], error)
 }
 
 type analyticsRecorderServiceClient struct {
@@ -57,52 +57,52 @@ func NewAnalyticsRecorderServiceClient(cc grpc.ClientConnInterface) AnalyticsRec
 	return &analyticsRecorderServiceClient{cc}
 }
 
-func (c *analyticsRecorderServiceClient) IngestStats(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[livekit.AnalyticsStats, emptypb.Empty], error) {
+func (c *analyticsRecorderServiceClient) IngestStats(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[wirtual.AnalyticsStats, emptypb.Empty], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	stream, err := c.cc.NewStream(ctx, &AnalyticsRecorderService_ServiceDesc.Streams[0], AnalyticsRecorderService_IngestStats_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[livekit.AnalyticsStats, emptypb.Empty]{ClientStream: stream}
+	x := &grpc.GenericClientStream[wirtual.AnalyticsStats, emptypb.Empty]{ClientStream: stream}
 	return x, nil
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type AnalyticsRecorderService_IngestStatsClient = grpc.ClientStreamingClient[livekit.AnalyticsStats, emptypb.Empty]
+type AnalyticsRecorderService_IngestStatsClient = grpc.ClientStreamingClient[wirtual.AnalyticsStats, emptypb.Empty]
 
-func (c *analyticsRecorderServiceClient) IngestEvents(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[livekit.AnalyticsEvents, emptypb.Empty], error) {
+func (c *analyticsRecorderServiceClient) IngestEvents(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[wirtual.AnalyticsEvents, emptypb.Empty], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	stream, err := c.cc.NewStream(ctx, &AnalyticsRecorderService_ServiceDesc.Streams[1], AnalyticsRecorderService_IngestEvents_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[livekit.AnalyticsEvents, emptypb.Empty]{ClientStream: stream}
+	x := &grpc.GenericClientStream[wirtual.AnalyticsEvents, emptypb.Empty]{ClientStream: stream}
 	return x, nil
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type AnalyticsRecorderService_IngestEventsClient = grpc.ClientStreamingClient[livekit.AnalyticsEvents, emptypb.Empty]
+type AnalyticsRecorderService_IngestEventsClient = grpc.ClientStreamingClient[wirtual.AnalyticsEvents, emptypb.Empty]
 
-func (c *analyticsRecorderServiceClient) IngestNodeRoomStates(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[livekit.AnalyticsNodeRooms, emptypb.Empty], error) {
+func (c *analyticsRecorderServiceClient) IngestNodeRoomStates(ctx context.Context, opts ...grpc.CallOption) (grpc.ClientStreamingClient[wirtual.AnalyticsNodeRooms, emptypb.Empty], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	stream, err := c.cc.NewStream(ctx, &AnalyticsRecorderService_ServiceDesc.Streams[2], AnalyticsRecorderService_IngestNodeRoomStates_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[livekit.AnalyticsNodeRooms, emptypb.Empty]{ClientStream: stream}
+	x := &grpc.GenericClientStream[wirtual.AnalyticsNodeRooms, emptypb.Empty]{ClientStream: stream}
 	return x, nil
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type AnalyticsRecorderService_IngestNodeRoomStatesClient = grpc.ClientStreamingClient[livekit.AnalyticsNodeRooms, emptypb.Empty]
+type AnalyticsRecorderService_IngestNodeRoomStatesClient = grpc.ClientStreamingClient[wirtual.AnalyticsNodeRooms, emptypb.Empty]
 
 // AnalyticsRecorderServiceServer is the server API for AnalyticsRecorderService service.
 // All implementations must embed UnimplementedAnalyticsRecorderServiceServer
 // for forward compatibility.
 type AnalyticsRecorderServiceServer interface {
-	IngestStats(grpc.ClientStreamingServer[livekit.AnalyticsStats, emptypb.Empty]) error
-	IngestEvents(grpc.ClientStreamingServer[livekit.AnalyticsEvents, emptypb.Empty]) error
-	IngestNodeRoomStates(grpc.ClientStreamingServer[livekit.AnalyticsNodeRooms, emptypb.Empty]) error
+	IngestStats(grpc.ClientStreamingServer[wirtual.AnalyticsStats, emptypb.Empty]) error
+	IngestEvents(grpc.ClientStreamingServer[wirtual.AnalyticsEvents, emptypb.Empty]) error
+	IngestNodeRoomStates(grpc.ClientStreamingServer[wirtual.AnalyticsNodeRooms, emptypb.Empty]) error
 	mustEmbedUnimplementedAnalyticsRecorderServiceServer()
 }
 
@@ -113,13 +113,13 @@ type AnalyticsRecorderServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedAnalyticsRecorderServiceServer struct{}
 
-func (UnimplementedAnalyticsRecorderServiceServer) IngestStats(grpc.ClientStreamingServer[livekit.AnalyticsStats, emptypb.Empty]) error {
+func (UnimplementedAnalyticsRecorderServiceServer) IngestStats(grpc.ClientStreamingServer[wirtual.AnalyticsStats, emptypb.Empty]) error {
 	return status.Errorf(codes.Unimplemented, "method IngestStats not implemented")
 }
-func (UnimplementedAnalyticsRecorderServiceServer) IngestEvents(grpc.ClientStreamingServer[livekit.AnalyticsEvents, emptypb.Empty]) error {
+func (UnimplementedAnalyticsRecorderServiceServer) IngestEvents(grpc.ClientStreamingServer[wirtual.AnalyticsEvents, emptypb.Empty]) error {
 	return status.Errorf(codes.Unimplemented, "method IngestEvents not implemented")
 }
-func (UnimplementedAnalyticsRecorderServiceServer) IngestNodeRoomStates(grpc.ClientStreamingServer[livekit.AnalyticsNodeRooms, emptypb.Empty]) error {
+func (UnimplementedAnalyticsRecorderServiceServer) IngestNodeRoomStates(grpc.ClientStreamingServer[wirtual.AnalyticsNodeRooms, emptypb.Empty]) error {
 	return status.Errorf(codes.Unimplemented, "method IngestNodeRoomStates not implemented")
 }
 func (UnimplementedAnalyticsRecorderServiceServer) mustEmbedUnimplementedAnalyticsRecorderServiceServer() {
@@ -145,25 +145,25 @@ func RegisterAnalyticsRecorderServiceServer(s grpc.ServiceRegistrar, srv Analyti
 }
 
 func _AnalyticsRecorderService_IngestStats_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AnalyticsRecorderServiceServer).IngestStats(&grpc.GenericServerStream[livekit.AnalyticsStats, emptypb.Empty]{ServerStream: stream})
+	return srv.(AnalyticsRecorderServiceServer).IngestStats(&grpc.GenericServerStream[wirtual.AnalyticsStats, emptypb.Empty]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type AnalyticsRecorderService_IngestStatsServer = grpc.ClientStreamingServer[livekit.AnalyticsStats, emptypb.Empty]
+type AnalyticsRecorderService_IngestStatsServer = grpc.ClientStreamingServer[wirtual.AnalyticsStats, emptypb.Empty]
 
 func _AnalyticsRecorderService_IngestEvents_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AnalyticsRecorderServiceServer).IngestEvents(&grpc.GenericServerStream[livekit.AnalyticsEvents, emptypb.Empty]{ServerStream: stream})
+	return srv.(AnalyticsRecorderServiceServer).IngestEvents(&grpc.GenericServerStream[wirtual.AnalyticsEvents, emptypb.Empty]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type AnalyticsRecorderService_IngestEventsServer = grpc.ClientStreamingServer[livekit.AnalyticsEvents, emptypb.Empty]
+type AnalyticsRecorderService_IngestEventsServer = grpc.ClientStreamingServer[wirtual.AnalyticsEvents, emptypb.Empty]
 
 func _AnalyticsRecorderService_IngestNodeRoomStates_Handler(srv interface{}, stream grpc.ServerStream) error {
-	return srv.(AnalyticsRecorderServiceServer).IngestNodeRoomStates(&grpc.GenericServerStream[livekit.AnalyticsNodeRooms, emptypb.Empty]{ServerStream: stream})
+	return srv.(AnalyticsRecorderServiceServer).IngestNodeRoomStates(&grpc.GenericServerStream[wirtual.AnalyticsNodeRooms, emptypb.Empty]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type AnalyticsRecorderService_IngestNodeRoomStatesServer = grpc.ClientStreamingServer[livekit.AnalyticsNodeRooms, emptypb.Empty]
+type AnalyticsRecorderService_IngestNodeRoomStatesServer = grpc.ClientStreamingServer[wirtual.AnalyticsNodeRooms, emptypb.Empty]
 
 // AnalyticsRecorderService_ServiceDesc is the grpc.ServiceDesc for AnalyticsRecorderService service.
 // It's only intended for direct use with grpc.RegisterService,

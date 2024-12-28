@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/livekit/protocol/livekit"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
 )
 
 func TestGrants(t *testing.T) {
@@ -87,7 +87,7 @@ func TestGrants(t *testing.T) {
 }
 
 func TestParticipantKind(t *testing.T) {
-	const kindMin, kindMax = livekit.ParticipantInfo_STANDARD, livekit.ParticipantInfo_AGENT
+	const kindMin, kindMax = wirtual.ParticipantInfo_STANDARD, wirtual.ParticipantInfo_AGENT
 	for k := kindMin; k <= kindMax; k++ {
 		k := k
 		t.Run(k.String(), func(t *testing.T) {

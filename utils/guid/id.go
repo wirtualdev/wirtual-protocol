@@ -1,4 +1,4 @@
-// Copyright 2023 LiveKit, Inc.
+// Copyright 2024 Xtressials Corporation, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,8 +26,8 @@ import (
 	"github.com/jxskiss/base62"
 	"github.com/lithammer/shortuuid/v4"
 
-	"github.com/livekit/protocol/livekit"
-	"github.com/livekit/protocol/utils/must"
+	"github.com/wirtualdev/wirtual-protocol/wirtual"
+	"github.com/wirtualdev/wirtual-protocol/utils/must"
 )
 
 const Size = 12
@@ -131,25 +131,25 @@ func (g *guidGenerator) New(prefix string) string {
 	return unsafe.String(unsafe.SliceData(b), len(b))
 }
 
-func guidPrefix[T livekit.Guid]() string {
+func guidPrefix[T wirtual.Guid]() string {
 	var id T
 	switch any(id).(type) {
-	case livekit.TrackID:
+	case wirtual.TrackID:
 		return TrackPrefix
-	case livekit.ParticipantID:
+	case wirtual.ParticipantID:
 		return ParticipantPrefix
-	case livekit.RoomID:
+	case wirtual.RoomID:
 		return RoomPrefix
 	default:
 		panic("unreachable")
 	}
 }
 
-func Marshal[T livekit.Guid](id T) livekit.GuidBlock {
-	return livekit.GuidBlock(MarshalAppend(nil, id))
+func Marshal[T wirtual.Guid](id T) wirtual.GuidBlock {
+	return wirtual.GuidBlock(MarshalAppend(nil, id))
 }
 
-func MarshalAppend[T livekit.Guid](b []byte, id T) []byte {
+func MarshalAppend[T wirtual.Guid](b []byte, id T) []byte {
 	off := len(b)
 	b = append(b, make([]byte, Size*3/4)...)
 	idb := []byte(id)[len(id)-Size:]
@@ -163,7 +163,7 @@ func MarshalAppend[T livekit.Guid](b []byte, id T) []byte {
 	return b
 }
 
-func Unmarshal[T livekit.Guid](b livekit.GuidBlock) T {
+func Unmarshal[T wirtual.Guid](b wirtual.GuidBlock) T {
 	prefix := guidPrefix[T]()
 	id := make([]byte, len(prefix)+Size)
 	copy(id, []byte(prefix))

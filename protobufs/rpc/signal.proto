@@ -16,7 +16,7 @@ syntax = "proto3";
 
 package rpc;
 
-option go_package = "github.com/wirtualdev/protocol/rpc";
+option go_package = "github.com/wirtualdev/wirtual-protocol/rpc";
 
 import "options.proto";
 import "wirtual_internal.proto";

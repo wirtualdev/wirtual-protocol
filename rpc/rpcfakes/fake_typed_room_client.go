@@ -7,7 +7,7 @@ import (
 
 	"github.com/wirtualdev/wirtual-protocol/wirtual"
 	"github.com/wirtualdev/wirtual-protocol/rpc"
-	"github.com/wirtualdev/psrpc"
+	"github.com/livekit/psrpc"
 )
 
 type FakeTypedRoomClient struct {

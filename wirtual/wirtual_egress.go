@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/wirtualdev/psrpc"
+	"github.com/livekit/psrpc"
 )
 
 const (

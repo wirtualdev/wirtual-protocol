@@ -23,8 +23,8 @@ import (
 	"go.uber.org/atomic"
 	"golang.org/x/exp/maps"
 
-	"github.com/wirtualdev/psrpc"
-	"github.com/wirtualdev/psrpc/pkg/middleware"
+	"github.com/livekit/psrpc"
+	"github.com/livekit/psrpc/pkg/middleware"
 )
 
 const (

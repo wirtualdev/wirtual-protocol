@@ -15,7 +15,7 @@
 syntax = "proto3";
 
 package wirtual;
-option go_package = "github.com/wirtualdev/protocol/rpc";
+option go_package = "github.com/wirtualdev/wirtual-protocol/rpc";
 
 import "google/protobuf/empty.proto";
 import "wirtual_analytics.proto";

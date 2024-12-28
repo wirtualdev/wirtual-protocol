@@ -17,7 +17,7 @@ package ingress
 import (
 	"fmt"
 
-	"github.com/wirtualdev/psrpc"
+	"github.com/livekit/psrpc"
 )
 
 var (

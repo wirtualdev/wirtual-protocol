@@ -6,15 +6,15 @@ package rpc
 import (
 	"context"
 
-	"github.com/wirtualdev/psrpc"
-	"github.com/wirtualdev/psrpc/pkg/client"
-	"github.com/wirtualdev/psrpc/pkg/info"
-	"github.com/wirtualdev/psrpc/pkg/rand"
-	"github.com/wirtualdev/psrpc/pkg/server"
-	"github.com/wirtualdev/psrpc/version"
+	"github.com/livekit/psrpc"
+	"github.com/livekit/psrpc/pkg/client"
+	"github.com/livekit/psrpc/pkg/info"
+	"github.com/livekit/psrpc/pkg/rand"
+	"github.com/livekit/psrpc/pkg/server"
+	"github.com/livekit/psrpc/version"
 )
-import wirtual1 "github.com/wirtualdev/protocol/wirtual"
-import wirtual6 "github.com/wirtualdev/protocol/wirtual"
+import wirtual1 "github.com/wirtualdev/wirtual-protocol/wirtual"
+import wirtual6 "github.com/wirtualdev/wirtual-protocol/wirtual"
 
 var _ = version.PsrpcVersion_0_6
 

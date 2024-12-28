@@ -25,7 +25,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/wirtualdev/mageutil"
+	"github.com/livekit/mageutil"
 	"github.com/wirtualdev/wirtual-protocol/psrpc"
 )
 
@@ -36,7 +36,7 @@ func Bootstrap() error {
 		"go install github.com/twitchtv/twirp/protoc-gen-twirp@latest",
 		"go install google.golang.org/protobuf/cmd/protoc-gen-go@latest",
 		"go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest",
-		"go install github.com/wirtualdev/psrpc/protoc-gen-psrpc@latest",
+		"go install github.com/livekit/psrpc/protoc-gen-psrpc@latest",
 	)
 }
 
@@ -162,7 +162,7 @@ func Proto() error {
 
 	fmt.Println("generating psrpc protobuf")
 
-	psrpcDir, err := mageutil.GetPkgDir("github.com/wirtualdev/psrpc")
+	psrpcDir, err := mageutil.GetPkgDir("github.com/livekit/psrpc")
 	if err != nil {
 		return err
 	}

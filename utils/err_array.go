@@ -18,7 +18,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/wirtualdev/psrpc"
+	"github.com/livekit/psrpc"
 )
 
 type ErrArray struct {

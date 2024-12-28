@@ -22,7 +22,7 @@ import (
 	"google.golang.org/protobuf/proto"
 
 	"github.com/wirtualdev/wirtual-protocol/logger"
-	"github.com/wirtualdev/psrpc"
+	"github.com/livekit/psrpc"
 )
 
 type loggerCache struct {

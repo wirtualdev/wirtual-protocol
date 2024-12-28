@@ -22,8 +22,8 @@ import (
 	"github.com/wirtualdev/wirtual-protocol/wirtual"
 	"github.com/wirtualdev/wirtual-protocol/logger"
 	"github.com/wirtualdev/wirtual-protocol/utils/must"
-	"github.com/wirtualdev/psrpc"
-	"github.com/wirtualdev/psrpc/pkg/middleware"
+	"github.com/livekit/psrpc"
+	"github.com/livekit/psrpc/pkg/middleware"
 )
 
 type PSRPCConfig struct {

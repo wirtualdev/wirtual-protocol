@@ -1,7 +1,7 @@
 {
   "name": "github.com/wirtualdev/wirtual-protocol",
   "private": true,
-  "version": "1.30.0",
+  "version": "1.31.0",
   "scripts": {
     "changeset": "changeset",
     "ci:publish": "pnpm --filter @wirtualdev/wirtual-protocol run build && changeset publish"

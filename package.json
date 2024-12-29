@@ -4,7 +4,7 @@
   "version": "1.30.0",
   "scripts": {
     "changeset": "changeset",
-    "ci:publish": "pnpm --filter @wirtual/protocol run build && changeset publish"
+    "ci:publish": "pnpm --filter @wirtualdev/wirtual-protocol run build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",

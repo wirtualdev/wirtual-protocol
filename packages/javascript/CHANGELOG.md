@@ -1,4 +1,4 @@
-# @wirtual/protocol
+# @wirtualdev/wirtual-protocol
 
 ## 1.30.0
 

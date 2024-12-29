@@ -1,5 +1,5 @@
 ---
-"@wirtual/protocol": minor
+"@wirtualdev/wirtual-protocol": minor
 "github.com/wirtualdev/wirtual-protocol": minor
 ---
 

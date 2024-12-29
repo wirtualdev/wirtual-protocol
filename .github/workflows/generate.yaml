@@ -65,7 +65,7 @@ jobs:
 
       - name: Test generate JS files
         run: |
-          pnpm --filter @wirtual/protocol run generate:proto
+          pnpm --filter @wirtualdev/wirtual-protocol run generate:proto
 
       - name: Add changes
         uses: EndBug/add-and-commit@v9

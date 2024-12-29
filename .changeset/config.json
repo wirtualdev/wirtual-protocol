@@ -1,11 +1,11 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.0/schema.json",
   "changelog": [
-    "@wirtual/changesets-changelog-github",
-    { "repo": "wirtual/protocol" }
+    "@livekit/changesets-changelog-github",
+    { "repo": "wirtualdev/wirtual-protocol" }
   ],
   "commit": false,
-  "fixed": [["github.com/wirtualdev/wirtual-protocol", "@wirtual/protocol"]],
+  "fixed": [["github.com/wirtualdev/wirtual-protocol", "@wirtualdev/wirtual-protocol"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
